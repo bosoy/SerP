@@ -6,12 +6,15 @@
 	AR2		- Automatic Rifleman (Scope)
 	MG 		- Machinegunner
 	MG2		- Machinegunner with Scope
-	MR		- Marksman
-	MRSD	- Marksman SD
-	SNP		- Sniper
-	HSNP	- Heavy Sniper
-	ASNP	- Asst. Sniper
+	DM		- Marksman
+	DMSD	- Marksman SD
+	SN		- Sniper
+	HSN		- Heavy Sniper
+	ASN		- Asst. Sniper
 	MED		- Corpsman
+	RC		- Operanor SD (Recon)
+	INF		- Infiltrator GL
+	INFSD	- Infiltrator SD
 	GL		- Grenadier
 	FAC		- Forward Air Controller
 	SAB		- Saboteur
@@ -24,34 +27,38 @@ _US_DF_processor = {
 	switch _type do {
 		// Squad Lider
 		case "SL": {
+			_unit addWeapon "ACE_Map";
+			_unit addWeapon "ACE_Map_Tools";
+			_unit addWeapon "ItemGPS";
 			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_Eotech";
-			{this addMagazine "SmokeShell"} forEach [0,0];
-			{this addMagazine "HandGrenade_West"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
-			_unit addWeapon "ACE_Map";
-			_unit addWeapon "ACE_Map_Tools";
-			_unit addWeapon "ItemGPS";
+			_unit addWeapon "Binocular";
+			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
+ 			_unit addWeapon "NVGoggles";					
 		};
+		
 		// Team Lider
 		case "TL": {
-			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
-			_unit addWeapon "ACE_SOC_M4A1_Eotech_4x";
-			{this addMagazine "SmokeShell"} forEach [0,0];
-			{this addMagazine "HandGrenade_West"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
-			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
-			_unit addWeapon "ACE_USPSD";
 			_unit addWeapon "ACE_Map";
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_Eotech_4x";
+			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
+ 			_unit addWeapon "NVGoggles";
+			_unit addWeapon "Binocular";
+			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
+			_unit addWeapon "ACE_USPSD";			
 			_unit addWeapon "ACE_ANPRC77";
 		};
+
 		// Automatic Rifleman
 		case "AR2": {
-			{_unit addMagazine "100Rnd_556x45_M249"} forEach [0,0];
+			{_unit addMagazine "100Rnd_556x45_M249"} forEach [0,0,0];
 			_unit addWeapon "M249_m145_EP1";
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
@@ -71,26 +78,87 @@ _US_DF_processor = {
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
 			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 2]]];
-		};
+			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240",2]]];
+		};		
 		// Operator SD
 		case "RC": {
-			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			{_unit addMagazine "30Rnd_556x45_StanagSD"} forEach [0,0,0,0,0,0,0,0];
 			{_unit addMagazine "ACE_HuntIR_M203"} forEach [0,0,0];
+			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
 			_unit addWeapon "ACE_HuntIR_monitor";
 			_unit addWeapon "ACE_SOC_M4A1_GL_SD";
+			_unit addWeapon "Binocular";
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
+		};
+		// Infiltrator
+		case "INF": {
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0];
+			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
+			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_GL_13";
+			{_unit addMagazine "SmokeShell"} forEach [0,0,0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0,0,0];
+			_unit addWeapon "NVGoggles";
+		};
+		// Infiltrator
+		case "INFSD": {
+			{_unit addMagazine "30Rnd_556x45_StanagSD"} forEach [0,0,0,0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_SD_9";
+			{_unit addMagazine "SmokeShell"} forEach [0,0,0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0,0,0];
+			_unit addWeapon "NVGoggles";
+		};
+		// Grenadier
+		case "GL": {
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
+			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_GL_AIMPOINT";
+			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
+			_unit addWeapon "NVGoggles";
+		};
+		// Sapper SF
+		case "SAP" : {
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_Aim";
+			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
+			_unit addWeapon "NVGoggles";
+			_unit addWeapon "ACE_FAST_PackEDC_ACU";
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3]]];
+		};
+		// Saboteur SF
+		case "SAB" : {
+			{_unit addMagazine "30Rnd_556x45_StanagSD"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_SD_9";
+			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
+			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
+			_unit addWeapon "ACE_USPSD";
+			_unit addWeapon "NVGoggles";
+			_unit addWeapon "ACE_FAST_PackEDC_ACU";
+			_unit setVariable ["ACE_RuckMagContents",[["PipeBomb", 3]]];
 		};
 		//Marksman
 		case "DM": {
 			_unit addWeapon "ACE_Map";
-			{_unit addMagazine "ACE_20Rnd_762x51_S_M110"} forEach [0,0,0,0,0];
-			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
-			_unit addWeapon "ACE_M110";
+			{_unit addMagazine "20Rnd_762x51_DMR"} forEach [0,0,0,0,0,0,0];
+			_unit addWeapon "DMR";
+			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
+			_unit addWeapon "ACE_USPSD";
+			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
+			_unit addWeapon "NVGoggles";
+		};
+		case "DMSD": { // Marksman SD
+			_unit addWeapon "ACE_Map";
+			{_unit addMagazine "30Rnd_556x45_StanagSD"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_SHORTDOT_SD";
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
@@ -110,7 +178,7 @@ _US_DF_processor = {
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
 		};
-		case "HSN" : {
+		case "HSN" : {// Sniper SF
 			_unit addWeapon "ACE_Map";
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
@@ -122,53 +190,31 @@ _US_DF_processor = {
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
 			_unit addWeapon "Binocular";
-			 // Sniper SF
+			 
 		};
 		// Assist. Sniper SF
 		case "ASN" : {
-			{_unit addMagazine "20Rnd_762x51_DMR"} forEach [0,0,0,0,0,0,0];
-			_unit addWeapon "DMR";
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0];
+			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
+			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			_unit addWeapon "ACE_SOC_M4A1_RCO_GL";
 			_unit addWeapon "NVGoggles";
 			{_unit addMagazine "ACE_Battery_Rangefinder"} forEach [0,0];
 			_unit addWeapon "ACE_Rangefinder_OD";
 			_unit addWeapon "ACE_Kestrel4500";
 			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3], ["HandGrenade_West", 2], ["SmokeShell", 2]]];
-		};
-
-		// Operator (Assault)
-		case "GL": {
-			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
-			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
-			_unit addWeapon "ACE_SOC_M4A1_GL_EOTECH";
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
-		};
-		// Sapper SF
-		case "SA" : {
-			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
-			_unit addWeapon "ACE_SOC_M4A1_Aim";
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
-			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
-			_unit addWeapon "ACE_USPSD";
-			_unit addWeapon "NVGoggles";
-			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents",[["PipeBomb", 3]]];	
+			_unit setVariable ["ACE_RuckMagContents",[[;"SmokeShell",2], ["ACE_Claymore_M",3], ["HandGrenade_West",2]]];
 		};
 		//Medic
 		case "MED": {
 			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0];
-			_unit addWeapon "ACE_SOC_M4A1_Eotech";
-			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0];
-			_unit addWeapon "ACE_USPSD";
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			{_unit addMagazine "ACE_LargeBandage"} forEach [0,0];
-			{_unit addMagazine "ACE_Bandage"} forEach [0,0];
-			{_unit addMagazine "ACE_Morphine"} forEach [0,0];
-			{_unit addMagazine "ACE_Epinephrine"} forEach [0,0];
+			_unit addWeapon "ACE_SOC_M4A1_Aim";
+			{_unit addMagazine "HandGrenade_West"} foreach [0,0];
+			{_unit addMagazine "SmokeShell"} foreach [0,0]; 
+			{_unit addMagazine "ACE_Bandage"} foreach [0,0];
+			{_unit addMagazine "ACE_Epinephrine"} foreach [0,0];
+			{_unit addMagazine "ACE_Morphine"} foreach [0,0];
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Rucksack_MOLLE_ACU_Medic";
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]

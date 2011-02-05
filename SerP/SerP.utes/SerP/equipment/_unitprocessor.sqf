@@ -30,6 +30,7 @@ _common_processor = {
 #include "USMC.sqf"
 #include "USMC_SF.sqf"
 #include "US_ARMY.sqf"
+#include "75th.sqf"
 #include "US_DF.sqf"
 #include "USArmy_bp.sqf"
 #include "US_DF_bp.sqf"
@@ -43,6 +44,7 @@ switch _faction do {
 	case "USMS_SF"		: {[_unit, _loadout] call _USMC_SF_processor};
 	case "US_ARMY"		: {[_unit, _loadout] call _US_ARMY_processor};
 	case "US_DF"		: {[_unit, _loadout] call _US_DF_processor};
+	case "75th"			: {[_unit, _loadout] call _US_DF_processor};
 	case "USArmy_bp"	: {[_unit, _loadout] call _USArmy_bp_processor};
 	case "US_DF_bp"		: {[_unit, _loadout] call _US_DF_bp_processor};
 	case "TL_bp"		: {[_unit, _loadout] call _TL_bp_processor};  
