@@ -29,7 +29,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
-			addMagazines("1Rnd_HE_GP25",8);
+			addMagazines("1Rnd_HE_GP25",4);
 		};
 		case "TL" : {//Старший стрелок
 			addWeapons ["ACE_AK74M_1P29","ACE_RPG27","Binocular","NVGoggles"];
@@ -101,7 +101,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
-			addMagazines("1Rnd_HE_GP25",8);
+			addMagazines("1Rnd_HE_GP25",4);
 		};
 		case "R_TL" : {//Старший разведчик
 			addWeapons ["ACE_AK74M_1P29","ACE_RPG27","ACE_APSB","Binocular","NVGoggles"];

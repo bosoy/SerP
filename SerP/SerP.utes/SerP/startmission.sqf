@@ -8,9 +8,9 @@ if (isServer) then {
 		_startTime = time + _briefingTime;
 		warbegins = 0;
 		while {(time<_startTime)&&(warbegins!=1)} do {
-			sleep 30;
 			SerP_server_message = format ["До конца брифинга осталось %1 секунд",round(_startTime-time)];
 			publicVariable "SerP_server_message";
+			sleep 30;
 		};
 		warbegins = 1;publicVariable "warbegins";
 	};
@@ -228,6 +228,7 @@ if !(isDedicated) then {
 			if (count(_objects)>0) then {
 				_veh = _objects select 0;
 				waitUntil {sleep 1;(time>_waitTime)||(getDir _veh != 0)};
+				sleep 5;
 			}else{
 				waitUntil {sleep 1;time>_waitTime};
 			};

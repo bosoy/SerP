@@ -11,7 +11,7 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_repair_default_tyres= true;
 	ace_sys_tracking_markers_enabled_override = true;
 	ace_sys_tracking_markers_enabled = false;
-	execVM "x\ace\addons\sys_wounds\XEH_preInit.sqf";
+	execVM "x\ace\addons\sys_wounds\XEH_postClientInit.sqf";
 };
 if (isServer) then {
 	//эти глобальные переменные будут переданы подключающимся клиентам
