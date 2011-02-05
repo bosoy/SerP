@@ -92,16 +92,16 @@ class Mission
 	randomSeed=6464821;
 	class Intel
 	{
-		briefingName="12.06.03 Begin";
-		briefingDescription="by DickWolf";
+		briefingName="TuCamp Distant Light 1.0";
+		briefingDescription="Мисия превая";
 		resistanceWest=0;
 		resistanceEast=1;
 		startWeather=0.54086566;
 		forecastWeather=0;
-		year=2003;
-		month=12;
-		day=12;
-		hour=10;
+		year=2011;
+		month=3;
+		day=4;
+		hour=2;
 		minute=25;
 	};
 	class Groups
@@ -152,8 +152,8 @@ class Mission
 				items=10;
 				class Item0
 				{
-					position[]={8005.4951,296.04001,1862.4574};
-					azimut=-262.8905;
+					position[]={8025.3945,296.04001,1860.5774};
+					azimut=-412.13718;
 					special="NONE";
 					id=2373;
 					side="EAST";
@@ -167,8 +167,8 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={8009.5259,296.04001,1861.1631};
-					azimut=-750.64246;
+					position[]={8013.9141,296.04001,1856.6733};
+					azimut=-750.64203;
 					special="NONE";
 					id=2374;
 					side="EAST";
@@ -181,7 +181,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={8011.2441,296.04001,1862.1823};
+					position[]={8018.8833,296.04001,1861.1576};
 					azimut=-750.64246;
 					special="NONE";
 					id=2375;
@@ -194,7 +194,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={8012.9668,296.04001,1863.2054};
+					position[]={8015.0503,296.04001,1863.2421};
 					azimut=-750.64203;
 					special="NONE";
 					id=2376;
@@ -207,8 +207,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={8014.6816,296.04001,1864.2234};
-					azimut=-750.64246;
+					position[]={8009.7417,296.04001,1851.9539};
+					azimut=-687.93835;
 					special="NONE";
 					id=2377;
 					side="EAST";
@@ -220,8 +220,8 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={8016.3994,296.04001,1865.2404};
-					azimut=-750.64246;
+					position[]={8012.6021,296.04001,1847.2367};
+					azimut=-687.93835;
 					special="NONE";
 					id=2378;
 					side="EAST";
@@ -246,8 +246,8 @@ class Mission
 				};
 				class Item7
 				{
-					position[]={8019.8433,296.04001,1867.2811};
-					azimut=-750.64246;
+					position[]={8018.4063,296.04001,1871.5743};
+					azimut=-849.06689;
 					special="NONE";
 					id=2380;
 					side="EAST";
@@ -260,8 +260,8 @@ class Mission
 				};
 				class Item8
 				{
-					position[]={8021.5596,296.04001,1868.3074};
-					azimut=-750.64246;
+					position[]={8017.1348,296.04001,1873.1232};
+					azimut=-849.06689;
 					special="NONE";
 					id=2381;
 					side="EAST";
@@ -273,8 +273,8 @@ class Mission
 				};
 				class Item9
 				{
-					position[]={8007.9893,296.04001,1860.1278};
-					azimut=-390.38571;
+					position[]={8005.2856,296.04001,1861.4805};
+					azimut=-676.9848;
 					special="NONE";
 					id=2382;
 					side="EAST";
@@ -864,87 +864,127 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=6;
+				items=9;
 				class Item0
 				{
-					position[]={8177.5742,468.21603,925.48401};
-					azimut=240.526;
-					special="NONE";
-					id=2505;
-					side="WEST";
-					vehicle="US_Delta_Force_TL_EP1";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""TL""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
-					description="Delta Force Team Leader";
-				};
-				class Item1
-				{
-					position[]={8177.4795,468.047,924.20911};
-					azimut=358.51599;
+					position[]={-6129.6309,553.8952,-6319.2432};
+					azimut=84.114197;
 					special="NONE";
 					id=2508;
 					side="WEST";
-					vehicle="US_Delta_Force_SD_EP1";
+					vehicle="ACE_USMC_Soldier_SL_D";
 					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""RC""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
-					description="DF Operator SD";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.59999996;
+					init="[this,""75th"",""SSL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="1P1S Squad Leader";
 				};
-				class Item2
+				class Item1
 				{
-					position[]={8176.1592,468.01022,924.17004};
-					azimut=358.51599;
-					special="NONE";
-					id=2512;
-					side="WEST";
-					vehicle="US_Delta_Force_Assault_EP1";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""INF""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
-					description="DF Assault Operator";
-				};
-				class Item3
-				{
-					position[]={8175.04,467.98981,924.22864};
-					azimut=358.51599;
+					position[]={-6123.9512,554.73486,-6320.5713};
+					azimut=-45.885799;
 					special="NONE";
 					id=2509;
 					side="WEST";
-					vehicle="US_Delta_Force_EP1";
+					vehicle="ACE_USMC_Soldier_TL_D";
 					player="PLAY CDG";
-					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""SAB""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
-					description="DF Saboteur";
+					rank="CORPORAL";
+					skill=0.46666664;
+					init="[this,""75th"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="1P1SA Team Leader";
 				};
-				class Item4
+				class Item2
 				{
-					position[]={8173.6846,467.90955,924.18616};
-					azimut=358.51599;
-					special="NONE";
-					id=2513;
-					side="WEST";
-					vehicle="US_Delta_Force_MG_EP1";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""MG""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
-					description="DF MG Operator";
-				};
-				class Item5
-				{
-					position[]={8172.4209,467.83725,924.17444};
-					azimut=358.51599;
+					position[]={-6122.5625,554.95868,-6319.1328};
+					azimut=-45.885799;
 					special="NONE";
 					id=2510;
 					side="WEST";
-					vehicle="US_Delta_Force_AR_EP1";
+					vehicle="ACE_USMC_Soldier_GL_D";
 					player="PLAY CDG";
-					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""AR2""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
-					description="DF AR Operator";
+					skill=0.46666664;
+					init="[this,""75th"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="Grenadier";
+				};
+				class Item3
+				{
+					position[]={-6121.168,555.19342,-6317.6992};
+					azimut=-45.885799;
+					special="NONE";
+					id=2511;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_AR_D";
+					player="PLAY CDG";
+					skill=0.33333331;
+					init="[this,""75th"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli3,[0]];";
+					description="Automatic rifleman";
+				};
+				class Item4
+				{
+					position[]={-6119.7734,555.40363,-6316.2656};
+					azimut=-45.885799;
+					special="NONE";
+					id=2512;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_AT_D";
+					player="PLAY CDG";
+					skill=0.33333331;
+					init="[this,""75th"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="Antiarmor Specialist";
+				};
+				class Item5
+				{
+					position[]={-6118.3848,555.58722,-6314.8242};
+					azimut=-45.885799;
+					special="NONE";
+					id=2513;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_TL_D";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.33333331;
+					init="[this,""75th"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="1P1SB Team Leader";
+				};
+				class Item6
+				{
+					position[]={-6116.9922,555.77283,-6313.3887};
+					azimut=-45.885799;
+					special="NONE";
+					id=2514;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_GL_D";
+					player="PLAY CDG";
+					skill=0.2;
+					init="[this,""75th"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="Grenadier";
+				};
+				class Item7
+				{
+					position[]={-6115.6025,555.93225,-6311.9502};
+					azimut=-45.885799;
+					special="NONE";
+					id=2515;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_AR_D";
+					player="PLAY CDG";
+					skill=0.2;
+					init="[this,""75th"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo [heli3,12]";
+					description="Automatic rifleman";
+				};
+				class Item8
+				{
+					position[]={-6114.207,556.11505,-6310.5225};
+					azimut=-45.885799;
+					special="NONE";
+					id=2516;
+					side="WEST";
+					vehicle="ACE_USMC_SoldierM_Marksman_D";
+					player="PLAY CDG";
+					skill=0.2;
+					init="[this,""US_ARMY"",""DM""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					description="Designated Marksman";
 				};
 			};
 		};
@@ -956,53 +996,53 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={-5410.0283,464.20844,-4382.5317};
+					position[]={-6130.2227,554.37329,-6308.2197};
 					azimut=85.643303;
 					special="NONE";
-					id=2514;
+					id=2517;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_SL_D";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.59999996;
-					init="[this,""USMC"",""OFF""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					init="[this,""75th"",""OFF""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
 					description="Platoon Leader";
 				};
 				class Item1
 				{
-					position[]={-5404.3857,464.83154,-4384.0103};
+					position[]={-6124.5801,554.94531,-6309.6982};
 					azimut=-44.356701;
 					special="NONE";
-					id=2515;
+					id=2518;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_TL_D";
 					player="PLAY CDG";
 					rank="SERGEANT";
 					skill=0.46666664;
-					init="[this,""USMC"",""SSL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					init="[this,""75th"",""SSL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
 					description="Platoon sergeant";
 				};
 				class Item2
 				{
-					position[]={-5402.9609,464.96841,-4382.6069};
+					position[]={-6123.1553,555.16577,-6308.2949};
 					azimut=-44.356701;
 					special="NONE";
-					id=2516;
+					id=2519;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.46666664;
-					init="[this,""USMC"",""ENG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
+					init="[this,""75th"",""ENG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
 					description="Platoon RATELO";
 				};
 				class Item3
 				{
-					position[]={-5401.5352,465.09433,-4381.2056};
+					position[]={-6121.7295,555.33521,-6306.8936};
 					azimut=-44.356701;
 					special="NONE";
-					id=2517;
+					id=2520;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
@@ -1021,118 +1061,118 @@ class Mission
 				items=9;
 				class Item0
 				{
-					position[]={-5377.2861,472.46985,-4421.7729};
+					position[]={-6097.4297,559.43323,-6347.5576};
 					azimut=84.114197;
 					special="NONE";
-					id=2518;
+					id=2521;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_SL_D";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.59999996;
-					init="[this,""USMC"",""SSL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1P1S Squad Leader";
+					init="[this,""75th"",""SSL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1P2S Squad Leader";
 				};
 				class Item1
 				{
-					position[]={-5371.6074,473.52252,-4423.105};
-					azimut=-45.885799;
-					special="NONE";
-					id=2519;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_TL_D";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.46666664;
-					init="[this,""USMC"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1P1SA Team Leader";
-				};
-				class Item2
-				{
-					position[]={-5370.2158,473.29477,-4421.6646};
-					azimut=-45.885799;
-					special="NONE";
-					id=2520;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_GL_D";
-					player="PLAY CDG";
-					skill=0.46666664;
-					init="[this,""USMC"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="Grenadier";
-				};
-				class Item3
-				{
-					position[]={-5368.8262,473.06073,-4420.228};
-					azimut=-45.885799;
-					special="NONE";
-					id=2521;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_AR_D";
-					player="PLAY CDG";
-					skill=0.33333331;
-					init="[this,""USMC"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli2,[0]];";
-					description="Automatic rifleman";
-				};
-				class Item4
-				{
-					position[]={-5367.4307,472.83423,-4418.7905};
+					position[]={-6091.751,559.79089,-6348.8896};
 					azimut=-45.885799;
 					special="NONE";
 					id=2522;
 					side="WEST";
+					vehicle="ACE_USMC_Soldier_TL_D";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.46666664;
+					init="[this,""75th"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1P2SA Team Leader";
+				};
+				class Item2
+				{
+					position[]={-6090.3594,559.85114,-6347.4492};
+					azimut=-45.885799;
+					special="NONE";
+					id=2523;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_GL_D";
+					player="PLAY CDG";
+					skill=0.46666664;
+					init="[this,""75th"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="Grenadier";
+				};
+				class Item3
+				{
+					position[]={-6088.9697,559.92383,-6346.0127};
+					azimut=-45.885799;
+					special="NONE";
+					id=2524;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_AR_D";
+					player="PLAY CDG";
+					skill=0.33333331;
+					init="[this,""75th"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli2,[0]];";
+					description="Automatic rifleman";
+				};
+				class Item4
+				{
+					position[]={-6087.5742,559.99835,-6344.5752};
+					azimut=-45.885799;
+					special="NONE";
+					id=2525;
+					side="WEST";
 					vehicle="ACE_USMC_Soldier_LAT_D";
 					player="PLAY CDG";
 					skill=0.33333331;
-					init="[this,""USMC"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					init="[this,""75th"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
 					description="Antiarmor Specialist";
 				};
 				class Item5
 				{
-					position[]={-5366.0381,472.65405,-4417.3579};
+					position[]={-6086.1816,560.0296,-6343.1426};
 					azimut=-45.885799;
 					special="NONE";
-					id=2523;
+					id=2526;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_TL_D";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""USMC"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1P1SB Team Leader";
+					init="[this,""75th"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1P2SB Team Leader";
 				};
 				class Item6
 				{
-					position[]={-5364.6465,472.47101,-4415.9214};
+					position[]={-6084.79,560.04053,-6341.7061};
 					azimut=-45.885799;
 					special="NONE";
-					id=2524;
+					id=2527;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_GL_D";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					init="[this,""75th"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
 					description="Grenadier";
 				};
 				class Item7
 				{
-					position[]={-5363.2559,472.27756,-4414.4868};
+					position[]={-6083.3994,560.06335,-6340.2715};
 					azimut=-45.885799;
 					special="NONE";
-					id=2525;
+					id=2528;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_AR_D";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo HELI2;";
+					init="[this,""75th"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo HELI2;";
 					description="Automatic rifleman";
 				};
 				class Item8
 				{
-					position[]={-5361.8643,472.09113,-4413.0464};
+					position[]={-6082.0078,560.09961,-6338.8311};
 					azimut=-45.885799;
 					special="NONE";
-					id=2526;
+					id=2529;
 					side="WEST";
 					vehicle="ACE_USMC_SoldierM_Marksman_D";
 					player="PLAY CDG";
@@ -1147,127 +1187,61 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=9;
+				items=4;
 				class Item0
 				{
-					position[]={-5409.4141,464.27524,-4393.4302};
-					azimut=84.114197;
-					special="NONE";
-					id=2527;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_SL_D";
-					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.59999996;
-					init="[this,""USMC"",""SSL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="1P2S Squad Leader";
-				};
-				class Item1
-				{
-					position[]={-5403.7344,465.0759,-4394.7583};
-					azimut=-45.885799;
-					special="NONE";
-					id=2528;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_D";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.46666664;
-					init="[this,""USMC"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="1P2SA Team Leader";
-				};
-				class Item2
-				{
-					position[]={-5402.3457,465.23703,-4393.3198};
-					azimut=-45.885799;
-					special="NONE";
-					id=2529;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_GL_D";
-					player="PLAY CDG";
-					skill=0.46666664;
-					init="[this,""USMC"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="Grenadier";
-				};
-				class Item3
-				{
-					position[]={-5400.9512,465.39542,-4391.8862};
-					azimut=-45.885799;
+					position[]={-6085.6436,560.00793,-6350.0166};
+					azimut=46.201599;
 					special="NONE";
 					id=2530;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_AR_D";
+					vehicle="ACE_USMC_Soldier_AT_D";
 					player="PLAY CDG";
-					skill=0.33333331;
-					init="[this,""USMC"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli3,[0]];";
-					description="Automatic rifleman";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.2;
+					init="[this,""75th"",""ASG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1ASA Gunner";
 				};
-				class Item4
+				class Item1
 				{
-					position[]={-5399.5566,465.52924,-4390.4526};
+					position[]={-6082.8945,560.06244,-6349.8994};
 					azimut=-45.885799;
 					special="NONE";
 					id=2531;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_AT_D";
+					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
-					skill=0.33333331;
-					init="[this,""USMC"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="Antiarmor Specialist";
+					skill=0.2;
+					init="[this,""75th"",""ASA""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1ASA Asst Gunner";
 				};
-				class Item5
+				class Item2
 				{
-					position[]={-5398.168,465.65558,-4389.0112};
+					position[]={-6081.6592,560.0993,-6348.623};
 					azimut=-45.885799;
 					special="NONE";
 					id=2532;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_TL_D";
+					vehicle="ACE_USMC_Soldier_AT_D";
 					player="PLAY CDG";
 					rank="CORPORAL";
-					skill=0.33333331;
-					init="[this,""USMC"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="1P1SB Team Leader";
+					skill=0.2;
+					init="[this,""75th"",""ASG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1ASB Gunner";
 				};
-				class Item6
+				class Item3
 				{
-					position[]={-5396.7754,465.78577,-4387.5757};
+					position[]={-6080.2695,560.12769,-6347.1885};
 					azimut=-45.885799;
 					special="NONE";
 					id=2533;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_GL_D";
+					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="Grenadier";
-				};
-				class Item7
-				{
-					position[]={-5395.3857,465.91623,-4386.1372};
-					azimut=-45.885799;
-					special="NONE";
-					id=2534;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_AR_D";
-					player="PLAY CDG";
-					skill=0.2;
-					init="[this,""USMC"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo [heli3,12]";
-					description="Automatic rifleman";
-				};
-				class Item8
-				{
-					position[]={-5393.9902,466.05273,-4384.7095};
-					azimut=-45.885799;
-					special="NONE";
-					id=2535;
-					side="WEST";
-					vehicle="ACE_USMC_SoldierM_Marksman_D";
-					player="PLAY CDG";
-					skill=0.2;
-					init="[this,""US_ARMY"",""DM""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli3;";
-					description="Designated Marksman";
+					init="[this,""75th"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
+					description="1ASB Asst Gunner";
 				};
 			};
 		};
@@ -1276,88 +1250,48 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=6;
+				items=3;
 				class Item0
 				{
-					position[]={-5334.7744,474.05853,-4346.3843};
-					azimut=57.6716;
+					position[]={-6063.8545,560.93311,-6279.915};
+					azimut=-284.396;
 					special="NONE";
-					id=2536;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_TL_D";
-					player="PLAY CDG";
-					skill=0.2;
-					init="[this,""USMC"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1MGA TEAM LDR";
-				};
-				class Item1
-				{
-					position[]={-5331.4316,474.11362,-4347.1216};
-					azimut=-45.885799;
-					special="NONE";
-					id=2537;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_MG_D";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.2;
-					init="[this,""USMC"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli1,[0]];";
-					description="1MGA Gunner";
-				};
-				class Item2
-				{
-					position[]={-5330.04,474.27356,-4345.6831};
-					azimut=-45.885799;
-					special="NONE";
-					id=2538;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_D";
-					player="PLAY CDG";
-					skill=0.2;
-					init="[this,""USMC"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1MGA Ammo Man";
-				};
-				class Item3
-				{
-					position[]={-5333.5674,474.02039,-4347.3228};
-					azimut=53.111801;
-					special="NONE";
-					id=2539;
+					id=2534;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_TL_D";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
+					rank="CORPORAL";
 					skill=0.2;
-					init="[this,""USMC"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1MGB TEAM LDR";
+					init="[this,""75th"",""MOG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1Sqd Gunner";
 				};
-				class Item4
+				class Item1
 				{
-					position[]={-5328.9014,474.40512,-4344.4868};
+					position[]={-6060.4746,561.10052,-6280.5059};
 					azimut=-45.885799;
 					special="NONE";
-					id=2540;
+					id=2535;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_MG_D";
+					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.2;
-					init="[this,""USMC"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli1,[1]];";
-					description="1MGB Gunner";
+					init="[this,""75th"",""MoAG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1Sqd Asst Gunner";
 				};
-				class Item5
+				class Item2
 				{
-					position[]={-5327.5127,474.57565,-4343.0532};
+					position[]={-6059.085,561.15723,-6279.0684};
 					azimut=-45.885799;
 					special="NONE";
-					id=2541;
+					id=2536;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1MGB Ammo Man";
+					init="[this,""75th"",""MoAm""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1Sqd Ammo Man";
 				};
 			};
 		};
@@ -1366,48 +1300,88 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=3;
+				items=6;
 				class Item0
 				{
-					position[]={-5343.7109,473.06723,-4354.1763};
-					azimut=-284.396;
+					position[]={-6054.8662,561.32806,-6272.123};
+					azimut=57.6716;
 					special="NONE";
-					id=2542;
+					id=2537;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_TL_D";
+					player="PLAY CDG";
+					skill=0.2;
+					init="[this,""75th"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1MGA TEAM LDR";
+				};
+				class Item1
+				{
+					position[]={-6051.5234,561.46478,-6272.8604};
+					azimut=-45.885799;
+					special="NONE";
+					id=2538;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_MG_D";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.2;
+					init="[this,""75th"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli1,[0]];";
+					description="1MGA Gunner";
+				};
+				class Item2
+				{
+					position[]={-6050.1318,561.53235,-6271.4219};
+					azimut=-45.885799;
+					special="NONE";
+					id=2539;
+					side="WEST";
+					vehicle="ACE_USMC_Soldier_D";
+					player="PLAY CDG";
+					skill=0.2;
+					init="[this,""75th"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1MGA Ammo Man";
+				};
+				class Item3
+				{
+					position[]={-6053.6592,561.37701,-6273.0615};
+					azimut=53.111801;
+					special="NONE";
+					id=2540;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_TL_D";
 					player="PLAY CDG";
 					leader=1;
-					rank="CORPORAL";
+					rank="SERGEANT";
 					skill=0.2;
-					init="[this,""USMC"",""MOG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1Sqd Gunner";
+					init="[this,""75th"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1MGB TEAM LDR";
 				};
-				class Item1
+				class Item4
 				{
-					position[]={-5340.3311,473.29483,-4354.7671};
+					position[]={-6048.9932,561.6095,-6270.2256};
 					azimut=-45.885799;
 					special="NONE";
-					id=2543;
+					id=2541;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_D";
+					vehicle="ACE_USMC_Soldier_MG_D";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.2;
-					init="[this,""USMC"",""MoAG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1Sqd Asst Gunner";
+					init="[this,""75th"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli1,[1]];";
+					description="1MGB Gunner";
 				};
-				class Item2
+				class Item5
 				{
-					position[]={-5338.9414,473.44821,-4353.3296};
+					position[]={-6047.6045,561.7395,-6268.792};
 					azimut=-45.885799;
 					special="NONE";
-					id=2544;
+					id=2542;
 					side="WEST";
 					vehicle="ACE_USMC_Soldier_D";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""MoAm""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
-					description="1Sqd Ammo Man";
+					init="[this,""75th"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli1;";
+					description="1MGB Ammo Man";
 				};
 			};
 		};
@@ -1416,61 +1390,34 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=4;
+				items=2;
 				class Item0
 				{
-					position[]={-5365.5,474.62198,-4424.3228};
-					azimut=46.201599;
+					position[]={-6104.7695,557.3056,-6314.3315};
+					azimut=44.6562;
 					special="NONE";
-					id=2545;
+					id=2543;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_AT_D";
+					vehicle="USMC_Soldier_Pilot";
 					player="PLAY CDG";
 					leader=1;
-					rank="SERGEANT";
-					skill=0.2;
-					init="[this,""USMC"",""ASG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1ASA Gunner";
+					rank="CORPORAL";
+					skill=0.33333331;
+					init="[this,""75th"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInDriver heli3;";
+					description="Pilot 1 Black Hawk 1";
 				};
 				class Item1
 				{
-					position[]={-5362.751,474.93903,-4424.2056};
-					azimut=-45.885799;
+					position[]={-6103.3457,557.54535,-6315.7358};
+					azimut=44.6562;
 					special="NONE";
-					id=2546;
+					id=2544;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_D";
+					vehicle="USMC_Soldier_Pilot";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""ASA""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1ASA Asst Gunner";
-				};
-				class Item2
-				{
-					position[]={-5361.5156,474.74023,-4422.9292};
-					azimut=-45.885799;
-					special="NONE";
-					id=2547;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_AT_D";
-					player="PLAY CDG";
-					rank="CORPORAL";
-					skill=0.2;
-					init="[this,""USMC"",""ASG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1ASB Gunner";
-				};
-				class Item3
-				{
-					position[]={-5360.126,474.51932,-4421.4946};
-					azimut=-45.885799;
-					special="NONE";
-					id=2548;
-					side="WEST";
-					vehicle="ACE_USMC_Soldier_D";
-					player="PLAY CDG";
-					skill=0.2;
-					init="[this,""USMC"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo heli2;";
-					description="1ASB Asst Gunner";
+					init="[this,""75th"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo [heli3,12];this moveInTurret[heli3,[1]];";
+					description="Pilot 2";
 				};
 			};
 		};
@@ -1482,30 +1429,30 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={-5345.9229,472.63971,-4358.7622};
-					azimut=52.916;
+					position[]={-6089.8213,559.3963,-6327.9199};
+					azimut=47.145302;
 					special="NONE";
-					id=2549;
+					id=2545;
 					side="WEST";
 					vehicle="USMC_Soldier_Pilot";
 					player="PLAY CDG";
 					leader=1;
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""USMC"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInDriver heli1;";
-					description="Pilot 1 VENOM";
+					init="[this,""75th"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInDriver heli2;";
+					description="Pilot 1 Black Hawk 2";
 				};
 				class Item1
 				{
-					position[]={-5344.7148,472.70749,-4360.354};
-					azimut=52.916;
+					position[]={-6088.4668,559.55249,-6329.3877};
+					azimut=47.145199;
 					special="NONE";
-					id=2550;
+					id=2546;
 					side="WEST";
 					vehicle="USMC_Soldier_Pilot";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli1,[2]];";
+					init="[this,""75th"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo [heli2,12]";
 					description="Pilot 2";
 				};
 			};
@@ -1518,30 +1465,30 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={-5369.9385,469.11417,-4402.311};
-					azimut=47.145302;
+					position[]={-6066.001,560.82263,-6284.5015};
+					azimut=52.916;
 					special="NONE";
-					id=2551;
+					id=2547;
 					side="WEST";
 					vehicle="USMC_Soldier_Pilot";
 					player="PLAY CDG";
 					leader=1;
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""USMC"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInDriver heli2;";
-					description="Pilot 1 Black Hawk 1";
+					init="[this,""75th"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInDriver heli1;";
+					description="Pilot 1 VENOM";
 				};
 				class Item1
 				{
-					position[]={-5368.584,469.48218,-4403.7788};
-					azimut=47.145199;
+					position[]={-6064.793,560.88934,-6286.0933};
+					azimut=52.916;
 					special="NONE";
-					id=2552;
+					id=2548;
 					side="WEST";
 					vehicle="USMC_Soldier_Pilot";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""USMC"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo [heli2,12]";
+					init="[this,""75th"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInTurret[heli1,[2]];";
 					description="Pilot 2";
 				};
 			};
@@ -1551,34 +1498,87 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=2;
+				items=6;
 				class Item0
 				{
-					position[]={-5386.0586,466.97757,-4388.5923};
-					azimut=44.6562;
+					position[]={8177.5742,468.21603,925.48401};
+					azimut=240.526;
 					special="NONE";
-					id=2553;
+					id=2549;
 					side="WEST";
-					vehicle="USMC_Soldier_Pilot";
-					player="PLAYER COMMANDER";
+					vehicle="US_Delta_Force_TL_EP1";
+					player="PLAY CDG";
 					leader=1;
-					rank="CORPORAL";
-					skill=0.33333331;
-					init="[this,""USMC"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInDriver heli3;";
-					description="Pilot 1 Black Hawk 2";
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="_xx= [this, ""US_DF"", ""TL""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					description="Delta Force Team Leader";
 				};
 				class Item1
 				{
-					position[]={-5384.6348,467.14514,-4389.9966};
-					azimut=44.6562;
+					position[]={8177.4795,468.047,924.20911};
+					azimut=358.51599;
+					special="NONE";
+					id=2550;
+					side="WEST";
+					vehicle="US_Delta_Force_SD_EP1";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init="_xx= [this, ""US_DF"", ""RC""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					description="DF Operator SD";
+				};
+				class Item2
+				{
+					position[]={8176.1592,468.01022,924.17004};
+					azimut=358.51599;
+					special="NONE";
+					id=2553;
+					side="WEST";
+					vehicle="US_Delta_Force_Assault_EP1";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="_xx= [this, ""US_DF"", ""INF""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					description="DF Assault Operator";
+				};
+				class Item3
+				{
+					position[]={8175.04,467.98981,924.22864};
+					azimut=358.51599;
+					special="NONE";
+					id=2551;
+					side="WEST";
+					vehicle="US_Delta_Force_EP1";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="_xx= [this, ""US_DF"", ""SAB""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					description="DF Saboteur";
+				};
+				class Item4
+				{
+					position[]={8173.6846,467.90955,924.18616};
+					azimut=358.51599;
 					special="NONE";
 					id=2554;
 					side="WEST";
-					vehicle="USMC_Soldier_Pilot";
+					vehicle="US_Delta_Force_MG_EP1";
 					player="PLAY CDG";
-					skill=0.2;
-					init="[this,""USMC"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf"";this moveInCargo [heli3,12];this moveInTurret[heli3,[1]];";
-					description="Pilot 2";
+					skill=0.60000002;
+					init="_xx= [this, ""US_DF"", ""MG""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					description="DF MG Operator";
+				};
+				class Item5
+				{
+					position[]={8172.4209,467.83725,924.17444};
+					azimut=358.51599;
+					special="NONE";
+					id=2552;
+					side="WEST";
+					vehicle="US_Delta_Force_AR_EP1";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="_xx= [this, ""US_DF"", ""AR2""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					description="DF AR Operator";
 				};
 			};
 		};
@@ -1593,14 +1593,14 @@ class Mission
 					position[]={8169.5098,467.66476,924.09875};
 					azimut=358.51599;
 					special="NONE";
-					id=2506;
+					id=2555;
 					side="WEST";
 					vehicle="US_Delta_Force_Marksman_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="SERGEANT";
 					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""HSNP""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					init="_xx= [this, ""US_DF"", ""HSNP""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
 					description="DF Heavy Sniper  ";
 				};
 				class Item1
@@ -1608,12 +1608,12 @@ class Mission
 					position[]={8168.0459,467.55539,924.11243};
 					azimut=358.51599;
 					special="NONE";
-					id=2507;
+					id=2556;
 					side="WEST";
 					vehicle="US_Delta_Force_Marksman_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""ASNP""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					init="_xx= [this, ""US_DF"", ""ASNP""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
 					description="DF Assist. Sniper";
 				};
 				class Item2
@@ -1621,12 +1621,12 @@ class Mission
 					position[]={8170.6235,467.72934,924.11932};
 					azimut=358.51599;
 					special="NONE";
-					id=2511;
+					id=2557;
 					side="WEST";
 					vehicle="US_Delta_Force_M14_EP1";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="_xx= [this, ""US_DF_bp"", ""MED""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
+					init="_xx= [this, ""US_DF"", ""MED""] call compile preprocessFileLineNumbers 'SerP\process_units.sqf';";
 					description="DF Medic";
 				};
 			};
@@ -25370,10 +25370,10 @@ class Mission
 		};
 		class Item2453
 		{
-			position[]={-5354.3125,471.00742,-4370.0425};
+			position[]={-6074.4561,560.18048,-6295.7817};
 			azimut=45.4118;
 			special="FLY";
-			id=2555;
+			id=2505;
 			side="EMPTY";
 			vehicle="UH1Y";
 			skill=0.33333331;
@@ -25382,10 +25382,10 @@ class Mission
 		};
 		class Item2454
 		{
-			position[]={-5393.4102,466.37985,-4396.7915};
+			position[]={-6113.5537,556.32886,-6322.5308};
 			azimut=45.4118;
 			special="FLY";
-			id=2556;
+			id=2506;
 			side="EMPTY";
 			vehicle="UH60M_EP1";
 			skill=0.33333331;
@@ -25394,10 +25394,10 @@ class Mission
 		};
 		class Item2455
 		{
-			position[]={-5377.5986,469.93729,-4411.3433};
+			position[]={-6097.7422,559.21857,-6337.0825};
 			azimut=45.4118;
 			special="FLY";
-			id=2557;
+			id=2507;
 			side="EMPTY";
 			vehicle="UH60M_EP1";
 			skill=0.33333331;
@@ -25407,7 +25407,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			position[]={7956.2969,296.22116,1923.3704};
@@ -25424,7 +25424,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={8014.6504,296.04001,1864.2347};
+			position[]={8011.5454,296.04001,1864.839};
 			name="all_st";
 			type="Empty";
 		};
@@ -25453,6 +25453,12 @@ class Mission
 			type="Empty";
 		};
 		class Item7
+		{
+			position[]={-6084.918,559.20636,-6312.0576};
+			name="usrg";
+			type="Empty";
+		};
+		class Item8
 		{
 			position[]={8176.2393,468.18582,925.49768};
 			name="usdf";
