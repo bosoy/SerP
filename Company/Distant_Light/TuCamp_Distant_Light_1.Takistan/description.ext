@@ -1,0 +1,14 @@
+﻿class Header	{
+	gameType = Unknown;
+	minPlayers = 1;
+	maxPlayers = 200;
+};
+respawn = 1;
+respawndelay = 3;
+
+onLoadMission = "SerP demo";
+
+class Params {
+#include "SerP\params_default.hpp"
+//здесь можно описать дополнительные параметры игры
+};

@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ID="Arma2">
+  <Package ID="Missions">
+    <Container ID="">
+<!-- Название миссии -->
+	<Key ID="STR_missionname">
+		<Original>
+		Please wait...
+		</Original>
+	</Key>
+<!-- информация для всех -->
+	<Key ID="credits">
+		<Original>
+		Автор миссии:&lt;br/&gt;
+		Unknown
+		&lt;br/&gt;&lt;br/&gt;
+		Платформа: SerP&lt;br/&gt;
+		Идея: conKORD&lt;br/&gt;
+		Исполнение: conKORD, Zu-23-2&lt;br/&gt;
+		</Original>
+	</Key>
+	<Key ID="convent">
+		<Original>
+		Описание работы триггеров и т.п.
+		</Original>
+	</Key>
+<!-- информация для прессы -->
+	<Key ID="situation_tv">
+		<Original>
+		Описание ситуации для прессы.
+		</Original>
+	</Key>
+<!-- информация для bluefor -->
+	<Key ID="situation_bf">
+		<Original>
+		Описание ситуации для синей стороны.
+&lt;br/&gt;Силы США уже почти 2 суток бомбят стратегические объекты в Северо-Западном регионе Такистана. 
+&lt;br/&gt;Командование решило ввести сухопутные войска,для продвижения в глубь страны и дальнейшего захвата стратегически важных позиции в этом регионе 
+&lt;br/&gt;Для своего плацдарма был выбран аэродром &lt;marker name='all_st'&gt;`Сamomile`&lt;/marker&gt;
+&lt;br/&gt;Сейчас он используется как тренировочная база для курсантов Армии Такистана.
+&lt;br/&gt;На базе находиться  &lt;marker name='sk'&gt;`Склад`&lt;/marker&gt; вооружения его бы не мешало захватить.
+&lt;br/&gt;Так же более 5 часов за базой наблюдает группа &lt;marker name='usdf'&gt;`SF+снайперская пара.`&lt;/marker&gt;SF+снайперская пара.
+&lt;br/&gt;Доложили,что на базе почти никого не осталось и это наилучшее время для захвата. 
+&lt;br/&gt;Для этих целей выделяется 26 Рейнджеров из 1-го Батальона 3-ей роты 75-го полка Рейнджеров
+&lt;br/&gt;вместе с усилением в виде минометного расчета(3 человека),противотанковый расчет(4 человека),пулеметный расчет(6 человек) на 2-х блек хоках и 1-ом веноме
+		</Original>
+	</Key>
+	<Key ID="task_bf">
+		<Original>
+		Задачи для синей стороны.
+		</Original>
+	</Key>
+	<Key ID="execution_bf">
+		<Original>
+		Выполнение для синей стороны.
+		</Original>
+	</Key>
+	<Key ID="machinery_bf">
+		<Original>
+		Вооружение синей стороны.
+		</Original>
+	</Key>
+	<Key ID="enemy_bf">
+		<Original>
+		Информация о противнике для синей стороны.
+		</Original>
+	</Key>
+<!-- информация для redfor -->
+	<Key ID="situation_rf">
+		<Original>
+		Описание ситуации для красной стороны.
+		</Original>
+	</Key>
+	<Key ID="task_rf">
+		<Original>
+		Задачи для красной стороны.
+		</Original>
+	</Key>
+	<Key ID="machinery_rf">
+		<Original>
+		Вооружение красной стороны.
+		&lt;br/&gt;&lt;br/&gt;Пример:
+		&lt;br/&gt;&lt;br/&gt;Управление:
+		&lt;br/&gt;- 2x M16A2
+		&lt;br/&gt;- 1x ПК
+		&lt;br/&gt;SUV&lt;br/&gt;
+		&lt;br/&gt;Штурмовые группы:
+		&lt;br/&gt;- 12x M16A2 из них 6 M16A2 Scope
+		&lt;br/&gt;- 6x  АК74+ПГ
+		&lt;br/&gt;- 6х  ПК
+		&lt;br/&gt;- 6х  РПК
+		&lt;br/&gt;- 6х  АК74У
+		&lt;br/&gt;- 6х  HK G3SG\1
+		&lt;br/&gt;- 12x M72A2 из них 6 в технике
+		&lt;br/&gt;5х БТР-40
+		&lt;br/&gt;всего в штурмовых группах 48 человек
+		</Original>
+	</Key>
+	<Key ID="execution_rf">
+		<Original>
+		Выполнение для красной стороны.
+		</Original>
+	</Key>
+	<Key ID="enemy_rf">
+		<Original>
+		Информация о противнике для красной стороны.
+		</Original>
+	</Key>
+<!-- заголовки в заметках -->
+	<Key ID="groups_title">
+		<Original>
+		Отряды
+		</Original> 
+	</Key>
+	<Key ID="credits_title">
+		<Original>
+		Авторы
+		</Original>
+	</Key>
+	<Key ID="situation_title">
+		<Original>
+		Общее положение дел
+		</Original>
+	</Key>
+	<Key ID="task_title">
+		<Original>
+		Поставленная задача
+		</Original>
+	</Key>
+	<Key ID="execution_title">
+		<Original>
+		Исполнение
+		</Original>
+	</Key>
+	<Key ID="machinery_title">
+		<Original>
+		Техника и вооружение
+		</Original>
+	</Key>
+	<Key ID="enemy_title">
+		<Original>
+		Противник
+		</Original>
+	</Key>	
+	<Key ID="convent_title">
+		<Original>
+		Условности
+		</Original>
+	</Key>
+<!-- Строки ниже используются платформой. Навряд-ли понадобится там что-то менять. -->
+<!-- Опции в лобби: погода, время суток, брифинг ингейм. -->
+	<Key ID="STR_timeOfDay">
+		<Original>
+		Time of Day
+		</Original>
+		<Russian>
+		Время суток
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option0">
+		<Original>
+		Dawn
+		</Original>
+		<Russian>
+		Рассвет
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option1">
+		<Original>
+		Early Morning
+		</Original>
+		<Russian>
+		Раннее утро
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option2">
+		<Original>
+		Morning
+		</Original>
+		<Russian>
+		Утро
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option3">
+		<Original>
+		Noon
+		</Original>
+		<Russian>
+		Полдень
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option4">
+		<Original>
+		Afternoon
+		</Original>
+		<Russian>
+		Середина дня
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option5">
+		<Original>
+		Evening
+		</Original>
+		<Russian>
+		Вечер
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option6">
+		<Original>
+		Dusk
+		</Original>
+		<Russian>
+		Сумерки
+		</Russian>
+	</Key>
+	<Key ID="STR_timeOfDay_Option7">
+		<Original>
+		Night
+		</Original>
+		<Russian>
+		Ночь
+		</Russian>
+	</Key>
+	<Key ID="STR_weather">
+		<Original>
+		Weather
+		</Original>
+		<Russian>
+		Погода
+		</Russian>
+	</Key>
+	<Key ID="STR_weather_Option0">
+		<Original>
+		Clear
+		</Original>
+		<Russian>
+		Безоблачно
+		</Russian>
+	</Key>
+	<Key ID="STR_weather_Option1">
+		<Original>
+		Overcast
+		</Original>
+		<Russian>
+		Облачно
+		</Russian>
+	</Key>
+	<Key ID="STR_weather_Option2">
+		<Original>
+		Light Fog
+		</Original>
+		<Russian>
+		Туман
+		</Russian>
+	</Key>
+	<Key ID="STR_weather_Option3">
+		<Original>
+		Heavy Fog
+		</Original>
+  		<Russian>
+		Густой туман
+		</Russian>
+	</Key>
+	<Key ID="STR_weather_Option4">
+		<Original>
+		Storm
+		</Original>
+		<Russian>
+		Гроза
+		</Russian>
+	</Key>
+	<Key ID="STR_briefing_mode">
+		<Original>
+		Briefing ingame
+		</Original> 
+		<Russian>
+		Брифинг ингейм
+		</Russian> 
+	</Key>
+	<Key ID="STR_briefing_mode_Option0">
+		<Original>
+		Without briefing
+		</Original> 
+		<Russian>
+		Без брифинга
+		</Russian> 
+	</Key>
+	<Key ID="STR_briefing_mode_Option1">
+		<Original>
+		7 min
+		</Original> 
+		<Russian>
+		7 минут
+		</Russian> 
+	</Key>
+	<Key ID="STR_briefing_mode_Option2">
+		<Original>
+		15 min
+		</Original> 
+		<Russian>
+		15 минут
+		</Russian> 
+	</Key>
+	<Key ID="STR_briefing_mode_Option3">
+		<Original>
+		Start when ready
+		</Original> 
+		<Russian>
+		Старт по готовности
+		</Russian> 
+	</Key>
+
+<!-- это добавил Зу хз зачем -->
+	<Key ID="STR_On">
+		<Original>
+		ON
+		</Original>
+		<Russian>
+		Вкл.
+		</Russian>
+	</Key>
+	<Key ID="STR_Off">
+		<Original>
+		Off
+		</Original>
+		<Russian>
+		Выкл.
+		</Russian>
+	</Key>
+	<Key ID="UAV_Launch">
+		<Original>
+		Launch UAV
+		</Original>
+		<Russian>
+		Запуск БПЛА
+		</Russian>
+	</Key>
+	<Key ID="UAV_LaunchOnMap">
+		<Original>
+		Right Click on Map for Launch UAV to desired location
+		</Original>
+		<Russian>
+		Щелкните правой кнопкой мыши на карте для запуска БПЛА в нужное место
+		</Russian>
+	</Key>
+	<Key ID="UAV_Operate">
+		<Original>
+		UAV
+		</Original>
+		<Russian>
+		БПЛА
+		</Russian>
+	</Key>
+	<Key ID="STR_UAV">
+		<Original>
+		UAV
+		</Original>
+		<Russian>
+		БПЛА
+		</Russian>
+	</Key>
+	<Key ID="UAV_ReadyToLaunch">
+		<Original>
+		UAV ready to launch
+		</Original>
+		<Russian>
+		БПЛА готов к запуску
+		</Russian>
+	</Key>
+	<Key ID="STR_UnauthorisedCrew">
+		<Original>
+		You are not authorised to crew this vehicle!
+		</Original> 
+		<Russian>
+		Вы не уполномочены управлять этой техникой!
+		</Russian> 
+	</Key>
+<!-- сообщения при завершении миссии -->
+	<Key ID="STR_win_call">
+		<Russian>
+		В миссии победили %1 
+		</Russian>
+		<Original>
+		%1 wins
+		</Original>
+	</Key>
+	<Key ID="STR_dead_call">
+		<Russian>
+		Все %1 погибли...
+		</Russian>
+		<Original>
+		All %1 KIA...
+		</Original>
+	</Key>
+
+	<Key ID="STR_mission_end_admin">
+		<Russian>
+		Миссия завершена досрочно
+		</Russian>
+		<Original>
+		Mission interrupted
+		</Original>
+	</Key>
+<!-- названия сторон, используется при завершении миссии -->
+	<Key ID="STR_ru_call">
+		<Russian>
+		мотострелки РА
+		</Russian>
+		<Original>
+		russian troops
+		</Original>
+	</Key>
+	<Key ID="STR_usmc_call">
+		<Russian>
+		морпехи США
+		</Russian>
+		<Original>
+		USMC troops
+		</Original>
+	</Key>
+	<Key ID="STR_usarmy_call">
+		<Russian>
+		рейнджеры США
+		</Russian>
+		<Original>
+		US Army soldiers
+		</Original>
+	</Key>
+	<Key ID="STR_napa_call">
+		<Russian>
+		бойцы НАПА
+		</Russian>
+		<Original>
+		NAPA rebels
+		</Original>
+	</Key>
+	<Key ID="STR_ta_call">
+		<Russian>
+		бойцы ИФОТ
+		</Russian>
+		<Original>
+		TA troops
+		</Original>
+	</Key>
+	<Key ID="STR_pot_call">
+		<Russian>
+		Войны Аллаха
+		</Russian>
+		<Original>
+		Mujahideen
+		</Original>
+	</Key>
+    </Container>
+  </Package>
+</Project>
