@@ -80,10 +80,13 @@ _US_ARMY_processor = {
 		
 		case "AT": {//AT Operator
 			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0];
+			{_unit addMagazine "ACE_30Rnd_556x45_T_Stanag"} forEach [0];
 			_unit addWeapon "M4A1";
-			{_unit addMagazine "MAAWS_HEAT"} forEach [0,0];
+			_unit addWeapon "ItemGPS";
+			_unit addWeapon "ACE_Map";
+			{_unit addMagazine "Dragon_EP1"} forEach [0];
 			_unit addWeapon "NVGoggles";
-			_unit addWeapon "MAAWS";
+			_unit addWeapon "M47Launcher_EP1";
 			_unit addWeapon "ACE_Earplugs";
 		};
 
@@ -144,28 +147,23 @@ _US_ARMY_processor = {
 		
 //sniper team
 		case "SN": {// Sniper
-			{_unit addMagazine "5Rnd_762x51_M24"} forEach [0,0,0,0,0,0,0,0];
-			_unit addWeapon "M24_des_EP1";
-			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
-			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
-			_unit addWeapon "ACE_USPSD";
-			_unit addWeapon "ACE_Map";
-			_unit addWeapon "ACE_Map_Tools";
-			_unit addWeapon "ItemGPS";
+			addWeapons ["m107","NVGoggles","ACE_USPSD"];
+			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
+			addMagazines("10Rnd_127x99_m107",8);
+			addMagazines("ACE_10Rnd_127x99_T_m107",1);
+			addMagazines("ACE_10Rnd_127x99_Raufoss_m107",1);
+			addMagazines("SmokeShell",2);
+			addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		};
 		// Assist. Sniper SF
 		case "ASN" : {
-			{_unit addMagazine "20Rnd_762x51_DMR"} forEach [0,0,0,0,0,0,0];
-			_unit addWeapon "DMR";
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
-			{_unit addMagazine "ACE_Battery_Rangefinder"} forEach [0,0];
-			_unit addWeapon "ACE_Rangefinder_OD";
-			_unit addWeapon "ACE_Kestrel4500";
-			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3],["HandGrenade_West", 2],["SmokeShell", 2]]];
+			addWeapons ["M24_des_EP1","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU"];
+			addMagazines("5Rnd_762x51_M24",6);
+			addMagazines("30Rnd_556x45_Stanag",2);
+			addMagazines("SmokeShell",2);
+			addMagazines("ACE_Battery_Rangefinder",2);
+			_unit setVariable ["ACE_weapononback","M4A1"];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3],["HandGrenade_West", 2],["SmokeShell", 2],["5Rnd_762x51_M24",4],["30Rnd_556x45_Stanag",4]]];
 		};
 
 
@@ -223,16 +221,15 @@ _US_ARMY_processor = {
 
 //heavy weapons
 		//M2		
-		case "HMG" : {
+		case "HMG" : {//M2 Gunner
 			{_unit addMagazine "30Rnd_556x45_Stanag"} foreach [0,0,0];
 			_unit addWeapon "M4A3_CCO_EP1"; 
 			_unit addWeapon "ACE_M2HBProxy";
 			_unit addMagazine "ACE_M2_CSWDM";
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
-			//M2 Gunner
 		};
-		case "HMGAG" : {
+		case "HMGAG" : {//M2 Asst. Gunnder
 			{_unit addMagazine "30Rnd_556x45_Stanag"} foreach [0,0,0,0,0,0];
 			_unit addWeapon "M4A3_CCO_EP1"; 
 			_unit addWeapon "ACE_M3TripodProxy";
@@ -241,9 +238,8 @@ _US_ARMY_processor = {
 			_unit addWeapon "Binocular";
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
-			//M2 Asst. Gunnder
 		};
-		case "HMGAB" : {
+		case "HMGAB" : {//M2 Ammo Bearer
 			{_unit addMagazine "30Rnd_556x45_Stanag"} foreach [0,0,0,0,0];
 			_unit addWeapon "M4A3_CCO_EP1"; 
 			{_unit addMagazine "HandGrenade_West"} foreach [0,0];
@@ -252,7 +248,6 @@ _US_ARMY_processor = {
 			_unit addWeapon "ACE_Earplugs";
 			_unit addWeapon "ACE_Rucksack_MOLLE_ACU";
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_M2_CSWDM", 1]]];
-			//M2 Ammo Bearer
 		};
 		
 		//Mk.19
@@ -288,6 +283,33 @@ _US_ARMY_processor = {
 			_unit addWeapon "ACE_Rucksack_MOLLE_ACU";
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_M2_CSWDM", 1]]];
 			//Mk.19 Ammo Bearer
+		};
+//mortar
+		case "MOG" : {//Mortar gunner
+			addWeapons ["ACE_M4_AIM","ACE_M224Proxy","Binocular","NVGoggles"];
+			addWeapons ["ACE_Earplugs","ACE_Map","ACE_Map_Tools","ACE_DAGR","ItemGPS"];
+			addMagazines("30Rnd_556x45_Stanag",4);
+			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
+			addMagazines("SmokeShell",2);
+			addMagazines("ACE_M224HE_CSWDM",3);
+			addMagazines("ACE_M224IL_CSWDM",2);
+		};
+		case "MOAG" : {//Mortar Asst. Gunner
+			addWeapons ["ACE_M4_AIM","ACE_M224TripodProxy","Binocular","NVGoggles"];
+			addWeapons ["ACE_Earplugs"];
+			addMagazines("30Rnd_556x45_Stanag",4);
+			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
+			addMagazines("SmokeShell",2);
+			_unit setVariable ["ACE_weapononback","ACE_Rucksack_MOLLE_Green"];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224WP_CSWDM",3],["ACE_M224HE_CSWDM",2]]];
+		};
+		case "MOAB" : {//Mortar Ammo Bearer
+			addWeapons ["ACE_M4_AIM","ACE_Rucksack_MOLLE_Green","Binocular","NVGoggles"];
+			addWeapons ["ACE_Earplugs"];
+			addMagazines("30Rnd_556x45_Stanag",4);
+			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
+			addMagazines("SmokeShell",2);
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224_HE_CSWDM",10]]];
 		};
 	};
 };

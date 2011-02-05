@@ -223,11 +223,18 @@ if !(isDedicated) then {
 		_pos = (_x select 0);
 		_size = (_x select 1);
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
-			_waitTime = if isServer then {20}else{40};
-			waitUntil {sleep 1;time>_waitTime};
+			_waitTime = if isServer then {10}else{90};
+			_objects = nearestObjects [_pos,["Plane","LandVehicle","Helicopter","Ship"],_size];
+			if (count(_objects)>0) then {
+				_veh = _objects select 0;
+				waitUntil {sleep 1;(time>_waitTime)||(getDir _veh != 0)};
+			}else{
+				waitUntil {sleep 1;time>_waitTime};
+			};
 			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker];
 			cutText['','BLACK IN',5];
 			while {(warbegins!=1)} do {
+				sleep 2;
 				_dist = (vehicle player) distance _pos;
 				if (_dist>(_size+_hintzonesize)) exitWith {
 					hint "Мне очень жаль";
