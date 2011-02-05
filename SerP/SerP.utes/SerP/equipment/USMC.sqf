@@ -10,7 +10,7 @@ _USMC_processor = {
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
-			addMagazines("15Rnd_9x19_M9",4);
+			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "PSG" : {//Platoon sergant
 			addWeapons ["M16A4_ACG","M136","M9","Binocular","NVGoggles"];
@@ -18,10 +18,10 @@ _USMC_processor = {
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
-			addMagazines("15Rnd_9x19_M9",4);
+			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "RATELO": {//RATELO
-			addWeapons ["M16A4","ACE_ANPRC77","M9","Binocular","NVGoggles"];
+			addWeapons ["M16A4","ACE_ANPRC77","M9","NVGoggles"];
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
@@ -34,7 +34,7 @@ _USMC_processor = {
 			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
-			addMagazines("15Rnd_9x19_M9",4);
+			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "TL" : {// FT Leader
 			addWeapons ["M16A4_ACG_GL","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
@@ -47,12 +47,13 @@ _USMC_processor = {
 			_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",8],["FlareRed_M203",4],["ACE_SSWhite_M203",4],["ACE_1Rnd_CS_M203",2]]];
 		};
 		case "GL": {// Greanadier
-			addWeapons ["M16A4_GL","NVGoggles"];
-			addMagazines("30Rnd_556x45_Stanag",4);
+			addWeapons ["ACE_M16A4_CCO_GL","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
+			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
-			addMagazines("1Rnd_HE_M203",8);
+			addMagazines("1Rnd_HE_M203",4);
+			_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",8],["FlareRed_M203",4],["ACE_SSWhite_M203",4],["ACE_1Rnd_CS_M203",2]]];
 		};
 		case "AR" : {// Automatic Rifleman
 			addWeapons ["ACE_M249Para","NVGoggles"];
@@ -63,7 +64,7 @@ _USMC_processor = {
 		};
 
 		case "AAR" : {// Assistant Automatic Rifleman
-			addWeapons ["M16A4_GL","ACE_Rucksack_MOLLE_ACU","Binocular","NVGoggles"];
+			addWeapons ["M16A4","ACE_Rucksack_MOLLE_ACU","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_556x45_Stanag",8);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -99,13 +100,13 @@ _USMC_processor = {
 		};
 //snipers
 		case "SN": {// Sniper
-			addWeapons ["m107","NVGoggles","ACE_USPSD"];
+			addWeapons ["m107","M9","NVGoggles","ACE_USPSD"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("10Rnd_127x99_m107",8);
 			addMagazines("ACE_10Rnd_127x99_T_m107",1);
 			addMagazines("ACE_10Rnd_127x99_Raufoss_m107",1);
+			addMagazines("15Rnd_9x19_M9",2);
 			addMagazines("SmokeShell",2);
-			addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		};
 		
 		case "ASN" : {// Assist. Sniper SF
@@ -114,16 +115,17 @@ _USMC_processor = {
 			addMagazines("30Rnd_556x45_Stanag",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("ACE_Battery_Rangefinder",2);
-			_unit setVariable ["ACE_weapononback","m16a4"];
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3],["HandGrenade_West", 2],["SmokeShell", 2],["5Rnd_762x51_M24",4],["30Rnd_556x45_Stanag",4]]];
+			_unit setVariable ["ACE_weapononback","ACE_M16A4_CCO_GL"];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3],["HandGrenade_West", 2],["SmokeShell", 2],["5Rnd_762x51_M24",4],["30Rnd_556x45_Stanag",4],["1Rnd_HE_M203",4],["FlareRed_M203",2],["ACE_SSWhite_M203",2],["ACE_1Rnd_CS_M203",2]]];
 		};
 //MG squad
 		case "MG": {// Machinegunner
-			addWeapons ["M240","NVGoggles"];
+			addWeapons ["M240","M9","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("100Rnd_762x51_M240",4);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
+			addMagazines("15Rnd_9x19_M9",2);
 		};
 		
 		case "AG": {//Asst. Machinegunner
@@ -203,10 +205,10 @@ _USMC_processor = {
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "PL": {//Pilot
-			addWeapons ["ACE_HK416_D10","M9","NVGoggles"]; 
+			addWeapons ["M4A1","M9","NVGoggles"]; 
 			addWeapons ["ACE_GlassesLHD_glasses","ACE_Map"]; 
 			addMagazines("30Rnd_556x45_Stanag",4);
-			addMagazines("15Rnd_9x19_M9",4);
+			addMagazines("15Rnd_9x19_M9",2);
 		};
 	};
 };
