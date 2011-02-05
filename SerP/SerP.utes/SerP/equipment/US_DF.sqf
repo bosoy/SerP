@@ -204,7 +204,7 @@ _US_DF_processor = {
 			_unit addWeapon "ACE_Rangefinder_OD";
 			_unit addWeapon "ACE_Kestrel4500";
 			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents",[[;"SmokeShell",2], ["ACE_Claymore_M",3], ["HandGrenade_West",2]]];
+			_unit setVariable ["ACE_RuckMagContents",[["SmokeShell",2], ["ACE_Claymore_M",3], ["HandGrenade_West",2]]];
 		};
 		//Medic
 		case "MED": {
