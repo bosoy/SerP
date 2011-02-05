@@ -6,12 +6,15 @@
 	AR2		- Automatic Rifleman (Scope)
 	MG 		- Machinegunner
 	MG2		- Machinegunner with Scope
-	MR		- Marksman
-	MRSD	- Marksman SD
-	SNP		- Sniper
-	HSNP	- Heavy Sniper
-	ASNP	- Asst. Sniper
+	DM		- Marksman
+	DMSD	- Marksman SD
+	SN		- Sniper
+	HSN		- Heavy Sniper
+	ASN		- Asst. Sniper
 	MED		- Corpsman
+	RC		- Operanor SD (Recon)
+	INF		- Infiltrator GL
+	INFSD	- Infiltrator SD
 	GL		- Grenadier
 	FAC		- Forward Air Controller
 	SAB		- Saboteur
@@ -27,7 +30,7 @@ _US_DF_bp_processor = {
 			_unit addWeapon "ACE_Map";
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
-			{_unit addMagazine "ACE_30Rnd_556x45_S_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_Eotech";
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
@@ -41,7 +44,7 @@ _US_DF_bp_processor = {
 			_unit addWeapon "ACE_Map";
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
-			{_unit addMagazine "ACE_30Rnd_556x45_S_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_Eotech_4x";
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
@@ -96,7 +99,7 @@ _US_DF_bp_processor = {
 		};
 		// Infiltrator
 		case "INF": {
-			{_unit addMagazine "ACE_30Rnd_556x45_S_Stanag"} forEach [0,0,0,0,0,0];
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0];
 			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
 			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_GL_13";
@@ -104,9 +107,17 @@ _US_DF_bp_processor = {
 			{_unit addMagazine "HandGrenade_West"} forEach [0,0,0,0];
 			_unit addWeapon "NVGoggles";
 		};
+		// Infiltrator
+		case "INFSD": {
+			{_unit addMagazine "30Rnd_556x45_StanagSD"} forEach [0,0,0,0,0,0];
+			_unit addWeapon "ACE_SOC_M4A1_SD_9";
+			{_unit addMagazine "SmokeShell"} forEach [0,0,0,0];
+			{_unit addMagazine "HandGrenade_West"} forEach [0,0,0,0];
+			_unit addWeapon "NVGoggles";
+		};
 		// Grenadier
 		case "GL": {
-			{_unit addMagazine "ACE_30Rnd_556x45_S_Stanag"} forEach [0,0,0,0,0,0,0,0];
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
 			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
 			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_GL_AIMPOINT";
@@ -145,17 +156,17 @@ _US_DF_bp_processor = {
 			_pack addMagazineCargoGlobal ["PipeBomb", 3];
 		};
 		//Marksman
-		case "MR": {
+		case "DM": {
 			_unit addWeapon "ACE_Map";
-			{_unit addMagazine "ACE_20Rnd_762x51_S_M110"} forEach [0,0,0,0,0];
-			_unit addWeapon "ACE_M110";
+			{_unit addMagazine "20Rnd_762x51_DMR"} forEach [0,0,0,0,0,0,0];
+			_unit addWeapon "DMR";
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
 		};
-		case "MRSD": {
+		case "DMSD": { // Marksman SD
 			_unit addWeapon "ACE_Map";
 			{_unit addMagazine "30Rnd_556x45_StanagSD"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_SHORTDOT_SD";
@@ -166,7 +177,7 @@ _US_DF_bp_processor = {
 			_unit addWeapon "NVGoggles";
 		};
 		 // Sniper
-		case "SNP": {
+		case "SN": {
 			{_unit addMagazine "5Rnd_762x51_M24"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "M24_des_EP1";
 			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
@@ -178,7 +189,7 @@ _US_DF_bp_processor = {
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
 		};
-		case "HSNP" : {
+		case "HSN" : {// Sniper SF
 			_unit addWeapon "ACE_Map";
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
@@ -190,13 +201,15 @@ _US_DF_bp_processor = {
 			{_unit addMagazine "ACE_12Rnd_45ACP_USPSD"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_USPSD";
 			_unit addWeapon "Binocular";
-			 // Sniper SF
+			 
 		};
 		// Assist. Sniper SF
-		case "ASNP" : {
-			{_unit addMagazine "20Rnd_762x51_DMR"} forEach [0,0,0,0,0,0,0];
-			_unit addWeapon "DMR";
+		case "ASN" : {
+			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0];
+			{_unit addMagazine "1Rnd_HE_M203"} forEach [0,0,0,0,0];
+			{_unit addMagazine "1Rnd_Smoke_M203"} forEach [0,0,0];
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
+			_unit addWeapon "ACE_SOC_M4A1_RCO_GL";
 			_unit addWeapon "NVGoggles";
 			{_unit addMagazine "ACE_Battery_Rangefinder"} forEach [0,0];
 			_unit addWeapon "ACE_Rangefinder_OD";

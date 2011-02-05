@@ -4,16 +4,16 @@
 	TL 		- Team Leader
 	MG 		- Machinegunner
 	MG2		- Machinegunner with Scope
-	AMG		- Asst. Machinegunner
+	AG		- Asst. Machinegunner
 	AR		- Automatic Rifleman
 	AAR		- Asst. Automatic Rifleman
 	HAT		- Opertor Heavy Anti Tank
 	AHAT	- Asst. Operator Heavy Anti Tank
 	AT		- Operator Anti Tank
-	AAT		- Asst. Operator Anti Tank
+	ASST	- Asst. Operator Anti Tank
 	LAT		- Rifleman AT
 	AA		- Anti Air Operaror
-	MR		- Marksman
+	DM		- Marksman
 	MED		- Courpsman
 	GL		- Grenadier
 	RF		- Rifleman
@@ -83,7 +83,7 @@ _USArmy_bp_processor = {
 		};
 		
 		//Asst. Machinegunner
-		case "AMG": {				
+		case "AG": {				
 			{_unit addMagazine "30Rnd_556x45_Stanag"} foreach [0,0,0,0,0,0];
 			_unit addWeapon "M4A3_CCO_EP1";
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
@@ -148,7 +148,7 @@ _USArmy_bp_processor = {
 			_unit addWeapon "ACE_Earplugs";
 		};
 		// Asst. AT Operator
-		case "AAT": { 	
+		case "ASST": { 	
 			{_unit addMagazine "30Rnd_556x45_Stanag"} foreach [0,0,0,0,0,0];
 			_unit addWeapon "M4A3_CCO_EP1";
 			_unit addWeapon "NVGoggles";

@@ -60,7 +60,7 @@ _US_DF_processor = {
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
 			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents", [["100Rnd_556x45_M249", 2]]];
+			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_556x45_M249", 2]]];
 		};
 		//Machinegunner
 		case "MG": {
@@ -71,7 +71,7 @@ _US_DF_processor = {
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
 			_unit addWeapon "ACE_FAST_PackEDC_ACU";
-			_unit setVariable ["ACE_RuckMagContents", [["100Rnd_762x51_M240", 2]]];
+			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 2]]];
 		};
 		// Operator SD
 		case "RC": {
@@ -147,7 +147,7 @@ _US_DF_processor = {
 			_unit addWeapon "NVGoggles";
 		};
 		// Sapper SF
-		case "SAP" : {
+		case "SA" : {
 			{_unit addMagazine "30Rnd_556x45_Stanag"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "ACE_SOC_M4A1_Aim";
 			{_unit addMagazine "SmokeShell"} forEach [0,0];
@@ -171,7 +171,7 @@ _US_DF_processor = {
 			{_unit addMagazine "ACE_Epinephrine"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Rucksack_MOLLE_ACU_Medic";
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10], ["ACE_Morphine",10], ["ACE_Epinephrine",10], ["ACE_Medkit",10]]];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 		};
 	};
 };
