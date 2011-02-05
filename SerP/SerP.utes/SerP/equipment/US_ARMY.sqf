@@ -106,13 +106,18 @@ _US_ARMY_processor = {
 			_unit addMagazine "Javelin";
 			_unit addWeapon "Javelin";
 		};
-
+		case "AHAT" : {//Assistant Javelin Operator 
+			addWeapons ["M4A1","ACE_Rucksack_MOLLE_ACU","Binocular","NVGoggles"];
+			addMagazines("30Rnd_556x45_Stanag",4);
+			addMagazines("Javelin",1);
+			addMagazines("SmokeShell",2);
+			_unit setVariable ["ACE_RuckMagContents",[["Javelin",1],["30Rnd_556x45_Stanag",4]]];
+		};
 		case "DM" : {//Designated marksman
-			_unit addWeapon "M4SPR";
-			_unit addWeapon "NVGoggles";
-			{_unit addMagazine "ACE_20Rnd_556x45_S_Stanag"} forEach [0,0,0,0,0,0,0,0];
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
+			addWeapons ["M16A4_ACG","NVGoggles"];
+			addMagazines("ACE_20Rnd_556x45_S_Stanag",8);
+			addMagazines("SmokeShell",2);
+			addMagazines("HandGrenade_West",2);
 		};
 //weapon squad
 		case "MG": {// Machinegunner

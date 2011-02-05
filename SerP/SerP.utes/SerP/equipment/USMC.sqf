@@ -169,7 +169,7 @@ _USMC_processor = {
 			addWeapons ["M16A4","ACE_M224Proxy","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs","ACE_Map","ACE_Map_Tools","ACE_DAGR","ItemGPS"];
 			addMagazines("30Rnd_556x45_Stanag",4);
-			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
+			addMagazines("ACE_30Rnd_556x45_T_Stanag",1);
 			addMagazines("SmokeShell",2);
 			addMagazines("ACE_M224HE_CSWDM",3);
 			addMagazines("ACE_M224IL_CSWDM",2);
