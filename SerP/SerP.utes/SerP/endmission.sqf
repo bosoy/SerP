@@ -14,7 +14,7 @@ waitUntil {sleep 1;!isNil{warbegins}};
 waitUntil {sleep 1;warbegins==1};
 
 //админ может завершить миссию досрочно нажав комбинацию клавиш ctrl+alt+shift+end
-if (serverCommandAvailable "#kick") then {
+if ((serverCommandAvailable "#kick")||isServer) then {
 	(findDisplay 46) displayAddEventHandler ["KeyDown", '
 		_ctrl = _this select 0;
 		_dikCode = _this select 1;

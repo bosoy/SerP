@@ -1,4 +1,4 @@
-﻿#define addWeapons(a) {_unit addWeapons _x} forEach a;
+﻿#define addWeapons {_unit addWeapons _x} forEach 
 #define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 _unit = _this select 0;
 _faction = _this select 1;
@@ -44,7 +44,7 @@ switch _faction do {
 	case "USMS_SF"		: {[_unit, _loadout] call _USMC_SF_processor};
 	case "US_ARMY"		: {[_unit, _loadout] call _US_ARMY_processor};
 	case "US_DF"		: {[_unit, _loadout] call _US_DF_processor};
-	case "75th"			: {[_unit, _loadout] call _US_DF_processor};
+	case "75th"			: {[_unit, _loadout] call _75th_processor};
 	case "USArmy_bp"	: {[_unit, _loadout] call _USArmy_bp_processor};
 	case "US_DF_bp"		: {[_unit, _loadout] call _US_DF_bp_processor};
 	case "TL_bp"		: {[_unit, _loadout] call _TL_bp_processor};  
