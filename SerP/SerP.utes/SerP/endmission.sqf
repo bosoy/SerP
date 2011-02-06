@@ -10,22 +10,9 @@ endAdmin = false;
 REDFOR_win = false;
 BLUEFOR_win = false;
 
-_processorEND = {
-	_message= _this select 0;
-	_code = format ["
-		this spawn {
-			cutText ['','BLACK',5];
-			titleFadeOut 3;
-			sleep 5;
-			cutText['%1','BLACK FADED',5];
-			sleep 1;
-			endMission 'LOSER';
-		};",_message];
-	"logic" createUnit [[0,0,0], createGroup sideLogic, _code, 0.6, 'corporal'];
-};
-
 waitUntil {sleep 1;!isNil{warbegins}};
 waitUntil {sleep 1;warbegins==1};
+
 //админ может завершить миссию досрочно нажав комбинацию клавиш ctrl+alt+shift+end
 if (serverCommandAvailable "#kick") then {
 	(findDisplay 46) displayAddEventHandler ["KeyDown", '
@@ -44,6 +31,45 @@ if (serverCommandAvailable "#kick") then {
 //завершить миссию может только сервер
 if (!isServer) exitWith {};
 
+_processorEND = {
+	_message= _this select 0;
+	_toRPT = _this select 1;
+	_code = format ["
+		this spawn {
+			cutText ['','BLACK',5];
+			{
+				diag_log _x;
+			} forEach %2;
+			titleFadeOut 3;
+			sleep 5;
+			cutText['%1','BLACK FADED',5];
+			sleep 1;
+			endMission 'LOSER';
+		};",_message,_toRPT];
+	"logic" createUnit [[0,0,0], createGroup sideLogic, _code, 0.6, 'corporal'];
+};
+
+_preprocessData = {
+	_return = [];
+	{
+		_return set [count _return,format ["Group: %1",_x select 0]];
+		{
+			_return set [count _return, format ['type: %1		name: %2		alive: %3', _x select 0, _x select 1, alive(_x select 2)]];
+		} forEach (_x select 1);
+	} forEach _this;
+	_return
+};
+
+sleep 10;
+_all_units = []; 
+{
+	_unitsInGroup = [];
+	{
+		_unitsInGroup set [count _unitsInGroup,[typeOf _x, name _x, _x]];
+	} forEach (units _x);
+_all_units set [count _all_units, [_x,_unitsInGroup]]; 
+} forEach allGroups; 
+
 _initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
 _initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
 
@@ -54,24 +80,24 @@ while {!_endF} do {
 	//REDFOR retreat
 	if ((_RFCount<_initRFCount*_RFRetreat)&&(_RFCount*_domiMult<_BFCount)) then {
 		_endF = true;
-		[format [localize "STR_dead_call", _titleREDFOR]] call _processorEND;
+		[format [localize "STR_dead_call", _titleREDFOR],_all_units call _preprocessData] call _processorEND;
 	};
 	//BLUEFOR retreat
 	if ((_BFCount<_initBFCount*_BFRetreat)&&(_BFCount*_domiMult<_RFCount)) then {
 		_endF = true;
-		[format [localize "STR_dead_call", _titleBLUEFOR]] call _processorEND;
+		[format [localize "STR_dead_call", _titleBLUEFOR],_all_units call _preprocessData] call _processorEND;
 	};
 
 	if (endAdmin) then {
 		_endF = true;
-		[localize "STR_mission_end_admin"] call _processorEND;
+		[localize "STR_mission_end_admin",_all_units call _preprocessData] call _processorEND;
 	};
 	if (REDFOR_win) then {
 		_endF = true;
-		[format [localize "STR_win_call", _titleREDFOR]] call _processorEND;
+		[format [localize "STR_win_call", _titleREDFOR],_all_units call _preprocessData] call _processorEND;
 	};
 	if (BLUEFOR_win) then {
 		_endF = true;
-		[format [localize "STR_win_call", _titleBLUEFOR]] call _processorEND;
+		[format [localize "STR_win_call", _titleBLUEFOR],_all_units call _preprocessData] call _processorEND;
 	};
 };
