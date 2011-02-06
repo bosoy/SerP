@@ -100,23 +100,21 @@ _USMC_processor = {
 		};
 //snipers
 		case "SN": {// Sniper
-			addWeapons ["m107","M9","NVGoggles","ACE_USPSD"];
+			addWeapons ["M40A3","M9","NVGoggles","ACE_USPSD"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
-			addMagazines("10Rnd_127x99_m107",8);
-			addMagazines("ACE_10Rnd_127x99_T_m107",1);
-			addMagazines("ACE_10Rnd_127x99_Raufoss_m107",1);
+			addMagazines("5Rnd_762x51_M24",8);
 			addMagazines("15Rnd_9x19_M9",2);
 			addMagazines("SmokeShell",2);
 		};
 		
 		case "ASN" : {// Assist. Sniper SF
-			addWeapons ["M40A3","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU","ACE_SpottingScope"];
-			addMagazines("5Rnd_762x51_M24",6);
-			addMagazines("30Rnd_556x45_Stanag",2);
+			addWeapons ["ACE_M16A4_CCO_GL","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU","ACE_SpottingScope"];
+			addMagazines("30Rnd_556x45_Stanag",8);
+			addMagazines("1Rnd_HE_M203",6);		
+			addMagazines("ACE_SSWhite_M203",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("ACE_Battery_Rangefinder",2);
-			_unit setVariable ["ACE_weapononback","ACE_M16A4_CCO_GL"];
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3],["HandGrenade_West", 2],["SmokeShell", 2],["5Rnd_762x51_M24",4],["30Rnd_556x45_Stanag",4],["1Rnd_HE_M203",4],["FlareRed_M203",2],["ACE_SSWhite_M203",2],["ACE_1Rnd_CS_M203",2]]];
+			_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",2],["FlareRed_M203",4],["ACE_SSWhite_M203",2],["5Rnd_762x51_M24",4]]];
 		};
 //MG squad
 		case "MG": {// Machinegunner
