@@ -36,10 +36,10 @@ _processorEND = {
 	_toRPT = _this select 1;
 	_code = format ["
 		this spawn {
-			cutText ['','BLACK',5];
 			{
 				diag_log _x;
 			} forEach %2;
+			cutText ['','BLACK',5];
 			titleFadeOut 3;
 			sleep 5;
 			cutText['%1','BLACK FADED',5];
@@ -53,8 +53,9 @@ _preprocessData = {
 	_return = [];
 	{
 		_return set [count _return,format ["Group: %1",_x select 0]];
+		_return set [count _return,"Name:			Lifestate:"];
 		{
-			_return set [count _return, format ['type: %1		name: %2		alive: %3', _x select 0, _x select 1, alive(_x select 2)]];
+			_return set [count _return, format ['%1		%2', _x select 0,lifeState(_x select 1)]];
 		} forEach (_x select 1);
 	} forEach _this;
 	_return
@@ -63,11 +64,15 @@ _preprocessData = {
 sleep 10;
 _all_units = []; 
 {
+	_show = false;
 	_unitsInGroup = [];
-	{
-		_unitsInGroup set [count _unitsInGroup,[typeOf _x, name _x, _x]];
-	} forEach (units _x);
-_all_units set [count _all_units, [_x,_unitsInGroup]]; 
+	{if isPlayer(_x) then {
+		_show = true;
+		_unitsInGroup set [count _unitsInGroup,[name _x, _x]];
+	};} forEach (units _x);
+	if _show then {
+		_all_units set [count _all_units, [_x,_unitsInGroup]]; 
+	};
 } forEach allGroups; 
 
 _initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
