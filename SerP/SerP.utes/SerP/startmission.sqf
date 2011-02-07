@@ -124,7 +124,6 @@ if (isServer) then {
 			_x set [2,_core];
 			_x set [3,_helper];
 		} forEach startZones;
-		diag_log str startZones;
 		publicVariable "startZones";
 		//control
 		waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
