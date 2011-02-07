@@ -117,7 +117,14 @@ if (isServer) then {
 					if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
 				};
 			}forEach _unitList;
+			_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];
+			_helper attachTo [_core,[0,0,-5]];
+			_helper setDir 90;
+			trashArray set [count trashArray, _helper];
+			_x set [2,_core];
+			_x set [3,_helper];
 		} forEach startZones;
+		diag_log str startZones;
 		publicVariable "startZones";
 		//control
 		waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
@@ -161,7 +168,7 @@ if !(isDedicated) then {
 	if !alive(player) exitWith {};
 	sleep .1;
 	cutText[localize 'STR_missionname','BLACK FADED',300];
-	_blocker = (findDisplay 46) displayAddEventHandler ["KeyDown", '
+	_blocker1 = (findDisplay 46) displayAddEventHandler ["KeyDown", '
 		_ctrl = _this select 0;
 		_dikCode = _this select 1;
 		_shift = _this select 2;
@@ -174,10 +181,15 @@ if !(isDedicated) then {
 		};
 		_handled
 	'];
+	_blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
+		[0,-1] call ace_sys_weaponselect_fnc_keypressed;
+		false
+	'];
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 	waitUntil{sleep .1;!isNil{warbegins}};
 	if (warbegins==1) exitWith {
-		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker];
+		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
+		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 		cutText['','BLACK IN',5];
 	};
 
@@ -222,17 +234,18 @@ if !(isDedicated) then {
 	{
 		_pos = (_x select 0);
 		_size = (_x select 1);
+		_helper = (_x select 3);
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_waitTime = if isServer then {10}else{90};
 			_objects = nearestObjects [_pos,["Plane","LandVehicle","Helicopter","Ship"],_size];
 			if (count(_objects)>0) then {
 				_veh = _objects select 0;
-				waitUntil {sleep 1;(time>_waitTime)||(getDir _veh != 0)};
+				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper == 90)};
 				sleep 5;
 			}else{
 				waitUntil {sleep 1;time>_waitTime};
 			};
-			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker];
+			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 			cutText['','BLACK IN',5];
 			while {(warbegins!=1)} do {
 				sleep 2;
@@ -248,6 +261,7 @@ if !(isDedicated) then {
 					player say "ACE_rus_combat30";
 				};
 			};
+			(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 		};
 	} forEach startZones;
 };
