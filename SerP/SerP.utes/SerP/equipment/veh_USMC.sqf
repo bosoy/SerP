@@ -10,7 +10,7 @@ _USMC_processor = {
 			_veh addMagazineCargo ["1Rnd_HE_M203",5];
 			_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
 			_veh addWeaponCargo ["ACE_PRC119_ACU",1];
-			_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",1];
+			_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
 			_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
 			_veh addMagazineCargo ["ACE_Morphine",2];
 			_veh addMagazineCargo ["ACE_Epinephrine",2];
@@ -26,7 +26,7 @@ _USMC_processor = {
 			_veh addMagazineCargo ["1Rnd_HE_M203",15];
 			_veh addMagazineCargo ["1Rnd_Smoke_M203",8];
 			_veh addWeaponCargo ["ACE_PRC119_ACU",3];
-			_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",2];
+			_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",8];
 			_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 10];
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];

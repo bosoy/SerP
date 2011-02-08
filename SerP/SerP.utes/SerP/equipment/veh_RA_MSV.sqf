@@ -19,7 +19,7 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_545x39_AK",10];
 			_veh addWeaponCargo ["ACE_ANPRC77",1];
-			_veh addWeaponCargo ["ACE_BackPack",2];
+			_veh addWeaponCargo ["ACE_BackPack",3];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 			_veh addMagazineCargo ["HandGrenade", 5];
 			_veh addMagazineCargo ["ACE_Bandage",5];
@@ -48,8 +48,8 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["10Rnd_762x54_SVD",20];
 			_veh addMagazineCargo ["100Rnd_762x54_PK",10];
 			_veh addMagazineCargo ["1Rnd_HE_GP25",20];
-			_veh addWeaponCargo ["ACE_ANPRC77",1];
-			_veh addWeaponCargo ["ACE_BackPack",2];
+			_veh addWeaponCargo ["ACE_ANPRC77",2];
+			_veh addWeaponCargo ["ACE_BackPack",8];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 			_veh addMagazineCargo ["ACE_Bandage",9];
 			_veh addMagazineCargo ["ACE_Morphine",9];
@@ -96,7 +96,7 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["1Rnd_HE_GP25",20];
 			_veh addMagazineCargo ["20Rnd_9x39_SP5_VSS",10];
 			_veh addWeaponCargo ["ACE_ANPRC77",1];
-			_veh addWeaponCargo ["ACE_BackPack",2];
+			_veh addWeaponCargo ["ACE_BackPack",4];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 			_veh addMagazineCargo ["HandGrenade", 15];
 			_veh addMagazineCargo ["ACE_Bandage",9];
