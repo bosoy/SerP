@@ -36,7 +36,7 @@ _veh call _addTyre;
 switch _faction do {
 	case "RA_MSV"		: {[_veh, _loadout] call _RA_MSV_processor};
 	case "US_ARMY"		: {[_veh, _loadout] call _US_ARMY_processor};
-	case "USMC"		: {[_veh, _loadout] call _USMC_processor};
+	case "USMC"			: {[_veh, _loadout] call _USMC_processor};
 	case "USAF"		: {[_veh, _loadout] call _USAF_processor};
 	case "RFVVS"		: {[_veh, _loadout] call _RFVVS_processor};
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
