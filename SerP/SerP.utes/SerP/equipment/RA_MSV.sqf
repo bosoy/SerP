@@ -4,7 +4,7 @@ _RA_MSV_processor = {
 	switch _loadout do {
 //командование взвода
 		case "OFF" : {//Командир взвода
-			addWeapons ["ACE_AK74M","ACE_ANPRC77","Makarov","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_P159_RD90","Makarov","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_545x39_AK",6);
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -14,7 +14,7 @@ _RA_MSV_processor = {
 		};
 //МСВ
 		case "SL" : {//Комод
-			addWeapons ["ACE_AK74M","ACE_ANPRC77","Makarov","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_P159_RD90","Makarov","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_545x39_AK",6);
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -23,7 +23,7 @@ _RA_MSV_processor = {
 			addMagazines("HandGrenade_East",2);
 		};
 		case "SL_GP" : {//Комод с ГП
-			addWeapons ["ACE_AK74M_GL","ACE_ANPRC77","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M_GL","ACE_P159_RD90","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_545x39_AK",6);
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -47,7 +47,7 @@ _RA_MSV_processor = {
 			addMagazines("HandGrenade_East",2);
 		};
 		case "AMG" : {//Помошник пулеметчика
-			addWeapons ["ACE_AK74M","ACE_Rucksack_EAST","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_Rucksack_RD90","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_545x39_AK",7);
 			addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -62,7 +62,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_PG7VM_PGO7",3);
 		};
 		case "AAT" : {//2й номер расчета РПГ
-			addWeapons ["ACE_AK74M","ACE_Rucksack_EAST","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_Rucksack_RD90","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_545x39_AK",7);
 			addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -95,7 +95,7 @@ _RA_MSV_processor = {
 		};
 //разведотделение
 		case "R_SL_GP" : {//Командир отделения разведки
-			addWeapons ["ACE_AK74M_GL","ACE_ANPRC77","Binocular","NVGoggles"];
+			addWeapons ["ACE_AKS74P_GL","ACE_P159_RD90","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_545x39_AK",6);
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -104,7 +104,7 @@ _RA_MSV_processor = {
 			addMagazines("1Rnd_HE_GP25",4);
 		};
 		case "R_TL" : {//Старший разведчик
-			addWeapons ["ACE_AK74M_1P29","ACE_RPG27","ACE_APSB","Binocular","NVGoggles"];
+			addWeapons ["ACE_AKS74P_1P29","ACE_RPG27","ACE_APSB","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_545x39_AK",6);
 			addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -113,7 +113,8 @@ _RA_MSV_processor = {
 			addMagazines("HandGrenade_East",2);
 		};
 		case "R_SN" : {//Разведчик - снайпер
-			addWeapons ["SVD_des_EP1","ACE_APSB","Binocular","NVGoggles"];
+			addWeapons ["SVD_des_EP1","ACE_APSB","ACE_YardAge450","NVGoggles"];
+			addMagazines("ACE_Battery_Rangefinder", 2);
 			addMagazines("10Rnd_762x54_SVD",7);
 			addMagazines("ACE_10Rnd_762x54_T_SVD",1);
 			addMagazines("ACE_20Rnd_9x18_APSB",4);
@@ -126,21 +127,20 @@ _RA_MSV_processor = {
 			addMagazines("100Rnd_762x54_PK",4);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
-			_unit setVariable ["ACE_weapononback","ACE_Rucksack_EAST"];
+			_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
 			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",4]]];
 		};
 		case "R_R" : {// Разведчик - радиотелефонист
-			addWeapons ["ACE_AK74M","ACE_ANPRC77","NVGoggles"];
+			addWeapons ["ACE_AKS74P","ACE_P159_RD90","NVGoggles"];
 			addMagazines("30Rnd_545x39_AK",7);
 			addMagazines("ACE_30Rnd_545x39_T_AK",1);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
 		};
 		case "R_SAP" : {// Разведчик - сапер
-			addWeapons ["ACE_AK74M","ACE_Rucksack_EAST","NVGoggles"];
+			addWeapons ["ACE_Val_Kobra","ACE_Rucksack_RD90","NVGoggles"];
 			addWeapons ["ACE_Map"];
-			addMagazines("30Rnd_545x39_AK",7);
-			addMagazines("ACE_30Rnd_545x39_T_AK",1);
+			addMagazines("20Rnd_9x39_SP5_VSS" ,8);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",5],["PipeBomb",2]]];
@@ -160,7 +160,7 @@ _RA_MSV_processor = {
 			addMagazines("AT13",1);
 		};
 		case "ATGMA" : {//Оператор
-			addWeapons ["ACE_AK74M","ACE_Rucksack_EAST","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_Rucksack_RD90","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_545x39_AK",4);
 			addMagazines("AT13",1);
@@ -174,8 +174,9 @@ _RA_MSV_processor = {
 			addMagazines("ACE_RPG29_PG29",3);
 		};
 		case "AHAT" : {//2й номер расчета РПГ-29
-			addWeapons ["ACE_AK74M","ACE_Rucksack_EAST","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_Rucksack_RD90","ACE_YardAge450","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
+			addMagazines("ACE_Battery_Rangefinder", 2);
 			addMagazines("30Rnd_545x39_AK",7);
 			addMagazines("ACE_30Rnd_545x39_T_AK",1);
 			addMagazines("ACE_RDGM",2);
@@ -198,7 +199,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_AGS30_CSWDM",2);
 		};
 		case "AGLAB" : {//Номер расчета
-			addWeapons ["ACE_AK74M","ACE_Rucksack_EAST","Binocular","NVGoggles"];
+			addWeapons ["ACE_AK74M","ACE_Rucksack_RD90","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_545x39_AK",4);
 			addMagazines("ACE_AGS30_CSWDM",3);
@@ -222,7 +223,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_20Rnd_9x18_APSB",4);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("ACE_MON50_M",2);
-			_unit setVariable ["ACE_weapononback","ACE_Rucksack_EAST"];
+			_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
 			_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",10]]];
 		};
 		case "HSN" : {//Снайпер КСВК
@@ -232,7 +233,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_20Rnd_9x18_APSB",4);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("ACE_MON50_M",2);
-			_unit setVariable ["ACE_weapononback","ACE_Rucksack_EAST"];
+			_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
 			_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",10],["ACE_MON50_M",1]]];
 		};
 		case "ASN" : {//Снайпер-наблюдатель
@@ -244,7 +245,7 @@ _RA_MSV_processor = {
 			addMagazines("ACE_RDGM",2);
 			addMagazines("ACE_Battery_Rangefinder",2);
 			addMagazines("ACE_MON50_M",2);
-			_unit setVariable ["ACE_weapononback","ACE_Rucksack_EAST"];
+			_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
 			_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",10],["ACE_MON50_M",1]]];
 			
 		};

@@ -34,7 +34,7 @@ _RFVVS_processor = {
 				_tbox addMagazineCargo ["FlareGreen_GP25",5];
 				_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
 			};
-			_veh addWeaponCargo ["ACE_Rope_M_120",4];
+			_veh addMagazineCargo ["ACE_Rope_M_60",4];
 			_veh addWeaponCargo ["ACE_ParachuteRoundPack",20];
 		};
 	};

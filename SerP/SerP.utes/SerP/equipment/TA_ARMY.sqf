@@ -55,7 +55,6 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_AK74M_1P29";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_RPG27";
 		};
 		case "MG" : {//Пулеметчик
@@ -71,7 +70,6 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_AK74M";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
 			_unit addWeapon "Binocular";
 			_unit addWeapon "ACE_Earplugs";
 			_unit setVariable ["ACE_weapononback","ACE_Rucksack_EAST"];
@@ -90,7 +88,6 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_AK74M";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
 			_unit setVariable ["ACE_weapononback","ACE_Rucksack_EAST"];
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_PG7VM_PGO7",4]]];
@@ -101,7 +98,6 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_AK74M_GL";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0,0];
-			_unit addWeapon "NVGoggles";
 		};
 		case "GLAT" : {//Стрелок с ГП РПГ27
 			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0,0,0];
@@ -110,14 +106,12 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_RPG27";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0,0];
-			_unit addWeapon "NVGoggles";
 		};
 		case "LAT" : {// Стрелок РПГ-27
 			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0,0,0,0,0];
 			_unit addWeapon "ACE_AK74M";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_RPG27";
 		};
 //разведотделение
@@ -274,7 +268,6 @@ _TA_ARMY_processor = {
 			_unit addWeapon "Binocular";
 			{_unit addMagazine "ACE_20Rnd_9x18_APSB"} forEach [0,0,0,0,0];
 			_unit addWeapon "ACE_APSB";
-			_unit addWeapon "NVGoggles";
 		};
 		case "SN" : {//Снайпер
 			_unit addWeapon "ACE_Map";

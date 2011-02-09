@@ -134,12 +134,20 @@ _US_ARMY_processor = {
 		
 //sniper team
 		case "SN": {// Sniper
-			addWeapons ["M24_des_EP1","M9","NVGoggles","ACE_USPSD"];
+			addWeapons ["M24_des_EP1","M9","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
-			addMagazines("5Rnd_762x51_M24",5);
+			addMagazines("5Rnd_762x51_M24",6);
 			addMagazines("15Rnd_9x19_M9",2);
 			addMagazines("SmokeShell",2);
 		};
+		case "SN2": {// Sniper
+			addWeapons ["ACE_M110","M9","NVGoggles"];
+			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
+			addMagazines("20Rnd_762x51_B_SCAR",6);
+			addMagazines("15Rnd_9x19_M9",2);
+			addMagazines("SmokeShell",2);
+		};
+		
 		// Assist. Sniper SF
 		case "ASN" : {
 			addWeapons ["ACE_M4A1_AIM_GL","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU"];
@@ -186,12 +194,12 @@ _US_ARMY_processor = {
 		};
 		case "LPL": {//Pilot
 			addWeapons ["M9","NVGoggles"];
-			addWeapons ["ACE_GlassesLHD_glasses","ACE_Map"]; 
+			addWeapons ["ACE_GlassesSunglasses","ACE_Map"]; 
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "PL": {//Pilot
 			addWeapons ["M4A1","M9","NVGoggles"]; 
-			addWeapons ["ACE_GlassesLHD_glasses","ACE_Map"]; 
+			addWeapons ["ACE_GlassesSunglasses","ACE_Map"]; 
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("15Rnd_9x19_M9",2);
 		};

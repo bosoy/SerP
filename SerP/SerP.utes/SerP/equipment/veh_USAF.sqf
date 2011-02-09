@@ -16,7 +16,7 @@ _USAF_processor = {
 			_veh addMagazineCargo ["ACE_Epinephrine",2];
 			_veh addMagazineCargo ["ACE_Bandage",5];
 			_veh addWeaponCargo ["M136",2];
-			_veh addWeaponCargo ["ACE_Rope_M_120",2];
+			_veh addMagazineCargo ["ACE_Rope_M_60",2];
 			_veh addWeaponCargo ["ACE_ParachuteRoundPack",6];
 		};
 		case "M" : {//UH1,MH60
@@ -33,7 +33,7 @@ _USAF_processor = {
 			_veh addMagazineCargo ["ACE_Epinephrine",15];
 			_veh addMagazineCargo ["ACE_Bandage",15];
 			_veh addWeaponCargo ["M136",6];
-			_veh addWeaponCargo ["ACE_Rope_M_120",4];
+			_veh addMagazineCargo["ACE_Rope_M_60",4];
 			_veh addWeaponCargo ["ACE_ParachuteRoundPack",16];
 		};
 		case "H" : {//CH47
@@ -50,7 +50,7 @@ _USAF_processor = {
 			_veh addMagazineCargo ["ACE_Epinephrine",30];
 			_veh addMagazineCargo ["ACE_Bandage",30];
 			_veh addWeaponCargo ["M136",10];
-			_veh addWeaponCargo ["ACE_Rope_M_120",6];
+			_veh addMagazineCargo ["ACE_Rope_M_60",6];
 			_veh addWeaponCargo ["ACE_ParachuteRoundPack",30];
 		};
 	};

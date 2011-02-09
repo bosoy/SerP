@@ -108,7 +108,7 @@ _USMC_processor = {
 		};
 		
 		case "ASN" : {// Assist. Sniper SF
-			addWeapons ["ACE_M16A4_CCO_GL","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU","ACE_SpottingScope"];
+			addWeapons ["ACE_M16A4_CCO_GL","NVGoggles","ACE_YardAge450","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU","ACE_SpottingScope"];
 			addMagazines("30Rnd_556x45_Stanag",8);
 			addMagazines("1Rnd_HE_M203",6);		
 			addMagazines("ACE_SSWhite_M203",2);
@@ -156,7 +156,7 @@ _USMC_processor = {
 			addMagazines("ACE_ANM14",2);
 		};
 		case "ASAG" : {// ASSAULT SECTION assistant GUNNER
-			addWeapons ["m16a4","ACE_Rucksack_MOLLE_Green","Binocular","NVGoggles"];
+			addWeapons ["m16a4","ACE_Rucksack_MOLLE_Green","ACE_YardAge450","NVGoggles"];
 			addWeapons ["ACE_Earplugs","ACE_Map","ItemGPS"];
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("SmokeShell",2);
@@ -189,7 +189,7 @@ _USMC_processor = {
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224_HE_CSWDM",10]]];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224_HE_CSWDM",5]]];
 		};
 //crew
 		case "CRW": {// Crewman
@@ -199,12 +199,12 @@ _USMC_processor = {
 		};
 		case "LPL": {//Pilot
 			addWeapons ["M9","NVGoggles"];
-			addWeapons ["ACE_GlassesLHD_glasses","ACE_Map"]; 
+			addWeapons ["ACE_GlassesSunglasses","ACE_Map"]; 
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "PL": {//Pilot
 			addWeapons ["M4A1","M9","NVGoggles"]; 
-			addWeapons ["ACE_GlassesLHD_glasses","ACE_Map"]; 
+			addWeapons ["ACE_GlassesSunglasses","ACE_Map"]; 
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("15Rnd_9x19_M9",2);
 		};

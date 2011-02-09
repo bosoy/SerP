@@ -27,8 +27,8 @@ _addTyre = {
 	};
 };
 #include "veh_RA_MSV.sqf"
-#include "veh_US_ARMY.sqf"
 #include "veh_USMC.sqf"
+#include "veh_US_ARMY.sqf"
 #include "veh_USAF.sqf"
 #include "veh_RFVVS.sqf"
 _veh call _common_processor;

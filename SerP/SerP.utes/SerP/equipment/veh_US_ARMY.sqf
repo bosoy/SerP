@@ -49,4 +49,3 @@ _US_ARMY_processor = {
 		};
 	};
 };
-z
