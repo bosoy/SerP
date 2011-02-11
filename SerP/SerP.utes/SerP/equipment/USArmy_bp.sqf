@@ -104,19 +104,6 @@ _USArmy_bp_processor = {
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
 		};
-		//Asst. Auto Rifleman
-		case "AAR": {	
-			{_unit addMagazine "30Rnd_556x45_Stanag"} foreach [0,0,0,0,0,0];
-			_unit addWeapon "M4A3_CCO_EP1";
-			{_unit addMagazine "SmokeShell"} forEach [0,0];
-			{_unit addMagazine "HandGrenade_West"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
-			_unit addBackpack "US_Assault_Pack_EP1";
-			//[_unit, [["200Rnd_556x45_M249",4]]] execVM "SerP\equipment\addMagazineBackpack.sqf";
-			_pack = unitBackpack _unit;
-			clearMagazineCargo _pack;
-			_pack addMagazineCargoGlobal ["200Rnd_556x45_M249",4];
-		};	
 		//Marksman
 		case "DM": {
 			_unit addWeapon "ACE_Map";

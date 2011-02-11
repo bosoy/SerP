@@ -84,12 +84,13 @@ _75th_processor = {
 			addWeapons ["M136", "M16A4", "NVGoggles", "ACE_GlassesLHD_glasses"];
 		};
 		case "DM" : {// Marksman 
-			addMagazines("20Rnd_762x51_DMR",8);
+			addMagazines("20Rnd_762x51_DMR",6);
+			addMagazines("30Rnd_556x45_Stanag",6);			
 			addMagazines("15Rnd_9x19_M9",2);
-			addMagazines("ACE_M7A3", 2);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
 			addWeapons ["DMR", "M9","NVGoggles"];
+			_unit setVariable ["ACE_weapononback","M16A4_ACG"];
 		};		
 		case "MED": {//Medic
 			addMagazines("30Rnd_556x45_Stanag",8);

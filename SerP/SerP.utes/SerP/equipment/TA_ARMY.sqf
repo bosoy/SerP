@@ -334,7 +334,6 @@ _TA_ARMY_processor = {
 			{_unit addMagazine "ACE_Bandage"} forEach [0,0];
 			{_unit addMagazine "ACE_Morphine"} forEach [0,0];
 			{_unit addMagazine "ACE_Epinephrine"} forEach [0,0];
-			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT_Medic";
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 		};
@@ -352,7 +351,6 @@ _TA_ARMY_processor = {
 		case "CRW" : {//Экипаж
 			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0,0,0];
 			_unit addWeapon "AKS_74_U";
-			_unit addWeapon "NVGoggles";
 		};
 		case "PL" : {//Пилот
 			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0,0,0];
