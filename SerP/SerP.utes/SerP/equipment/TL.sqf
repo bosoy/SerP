@@ -114,7 +114,6 @@ _TL_processor = {
 			addWeapons ["AK_47_M", "ACE_Map", "ACE_Glock18", "NVGoggles"];
 			addMagazines("30Rnd_762x39_AK47",3);
 			addMagazines("ACE_33Rnd_9x19_G18",2);
-			addWeapons ["ACE_Glock18";
 			_unit addMagazine "BAF_ied_v3";
 			addMagazines("HandGrenade_East",4);				
 		};
