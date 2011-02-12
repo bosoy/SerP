@@ -230,7 +230,7 @@ _US_ARMY_processor = {
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224_HE_CSWDM",10]]];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224HE_CSWDM",10]]];
 		};
 	};
 };

@@ -165,7 +165,7 @@
 			addMagazines("SmokeShell",2);
 			addWeapons ["M16A4","ACE_Rucksack_MOLLE_Green","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs", "ACE_GlassesLHD_glasses"];
-			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224_HE_CSWDM",5]]];
+			_unit setVariable ["ACE_RuckMagContents",[["ACE_M224HE_CSWDM",5]]];
 		};
 //crew
 		case "CRW": {// Crewman
