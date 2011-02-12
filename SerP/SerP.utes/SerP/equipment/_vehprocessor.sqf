@@ -27,6 +27,7 @@ _addTyre = {
 	};
 };
 #include "veh_RA_MSV.sqf"
+#include "veh_TA_MSV.sqf"
 #include "veh_USMC.sqf"
 #include "veh_US_ARMY.sqf"
 #include "veh_USAF.sqf"
@@ -35,6 +36,7 @@ _veh call _common_processor;
 _veh call _addTyre;
 switch _faction do {
 	case "RA_MSV"		: {[_veh, _loadout] call _RA_MSV_processor};
+	case "TA_MSV"		: {[_veh, _loadout] call _TA_MSV_processor};
 	case "US_ARMY"		: {[_veh, _loadout] call _US_ARMY_processor};
 	case "USMC"			: {[_veh, _loadout] call _USMC_processor};
 	case "USAF"		: {[_veh, _loadout] call _USAF_processor};
