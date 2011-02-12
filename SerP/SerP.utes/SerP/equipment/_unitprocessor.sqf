@@ -48,6 +48,7 @@ switch _faction do {
 	case "USArmy_bp"	: {[_unit, _loadout] call _USArmy_bp_processor};
 	case "US_DF_bp"		: {[_unit, _loadout] call _US_DF_bp_processor};
 	case "TL_bp"		: {[_unit, _loadout] call _TL_bp_processor};  
+	case "TL"		: {[_unit, _loadout] call _TL_processor};  
 	case "TA_ARMY"		: {[_unit, _loadout] call _TA_ARMY_processor};  
 	default {diag_log format ["Undefined unit faction : %1",_faction]};
 };
