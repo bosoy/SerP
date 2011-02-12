@@ -35,6 +35,7 @@ _common_processor = {
 #include "USArmy_bp.sqf"
 #include "US_DF_bp.sqf"
 #include "TL_bp.sqf"
+#include "TL.sqf"
 #include "TA_ARMY.sqf"
 
 _unit call _common_processor;

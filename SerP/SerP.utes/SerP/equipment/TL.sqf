@@ -114,15 +114,23 @@ _TL_processor = {
 			addWeapons ["AK_47_M", "ACE_Map", "ACE_Glock18", "NVGoggles"];
 			addMagazines("30Rnd_762x39_AK47",3);
 			addMagazines("ACE_33Rnd_9x19_G18",2);
-			addWeapons ["ACE_Glock18";			_unit addMagazine "BAF_ied_v3";			addMagazines("HandGrenade_East",4);				
+			addWeapons ["ACE_Glock18";
+			_unit addMagazine "BAF_ied_v3";
+			addMagazines("HandGrenade_East",4);				
 		};
 		// Lee-Endfield
 		case "MR": {
-			addMagazines("10x_303",4);			addWeapons ["LeeEnfield", "ACE_Map", "NVGoggles", "RPG18"];			addMagazines("HandGrenade_East",4);
+			addMagazines("10x_303",4);
+			addWeapons ["LeeEnfield", "ACE_Map", "NVGoggles", "RPG18"];
+			addMagazines("HandGrenade_East",4);
 		};
 		// Sniper SVD
 		case "SNP": {
-			addMagazines("10Rnd_762x54_SVD",4);						addWeapons ["SVD", "ACE_Map", "NVGoggles", "Makarov"];			addMagazines("ACE_Pomz_M",2);			addMagazines("SmokeShell",2);			addMagazines("8Rnd_9x18_Makarov",2);
+			addMagazines("10Rnd_762x54_SVD",4);			
+			addWeapons ["SVD", "ACE_Map", "NVGoggles", "Makarov"];
+			addMagazines("ACE_Pomz_M",2);
+			addMagazines("SmokeShell",2);
+			addMagazines("8Rnd_9x18_Makarov",2);
 		};	
 		//Medic
 		case "MED": {
