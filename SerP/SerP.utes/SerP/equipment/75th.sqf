@@ -17,6 +17,7 @@
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
 			addMagazines("15Rnd_9x19_M9", 2);
+			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
 		};
 		case "ENG": { //RATELO
 			addMagazines("30Rnd_556x45_Stanag",6);
