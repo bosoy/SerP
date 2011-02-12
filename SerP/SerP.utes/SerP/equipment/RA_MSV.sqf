@@ -183,6 +183,29 @@ _RA_MSV_processor = {
 			addMagazines("HandGrenade_East",2);
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_RPG29_PG29",2],["ACE_RPG29_TBG29",2]]];
 		};
+//расчет миномета
+		case "MOG" : {//Старший наводчик
+			addWeapons ["ACE_AK74M","ACE_2b14Proxy","NVGoggles"];
+			addWeapons ["ACE_Earplugs","ACE_Map","ACE_Map_Tools","ItemGPS"];
+			addMagazines("30Rnd_545x39_AK",4);
+			addMagazines("ACE_RDGM",2);
+			addMagazines("ACE_2B14HE_CSWDM",2);
+		};
+		case "MOAG" : {//Наводчик
+			addWeapons ["ACE_AK74M","ACE_2b14TripodProxy","Binocular","NVGoggles"];
+			addWeapons ["ACE_Earplugs"];
+			addMagazines("30Rnd_545x39_AK",4);
+			addMagazines("ACE_RDGM",2);
+			addMagazines("ACE_2B14HE_CSWDM",2);
+		};
+		case "MOAB" : {//Номер расчета
+			addWeapons ["ACE_AK74M","ACE_Rucksack_RD90","Binocular","NVGoggles"];
+			addWeapons ["ACE_Earplugs"];
+			addMagazines("30Rnd_545x39_AK",4);
+			addMagazines("ACE_2B14HE_CSWDM",3);
+			addMagazines("ACE_RDGM",2);
+			_unit setVariable ["ACE_RuckMagContents",[["HandGrenade_East",4],["30Rnd_545x39_AK",4]]];
+		};
 //отделение АГС
 		case "AGL" : {//Старший наводчик
 			addWeapons ["ACE_AK74M","ACE_AGS30Proxy","NVGoggles"];
