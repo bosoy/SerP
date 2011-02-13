@@ -223,8 +223,16 @@ if !(isDedicated) then {
 		_pos = (_x select 0);
 		_size = (_x select 1);
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
+<<<<<<< .mine
+			_waitTime = if isServer then {10}else{90};
+			_objects = nearestObjects [_pos,["Plane","LandVehicle","Helicopter","Ship"],_size];
+			waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
+			sleep 5;
+			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
+=======
 			waitUntil {sleep 1;time>60};
 			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker];
+>>>>>>> .r67
 			cutText['','BLACK IN',5];
 			while {(warbegins!=1)} do {
 				_dist = (vehicle player) distance _pos;
