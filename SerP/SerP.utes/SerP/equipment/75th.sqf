@@ -17,6 +17,7 @@
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
 			addMagazines("15Rnd_9x19_M9", 2);
+			addWeapons ["M9", "M16A4_ACG", "Binocular", "NVGoggles"];
 			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
 		};
 		case "ENG": { //RATELO
@@ -28,7 +29,7 @@
 			addWeapons ["M9", "m16a4", "NVGoggles", "ACE_ANPRC77" , "ACE_GlassesLHD_glasses"];
 		};
 // Rifle squad
-		case "SSL" : { //Squad Leader
+		case "SL" : { //Squad Leader
 			addMagazines("30Rnd_556x45_Stanag",5);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",1);
 			addMagazines("15Rnd_9x19_M9", 2);
@@ -83,7 +84,8 @@
 			addMagazines("15Rnd_9x19_M9",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
-			addWeapons ["DMR", "M9","NVGoggles"];
+			addWeapons ["DMR", "M9","NVGoggles"];		
+			addWeapons ["ACE_GlassesLHD_glasses"];
 			_unit setVariable ["ACE_weapononback","M16A4_ACG"];
 		};
 		case "MED": {//Medic
@@ -94,7 +96,8 @@
 			addMagazines("ACE_Morphine",2);
 			addMagazines("ACE_Epinephrine",2);
 			addMagazines("ACE_Medkit",2);
-			addMagazines("15Rnd_9x19_M9",2);
+			addMagazines("15Rnd_9x19_M9",2);		
+			addWeapons ["ACE_GlassesLHD_glasses"];
 			addWeapons ["m16a4", "M9", "ACE_Rucksack_MOLLE_DMARPAT_Medic", "NVGoggles"];
 			_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 		};
@@ -109,35 +112,63 @@
 			addWeapons ["M9", "Mk_48_DES_EP1", "Binocular", "NVGoggles"];
 			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
 		};
-		case "AMG" : { // Asst. Machinegunner
+		case "AG" : { // Asst. Machinegunner
 			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",1);
 			addMagazines("SmokeShell",2);
-			addMagazines("HandGrenade_West",2);
-
+			addMagazines("HandGrenade_West",2);		
+			addWeapons ["ACE_GlassesLHD_glasses"];
 			addWeapons ["M16A4", "NVGoggles", "ACE_Earplugs", "ACE_Rucksack_MOLLE_Green"];
 			_unit setVariable ["ACE_RuckMagContents", [["100Rnd_762x51_M240", 2], ["ACE_Claymore_M", 2]]];
+		};
+//sniper team
+		case "SN2": {// Sniper
+			addWeapons ["M24_des_EP1","M9","NVGoggles", "Binocular"];
+			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
+			addMagazines("5Rnd_762x51_M24",6);
+			addMagazines("15Rnd_9x19_M9",2);
+			addMagazines("SmokeShell",2);
+		};
+		case "SN": {// Sniper
+			addMagazines("10Rnd_127x99_m107",5);
+			addMagazines("ACE_10Rnd_127x99_T_m107",1);
+			addMagazines("ACE_10Rnd_127x99_Raufoss_m107",1);
+			addMagazines("SmokeShell",2);
+			addMagazines("HandGrenade_West",3);
+			addWeapons ["m107", "NVGoggles", "Binocular"];
+			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
+		};
+		
+		// Assist. Sniper SF
+		case "ASN" : {
+			addWeapons ["ACE_M4A1_AIM_GL","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU"];
+			addMagazines("30Rnd_556x45_Stanag",8);
+			addMagazines("1Rnd_HE_M203",6);		
+			addMagazines("ACE_SSWhite_M203",2);
+			addMagazines("SmokeShell",2);
+			addMagazines("ACE_Battery_Rangefinder",2);					
+			addWeapons ["ACE_GlassesLHD_glasses"];
+			_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",2],["FlareRed_M203",4],["ACE_SSWhite_M203",2],["5Rnd_762x51_M24",4]]];
 		};
 
 // ASSAULT SECTION Squad
 		case "ASG" : {// ASSAULT SECTION GUNNER
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("SmokeShell",2);
-			addMagazines("ACE_SMAW_Spotting",2);
-			addMagazines("SMAW_HEAA",1);
-			addMagazines("ACE_SMAW_NE",1);
+			addMagazines("MAAWS_HEAT",1);
+			addMagazines("ACE_MAAWS_HE",1);
 			addMagazines("ACE_ANM14",2);
-			addWeapons ["m16a4","SMAW","NVGoggles"];
+			addWeapons ["m16a4","MAAWS","NVGoggles"];			
 			addWeapons ["ACE_Earplugs","ACE_Map","ItemGPS", "ACE_GlassesLHD_glasses"];
 		};
 		case "ASAG" : {// ASSAULT SECTION assistant GUNNER
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("SmokeShell",2);
 			addMagazines("ACE_C4_M",3);
-			addMagazines("SMAW_HEDP",1);
+			addMagazines("ACE_MAAWS_HE",1);
 			addWeapons ["m16a4","ACE_Rucksack_MOLLE_Green","ACE_YardAge450","NVGoggles"];
 			addWeapons ["ACE_Earplugs","ACE_Map","ItemGPS", "ACE_GlassesLHD_glasses"];
-			_unit setVariable ["ACE_RuckMagContents",[["SMAW_HEDP",1],["SMAW_HEAA",1]]];
+			_unit setVariable ["ACE_RuckMagContents",[["MAAWS_HEDP",1],["MAAWS_HEAT",1]]];
 		};
 
 //mortar
