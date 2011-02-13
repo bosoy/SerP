@@ -71,7 +71,7 @@ if (isServer) then {
 			_zones set [count _zones,[_unitPos,_defZoneSize,1]]
 		};
 	} forEach playableUnits;
-	while {true} do {
+	waitUntil {
 		_exit = true;
 		{
 			_zonePos1 = _x select 0;
@@ -94,7 +94,7 @@ if (isServer) then {
 			} forEach _zones;
 			if (!_exit) exitWith {};
 		} forEach _zones;
-		if (_exit) exitWith {};
+		_exit
 	};
 	startZones = _zones;
 	[] spawn {
@@ -187,8 +187,8 @@ if !(isDedicated) then {
 		false
 	'];
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
-	waitUntil{sleep .1;!isNil{warbegins}};
-	if (warbegins==1) exitWith {
+	waitUntil{sleep .1;!isNil{warbegins}||(time > 120)};
+	if ((warbegins==1)||isNil{warbegins}) exitWith {
 		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 		cutText['','BLACK IN',5];
@@ -231,7 +231,11 @@ if !(isDedicated) then {
 		];
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
-	waitUntil{sleep 1;!isNil{startZones}};
+	_waitTime == time + 60;
+	waitUntil{sleep 1;!isNil{startZones}||(time>_waitTime)};
+	if isNil{startZones} then {
+		startZones = [[getPos(vehicle player),_size,1]];
+	};
 	_inZone = false;
 	{
 		_pos = (_x select 0);
@@ -240,7 +244,11 @@ if !(isDedicated) then {
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_inZone = true;
 			_waitTime = if isServer then {10}else{90};
-			waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
+			if !isNil{getDir _helper} then {
+				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
+			}else{
+				waitUntil {sleep 1;(time>_waitTime)};
+			};
 			sleep 5;
 			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 			cutText['','BLACK IN',5];
