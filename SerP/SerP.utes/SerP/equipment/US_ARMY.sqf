@@ -99,7 +99,7 @@ _US_ARMY_processor = {
 		};
 		case "DM" : {//Designated marksman
 			addWeapons ["M16A4_ACG","NVGoggles"];
-			addMagazines("ACE_20Rnd_556x45_S_Stanag",8);
+			addMagazines("30Rnd_556x45_Stanag",8);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
 		};

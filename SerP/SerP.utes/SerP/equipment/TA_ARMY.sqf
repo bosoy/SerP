@@ -53,6 +53,14 @@ _TA_ARMY_processor = {
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_Earplugs";
 		};
+		case "AR" : {//Пулеметчик РПК
+			{_unit addMagazine "ACE_75Rnd_762x39_B_AK47"} forEach [0,0,0,0,0,0,0];
+			_unit addWeapon "ACE_RPK";
+			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
+			_unit addWeapon "NVGoggles";
+			_unit addWeapon "ACE_Earplugs";
+		};
 		case "AMG" : {//Помошник пулеметчика
 			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0,0,0];
 			_unit addWeapon "ACE_AKM";
@@ -107,10 +115,10 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_Map";
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
-			{_unit addMagazine "ACE_30Rnd_762x39_T_AK47"} forEach [0,0,0,0];
-			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0];
+			{_unit addMagazine "ACE_30Rnd_545x39_T_AK"} forEach [0,0,0,0];
+			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0];
 			{_unit addMagazine "1Rnd_HE_GP25"} forEach [0,0,0,0,0,0,0,0];
-			_unit addWeapon "ACE_AKM_GL";
+			_unit addWeapon "AK_74_GL";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
 			_unit addWeapon "Binocular";
@@ -119,9 +127,9 @@ _TA_ARMY_processor = {
 		};
 		case "R_TL" : {//Старший разведчик
 			_unit addWeapon "ACE_Map";
-			{_unit addMagazine "ACE_30Rnd_762x39_T_AK47"} forEach [0,0,0,0];
-			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0];
-			_unit addWeapon "ACE_AKM";
+			{_unit addMagazine "ACE_30Rnd_545x39_T_AK"} forEach [0,0,0,0];
+			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0];
+			_unit addWeapon "AKS_74_pso";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
@@ -141,7 +149,7 @@ _TA_ARMY_processor = {
 		};
 		case "R_MG" : {//Разведчик - пулеметчик
 			{_unit addMagazine "100Rnd_762x54_PK"} forEach [0,0,0];
-			_unit addWeapon "Pecheneg";
+			_unit addWeapon "PK";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
@@ -150,8 +158,8 @@ _TA_ARMY_processor = {
 			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",4]]];
 		};
 		case "R_R" : {// Разведчик - радиотелефонист
-			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0,0,0,0,0];
-			_unit addWeapon "ACE_AKM";
+			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "AK_74";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
@@ -159,8 +167,8 @@ _TA_ARMY_processor = {
 		};
 		case "R_SAP" : {// Разведчик - сапер
 			_unit addWeapon "ACE_Map";
-			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0,0,0,0,0];
-			_unit addWeapon "ACE_AKM";
+			{_unit addMagazine "30Rnd_545x39_AK"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "AK_74";
 			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
 			_unit addWeapon "NVGoggles";
@@ -331,18 +339,18 @@ _TA_ARMY_processor = {
 			_unit addWeapon "ACE_Map_Tools";
 			_unit addWeapon "ItemGPS";
 			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0];
-			_unit addWeapon "AKS_74_U";
+			_unit addWeapon "ACE_AKMS";
 			{_unit addMagazine "8Rnd_9x18_Makarov"} forEach [0,0,0,0,0];
 			_unit addWeapon "Makarov";
 			_unit addWeapon "NVGoggles";
 		};
 		case "CRW" : {//Экипаж
 			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0,0,0];
-			_unit addWeapon "AKS_74_U";
+			_unit addWeapon "ACE_AKMS";
 		};
 		case "PL" : {//Пилот
 			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0,0,0];
-			_unit addWeapon "AKS_74_U";
+			_unit addWeapon "ACE_AKMS";
 			{_unit addMagazine "8Rnd_9x18_Makarov"} forEach [0,0,0,0,0];
 			_unit addWeapon "Makarov";
 			_unit addWeapon "NVGoggles";

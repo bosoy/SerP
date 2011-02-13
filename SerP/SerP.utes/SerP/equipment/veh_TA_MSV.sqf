@@ -6,7 +6,7 @@ _TA_MSV_processor = {
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_762x39_AK47",10];
-			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_ANPRC77",1];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",2];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 10];
 			_veh addMagazineCargo ["HandGrenade", 5];
@@ -18,7 +18,7 @@ _TA_MSV_processor = {
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_762x39_AK47",10];
-			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_ANPRC77",1];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",3];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 10];
 			_veh addMagazineCargo ["HandGrenade", 5];
@@ -31,7 +31,7 @@ _TA_MSV_processor = {
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_762x39_AK47",5];
-			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_ANPRC77",1];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",1];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 5];
 			_veh addMagazineCargo ["10Rnd_762x54_SVD", 20];
@@ -44,11 +44,12 @@ _TA_MSV_processor = {
 		case "MSV" : {//
 			_veh addMagazineCargo ["HandGrenade",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
-			_veh addMagazineCargo ["30Rnd_762x39_AK47",10];
+			_veh addMagazineCargo ["30Rnd_762x39_AK47",39];
+			_veh addMagazineCargo ["ACE_75Rnd_762x39_B_AK47",20];
 			_veh addMagazineCargo ["10Rnd_762x54_SVD",20];
 			_veh addMagazineCargo ["100Rnd_762x54_PK",10];
 			_veh addMagazineCargo ["1Rnd_HE_GP25",20];
-			_veh addWeaponCargo ["ACE_P159_RD90",2];
+			_veh addWeaponCargo ["ACE_ANPRC77",2];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",8];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 10];
 			_veh addMagazineCargo ["ACE_Bandage",9];
@@ -78,7 +79,7 @@ _TA_MSV_processor = {
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_762x39_AK47",36];
-			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_ANPRC77",1];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",2];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 10];
 			_veh addMagazineCargo ["HandGrenade", 15];
@@ -91,11 +92,12 @@ _TA_MSV_processor = {
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_762x39_AK47",36];
+			_veh addMagazineCargo ["30Rnd_545x39_AK",36];
 			_veh addMagazineCargo ["10Rnd_762x54_SVD",20];
 			_veh addMagazineCargo ["100Rnd_762x54_PK",10];
 			_veh addMagazineCargo ["1Rnd_HE_GP25",20];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_SD_AK47",10];
-			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_ANPRC77",1];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 			_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 10];
 			_veh addMagazineCargo ["HandGrenade", 15];
