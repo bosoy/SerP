@@ -234,7 +234,7 @@ if !(isDedicated) then {
 	_waitTime == time + 60;
 	waitUntil{sleep 1;!isNil{startZones}||(time>_waitTime)};
 	if isNil{startZones} then {
-		startZones = [[getPos(vehicle player),_size,1]];
+		startZones = [[getPos(vehicle player),_size,1,objNull,objNull]];
 	};
 	_inZone = false;
 	{
@@ -244,7 +244,7 @@ if !(isDedicated) then {
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_inZone = true;
 			_waitTime = if isServer then {10}else{90};
-			if !isNil{getDir _helper} then {
+			if !isNull(_helper) then {
 				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
 			}else{
 				waitUntil {sleep 1;(time>_waitTime)};
