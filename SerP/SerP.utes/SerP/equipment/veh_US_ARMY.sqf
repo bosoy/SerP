@@ -47,5 +47,36 @@ _US_ARMY_processor = {
 			_veh addWeaponCargo ["ACE_Stretcher",2];
 			_veh addWeaponCargo ["ACE_PRC119_ACU",1];
 		};
+		case "HMWMG" : {// LandRover SF MG Team
+			_veh addMagazineCargo ["HandGrenade_west",20];
+			_veh addMagazineCargo ["SmokeShell",5];
+			_veh addMagazineCargo ["30Rnd_556x45_Stanag",15];
+			_veh addMagazineCargo ["100Rnd_762x51_M240",10];
+			_veh addMagazineCargo ["1Rnd_HE_M203",5];
+			_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
+			_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+			_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+			_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+			_veh addMagazineCargo ["ACE_Morphine",2];
+			_veh addMagazineCargo ["ACE_Epinephrine",2];
+			_veh addMagazineCargo ["ACE_Bandage",5];
+			_veh addWeaponCargo ["M136",4];
+		};
+		case "HWMAS" : {// LandRover SF AS Team
+			_veh addMagazineCargo ["HandGrenade_west",20];
+			_veh addMagazineCargo ["SmokeShell",5];
+			_veh addMagazineCargo ["30Rnd_556x45_Stanag",15];
+			_veh addMagazineCargo ["MAAWS_HEDP",3];
+			_veh addMagazineCargo ["MAAWS_HEAT",3];
+			_veh addMagazineCargo ["ACE_MAAWS_HE",3];
+			_veh addMagazineCargo ["ACE_ANM14",2];
+			_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+			_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+			_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+			_veh addMagazineCargo ["ACE_Morphine",2];
+			_veh addMagazineCargo ["ACE_Epinephrine",2];
+			_veh addMagazineCargo ["ACE_Bandage",5];
+			_veh addWeaponCargo ["M136",4];
+		};
 	};
 };
