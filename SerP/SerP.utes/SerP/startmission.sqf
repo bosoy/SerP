@@ -7,10 +7,12 @@ if (isServer) then {
 		_briefingTime = _this select 0;
 		_startTime = time + _briefingTime;
 		warbegins = 0;
+		_nextTime = time + 30;
 		while {(time<_startTime)&&(warbegins!=1)} do {
 			SerP_server_message = format ["До конца брифинга осталось %1 секунд",round(_startTime-time)];
 			publicVariable "SerP_server_message";
-			sleep 30;
+			waitUntil{sleep 1;time>_nextTime};
+			_nextTime = time + 30;
 		};
 		warbegins = 1;publicVariable "warbegins";
 	};
@@ -49,7 +51,7 @@ if (isServer) then {
 	//find zones
 	_zones = [];//[_pos,_size]
 	{
-		_unitPos = getPos _x;
+		_unitPos = getPos vehicle(_x);
 		_outOfZone = true;
 		{
 			_zonePos = _x select 0;
@@ -103,7 +105,7 @@ if (isServer) then {
 			_corepos = (_x select 0);
 			_size = (_x select 1);
 			_core = createVehicle ["FlagCarrierChecked", _corepos, [], 0, "CAN_COLLIDE"];
-			_core setPos _corepos;
+			_core setPos [_corepos select 0,_corepos select 1,-3];
 			_corepos = getPosASL _core;
 			trashArray set [count trashArray, _core];
 			{
@@ -112,7 +114,7 @@ if (isServer) then {
 					_vUp = vectorUp _x;
 					_unitpos = getPosASL _x;
 					_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
-					_x attachTo [_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]];
+					_x attachTo [_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) + 1.5)]];
 					_x setVectorDirAndUp [_vDir,_vUp];
 					if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
 				};
@@ -230,11 +232,13 @@ if !(isDedicated) then {
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
 	waitUntil{sleep 1;!isNil{startZones}};
+	_inZone = false;
 	{
 		_pos = (_x select 0);
 		_size = (_x select 1);
 		_helper = (_x select 3);
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
+			_inZone = true;
 			_waitTime = if isServer then {10}else{90};
 			waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
 			sleep 5;
@@ -254,7 +258,11 @@ if !(isDedicated) then {
 					player say "ACE_rus_combat30";
 				};
 			};
-			(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 		};
 	} forEach startZones;
+	if !_inZone then {
+		cutText['','BLACK IN',5];
+		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
+	};
+	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
