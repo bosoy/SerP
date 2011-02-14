@@ -69,8 +69,19 @@
 			addWeapons ["ACE_M16A4_CCO_GL", "NVGoggles", "ACE_FAST_PackEDC_ACU"];
 			addWeapons ["ACE_GlassesLHD_glasses"];
 			addMagazines("6Rnd_HE_M203",3);
+			_unit setVariable ["ACE_RuckMagContents",[["FlareRed_M203", 4], ["1Rnd_HE_M203", 6], ["1Rnd_Smoke_M203", 6]]];
+		};
+		case "GL2": { // Greanadier
+			addMagazines("30Rnd_556x45_Stanag", 6);
+			addMagazines("1Rnd_Smoke_M203",2);
+			addMagazines("1Rnd_HE_M203",4);
+			addMagazines("FlareRed_M203",2);
+			addMagazines("ACE_12Rnd_45ACP_USPSD",2);
+			addWeapons ["ACE_M16A4_CCO_GL", "NVGoggles", "ACE_FAST_PackEDC_ACU"];
+			addWeapons ["ACE_GlassesLHD_glasses"];
+			addMagazines("6Rnd_HE_M203",3);
 			_unit setVariable ["ACE_weapononback","ACE_M32"];
-			_unit setVariable ["ACE_RuckMagContents",[["FlareRed_M203", 4], ["6Rnd_HE_M203", 2], ["1Rnd_Smoke_M203", 6]]];
+			_unit setVariable ["ACE_RuckMagContents",[["FlareRed_M203", 4], ["6Rnd_HE_M203", 1], ["1Rnd_Smoke_M203", 6]]];
 		};
 		case "LAT": { // Rifleman AT
 			addMagazines("30Rnd_556x45_Stanag",8);
@@ -143,7 +154,7 @@
 		case "ASN" : {
 			addWeapons ["ACE_M4A1_AIM_GL","NVGoggles","ACE_Rangefinder_OD","ACE_Kestrel4500","ACE_FAST_PackEDC_ACU"];
 			addMagazines("30Rnd_556x45_Stanag",8);
-			addMagazines("1Rnd_HE_M203",6);		
+			addMagazines("1Rnd_HE_M203",6);
 			addMagazines("ACE_SSWhite_M203",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("ACE_Battery_Rangefinder",2);					
