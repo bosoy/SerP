@@ -1,4 +1,4 @@
-﻿#include "const.sqf"
+#include "const.sqf"
 private ["_blocker"];
 trashArray = [];
 planeList = [];
@@ -179,6 +179,7 @@ if (isServer) then {
 			} forEach ((allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship"));
 			ace_sys_map_enabled = true;
 			[] execVM "\x\ace\addons\sys_map\mapview.sqf";
+			player say "ACE_rus_combat119";
 			this spawn {
 				sleep 4;
 				{deleteVehicle _x} forEach trashArray;
@@ -192,20 +193,8 @@ if !(isDedicated) then {
 	waitUntil{player==player};
 	if !alive(player) exitWith {};
 	sleep .1;
-	cutText[localize 'STR_missionname','BLACK FADED',300];
-	_blocker1 = (findDisplay 46) displayAddEventHandler ["KeyDown", '
-		_ctrl = _this select 0;
-		_dikCode = _this select 1;
-		_shift = _this select 2;
-		_ctrlKey = _this select 3;
-		_alt = _this select 4;
-		_handled = false;
-		if (_dikCode!=1) then {
-			_ctrl = nil;
-			_handled = true;
-		};
-		_handled
-	'];
+	cutText[localize 'STR_missionname','BLACK IN',5];
+	forceMap true;
 	_blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 		[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 		false
@@ -213,9 +202,8 @@ if !(isDedicated) then {
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 	waitUntil{sleep .1;!isNil{warbegins}};
 	if (warbegins==1) exitWith {
-		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
+		forceMap false;
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
-		cutText['','BLACK IN',5];
 	};
 
 	_radio=createTrigger["EmptyDetector",[0,0]];
@@ -274,27 +262,37 @@ if !(isDedicated) then {
 				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
 			};
 			sleep 5;
-			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
-			cutText['','BLACK IN',5];
+			forceMap false;
 			while {(warbegins!=1)} do {
 				sleep 2;
 				_dist = (vehicle player) distance _pos;
 				if (_dist>(_size+_hintzonesize)) exitWith {
 					hint "Мне очень жаль";
+					player say "r44";
+					player say "All_haha";
+					//player say "ACE_rus_combat143";
 					sleep 3;
-					player say "ACE_rus_combat120";
 					player setDamage 1;
 				};
 				if (_dist>_size) then {
 					hint "Вы покидаете зону брифинга";
-					player say "ACE_rus_combat30";
+					switch round(random 8) do {
+						case 0: {player say "r11"};
+						case 1: {player say "r15"};
+						case 2: {player say "r26"};
+						case 3: {player say "r29"};
+						case 4: {player say "r25"};
+						case 5: {player say "r04"};
+						case 6: {player say "r21_4"};
+						case 7: {player say "ACE_rus_combat117"};
+						case 8: {player say "ACE_rus_combat197"};
+					};
 				};
 			};
 		};
 	} forEach startZones;
 	if (!_inZone) then {
-		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
-		cutText['','BLACK IN',5];
+		forceMap false;
 	};
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
