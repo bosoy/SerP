@@ -7,12 +7,10 @@ if (isServer) then {
 		_briefingTime = _this select 0;
 		_startTime = time + _briefingTime;
 		warbegins = 0;
-		_nextTime = time + 30;
 		while {(time<_startTime)&&(warbegins!=1)} do {
 			SerP_server_message = format ["До конца брифинга осталось %1 секунд",round(_startTime-time)];
 			publicVariable "SerP_server_message";
-			waitUntil{sleep 1;time>_nextTime};
-			_nextTime = time + 30;
+			sleep 30;
 		};
 		warbegins = 1;publicVariable "warbegins";
 	};
@@ -71,7 +69,7 @@ if (isServer) then {
 			_zones set [count _zones,[_unitPos,_defZoneSize,1]]
 		};
 	} forEach playableUnits;
-	waitUntil {
+	while {true} do {
 		_exit = true;
 		{
 			_zonePos1 = _x select 0;
@@ -94,7 +92,7 @@ if (isServer) then {
 			} forEach _zones;
 			if (!_exit) exitWith {};
 		} forEach _zones;
-		_exit
+		if (_exit) exitWith {};
 	};
 	startZones = _zones;
 	[] spawn {
@@ -114,7 +112,7 @@ if (isServer) then {
 					_vUp = vectorUp _x;
 					_unitpos = getPosASL _x;
 					_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
-					_x attachTo [_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) + 1.5)]];
+					_x attachTo [_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]];
 					_x setVectorDirAndUp [_vDir,_vUp];
 					if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
 				};
@@ -187,8 +185,8 @@ if !(isDedicated) then {
 		false
 	'];
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
-	waitUntil{sleep .1;!isNil{warbegins}||(time > 120)};
-	if ((warbegins==1)||isNil{warbegins}) exitWith {
+	waitUntil{sleep .1;!isNil{warbegins}};
+	if (warbegins==1) exitWith {
 		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 		cutText['','BLACK IN',5];
@@ -231,24 +229,14 @@ if !(isDedicated) then {
 		];
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
-	_waitTime == time + 60;
-	waitUntil{sleep 1;!isNil{startZones}||(time>_waitTime)};
-	if isNil{startZones} then {
-		startZones = [[getPos(vehicle player),_size,1,objNull,objNull]];
-	};
-	_inZone = false;
+	waitUntil{sleep 1;!isNil{startZones}};
 	{
 		_pos = (_x select 0);
 		_size = (_x select 1);
 		_helper = (_x select 3);
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
-			_inZone = true;
 			_waitTime = if isServer then {10}else{90};
-			if !isNull(_helper) then {
-				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
-			}else{
-				waitUntil {sleep 1;(time>_waitTime)};
-			};
+			waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
 			sleep 5;
 			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 			cutText['','BLACK IN',5];
@@ -268,9 +256,5 @@ if !(isDedicated) then {
 			};
 		};
 	} forEach startZones;
-	if !_inZone then {
-		cutText['','BLACK IN',5];
-		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
-	};
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
