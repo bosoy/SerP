@@ -53,9 +53,16 @@ _preprocessData = {
 	_return = [];
 	{
 		_return set [count _return,format ["Group: %1",_x select 0]];
-		_return set [count _return,"Name:			Lifestate:"];
+		_return set [count _return,"Name:			Lifestate:	Weapons:"];
 		{
-			_return set [count _return, format ['%1		%2', _x select 0,lifeState(_x select 1)]];
+			_wpnStr = "";
+			{
+				_weapon = (configFile >> "cfgWeapons" >> _x);
+				if ((getNumber(_weapon >> "type") in [1,4,5])&&!isNil{(getArray(_weapon >> "magazines") select  0)}) then {
+					_wpnStr = _wpnStr + _x + " ";
+				};
+			} forEach weapons(_x select 1);
+			_return set [count _return, format ['%1		%2		%3', _x select 0,lifeState(_x select 1),_wpnStr]];
 		} forEach (_x select 1);
 	} forEach _this;
 	_return
