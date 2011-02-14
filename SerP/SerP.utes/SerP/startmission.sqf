@@ -1,4 +1,4 @@
-#include "const.sqf"
+﻿#include "const.sqf"
 private ["_blocker"];
 trashArray = [];
 planeList = [];
@@ -121,10 +121,36 @@ if (isServer) then {
 			_helper attachTo [_core,[0,0,-5]];
 			_helper setDir 90;
 			trashArray set [count trashArray, _helper];
-			_x set [2,_core];
+			_x set [2,_core]; // НАФА? не используется нигде же! Зачем грузить канал?!
 			_x set [3,_helper];
 		} forEach startZones;
 		publicVariable "startZones";
+		//Корд, давай уберём за кометны ради снижения нагрузки - передать целых паблик массива с объектами два объекта в пбалик это не хухры-мухры.
+		/* Ниже следующее отсвил для потомков.
+		_AttUnitList = [];
+		{ 
+			_center = getposASL _x;
+			{
+				if !(_x in _AttUnitList) then {
+					_dist = (_center distance (getPosASL _x));
+					if ((_dist < _defZoneSize + _hintzonesize)&&!(_x isKindOf "StaticWeapon")) then {
+						_AttUnitList set [count _AttUnitList, _x];
+						_unitpos = getPosASL _x;
+						_core = createVehicle ["FlagCarrierChecked", _unitpos, [], 0, "CAN_COLLIDE"];
+						_core setPos [_unitpos select 0,_unitpos select 1,-3];
+						_corepos = getPosASL _core;
+						trashArray set [count trashArray, _core];
+						_vDir = vectorDir _x;
+						_vUp = vectorUp _x;      
+						_diff = [0,0,((_unitpos select 2) - (_corepos select 2))];
+						_x attachTo [_core,[0,0,((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]];
+						_x setVectorDirAndUp [_vDir,_vUp];
+						if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
+					};
+				};
+			} foreach _unitList;
+		} foreach PlayableUnits;
+		*/
 		//control
 		waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
 
@@ -215,8 +241,8 @@ if !(isDedicated) then {
 	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 	_endTrigger setTriggerStatements[
 		"(((readyArray select 0) == 1))",format [
-		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Продолжить брифинг"";};",_sideBLUEFOR],format [
-		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Закончить брифинг"";};",_sideBLUEFOR]
+		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""РџСЂРѕРґРѕР»Р¶РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideBLUEFOR],format [
+		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Р—Р°РєРѕРЅС‡РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideBLUEFOR]
 		];
 	trashArray set [count trashArray, _endTrigger];
 
@@ -224,12 +250,16 @@ if !(isDedicated) then {
 	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 	_endTrigger setTriggerStatements[
 		"(((readyArray select 1) == 1))",format [
-		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Продолжить брифинг"";};",_sideREDFOR],format [
-		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Закончить брифинг"";};",_sideREDFOR]
+		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""РџСЂРѕРґРѕР»Р¶РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideREDFOR],format [
+		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Р—Р°РєРѕРЅС‡РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideREDFOR]
 		];
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
-	waitUntil{sleep 1;!isNil{startZones}};
+	_waitTime = time + 60;
+	waitUntil{sleep 1;!isNil{startZones}||(time>_waitTime)};// вернул проверку на получене стартзонес, ибо выткать в чёрный экран при потери пакетов особого желания нет.
+	if isNil{startZones} then { 
+		startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]]; //вот тут была ошибка не объявленый _size вместо _defZoneSize
+	};
 	{
 		_pos = (_x select 0);
 		_size = (_x select 1);
@@ -238,7 +268,11 @@ if !(isDedicated) then {
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_inZone = true;
 			_waitTime = if isServer then {10}else{90};
-			waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
+			if (isNull _helper) then {
+				waitUntil {sleep 1;(time>_waitTime)};
+			} else {
+				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
+			};
 			sleep 5;
 			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 			cutText['','BLACK IN',5];
@@ -246,13 +280,13 @@ if !(isDedicated) then {
 				sleep 2;
 				_dist = (vehicle player) distance _pos;
 				if (_dist>(_size+_hintzonesize)) exitWith {
-					hint "Мне очень жаль";
+					hint "РњРЅРµ РѕС‡РµРЅСЊ Р¶Р°Р»СЊ";
 					sleep 3;
 					player say "ACE_rus_combat120";
 					player setDamage 1;
 				};
 				if (_dist>_size) then {
-					hint "Вы покидаете зону брифинга";
+					hint "Р’С‹ РїРѕРєРёРґР°РµС‚Рµ Р·РѕРЅСѓ Р±СЂРёС„РёРЅРіР°";
 					player say "ACE_rus_combat30";
 				};
 			};
