@@ -195,6 +195,19 @@ if !(isDedicated) then {
 	sleep .1;
 	cutText[localize 'STR_missionname','BLACK IN',5];
 	forceMap true;
+	_blocker1 = (findDisplay 46) displayAddEventHandler ["KeyDown", '
+		_ctrl = _this select 0;
+		_dikCode = _this select 1;
+		_shift = _this select 2;
+		_ctrlKey = _this select 3;
+		_alt = _this select 4;
+		_handled = false;
+		if (_dikCode!=1) then {
+			_ctrl = nil;
+			_handled = true;
+		};
+		_handled
+	'];
 	_blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 		[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 		false
@@ -203,6 +216,7 @@ if !(isDedicated) then {
 	waitUntil{sleep .1;!isNil{warbegins}};
 	if (warbegins==1) exitWith {
 		forceMap false;
+		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 	};
 
@@ -263,6 +277,7 @@ if !(isDedicated) then {
 			};
 			sleep 5;
 			forceMap false;
+			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 			while {(warbegins!=1)} do {
 				sleep 2;
 				_dist = (vehicle player) distance _pos;
@@ -292,6 +307,7 @@ if !(isDedicated) then {
 		};
 	} forEach startZones;
 	if (!_inZone) then {
+		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 		forceMap false;
 	};
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
