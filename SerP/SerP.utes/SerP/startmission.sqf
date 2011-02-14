@@ -1,4 +1,4 @@
-#include "const.sqf"
+﻿#include "const.sqf"
 private ["_blocker"];
 trashArray = [];
 planeList = [];
