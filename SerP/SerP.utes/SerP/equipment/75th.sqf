@@ -39,11 +39,10 @@
 		case "TL" : { // FT Leader
 			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",1);
-			addMagazines("1Rnd_HE_M203",4);
 			addMagazines("ACE_1Rnd_HE_M203",4);
 			addMagazines("SmokeShell", 2);
 			addMagazines("HandGrenade_West",2);
-			addWeapons ["ACE_M16A4_CCO_GL", "Binocular", "NVGoggles"];
+			addWeapons ["M16A4_ACG_GL", "Binocular", "NVGoggles"];
 			addWeapons ["ACE_Map", "ACE_GlassesLHD_glasses"];
 		};
 		case "AR" : { // Automatic Rifleman
