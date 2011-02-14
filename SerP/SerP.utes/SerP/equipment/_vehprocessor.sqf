@@ -1,6 +1,7 @@
 _veh = _this select 0;
 _faction = _this select 1;
 _loadout = _this select 2;
+_cargoboxs = _this select 3;
 _common_processor = {
 	clearWeaponCargo _this;
 	clearMagazineCargo _this;
@@ -26,12 +27,15 @@ _addTyre = {
 		};
 	};
 };
+//  [["ACE_OrdnanceBox_BIS_US", [], [["ACE_M224HE_CSWDM",10]]],["ACE_OrdnanceBox_BIS_US"]]
 _addCargoBox = {
 // (c) Zu-23-2
 	_veh = _this select 0;
-	_boxtype = _this select 1;
-	_weapons = _this select 2;
-	_magasines = _this select 3;
+	_veh disableTIEquipment true;
+	_box = _this select 1;	
+	_boxtype = _box select 0;
+	_weapons = _box select 1;
+	_magasines = _box select 2;
 	if (isServer) then {
 		_tbox = _boxtype createVehicle [0,0,0];
 		_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
@@ -56,8 +60,9 @@ switch _faction do {
 	case "RA_MSV"		: {[_veh, _loadout] call _RA_MSV_processor};
 	case "TA_MSV"		: {[_veh, _loadout] call _TA_MSV_processor};
 	case "US_ARMY"		: {[_veh, _loadout] call _US_ARMY_processor};
-	case "USMC"			: {[_veh, _loadout] call _USMC_processor};
+	case "USMC"		: {[_veh, _loadout] call _USMC_processor};
 	case "USAF"		: {[_veh, _loadout] call _USAF_processor};
 	case "RFVVS"		: {[_veh, _loadout] call _RFVVS_processor};
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
+if (!isnil {_cargoboxs}) then { {[_veh, _x] call _addCargoBox;} forEach _cargoboxs};
