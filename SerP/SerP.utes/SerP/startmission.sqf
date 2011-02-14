@@ -1,20 +1,16 @@
-﻿#include "const.sqf"
+#include "const.sqf"
 private ["_blocker"];
 trashArray = [];
 planeList = [];
 if (isServer) then {
 	_bCounter = {
-		_briefingTime = _this select 0;
-		_startTime = time + _briefingTime;
+		_briefingTime = round((_this select 0)/30);
 		warbegins = 0;
-		_i = 0;
-		waitUntil{sleep 10; (time >= _briefingTime)||(warbegins==1)};
-		/* Нафиг эта публикация? Давай пока без неё.
-		while {(time<_startTime)&&(warbegins!=1)} do {
-			SerP_server_message = format ["До конца брифинга осталось %1 секунд",round(_startTime-time)];
-			publicVariable "SerP_server_message";
+		for "_i" from 1 to _briefingTime do {
 			sleep 30;
-		};*/
+			SerP_server_message = format ["%1 seconds remaining",round((_briefingTime-_i)*30)];
+			publicVariable "SerP_server_message";hint SerP_server_message;
+		};
 		warbegins = 1;publicVariable "warbegins";
 	};
 	switch (briefing_mode) do	{
@@ -26,7 +22,7 @@ if (isServer) then {
 					ace_sys_map_enabled = true; 
 					publicVariable "ace_sys_map_enabled";
 					sleep 600;
-					{//через 10 минут удаляем ботов
+					{//delete AI
 						if ((_x isKindOf "Man")and(not(isPlayer _x))) then {_x setPos [0,0,0]; _x setDamage 1} else {	
 							if ((_x isKindOf "LandVehicle")or(_x isKindOf "Air")or(_x isKindOf "Ship")) then
 							{
@@ -72,7 +68,7 @@ if (isServer) then {
 			_zones set [count _zones,[_unitPos,_defZoneSize,1]]
 		};
 	} forEach playableUnits;
-	while {true} do {
+	waitUntil{
 		_exit = true;
 		{
 			_zonePos1 = _x select 0;
@@ -95,9 +91,9 @@ if (isServer) then {
 			} forEach _zones;
 			if (!_exit) exitWith {};
 		} forEach _zones;
-		if (_exit) exitWith {};
+		_exit
 	};
-	//startZones = _zones;
+	startZones = _zones;
 	[] spawn {
 		#include "const.sqf"
 		sleep .01;
@@ -124,36 +120,10 @@ if (isServer) then {
 			_helper attachTo [_core,[0,0,-5]];
 			_helper setDir 90;
 			trashArray set [count trashArray, _helper];
-			_x set [2,_core]; // НАФ�?ГА? не используется нигде же! Зачем грузить канал?!
+			_x set [2,_core];
 			_x set [3,_helper];
 		} forEach startZones;
 		publicVariable "startZones";
-		//Корд, давай уберём за кометны ради снижения нагрузки - передать целых паблик массива с объектами два объекта в пбалик это не хухры-мухры.
-		/* Ниже следующее отсвил для потомков.
-		_AttUnitList = [];
-		{ 
-			_center = getposASL _x;
-			{
-				if !(_x in _AttUnitList) then {
-					_dist = (_center distance (getPosASL _x));
-					if ((_dist < _defZoneSize + _hintzonesize)&&!(_x isKindOf "StaticWeapon")) then {
-						_AttUnitList set [count _AttUnitList, _x];
-						_unitpos = getPosASL _x;
-						_core = createVehicle ["FlagCarrierChecked", _unitpos, [], 0, "CAN_COLLIDE"];
-						_core setPos [_unitpos select 0,_unitpos select 1,-3];
-						_corepos = getPosASL _core;
-						trashArray set [count trashArray, _core];
-						_vDir = vectorDir _x;
-						_vUp = vectorUp _x;      
-						_diff = [0,0,((_unitpos select 2) - (_corepos select 2))];
-						_x attachTo [_core,[0,0,((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]];
-						_x setVectorDirAndUp [_vDir,_vUp];
-						if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
-					};
-				};
-			} foreach _unitList;
-		} foreach PlayableUnits;
-		*/
 		//control
 		waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
 
@@ -258,22 +228,16 @@ if !(isDedicated) then {
 		];
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
-	_waitTime == time + 60;
-	waitUntil{sleep 1;!isNil{startZones}||(time>_waitTime)};// вернул проверку на получене стартзонес, ибо выткать в чёрный экран при потери пакетов особого желания нет.
-	if isNil{startZones} then { 
-		startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]]; //вот тут была ошибка не объявленый _size вместо _defZoneSize
-	};
+	waitUntil{sleep 1;!isNil{startZones}};
 	{
 		_pos = (_x select 0);
 		_size = (_x select 1);
 		_helper = (_x select 3);
+		_inZone = false;
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
+			_inZone = true;
 			_waitTime = if isServer then {10}else{90};
-			if (isNull _helper) then {
-				waitUntil {sleep 1;(time>_waitTime)};
-			} else {
-				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
-			};
+			waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
 			sleep 5;
 			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 			cutText['','BLACK IN',5];
@@ -293,5 +257,9 @@ if !(isDedicated) then {
 			};
 		};
 	} forEach startZones;
+	if (!_inZone) then {
+		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
+		cutText['','BLACK IN',5];
+	};
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
