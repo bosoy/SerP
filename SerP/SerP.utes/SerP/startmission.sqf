@@ -4,12 +4,13 @@ trashArray = [];
 planeList = [];
 if (isServer) then {
 	_bCounter = {
-		_briefingTime = round((_this select 0)/30);
+		_briefingTime = (_this select 0);
 		warbegins = 0;
-		for "_i" from 1 to _briefingTime do {
-			sleep 30;
-			SerP_server_message = format ["%1 seconds remaining",round((_briefingTime-_i)*30)];
+		waitUntil{
+			sleep 60; 
+			SerP_server_message = format ["%1 minutes remaining",round((_briefingTime-time)/60)];
 			publicVariable "SerP_server_message";hint SerP_server_message;
+			(time >= _briefingTime)||(warbegins==1)
 		};
 		warbegins = 1;publicVariable "warbegins";
 	};
