@@ -241,8 +241,8 @@ if !(isDedicated) then {
 	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 	_endTrigger setTriggerStatements[
 		"(((readyArray select 0) == 1))",format [
-		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""РџСЂРѕРґРѕР»Р¶РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideBLUEFOR],format [
-		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Р—Р°РєРѕРЅС‡РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideBLUEFOR]
+		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Продолжить брифинг"";};",_sideBLUEFOR],format [
+		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Закончить брифинг"";};",_sideBLUEFOR]
 		];
 	trashArray set [count trashArray, _endTrigger];
 
@@ -250,8 +250,8 @@ if !(isDedicated) then {
 	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 	_endTrigger setTriggerStatements[
 		"(((readyArray select 1) == 1))",format [
-		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""РџСЂРѕРґРѕР»Р¶РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideREDFOR],format [
-		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Р—Р°РєРѕРЅС‡РёС‚СЊ Р±СЂРёС„РёРЅРі"";};",_sideREDFOR]
+		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Продолжить брифинг"";};",_sideREDFOR],format [
+		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Закончить брифинг"";};",_sideREDFOR]
 		];
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
@@ -280,13 +280,13 @@ if !(isDedicated) then {
 				sleep 2;
 				_dist = (vehicle player) distance _pos;
 				if (_dist>(_size+_hintzonesize)) exitWith {
-					hint "РњРЅРµ РѕС‡РµРЅСЊ Р¶Р°Р»СЊ";
+					hint "Мне очень жаль";
 					sleep 3;
 					player say "ACE_rus_combat120";
 					player setDamage 1;
 				};
 				if (_dist>_size) then {
-					hint "Р’С‹ РїРѕРєРёРґР°РµС‚Рµ Р·РѕРЅСѓ Р±СЂРёС„РёРЅРіР°";
+					hint "Вы покидаете зону брифинга";
 					player say "ACE_rus_combat30";
 				};
 			};
