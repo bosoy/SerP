@@ -31,11 +31,10 @@ _addTyre = {
 _addCargoBox = {
 // (c) Zu-23-2
 	_veh = _this select 0;
-	_veh disableTIEquipment true;
-	_box = _this select 1;	
-	_boxtype = _box select 0;
-	_weapons = _box select 1;
-	_magasines = _box select 2;
+	_veh disableTIEquipment true;	
+	_boxtype = _this select 1;
+	_magasines = _this select 2;
+	_weapons = _this select 3;
 	if (isServer) then {
 		_tbox = _boxtype createVehicle [0,0,0];
 		_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
@@ -65,4 +64,5 @@ switch _faction do {
 	case "RFVVS"		: {[_veh, _loadout] call _RFVVS_processor};
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
-if (!isnil {_cargoboxs}) then { {[_veh, _x] call _addCargoBox;} forEach _cargoboxs};
+#include "ammo_tbox.sqf"
+if (!isnil {_cargoboxs}) then { {[_veh, _x] call _CargoCrate_processor;} forEach _cargoboxs};
