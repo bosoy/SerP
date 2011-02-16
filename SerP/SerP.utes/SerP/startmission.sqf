@@ -7,9 +7,9 @@ if (isServer) then {
 		_briefingTime = (_this select 0);
 		warbegins = 0;
 		waitUntil{
-			sleep 60; 
 			SerP_server_message = format ["%1 minutes remaining",round((_briefingTime-time)/60)];
 			publicVariable "SerP_server_message";hint SerP_server_message;
+			sleep 60;
 			(time >= _briefingTime)||(warbegins==1)
 		};
 		warbegins = 1;publicVariable "warbegins";
