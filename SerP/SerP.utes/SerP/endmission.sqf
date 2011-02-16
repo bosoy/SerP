@@ -5,7 +5,6 @@ end3 = false;
 end4 = false;
 end5 = false;
 end6 = false;
-_endF = false;
 endAdmin = false;
 endCustom = false;
 REDFOR_win = false;
@@ -87,35 +86,29 @@ _all_units = [];
 _initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
 _initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
 
-while {!_endF} do {
+while {true} do {
 	sleep 10;
 	_RFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
 	_BFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
 	//REDFOR retreat
-	if ((_RFCount<_initRFCount*_RFRetreat)&&(_RFCount*_domiMult<_BFCount)) then {
-		_endF = true;
+	if ((_RFCount<_initRFCount*_RFRetreat)&&(_RFCount*_domiMult<_BFCount)) exitWith {
 		[format [localize "STR_dead_call", _titleREDFOR],_all_units call _preprocessData] call _processorEND;
 	};
 	//BLUEFOR retreat
-	if ((_BFCount<_initBFCount*_BFRetreat)&&(_BFCount*_domiMult<_RFCount)) then {
-		_endF = true;
+	if ((_BFCount<_initBFCount*_BFRetreat)&&(_BFCount*_domiMult<_RFCount)) exitWith {
 		[format [localize "STR_dead_call", _titleBLUEFOR],_all_units call _preprocessData] call _processorEND;
 	};
 
-	if (endAdmin) then {
-		_endF = true;
+	if (endAdmin) exitWith {
 		[localize "STR_mission_end_admin",_all_units call _preprocessData] call _processorEND;
 	};
-	if (REDFOR_win) then {
-		_endF = true;
+	if (REDFOR_win) exitWith {
 		[format [localize "STR_win_call", _titleREDFOR],_all_units call _preprocessData] call _processorEND;
 	};
-	if (BLUEFOR_win) then {
-		_endF = true;
+	if (BLUEFOR_win) exitWith {
 		[format [localize "STR_win_call", _titleBLUEFOR],_all_units call _preprocessData] call _processorEND;
 	};
-	if (endCustom) then {
-		_endF = true;
+	if (endCustom) exitWith {
 		[titleCustomWin,_all_units call _preprocessData] call _processorEND;
 	};
 };
