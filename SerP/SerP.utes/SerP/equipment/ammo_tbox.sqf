@@ -9,7 +9,7 @@ _cargoCrate_processor = {
 			[_veh, "ACE_Tbox_US", [["200Rnd_556x45_M249",5],["100Rnd_556x45_M249",5]]] call _addCargoBox;
 		};
 		case "gren_west" : {//
-			[_veh, "ACE_Tbox_US", [["HandGrenade_West",25]]] call _addCargoBox;
+			[_veh, "ACE_Tbox_US", [["HandGrenade_West",15], ["SmokeShell",10]]] call _addCargoBox;
 		};		
 		case "60mmHE" : {//
 			[_veh, "ACE_Tbox_US", [["ACE_M224HE_CSWDM",10]]] call _addCargoBox;
