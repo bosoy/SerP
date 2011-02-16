@@ -1,4 +1,4 @@
-_veh = _this select 0;
+﻿_veh = _this select 0;
 _faction = _this select 1;
 _loadout = _this select 2;
 _cargoBoxes = _this select 3;
