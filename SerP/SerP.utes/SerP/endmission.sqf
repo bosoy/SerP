@@ -7,10 +7,10 @@ end5 = false;
 end6 = false;
 _endF = false;
 endAdmin = false;
-custom_end = false;
+endCustom = false;
 REDFOR_win = false;
 BLUEFOR_win = false;
-titleCUSTOMwin = '';
+titleCustomWin = '';
 
 waitUntil {sleep 1;!isNil{warbegins}};
 waitUntil {sleep 1;warbegins==1};
@@ -114,8 +114,8 @@ while {!_endF} do {
 		_endF = true;
 		[format [localize "STR_win_call", _titleBLUEFOR],_all_units call _preprocessData] call _processorEND;
 	};
-	if (custom_end) then {
+	if (endCustom) then {
 		_endF = true;
-		[titleCUSTOMwin,_all_units call _preprocessData] call _processorEND;
+		[titleCustomWin,_all_units call _preprocessData] call _processorEND;
 	};
 };
