@@ -161,6 +161,14 @@ _US_DF_processor = {
 			addWeapons ["M24_des_EP1", "ACE_USPSD", "NVGoggles", "Binocular"];
 			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
 		};
+		case "SNNV": { // Sniper
+			addMagazines("20Rnd_762x51_B_SCAR",8);
+			addMagazines("ACE_12Rnd_45ACP_USPSD",4);
+			addMagazines("SmokeShell",2);
+			addMagazines("HandGrenade_West",3);
+			addWeapons ["M110_NVG_EP1", "ACE_USPSD", "NVGoggles", "Binocular"];
+			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
+		};
 		case "HSN" : {// Sniper SF
 			addMagazines("10Rnd_127x99_m107",5);
 			addMagazines("ACE_10Rnd_127x99_T_m107",1);
