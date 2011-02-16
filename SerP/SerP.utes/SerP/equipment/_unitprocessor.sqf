@@ -2,7 +2,7 @@
 #define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 _unit = _this select 0;
 _faction = _this select 1;
-_loadout = _this select 2;
+_loadout = toUpper(_this select 2);
 _common_processor = {
 	_unit setBehaviour "CARELESS"; 
 	_unit allowFleeing 0; 
@@ -53,3 +53,18 @@ switch _faction do {
 	case "TA_ARMY"		: {[_unit, _loadout] call _TA_ARMY_processor};  
 	default {diag_log format ["Undefined unit faction : %1",_faction]};
 };
+//посадка юнита в технику, синхронизированную с юнитом, не работает на выделенном сервере
+/*
+_synchronizedObjects = synchronizedObjects _unit;
+if ((count(_synchronizedObjects)>0)&&(local _unit)) then {
+if ((_synchronizedObjects select 0) isKindOf "LandVehicle") then {
+	_veh = _synchronizedObjects select 0;
+	switch true do {
+	case ((_loadout=="CRW")&&isNull(driver _veh)): {_unit moveInDriver _veh};
+	case ((_loadout=="CRW")&&isNull(gunner _veh)): {_unit moveInGunner _veh};
+	case (isNull(driver _veh)): {_unit moveInDriver _veh};
+	case (isNull(gunner _veh)): {_unit moveInGunner _veh};
+	default {_unit moveInCargo _veh};
+	};
+	_unit synchronizeObjectsRemove [_veh];
+};};*/

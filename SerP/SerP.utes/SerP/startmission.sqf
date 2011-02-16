@@ -121,11 +121,10 @@ if (isServer) then {
 			_helper attachTo [_core,[0,0,-5]];
 			_helper setDir 90;
 			trashArray set [count trashArray, _helper];
-			_x set [2,_core]; // НАФА? не используется нигде же! Зачем грузить канал?!
+			_x set [2,_core];
 			_x set [3,_helper];
 		} forEach startZones;
 		publicVariable "startZones";
-		//Корд, давай уберём за кометны ради снижения нагрузки - передать целых паблик массива с объектами два объекта в пбалик это не хухры-мухры.
 		/* Ниже следующее отсвил для потомков.
 		_AttUnitList = [];
 		{ 
@@ -179,7 +178,7 @@ if (isServer) then {
 			} forEach ((allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship"));
 			ace_sys_map_enabled = true;
 			[] execVM "\x\ace\addons\sys_map\mapview.sqf";
-			player say "ACE_rus_combat119";
+			player say "r61";
 			this spawn {
 				sleep 4;
 				{deleteVehicle _x} forEach trashArray;
@@ -193,21 +192,7 @@ if !(isDedicated) then {
 	waitUntil{player==player};
 	if !alive(player) exitWith {};
 	sleep .1;
-	cutText[localize 'STR_missionname','BLACK IN',5];
-	forceMap true;
-	_blocker1 = (findDisplay 46) displayAddEventHandler ["KeyDown", '
-		_ctrl = _this select 0;
-		_dikCode = _this select 1;
-		_shift = _this select 2;
-		_ctrlKey = _this select 3;
-		_alt = _this select 4;
-		_handled = false;
-		if (_dikCode!=1) then {
-			_ctrl = nil;
-			_handled = true;
-		};
-		_handled
-	'];
+	startLoadingScreen [localize 'STR_missionname', "RscDisplayLoadCustom"];
 	_blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 		[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 		false
@@ -258,9 +243,9 @@ if !(isDedicated) then {
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
 	_waitTime = time + 60;
-	waitUntil{sleep 1;!isNil{startZones}||(time>_waitTime)};// вернул проверку на получене стартзонес, ибо выткать в чёрный экран при потери пакетов особого желания нет.
+	waitUntil{sleep 1;progressLoadingScreen (0.3*(_waitTime - time)/_waitTime);!isNil{startZones}||(time>_waitTime)};
 	if isNil{startZones} then { 
-		startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]]; //вот тут была ошибка не объявленый _size вместо _defZoneSize
+		startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]];
 	};
 	{
 		_pos = (_x select 0);
@@ -269,29 +254,30 @@ if !(isDedicated) then {
 		_inZone = false;
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_inZone = true;
-			_waitTime = if isServer then {10}else{90};
+			_waitTime = if isServer then {time + 10}else{time + 90};
+			_startTime = time;
 			if (isNull _helper) then {
-				waitUntil {sleep 1;(time>_waitTime)};
+				waitUntil {sleep 1;progressLoadingScreen (0.7*(_waitTime - time)/_waitTime+0.3);(time>_waitTime)};
 			} else {
-				waitUntil {sleep 1;(time>_waitTime)||(getDir _helper != 0)};
+				waitUntil {sleep 1;progressLoadingScreen (0.7*(_waitTime - time)/_waitTime+0.3);(time>_waitTime)||(getDir _helper != 0)};
 			};
 			sleep 5;
-			forceMap false;
-			(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
+			endLoadingScreen;
 			while {(warbegins!=1)} do {
-				sleep 2;
+				sleep 1;
 				_dist = (vehicle player) distance _pos;
 				if (_dist>(_size+_hintzonesize)) exitWith {
 					hint "Мне очень жаль";
 					player say "r44";
+					player say "svd_single_shot_v2";
 					player say "All_haha";
 					//player say "ACE_rus_combat143";
-					sleep 3;
+					sleep 4;
 					player setDamage 1;
 				};
 				if (_dist>_size) then {
 					hint "Вы покидаете зону брифинга";
-					switch round(random 8) do {
+					switch round(random 11) do {
 						case 0: {player say "r11"};
 						case 1: {player say "r15"};
 						case 2: {player say "r26"};
@@ -301,14 +287,17 @@ if !(isDedicated) then {
 						case 6: {player say "r21_4"};
 						case 7: {player say "ACE_rus_combat117"};
 						case 8: {player say "ACE_rus_combat197"};
+						case 9: {player say "Zora_AK74";player say "UnderFire1"};
+						case 10: {player say "Zora_M16";player say "UnderFire2"};
+						case 11: {player say "svd_single_shot_v2";player say "UnderFire3"};
 					};
+					sleep 3;
 				};
 			};
 		};
 	} forEach startZones;
 	if (!_inZone) then {
-		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
-		forceMap false;
+		endLoadingScreen;
 	};
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
