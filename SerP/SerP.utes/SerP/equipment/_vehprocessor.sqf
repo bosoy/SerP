@@ -1,7 +1,7 @@
 _veh = _this select 0;
 _faction = _this select 1;
 _loadout = _this select 2;
-_cargoboxs = _this select 3;
+_cargoBoxes = _this select 3;
 _common_processor = {
 	clearWeaponCargo _this;
 	clearMagazineCargo _this;
@@ -65,4 +65,4 @@ switch _faction do {
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
 #include "ammo_tbox.sqf"
-if (!isnil {_cargoboxs}) then { {[_veh, _x] call _CargoCrate_processor;} forEach _cargoboxs};
+if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes};
