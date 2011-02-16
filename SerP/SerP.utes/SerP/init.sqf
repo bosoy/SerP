@@ -28,7 +28,7 @@ ace_sys_spectator_fnc_spectate_events = {
 */
 //эти глобальные переменные будут переданы подключающимся клиентам
 if (isServer) then {
-	publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones","Server_initalized"];
+	publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones"];
 	onPlayerConnected "{publicVariable _x} forEach publicVars";
 };
 enableEngineArtillery false;
