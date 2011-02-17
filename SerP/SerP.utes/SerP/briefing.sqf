@@ -41,7 +41,6 @@ getArray(missionConfigFile >> "Params" >> "weather" >> "texts") select weather
 //задачи, вооружение и брифинги сторон
 switch true do {
 	case (_unitside == _sideREDFOR): {
-		
 		_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_rf"]];
 		_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_rf"]];
 		_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_rf"]];

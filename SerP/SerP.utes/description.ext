@@ -13,3 +13,6 @@ class Params {
 //здесь можно описать дополнительные параметры игры
 };
 #include "mission.sqm"
+class SerP_const {
+	#include "const.hpp"
+};

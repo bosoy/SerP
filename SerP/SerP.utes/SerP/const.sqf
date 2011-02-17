@@ -1,21 +1,17 @@
+#define __quoted(str) #str
+#define __concat2(var1,var2) ##var1####var2
+#define getParamNumber(a) __concat2(_,a) = getNumber(missionConfigFile >> "SerP_const" >> __quoted(a))
+#define getParamText(a) __concat2(_,a) = getText(missionConfigFile >> "SerP_const" >> __quoted(a))
+#define getParamTextCompile(a) __concat2(_,a) = call compile getText(missionConfigFile >> "SerP_const" >> __quoted(a))
 
-//радиус зоны за которую нельзя выходить во время брифинга ингейм
-_defZoneSize = 50;
-//толщина зоны в которой будет выскакивать хинт о покидании зоны брифинга
-_hintzonesize = 30;
-
-//Воюющие стороны: west, east, guer, civ
-_sideREDFOR = east;
-_sideBLUEFOR = west;
-//Текст который будет использован в сообщении о победе/проигрыше
-//Допустимые значения: STR_ru_call, STR_usmc_call, STR_usarmy_call, STR_napa_call, STR_ta_call, STR_pot_call
-//Можно дописать свое в stringtable.xml
-_titleREDFOR = localize "STR_ru_call";
-_titleBLUEFOR = localize "STR_usarmy_call";
-
-//если у одной из сторон окажется численное преимущество в _domiMult и противоположная сторона достигнет коэффициента допутимых потерь миссия завершится
-_domiMult = 3;
-//коэффициент допустимых потерь синих. Если выживут меньше n*(начальные силы) синие отступят
-_RFRetreat = 0.2;
-//коэффициент допустимых потерь красных. Если выживут меньше n*(начальные силы) красные отступят
-_BFRetreat = 0.2;
+getParamNumber(defZoneSize);
+getParamNumber(hintzonesize);
+getParamNumber(zoneMultREDFOR);
+getParamNumber(zoneMultBLUEFOR);
+getParamTextCompile(sideREDFOR);
+getParamTextCompile(sideBLUEFOR);
+getParamText(titleREDFOR);
+getParamText(titleBLUEFOR);
+getParamNumber(domiMult);
+getParamNumber(RFRetreat);
+getParamNumber(BFRetreat);
