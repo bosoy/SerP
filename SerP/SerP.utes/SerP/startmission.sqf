@@ -104,8 +104,8 @@ if (isServer) then {[] spawn {
 		_exit
 	};
 	_unitList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
-	sleep .01;
-	{
+	_actionList = [];
+	{//готовим список юнитов и данные для аттача что-бы он сработал быстрее при старте миссии
 		_corepos = (_x select 0);
 		_size = (_x select 1);
 		_core = createVehicle ["FlagCarrierChecked", _corepos, [], 0, "CAN_COLLIDE"];
@@ -118,9 +118,7 @@ if (isServer) then {[] spawn {
 				_vUp = vectorUp _x;
 				_unitpos = getPosASL _x;
 				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
-				_x attachTo [_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]];
-				_x setVectorDirAndUp [_vDir,_vUp];
-				if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
+				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[_vDir,_vUp]]];
 			};
 		}forEach _unitList;
 		_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];
@@ -130,33 +128,20 @@ if (isServer) then {[] spawn {
 		_x set [2,_core];
 		_x set [3,_helper];
 	} forEach _zones;
+	sleep .01;
+	{
+		(_x select 0) attachTo (_x select 1);
+		(_x select 0) setVectorDirAndUp (_x select 2);
+	} forEach _actionList;
+	{
+		_helper = createVehicle ["Sign_arrow_down_EP1", [0,0,0], [], 0, "CAN_COLLIDE"];
+		_helper attachTo [_x select 2,[0,0,-5]];
+		_helper setDir 90;
+		trashArray set [count trashArray, _helper];
+		_x set [3,_helper];
+	} forEach _zones;
 	startZones = _zones;
 	publicVariable "startZones";
-	/* Нижеследующее отсвил для потомков.
-	_AttUnitList = [];
-	{ 
-		_center = getposASL _x;
-		{
-			if !(_x in _AttUnitList) then {
-				_dist = (_center distance (getPosASL _x));
-				if ((_dist < _defZoneSize + _hintzonesize)&&!(_x isKindOf "StaticWeapon")) then {
-					_AttUnitList set [count _AttUnitList, _x];
-					_unitpos = getPosASL _x;
-					_core = createVehicle ["FlagCarrierChecked", _unitpos, [], 0, "CAN_COLLIDE"];
-					_core setPos [_unitpos select 0,_unitpos select 1,-3];
-					_corepos = getPosASL _core;
-					trashArray set [count trashArray, _core];
-					_vDir = vectorDir _x;
-					_vUp = vectorUp _x;      
-					_diff = [0,0,((_unitpos select 2) - (_corepos select 2))];
-					_x attachTo [_core,[0,0,((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]];
-					_x setVectorDirAndUp [_vDir,_vUp];
-					if ((_x isKindOf "Plane")and((_unitpos select 2) > 20)) then {planeList set [count planeList, _x];};
-				};
-			};
-		} foreach _unitList;
-	} foreach PlayableUnits;
-	*/
 	//control
 	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
 
@@ -199,6 +184,8 @@ if !(isDedicated) then {
 	waitUntil{player==player};
 	if !alive(player) exitWith {};
 	sleep .01;
+	_veh = (vehicle player);
+	(_veh) enableSimulation false;
 	startLoadingScreen [localize 'STR_missionname', "RscDisplayLoadCustom"];
 	_blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 		[0,-1] call ace_sys_weaponselect_fnc_keypressed;
@@ -250,7 +237,9 @@ if !(isDedicated) then {
 	trashArray set [count trashArray, _endTrigger];
 	9 setRadioMsg "Закончить брифинг";
 	_waitTime = time + 60;
-	waitUntil{sleep 1;progressLoadingScreen (0.3-0.3*(_waitTime - time)/60);!isNil{startZones}||(time>_waitTime)};
+	waitUntil{sleep 1;progressLoadingScreen (0.3-0.3*(_waitTime - time)/60);
+	!isNil{startZones}||(time>_waitTime)
+	};
 	if isNil{startZones} then { 
 		startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]];
 	};
@@ -262,12 +251,9 @@ if !(isDedicated) then {
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_inZone = true;
 			_waitTime = time + 60;
-			if (isNull _helper) then {
-				waitUntil {sleep 1;progressLoadingScreen (1-0.7*(_waitTime - time)/60);(time>_waitTime)};
-			} else {
-				waitUntil {sleep 1;progressLoadingScreen (1-0.7*(_waitTime - time)/60);(time>_waitTime)||(getDir _helper != 0)};
-			};
+			waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/60);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
 			endLoadingScreen;
+			_veh enableSimulation true;
 			while {(warbegins!=1)} do {
 				sleep 1;
 				_dist = (vehicle player) distance _pos;
@@ -302,6 +288,7 @@ if !(isDedicated) then {
 		};
 	} forEach startZones;
 	if (!_inZone) then {
+		_veh enableSimulation true;
 		endLoadingScreen;
 	};
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
