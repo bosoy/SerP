@@ -198,7 +198,7 @@ if !(isDedicated) then {
 	#include "const.sqf"
 	waitUntil{player==player};
 	if !alive(player) exitWith {};
-	//sleep .01;
+	sleep .01;
 	startLoadingScreen [localize 'STR_missionname', "RscDisplayLoadCustom"];
 	_blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 		[0,-1] call ace_sys_weaponselect_fnc_keypressed;
