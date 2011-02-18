@@ -67,13 +67,13 @@ if (isServer) then {[] spawn {
 				_unitmod = 1/_unitsInZone;
 				_sizemod = (_unitsInZone-1)/_unitsInZone;
 				_pos = [(_unitPos select 0)*_unitmod+(_zonePos select 0)*_sizemod,(_unitPos select 1)*_unitmod+(_zonePos select 1)*_sizemod,0];
-				_zoneSize = (_dist + _size) max _zoneSize;
-				_zones set [_forEachIndex,[_pos,_zoneSize,_unitsInZone+1]];
+				_zoneSize = (_size+_dist) max _zoneSize;
+				_zones set [_forEachIndex,[_pos,_zoneSize,_unitsInZone+1,_zoneSide]];
 				_outOfZone = false;
 			};
 		} forEach _zones;
 		if (_outOfZone) then {
-			_zones set [count _zones,[_unitPos,_size,1]]
+			_zones set [count _zones,[_unitPos,_size,1,_side]]
 		};
 	} forEach playableUnits;
 	waitUntil{
@@ -251,6 +251,12 @@ if !(isDedicated) then {
 		if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 			_inZone = true;
 			_waitTime = time + 60;
+			createMarkerLocal ["SerP_startZoneMarker",_pos];
+			"SerP_startZoneMarker" setMarkerBrushLocal "SOLID";
+			"SerP_startZoneMarker" setMarkerShapeLocal "Ellipse";
+			"SerP_startZoneMarker" setMarkerSizeLocal [_size,_size];
+			"SerP_startZoneMarker" setMarkerColorLocal "ColorGreen";
+			"SerP_startZoneMarker" setMarkerAlphaLocal 1;
 			waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/60);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
 			endLoadingScreen;
 			_veh enableSimulation true;
@@ -291,5 +297,6 @@ if !(isDedicated) then {
 		_veh enableSimulation true;
 		endLoadingScreen;
 	};
+	deleteMarkerLocal "SerP_startZoneMarker";
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
