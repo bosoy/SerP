@@ -198,9 +198,9 @@ _US_ARMY_processor = {
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "PL": {//Pilot
-			addWeapons ["M4A1","M9","NVGoggles"]; 
+			addWeapons ["MP5A5","M9","NVGoggles"]; 
 			addWeapons ["ACE_GlassesSunglasses","ACE_Map"]; 
-			addMagazines("30Rnd_556x45_Stanag",4);
+			addMagazines("30Rnd_9x19_MP5",4);
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 
