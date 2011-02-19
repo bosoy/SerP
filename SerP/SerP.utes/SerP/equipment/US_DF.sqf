@@ -88,7 +88,7 @@ _US_DF_processor = {
 			addMagazines("15Rnd_9x19_M9SD",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",4);
-			addWeapons ["ACE_SOC_M4A1_GL_13", "M9SD", "NVGoggles"];
+			addWeapons ["ACE_SOC_M4A1_GL_13", "M136", "M9SD", "NVGoggles"];
 			addWeapons ["ACE_GlassesLHD_glasses", "ACE_GlassesGasMask_US"];
 		};
 		// Infiltrator
@@ -99,7 +99,7 @@ _US_DF_processor = {
 			addMagazines("HandGrenade_West",4);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",4);
-			addWeapons ["ACE_SOC_M4A1_SD_9", "M9SD", "NVGoggles"];
+			addWeapons ["ACE_SOC_M4A1_SD_9", "M136", "M9SD", "NVGoggles"];
 			addWeapons ["ACE_GlassesLHD_glasses", "ACE_GlassesGasMask_US"];
 		};
 		case "GL": {// Grenadier
