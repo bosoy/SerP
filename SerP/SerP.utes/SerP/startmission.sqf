@@ -75,6 +75,7 @@ if (isServer) then {[] spawn {
 		if (_outOfZone) then {
 			_zones set [count _zones,[_unitPos,_size,1,_side]]
 		};
+		_x setVariable ["SerP_isPlayer",(isPlayer _x)];
 	} forEach playableUnits;
 	waitUntil{
 		_exit = true;
@@ -147,7 +148,7 @@ if (isServer) then {[] spawn {
 
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";
-	{if (!(isPlayer _x)) then {
+	{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
 		_unit = _x;
 		_unit setPos [0,0,0];
 		deleteVehicle _unit;
