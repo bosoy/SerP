@@ -2,23 +2,29 @@
 	_veh = _this select 0;
 	_loadout = toUpper (_this select 1);
 	switch _loadout do {
-		case "5.56M_big" : {//
-			[_veh, "ACE_Tbox_US", [["30Rnd_556x45_Stanag",30], ["ACE_30Rnd_556x45_T_Stanag",6]]] call _addCargoBox;
+		case "556M_BIG" : {//
+			[_veh, "ACE_Tbox_US", [["30Rnd_556x45_Stanag",30], ["ACE_30Rnd_556x45_T_Stanag",6]],[]] call _addCargoBox;
 		};
-		case "5.56B" : {//
-			[_veh, "ACE_Tbox_US", [["200Rnd_556x45_M249",5],["100Rnd_556x45_M249",5]]] call _addCargoBox;
+		case "556B" : {//
+			[_veh, "ACE_Tbox_US", [["200Rnd_556x45_M249",5],["100Rnd_556x45_M249",5]],[]] call _addCargoBox;
 		};
-		case "gren_west" : {//
-			[_veh, "ACE_Tbox_US", [["HandGrenade_West",15], ["SmokeShell",10]]] call _addCargoBox;
+		case "GREN_WEST" : {//
+			[_veh, "ACE_Tbox_US", [["HandGrenade_West",15], ["SmokeShell",10]],[]] call _addCargoBox;
 		};		
-		case "60mmHE" : {//
-			[_veh, "ACE_Tbox_US", [["ACE_M224HE_CSWDM",10]]] call _addCargoBox;
+		case "60MMHE" : {//
+			[_veh, "ACE_Tbox_US", [["ACE_M224HE_CSWDM",10]],[]] call _addCargoBox;
 		};
-		case "60mmWP" : {//
-			[_veh, "ACE_Tbox_US", [["ACE_M224WP_CSWDM",10]]] call _addCargoBox;
+		case "60MMWP" : {//
+			[_veh, "ACE_Tbox_US", [["ACE_M224WP_CSWDM",10]],[]] call _addCargoBox;
 		};
-		case "5.45M_big" : {//
-			[_veh, "ACE_Tbox_RU", [["30Rnd_545x39_AK",20]]] call _addCargoBox;
+		case "762X51B" : {//
+			[_veh, "ACE_Tbox_US", [["100Rnd_762x51_M240",10]],[]] call _addCargoBox;
+		};
+		case "545M_BIG" : {//
+			[_veh, "ACE_Tbox_RU", [["30Rnd_545x39_AK",20]],[]] call _addCargoBox;
+		};
+		case "FLARE" : {//
+			[_veh, "ACE_Tbox_RU", [["ACE_SSGreen_FG",20],["ACE_SSRed_FG",20]], [["ACE_Flaregun",3]]] call _addCargoBox;
 		};
 	};
 };
