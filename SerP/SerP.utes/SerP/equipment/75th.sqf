@@ -76,7 +76,6 @@
 			addMagazines("1Rnd_HE_M203",4);
 			addMagazines("FlareRed_M203",2);
 			addMagazines("ACE_12Rnd_45ACP_USPSD",2);
-			addMagazines("6Rnd_HE_M203",3);
 			_unit setVariable ["ACE_weapononback","ACE_M32"];
 			_unit setVariable ["ACE_RuckMagContents",[["FlareRed_M203", 4], ["6Rnd_HE_M203", 1], ["1Rnd_Smoke_M203", 6]]];
 		};
