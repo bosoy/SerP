@@ -67,7 +67,6 @@
 			addMagazines("ACE_12Rnd_45ACP_USPSD",2);
 			addWeapons ["ACE_M16A4_CCO_GL", "NVGoggles", "ACE_FAST_PackEDC_ACU"];
 			addWeapons ["ACE_GlassesLHD_glasses"];
-			addMagazines("6Rnd_HE_M203",3);
 			_unit setVariable ["ACE_RuckMagContents",[["FlareRed_M203", 4], ["1Rnd_HE_M203", 6], ["1Rnd_Smoke_M203", 6]]];
 		};
 		case "GL2": { // Greanadier
@@ -119,7 +118,7 @@
 			addMagazines("ACE_M7A3", 2);
 			addMagazines("SmokeShellGreen", 2);
 			addMagazines("15Rnd_9x19_M9", 2);
-			addWeapons ["M9", "Mk_48_DES_EP1", "Binocular", "NVGoggles"];
+			addWeapons ["M9", "Mk_48_DES_EP1", "Binocular", "NVGoggles", "ACE_Earplugs"];
 			addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
 		};
 		case "AG" : { // Asst. Machinegunner
