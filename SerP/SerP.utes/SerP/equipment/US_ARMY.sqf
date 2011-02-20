@@ -98,8 +98,9 @@ _US_ARMY_processor = {
 			_unit setVariable ["ACE_RuckMagContents",[["Javelin",1],["30Rnd_556x45_Stanag",4]]];
 		};
 		case "DM" : {//Designated marksman
-			addWeapons ["M16A4_ACG","NVGoggles"];
-			addMagazines("30Rnd_556x45_Stanag",8);
+			addWeapons ["ACE_Mk12mod1","NVGoggles"];
+			addMagazines("30Rnd_556x45_Stanag",6);
+			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
 		};
