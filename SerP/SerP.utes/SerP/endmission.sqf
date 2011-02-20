@@ -1,4 +1,4 @@
-п»ї#include "const.sqf"
+#include "const.sqf"
 end1 = false;
 end2 = false;
 end3 = false;
@@ -14,7 +14,7 @@ titleCustomWin = '';
 waitUntil {sleep 1;!isNil{warbegins}};
 waitUntil {sleep 1;warbegins==1};
 
-//Р°РґРјРёРЅ РјРѕР¶РµС‚ Р·Р°РІРµСЂС€РёС‚СЊ РјРёСЃСЃРёСЋ РґРѕСЃСЂРѕС‡РЅРѕ РЅР°Р¶Р°РІ РєРѕРјР±РёРЅР°С†РёСЋ РєР»Р°РІРёС€ ctrl+alt+shift+end
+//админ может завершить миссию досрочно нажав комбинацию клавиш ctrl+alt+shift+end
 if ((serverCommandAvailable "#kick")||isServer) then {
 	(findDisplay 46) displayAddEventHandler ["KeyDown", '
 		_ctrl = _this select 0;
@@ -29,7 +29,7 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 	'];
 };
 
-//Р·Р°РІРµСЂС€РёС‚СЊ РјРёСЃСЃРёСЋ РјРѕР¶РµС‚ С‚РѕР»СЊРєРѕ СЃРµСЂРІРµСЂ
+//завершить миссию может только сервер
 if (!isServer) exitWith {};
 
 _processorEND = {
