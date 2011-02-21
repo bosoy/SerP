@@ -110,6 +110,12 @@ _TA_ARMY_processor = {
 			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
 			_unit addWeapon "ACE_RPG22";
 		};
+		case "RF" : {// Стрелок
+			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0,0,0,0,0];
+			_unit addWeapon "ACE_AKM";
+			{_unit addMagazine "ACE_RDGM"} forEach [0,0];
+			{_unit addMagazine "HandGrenade_East"} forEach [0,0];
+		};
 //разведотделение
 		case "R_SL_GP" : {//Командир отделения разведки
 			_unit addWeapon "ACE_Map";
@@ -355,6 +361,15 @@ _TA_ARMY_processor = {
 			_unit addWeapon "Makarov";
 			_unit addWeapon "NVGoggles";
 			_unit addWeapon "ACE_GlassesSunglasses";
+		};
+//специалисты
+		case "AA" : {//ПЗРК
+			_unit addWeapon "ACE_Map";
+			{_unit addMagazine "30Rnd_762x39_AK47"} forEach [0,0,0,0];
+			_unit addWeapon "ACE_AKMS";
+			_unit addWeapon "Strela";		
+			_unit addMagazine "Strela";		
+			_unit addWeapon "NVGoggles";
 		};
 	};
 };
