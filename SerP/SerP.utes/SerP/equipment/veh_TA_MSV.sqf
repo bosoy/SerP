@@ -55,25 +55,6 @@ _TA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_Bandage",9];
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
-			if (isServer) then {
-				_tbox = "ACE_Tbox_RU" createVehicle [0,0,0];
-				_tbox setVariable ["ace_sys_cargo_UnloadPos", [0,7,0], true];
-				_tbox addMagazineCargoGlobal ["ACE_PG7VM_PGO7", 6];
-				_tbox addMagazineCargoGlobal ["ACE_OG7_PGO7", 6];
-				_tbox addMagazineCargoGlobal["30Rnd_762x39_AK47",26];
-				_tbox addMagazineCargoGlobal ["HandGrenade_East", 15];
-				_tbox addMagazineCargoGlobal ["1Rnd_SMOKE_GP25",10];
-				_tbox addMagazineCargoGlobal ["1Rnd_SmokeRed_GP25",3];
-				_tbox addMagazineCargoGlobal ["1Rnd_SmokeGreen_GP25",3];
-				_tbox addMagazineCargoGlobal ["ACE_1Rnd_CS_GP25",10];
-				_tbox addMagazineCargoGlobal ["ACE_SSWhite_GP25",3];
-				_tbox addMagazineCargoGlobal ["ACE_SSRed_GP25",3];
-				_tbox addMagazineCargoGlobal ["ACE_SSGreen_GP25",3];
-				_tbox addMagazineCargoGlobal ["FlareWhite_GP25",3];
-				_tbox addMagazineCargoGlobal ["FlareRed_GP25",3];
-				_tbox addMagazineCargoGlobal ["FlareGreen_GP25",3];
-				_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
-			};
 		};
 		case "MSV_E" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
@@ -111,6 +92,7 @@ _TA_MSV_processor = {
 		};
 		case "MED" : {//
 			_veh addWeaponCargo ["ACE_RPG22",1];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 			_veh addMagazineCargo ["ACE_Bandage",20];
 			_veh addMagazineCargo ["ACE_Morphine",20];
 			_veh addMagazineCargo ["ACE_Epinephrine",20];
