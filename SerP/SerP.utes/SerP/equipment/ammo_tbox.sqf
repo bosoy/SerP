@@ -46,7 +46,6 @@
 			[_veh, "ACE_Tbox_RU", [["ACE_SSGreen_FG",20],["ACE_SSRed_FG",20]], [["ACE_Flaregun",3]]] call _addCargoBox;
 		};
 	};
-	};
 };
 /*
 			_veh addMagazineCargo ["HandGrenade",24];
