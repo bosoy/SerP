@@ -9,7 +9,7 @@
 		case "556B" : {//5.56x45 Belt
 			[_veh, "ACE_Tbox_US", [["200Rnd_556x45_M249",5],["100Rnd_556x45_M249",5]],[]] call _addCargoBox;
 		};
-		case "762X51B" : {// 
+		case "762X51B" : {// 7.62x51 Belt
 			[_veh, "ACE_Tbox_US", [["100Rnd_762x51_M240",10]],[]] call _addCargoBox;
 		};
 		case "GREN_WEST" : {// Grenade
