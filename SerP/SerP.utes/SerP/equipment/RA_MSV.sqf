@@ -93,6 +93,13 @@ _RA_MSV_processor = {
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
 		};
+		case "RF" : {// Стрелок
+			addWeapons ["ACE_AK74M","NVGoggles"];
+			addMagazines("30Rnd_545x39_AK",7);
+			addMagazines("ACE_30Rnd_545x39_T_AK",1);
+			addMagazines("ACE_RDGM",2);
+			addMagazines("HandGrenade_East",2);
+		};
 //разведотделение
 		case "R_SL_GP" : {//Командир отделения разведки
 			addWeapons ["ACE_AKS74P_GL","ACE_P159_RD90","Binocular","NVGoggles"];
@@ -149,6 +156,23 @@ _RA_MSV_processor = {
 			addWeapons ["VSS_vintorez","ACE_RPG27","NVGoggles"];
 			addWeapons ["ACE_Map"];
 			addMagazines("20Rnd_9x39_SP5_VSS",8);
+			addMagazines("ACE_RDGM",2);
+			addMagazines("HandGrenade_East",2);
+		};
+//Отделение АГС/миномета/ПТРК когда оружие погружено в технику
+		case "ACOM" : {// Командир расчета АГС/Миномета
+			addWeapons ["ACE_AK74M","NVGoggles"];
+			addWeapons ["ACE_Map","ACE_Map_Tools","ACE_Earplugs"];
+			addMagazines("30Rnd_545x39_AK",7);
+			addMagazines("ACE_30Rnd_545x39_T_AK",1);
+			addMagazines("ACE_RDGM",2);
+			addMagazines("HandGrenade_East",2);
+		};
+		case "AASS" : {// Номер расчета АГС/Миномета
+			addWeapons ["ACE_AK74M","NVGoggles"];
+			addWeapons ["ACE_Earplugs"];
+			addMagazines("30Rnd_545x39_AK",7);
+			addMagazines("ACE_30Rnd_545x39_T_AK",1);
 			addMagazines("ACE_RDGM",2);
 			addMagazines("HandGrenade_East",2);
 		};

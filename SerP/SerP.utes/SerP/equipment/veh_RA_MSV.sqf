@@ -27,6 +27,22 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_Epinephrine",2];
 			_veh addWeaponCargo ["ACE_RPG27",1];
 		};
+		case "UAZ_AGS" : {//
+			_veh addMagazineCargo ["HandGrenade_East",12];
+			_veh addMagazineCargo ["ACE_RDGM",10];
+			_veh addMagazineCargo ["30Rnd_545x39_AK",10];
+			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
+			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
+			_veh addMagazineCargo ["HandGrenade", 5];
+			_veh addMagazineCargo ["ACE_Bandage",5];
+			_veh addMagazineCargo ["ACE_Morphine",2];
+			_veh addMagazineCargo ["ACE_Epinephrine",2];
+			_veh addWeaponCargo ["ACE_AGS30Proxy",1];
+			_veh addWeaponCargo ["ACE_AGS30TripodProxy",1];
+			_veh addMagazineCargo ["ACE_AGS30_CSWDM",8];
+			_veh addWeaponCargo ["ACE_RPG27",1];
+		};
 		case "UAZ_SN" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
@@ -86,6 +102,37 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
 			_veh addWeaponCargo ["ACE_RPG27",1];
+		};
+		case "TRUCK_METIS" : {//
+			_veh addMagazineCargo ["HandGrenade_East",12];
+			_veh addMagazineCargo ["ACE_RDGM",10];
+			_veh addMagazineCargo ["30Rnd_545x39_AK",36];
+			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",6];
+			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
+			_veh addMagazineCargo ["HandGrenade", 15];
+			_veh addMagazineCargo ["ACE_Bandage",9];
+			_veh addMagazineCargo ["ACE_Morphine",9];
+			_veh addMagazineCargo ["ACE_Epinephrine",9];
+			_veh addWeaponCargo ["ACE_RPG27",2];
+			_veh addWeaponCargo ["MetisLauncher",3];
+			_veh addMagazineCargo ["AT13",6];
+			_veh addMagazineCargo ["ACE_AT13TB",3];
+		};
+		case "TRUCK_KONKURS" : {//
+			_veh addMagazineCargo ["HandGrenade_East",12];
+			_veh addMagazineCargo ["ACE_RDGM",10];
+			_veh addMagazineCargo ["30Rnd_545x39_AK",36];
+			_veh addWeaponCargo ["ACE_P159_RD90",1];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",6];
+			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
+			_veh addMagazineCargo ["HandGrenade", 15];
+			_veh addMagazineCargo ["ACE_Bandage",9];
+			_veh addMagazineCargo ["ACE_Morphine",9];
+			_veh addMagazineCargo ["ACE_Epinephrine",9];
+			_veh addWeaponCargo ["ACE_RPG27",2];
+			_veh addWeaponCargo ["ACE_KonkursTripodProxy",3];
+			_veh addMagazineCargo ["ACE_KonkursM_CSWDM",6];
 		};
 		case "RECON" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
