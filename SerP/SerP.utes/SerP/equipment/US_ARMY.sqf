@@ -5,7 +5,7 @@ _US_ARMY_processor = {
 	switch _type do {
 //Platoon command
 		case "OFF": {// Officer
-			addWeapons ["ACE_M4","M9","Binocular","NVGoggles"];
+			addWeapons ["M4A1","M9","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ACE_DAGR","ItemGPS"];
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -13,7 +13,7 @@ _US_ARMY_processor = {
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "PSG" : {//Platoon sergant
-			addWeapons ["ACE_M4","M136","M9","Binocular","NVGoggles"];
+			addWeapons ["ACE_M4A1_ACOG","M136","M9","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -21,14 +21,14 @@ _US_ARMY_processor = {
 			addMagazines("15Rnd_9x19_M9",2);
 		};
 		case "RATELO": {//RATELO
-			addWeapons ["ACE_M4","ACE_ANPRC77","M9","Binocular","NVGoggles"];
+			addWeapons ["M4A1","ACE_ANPRC77","M9","Binocular","NVGoggles"];
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
 			addMagazines("HandGrenade_West",2);
 		};
 		case "FO": {// Forward observer
-			addWeapons ["ACE_M4","M9","Binocular","NVGoggles"];
+			addWeapons ["M4A1","M9","Binocular","NVGoggles"];
 			addMagazines("30Rnd_556x45_Stanag",4);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
@@ -36,7 +36,7 @@ _US_ARMY_processor = {
 		};
 //Rifle squad
 		case "SL": {// Squad Lider
-			addWeapons ["ACE_M4","ACE_ANPRC77","M9","Binocular","NVGoggles"];
+			addWeapons ["M4A1","ACE_ANPRC77","M9","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -45,7 +45,7 @@ _US_ARMY_processor = {
 		};
 		
 		case "TL": {// FT Leader
-			addWeapons ["ACE_M4_ACOG","Binocular","NVGoggles"];
+			addWeapons ["ACE_M4A1_ACOG","Binocular","NVGoggles"];
 			addWeapons ["ACE_Map"];
 			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -53,7 +53,7 @@ _US_ARMY_processor = {
 		};
 
 		case "GL": {// Greanadier
-			addWeapons ["ACE_M4_AIM_GL","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
+			addWeapons ["ACE_M16A4_CCO_GL","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
 			addMagazines("30Rnd_556x45_Stanag",6);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
@@ -70,7 +70,7 @@ _US_ARMY_processor = {
 		};
 
 		case "LAT": {// Rifleman AT
-			addWeapons ["M4A1_AIM","M136","NVGoggles"];
+			addWeapons ["m16a4","M136","NVGoggles"];
 			addMagazines("30Rnd_556x45_Stanag",8);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 			addMagazines("SmokeShell",2);
@@ -106,7 +106,7 @@ _US_ARMY_processor = {
 		};
 //weapon squad
 		case "MG": {// Machinegunner
-			addWeapons ["M240","M9","NVGoggles"];
+			addWeapons ["m240_scoped_EP1","M9","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("100Rnd_762x51_M240",4);
 			addMagazines("SmokeShell",2);
@@ -115,7 +115,7 @@ _US_ARMY_processor = {
 		};
 		
 		case "AG": {//Asst. Machinegunner
-			addWeapons ["M4A1","ACE_Rucksack_MOLLE_ACU","Binocular","NVGoggles"];
+			addWeapons ["ACE_M16A4_Iron","ACE_Rucksack_MOLLE_ACU","Binocular","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_556x45_Stanag",8);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -124,7 +124,7 @@ _US_ARMY_processor = {
 			_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 2]]];
 		};
 		case "AB": {//Ammo bearer
-			addWeapons ["M4A1","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
+			addWeapons ["ACE_M16A4_Iron","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
 			addWeapons ["ACE_Earplugs"];
 			addMagazines("30Rnd_556x45_Stanag",8);
 			addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
@@ -189,7 +189,7 @@ _US_ARMY_processor = {
 
 //crew
 		case "CRW": {// Crewman
-			addWeapons ["M4A1","NVGoggles"]; 
+			addWeapons ["ACE_M4","NVGoggles"]; 
 			addWeapons ["ACE_GlassesLHD_glasses"]; 
 			addMagazines("30Rnd_556x45_Stanag",4);
 		};
