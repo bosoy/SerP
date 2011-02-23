@@ -106,23 +106,24 @@ _RA_MSV_processor = {
 		case "TRUCK_METIS" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
-			_veh addMagazineCargo ["30Rnd_545x39_AK",36];
+			_veh addMagazineCargo ["30Rnd_545x39_AK",20];
 			_veh addWeaponCargo ["ACE_P159_RD90",1];
-			_veh addWeaponCargo ["ACE_Rucksack_RD90",6];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",1];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 			_veh addMagazineCargo ["HandGrenade", 15];
 			_veh addMagazineCargo ["ACE_Bandage",9];
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
 			_veh addWeaponCargo ["ACE_RPG27",2];
-			_veh addWeaponCargo ["MetisLauncher",3];
-			_veh addMagazineCargo ["AT13",6];
-			_veh addMagazineCargo ["ACE_AT13TB",3];
+			[_veh,"ACE_Tbox_RU",[["MetisLauncher",1],["ACE_Rucksack_RD90",1]],[["AT13",6],["ACE_AT13TB",3]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["MetisLauncher",1],["ACE_Rucksack_RD90",1]],[["AT13",6],["ACE_AT13TB",3]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["MetisLauncher",1],["ACE_Rucksack_RD90",1]],[["AT13",6],["ACE_AT13TB",3]]] call _addCargoBox;
+
 		};
 		case "TRUCK_KONKURS" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
 			_veh addMagazineCargo ["ACE_RDGM",10];
-			_veh addMagazineCargo ["30Rnd_545x39_AK",36];
+			_veh addMagazineCargo ["30Rnd_545x39_AK",20];
 			_veh addWeaponCargo ["ACE_P159_RD90",1];
 			_veh addWeaponCargo ["ACE_Rucksack_RD90",6];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
@@ -133,6 +134,9 @@ _RA_MSV_processor = {
 			_veh addWeaponCargo ["ACE_RPG27",2];
 			_veh addWeaponCargo ["ACE_KonkursTripodProxy",3];
 			_veh addMagazineCargo ["ACE_KonkursM_CSWDM",6];
+			[_veh,"ACE_Tbox_RU",[["ACE_KonkursTripodProxy",1],["ACE_Rucksack_RD90",1]],[["ACE_KonkursM_CSWDM",2]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["ACE_KonkursTripodProxy",1],["ACE_Rucksack_RD90",1]],[["ACE_KonkursM_CSWDM",2]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["ACE_KonkursTripodProxy",1],["ACE_Rucksack_RD90",1]],[["ACE_KonkursM_CSWDM",2]]] call _addCargoBox;
 		};
 		case "RECON" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];

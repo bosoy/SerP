@@ -5039,7 +5039,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={3948.7539,19,3583.5181};
+					position[]={3948.719,19,3583.8645};
 					special="NONE";
 					id=405;
 					side="WEST";
@@ -5053,7 +5053,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3950.7292,19,3583.5459};
+					position[]={3950.6943,19,3583.8923};
 					special="NONE";
 					id=406;
 					side="WEST";
@@ -5065,7 +5065,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={3952.5044,19,3583.5459};
+					position[]={3952.4695,19,3583.8923};
 					special="NONE";
 					id=407;
 					side="WEST";
@@ -5078,7 +5078,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={3954.5044,19,3583.5459};
+					position[]={3954.4695,19,3583.8923};
 					special="NONE";
 					id=408;
 					side="WEST";

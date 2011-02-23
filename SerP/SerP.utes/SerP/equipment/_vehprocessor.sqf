@@ -27,21 +27,20 @@ _addTyre = {
 		};
 	};
 };
-//  [["ACE_OrdnanceBox_BIS_US", [], [["ACE_M224HE_CSWDM",10]]],["ACE_OrdnanceBox_BIS_US"]]
+
 _addCargoBox = {
 // (c) Zu-23-2
 	_veh = _this select 0;
-	_veh disableTIEquipment true;	
 	_boxtype = _this select 1;
-	_magasines = _this select 2;
-	_weapons = _this select 3;
+	_weapons = _this select 2;
+	_magazines = _this select 3;
 	if (isServer) then {
 		_tbox = _boxtype createVehicle [0,0,0];
 		_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
-		if ((count _weapons > 0)||(count _magasines > 0)) then {
+		if ((count _weapons > 0)||(count _magazines > 0)) then {
 			clearWeaponCargoGlobal _tbox;
 			clearMagazineCargoGlobal _tbox;
-			{ _tbox addMagazineCargoGlobal _x } forEach _magasines;
+			{ _tbox addMagazineCargoGlobal _x } forEach _magazines;
 			{ _tbox addWeaponCargoGlobal _x } forEach _weapons;
 		};
 		_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
