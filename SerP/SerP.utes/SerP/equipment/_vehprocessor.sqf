@@ -1,5 +1,6 @@
 ﻿_veh = _this select 0;
 _faction = _this select 1;
+call compile format ["if isNil {SerP_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}",_faction];
 _loadout = _this select 2;
 _cargoBoxes = _this select 3;
 _common_processor = {
@@ -28,7 +29,7 @@ _addTyre = {
 	};
 };
 
-_addCargoBox = {
+_addCargoBox_processor = {
 // (c) Zu-23-2
 	_veh = _this select 0;
 	_boxtype = _this select 1;
@@ -48,22 +49,16 @@ _addCargoBox = {
 		_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
 	};
 };
-#include "veh_RA_MSV.sqf"
-#include "veh_TA_MSV.sqf"
-#include "veh_USMC.sqf"
-#include "veh_US_ARMY.sqf"
-#include "veh_USAF.sqf"
-#include "veh_RFVVS.sqf"
 _veh call _common_processor;
 _veh call _addTyre;
 switch _faction do {
-	case "RA_MSV"		: {[_veh, _loadout] call _RA_MSV_processor};
-	case "TA_MSV"		: {[_veh, _loadout] call _TA_MSV_processor};
-	case "US_ARMY"		: {[_veh, _loadout] call _US_ARMY_processor};
-	case "USMC"		: {[_veh, _loadout] call _USMC_processor};
-	case "USAF"		: {[_veh, _loadout] call _USAF_processor};
-	case "RFVVS"		: {[_veh, _loadout] call _RFVVS_processor};
+	case "RA_MSV"		: {[_veh, _loadout] call SerP_veh_RA_MSV_processor};
+	case "TA_MSV"		: {[_veh, _loadout] call SerP_veh_TA_MSV_processor};
+	case "US_ARMY"		: {[_veh, _loadout] call SerP_veh_US_ARMY_processor};
+	case "USMC"		: {[_veh, _loadout] call SerP_veh_USMC_processor};
+	case "USAF"		: {[_veh, _loadout] call SerP_veh_USAF_processor};
+	case "RFVVS"		: {[_veh, _loadout] call SerP_veh_RFVVS_processor};
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
 #include "ammo_tbox.sqf"
-if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes};
+if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes_processor};
