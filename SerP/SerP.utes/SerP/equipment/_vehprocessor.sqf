@@ -1,6 +1,6 @@
 ﻿_veh = _this select 0;
 _faction = _this select 1;
-call compile format ["if isNil {SerP_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}",_faction];
+call compile format ["if (isNil {SerP_veh_%1_processor}) then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}",_faction];
 _loadout = _this select 2;
 _cargoBoxes = _this select 3;
 _common_processor = {
@@ -28,25 +28,26 @@ _addTyre = {
 		};
 	};
 };
-
-_addCargoBox_processor = {
-// (c) Zu-23-2
-	_veh = _this select 0;
-	_boxtype = _this select 1;
-	_magazines = _this select 2;	
-	if (isNil {_magazines}) then {_magazines = [];};
-	_weapons = _this select 3;
-	if (isNil {_waspons}) then {_weapons = [];};
-	if (isServer) then {
-		_tbox = _boxtype createVehicle [0,0,0];
-		_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
-		if ((count _weapons > 0)||(count _magazines > 0)) then {
-			clearWeaponCargoGlobal _tbox;
-			clearMagazineCargoGlobal _tbox;
-			{ _tbox addMagazineCargoGlobal _x } forEach _magazines;
-			{ _tbox addWeaponCargoGlobal _x } forEach _weapons;
+if (isNil {SerP_addCargoBox_processor}) then {
+	SerP_addCargoBox_processor = {
+	// (c) Zu-23-2
+		_veh = _this select 0;
+		_boxtype = _this select 1;
+		_magazines = _this select 2;	
+		if (isNil {_magazines}) then {_magazines = [];};
+		_weapons = _this select 3;
+		if (isNil {_waspons}) then {_weapons = [];};
+		if (isServer) then {
+			_tbox = _boxtype createVehicle [0,0,0];
+			_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
+			if ((count _weapons > 0)||(count _magazines > 0)) then {
+				clearWeaponCargoGlobal _tbox;
+				clearMagazineCargoGlobal _tbox;
+				{ _tbox addMagazineCargoGlobal _x } forEach _magazines;
+				{ _tbox addWeaponCargoGlobal _x } forEach _weapons;
+			};
+			_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
 		};
-		_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
 	};
 };
 _veh call _common_processor;
@@ -56,7 +57,7 @@ switch _faction do {
 	case "TA_MSV"		: {[_veh, _loadout] call SerP_veh_TA_MSV_processor};
 	case "US_ARMY"		: {[_veh, _loadout] call SerP_veh_US_ARMY_processor};
 	case "USMC"		: {[_veh, _loadout] call SerP_veh_USMC_processor};
-	case "USAF"		: {[_veh, _loadout] call SerP_veh_USAF_processor};
+	case "USAF"		: {[_veh, _loadout] call SSerP_veh_USAF_processor};
 	case "RFVVS"		: {[_veh, _loadout] call SerP_veh_RFVVS_processor};
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
