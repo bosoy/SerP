@@ -96,9 +96,9 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG27",2];
-		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call _addCargoBox_processor;
-		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call _addCargoBox_processor;
-		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call _addCargoBox_processor;
+		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox_processor;
+		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox_processor;
+		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox_processor;
 
 	};
 	case "TRUCK_KONKURS" : {//
@@ -113,9 +113,9 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG27",2];
-		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call _addCargoBox_processor;
-		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call _addCargoBox_processor;
-		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call _addCargoBox_processor;
+		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox_processor;
+		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox_processor;
+		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox_processor;
 	};
 	case "RECON" : {//
 		_veh addMagazineCargo ["HandGrenade_East",12];

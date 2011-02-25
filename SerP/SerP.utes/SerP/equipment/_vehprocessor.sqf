@@ -61,4 +61,4 @@ switch _faction do {
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
 #include "ammo_tbox.sqf"
-if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes_processor};
+if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes};
