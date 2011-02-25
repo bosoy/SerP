@@ -1,37 +1,5 @@
-﻿/*
-OFF 	- Officer
-SL 		- Squad Leader
-TL 		- Team Leader
-MG 		- Machinegunner
-MG2		- Machinegunner with Scope
-AG		- Asst. Machinegunner
-AR		- Automatic Rifleman
-AAR		- Asst. Automatic Rifleman
-HAT		- Opertor Heavy Anti Tank
-AHAT	- Asst. Operator Heavy Anti Tank
-AT		- Operator Anti Tank
-ASST	- Asst. Operator Anti Tank
-LAT		- Rifleman AT
-AA		- Anti Air Operaror
-DM		- Marksman
-MED		- Courpsman
-GL		- Grenadier
-RF		- Rifleman
-CRW		- Crew Armored Vehicle
-CRWVC	- Commander Armored Vehicle
-PL		- Pilot
-ENG		- Engineer
-HMG		- Heavy Machinegunner
-HMGAG	- Asst. Heavy Machinegunner
-HMGAB	- Ammo Bearer Heavy Machinegun
-AGL		- Automatic Grenade Launcher Operator
-AGLAG	- Asst. Automatic Grenade Launcher Operator
-AGLAB	- Ammo Bearer Automatic Grenade Launcher
-ATGM	- ATGM Operator
-ATGMA	- Asst. ATGM
-ATGMB	- Ammo Bearer ATGM
-*/
-
+﻿#define addWeapons {_unit addWeapon _x} forEach 
+#define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 _unit = _this select 0;
 _type = toUpper (_this select 1);
 switch _type do {

@@ -1,23 +1,5 @@
-﻿/*
-COM 	- Commander
-SL 		- Squad Leader
-TL 		- Team Leader
-AR		- Automatic Rifleman
-AR2		- Automatic Rifleman (Scope)
-MG 		- Machinegunner
-MG2		- Machinegunner with Scope
-DM		- Designated Marksman
-SN		- Sniper
-HSN		- Heavy Sniper
-ASN		- Asst. Sniper
-MED		- Corpsman
-GL		- Grenadier
-FAC		- Forward Air Controller
-RC		- Recon
-SAB		- Saboteur
-SAP		- Sapper
-RF		- Rifleman
-*/
+﻿#define addWeapons {_unit addWeapon _x} forEach 
+#define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 _unit = _this select 0;
 _type = toUpper (_this select 1);
 switch _type do {
