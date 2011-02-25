@@ -70,25 +70,6 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_Bandage",9];
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
-			if (isServer) then {
-				_tbox = "ACE_Tbox_RU" createVehicle [0,0,0];
-				_tbox setVariable ["ace_sys_cargo_UnloadPos", [0,7,0], true];
-				_tbox addMagazineCargoGlobal ["ACE_PG7VM_PGO7", 6];
-				_tbox addMagazineCargoGlobal ["ACE_OG7_PGO7", 6];
-				_tbox addMagazineCargoGlobal["30Rnd_545x39_AK",26];
-				_tbox addMagazineCargoGlobal ["HandGrenade_East", 15];
-				_tbox addMagazineCargoGlobal ["1Rnd_SMOKE_GP25",10];
-				_tbox addMagazineCargoGlobal ["1Rnd_SmokeRed_GP25",3];
-				_tbox addMagazineCargoGlobal ["1Rnd_SmokeGreen_GP25",3];
-				_tbox addMagazineCargoGlobal ["ACE_1Rnd_CS_GP25",10];
-				_tbox addMagazineCargoGlobal ["ACE_SSWhite_GP25",3];
-				_tbox addMagazineCargoGlobal ["ACE_SSRed_GP25",3];
-				_tbox addMagazineCargoGlobal ["ACE_SSGreen_GP25",3];
-				_tbox addMagazineCargoGlobal ["FlareWhite_GP25",3];
-				_tbox addMagazineCargoGlobal ["FlareRed_GP25",3];
-				_tbox addMagazineCargoGlobal ["FlareGreen_GP25",3];
-				_veh setVariable ["ace_sys_cargo_content",(_veh getVariable ["ace_sys_cargo_content",[]]) + [_tbox],true];
-			};
 		};
 		case "MSV_E" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
@@ -108,16 +89,16 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_545x39_AK",20];
 			_veh addWeaponCargo ["ACE_P159_RD90",1];
-			_veh addWeaponCargo ["ACE_Rucksack_RD90",1];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 			_veh addMagazineCargo ["HandGrenade", 15];
 			_veh addMagazineCargo ["ACE_Bandage",9];
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
 			_veh addWeaponCargo ["ACE_RPG27",2];
-			[_veh,"ACE_Tbox_RU",[["MetisLauncher",1],["ACE_Rucksack_RD90",1]],[["AT13",6],["ACE_AT13TB",3]]] call _addCargoBox;
-			[_veh,"ACE_Tbox_RU",[["MetisLauncher",1],["ACE_Rucksack_RD90",1]],[["AT13",6],["ACE_AT13TB",3]]] call _addCargoBox;
-			[_veh,"ACE_Tbox_RU",[["MetisLauncher",1],["ACE_Rucksack_RD90",1]],[["AT13",6],["ACE_AT13TB",3]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["AT13",6],["ACE_AT13TB",3]],[["MetisLauncher",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["AT13",6],["ACE_AT13TB",3]],[["MetisLauncher",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["AT13",6],["ACE_AT13TB",3]],[["MetisLauncher",1]]] call _addCargoBox;
 
 		};
 		case "TRUCK_KONKURS" : {//
@@ -125,18 +106,16 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_RDGM",10];
 			_veh addMagazineCargo ["30Rnd_545x39_AK",20];
 			_veh addWeaponCargo ["ACE_P159_RD90",1];
-			_veh addWeaponCargo ["ACE_Rucksack_RD90",6];
+			_veh addWeaponCargo ["ACE_Rucksack_RD90",9];
 			_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 			_veh addMagazineCargo ["HandGrenade", 15];
 			_veh addMagazineCargo ["ACE_Bandage",9];
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
 			_veh addWeaponCargo ["ACE_RPG27",2];
-			_veh addWeaponCargo ["ACE_KonkursTripodProxy",3];
-			_veh addMagazineCargo ["ACE_KonkursM_CSWDM",6];
-			[_veh,"ACE_Tbox_RU",[["ACE_KonkursTripodProxy",1],["ACE_Rucksack_RD90",1]],[["ACE_KonkursM_CSWDM",2]]] call _addCargoBox;
-			[_veh,"ACE_Tbox_RU",[["ACE_KonkursTripodProxy",1],["ACE_Rucksack_RD90",1]],[["ACE_KonkursM_CSWDM",2]]] call _addCargoBox;
-			[_veh,"ACE_Tbox_RU",[["ACE_KonkursTripodProxy",1],["ACE_Rucksack_RD90",1]],[["ACE_KonkursM_CSWDM",2]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call _addCargoBox;
 		};
 		case "RECON" : {//
 			_veh addMagazineCargo ["HandGrenade_East",12];
