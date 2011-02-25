@@ -1,27 +1,5 @@
-﻿/*
-WL	 	- Warlord
-SL 		- Team Leader
-TL 		- Team Leader
-MG 		- Machinegunner
-AMG		- Asst. Machinegunner
-AR		- Automatic Rifleman
-AT		- Operator Anti Tank
-AAT		- Asst. Operator Anti Tank
-LAT		- Rifleman AT
-AA		- Anti Air Operaror
-SAB		- Saboteur
-SAP		- Sapper
-ASAP	- Asst. Sapper
-RC		- Recon
-MR		- Marksman
-SNP		- Sniper
-MED		- Courpsman
-GL		- Grenadier
-HMG		- Heavy Machinegunner
-HMGAG	- Asst. Heavy Machinegunner
-HMGAB	- Ammo Bearer Heavy Machinegun
-*/
-
+﻿#define addWeapons {_unit addWeapon _x} forEach 
+#define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 _unit = _this select 0;
 _type = toUpper (_this select 1);
 switch _type do {
