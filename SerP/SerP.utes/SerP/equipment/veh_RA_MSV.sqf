@@ -96,9 +96,9 @@ _RA_MSV_processor = {
 			_veh addMagazineCargo ["ACE_Morphine",9];
 			_veh addMagazineCargo ["ACE_Epinephrine",9];
 			_veh addWeaponCargo ["ACE_RPG27",2];
-			[_veh,"ACE_Tbox_RU",[["AT13",6],["ACE_AT13TB",3]],[["MetisLauncher",1]]] call _addCargoBox;
-			[_veh,"ACE_Tbox_RU",[["AT13",6],["ACE_AT13TB",3]],[["MetisLauncher",1]]] call _addCargoBox;
-			[_veh,"ACE_Tbox_RU",[["AT13",6],["ACE_AT13TB",3]],[["MetisLauncher",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["AT13",3],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["AT13",3],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call _addCargoBox;
+			[_veh,"ACE_Tbox_RU",[["AT13",3],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call _addCargoBox;
 
 		};
 		case "TRUCK_KONKURS" : {//
