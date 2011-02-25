@@ -32,8 +32,8 @@ _addCargoBox = {
 // (c) Zu-23-2
 	_veh = _this select 0;
 	_boxtype = _this select 1;
-	_weapons = _this select 2;
-	_magazines = _this select 3;
+	_magazines = _this select 2;
+	_weapons = _this select 3;
 	if (isServer) then {
 		_tbox = _boxtype createVehicle [0,0,0];
 		_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
