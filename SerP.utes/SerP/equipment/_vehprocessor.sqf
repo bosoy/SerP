@@ -61,5 +61,6 @@ switch _faction do {
 	case "RFVVS"		: {[_veh, _loadout] call SerP_veh_RFVVS_processor};
 	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
 };
+
 #include "ammo_tbox.sqf"
 if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes};
