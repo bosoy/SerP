@@ -1,12 +1,10 @@
-﻿#define addWeapons {_unit addWeapon _x} forEach 
-#define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
-#define __quoted(str) #str
+﻿#define __quoted(str) #str
 #define __concat2(var1,var2) ##var1####var2
 #define __concat3(var1,var2,var3) ##var1####var2####var3
-#define __callProcessor(a) case __quoted(a) : {if (isNil __quoted(__concat2(a,_processor))) then {call compile preprocessFileLineNumbers __quoted(__concat3(SerP\equipment\,a,.sqf))};[_unit, _loadout] call __concat2(a,_processor)};
+#define __callProcessor(a) case __quoted(a) : {[_unit, _loadout] call __concat3(SerP_,a,_processor)};
 _unit = _this select 0;
 _faction = _this select 1;
-call compile format ["if isNil {%1_processor} then {call compile preprocessFileLineNumbers 'SerP\equipment\%1.sqf'}",_faction];
+call compile format ["if isNil {SerP_%1_processor} then {SerP_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\%1.sqf'}",_faction];
 _loadout = toUpper(_this select 2);
 _common_processor = {
 	_unit setBehaviour "CARELESS"; 
