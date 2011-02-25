@@ -21,7 +21,7 @@
 	HMGAG	- Asst. Heavy Machinegunner
 	HMGAB	- Ammo Bearer Heavy Machinegun
 */
-_TL_processor = {
+TL_processor = {
 	_unit = _this select 0;
 	_type = toUpper (_this select 1);
 	switch _type do {

@@ -31,7 +31,7 @@
 	ATGMA	- Asst. ATGM
 	ATGMB	- Ammo Bearer ATGM
 */
-_USArmy_bp_processor = {
+USArmy_bp_processor = {
 	_unit = _this select 0;
 	_type = toUpper (_this select 1);
 	switch _type do {

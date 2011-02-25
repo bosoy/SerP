@@ -18,7 +18,7 @@
 	SAP		- Sapper
 	RF		- Rifleman
 */
-_USMC_SF_processor = {
+USMC_SF_processor = {
 	_unit = _this select 0;
 	_type = toUpper (_this select 1);
 	switch _type do {

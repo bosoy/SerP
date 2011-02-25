@@ -1,4 +1,4 @@
-_RA_MSV_processor = {
+RA_MSV_processor = {
 	_unit = _this select 0;
 	_loadout = toUpper (_this select 1);
 	switch _loadout do {

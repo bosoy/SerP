@@ -1,5 +1,9 @@
 ﻿#define addWeapons {_unit addWeapon _x} forEach 
 #define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
+#define __quoted(str) #str
+#define __concat2(var1,var2) ##var1####var2
+#define __concat3(var1,var2,var3) ##var1####var2####var3
+#define __callProcessor(a) case __quoted(a) : {if (isNil {__concat2(a,_processor)}) then {call compile preprocessFileLineNumbers __quoted(__concat3(SerP\equipment\,a,.sqf))};[_unit, _loadout] call __concat2(a,_processor)};
 _unit = _this select 0;
 _faction = _this select 1;
 _loadout = toUpper(_this select 2);
@@ -26,31 +30,19 @@ _common_processor = {
 	_unit addWeapon "ItemCompass";
 };
 
-#include "RA_MSV.sqf"
-#include "USMC.sqf"
-#include "USMC_SF.sqf"
-#include "US_ARMY.sqf"
-#include "75th.sqf"
-#include "US_DF.sqf"
-#include "USArmy_bp.sqf"
-#include "US_DF_bp.sqf"
-#include "TL_bp.sqf"
-#include "TL.sqf"
-#include "TA_ARMY.sqf"
-
 _unit call _common_processor;
 switch _faction do {
-	case "RA_MSV"		: {[_unit, _loadout] call _RA_MSV_processor};
-	case "USMC"			: {[_unit, _loadout] call _USMC_processor};
-	case "USMS_SF"		: {[_unit, _loadout] call _USMC_SF_processor};
-	case "US_ARMY"		: {[_unit, _loadout] call _US_ARMY_processor};
-	case "US_DF"		: {[_unit, _loadout] call _US_DF_processor};
-	case "75th"			: {[_unit, _loadout] call _75th_processor};
-	case "USArmy_bp"	: {[_unit, _loadout] call _USArmy_bp_processor};
-	case "US_DF_bp"		: {[_unit, _loadout] call _US_DF_bp_processor};
-	case "TL_bp"		: {[_unit, _loadout] call _TL_bp_processor};  
-	case "TL"		: {[_unit, _loadout] call _TL_processor};  
-	case "TA_ARMY"		: {[_unit, _loadout] call _TA_ARMY_processor};  
+	__callProcessor(RA_MSV);
+	__callProcessor(USMC);
+	__callProcessor(USMS_SF);
+	__callProcessor(US_ARMY);
+	__callProcessor(US_DF);
+	__callProcessor(75th);
+	__callProcessor(USArmy_bp);
+	__callProcessor(US_DF_bp);
+	__callProcessor(TL_bp);
+	__callProcessor(TL);
+	__callProcessor(TA_ARMY);
 	default {diag_log format ["Undefined unit faction : %1",_faction]};
 };
 //посадка юнита в технику, синхронизированную с юнитом, не работает на выделенном сервере

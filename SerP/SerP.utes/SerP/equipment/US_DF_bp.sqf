@@ -21,30 +21,8 @@
 	SAP		- Sapper
 	RF		- Rifleman
 */
-/*
-	COM 	- Commander
-	SL 		- Squad Leader
-	TL 		- Team Leader
-	AR		- Automatic Rifleman
-	AR2		- Automatic Rifleman (Scope)
-	MG 		- Machinegunner
-	MG2		- Machinegunner with Scope
-	DM		- Marksman
-	DMSD	- Marksman SD
-	SN		- Sniper
-	HSN		- Heavy Sniper
-	ASN		- Asst. Sniper
-	MED		- Corpsman
-	RC		- Operanor SD (Recon)
-	INF		- Infiltrator GL
-	INFSD	- Infiltrator SD
-	GL		- Grenadier
-	FAC		- Forward Air Controller
-	SAB		- Saboteur
-	SAP		- Sapper
-	RF		- Rifleman
-*/
-_US_DF_bp_processor = {
+
+US_DF_bp_processor = {
 	_unit = _this select 0;
 	_type = toUpper (_this select 1);
 	switch _type do {
