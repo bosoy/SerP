@@ -25,8 +25,7 @@ _common_processor = {
 };
 
 _unit call _common_processor;
-call compile format ["if isNil {SerP_%1_processor} then {SerP_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\%1.sqf'}",_faction];
-[_unit, _loadout] call compile format ["_this call SerP_%1_processor",_faction];
+[_unit, _loadout] call compile format ["if isNil {SerP_%1_processor} then {SerP_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\%1.sqf'};_this call SerP_%1_processor",_faction];
 
 //посадка юнита в технику, синхронизированную с юнитом, не работает на выделенном сервере
 /*

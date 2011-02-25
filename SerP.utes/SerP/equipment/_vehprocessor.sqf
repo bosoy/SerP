@@ -28,8 +28,8 @@ _addTyre = {
 		};
 	};
 };
-if (isNil {SerP_addCargoBox_processor}) then {
-	SerP_addCargoBox_processor = {
+if (isNil {SerP_addCargoBox}) then {
+	SerP_addCargoBox = {
 	// (c) Zu-23-2
 		_veh = _this select 0;
 		_boxtype = _this select 1;
@@ -52,15 +52,7 @@ if (isNil {SerP_addCargoBox_processor}) then {
 };
 _veh call _common_processor;
 _veh call _addTyre;
-switch _faction do {
-	case "RA_MSV"		: {[_veh, _loadout] call SerP_veh_RA_MSV_processor};
-	case "TA_MSV"		: {[_veh, _loadout] call SerP_veh_TA_MSV_processor};
-	case "US_ARMY"		: {[_veh, _loadout] call SerP_veh_US_ARMY_processor};
-	case "USMC"		: {[_veh, _loadout] call SerP_veh_USMC_processor};
-	case "USAF"		: {[_veh, _loadout] call SSerP_veh_USAF_processor};
-	case "RFVVS"		: {[_veh, _loadout] call SerP_veh_RFVVS_processor};
-	default {diag_log format ["Undefined vehicle faction : %1",_faction]};
-};
+[_veh, _loadout] call compile format ["if isNil {SerP_veh_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}; _this call SerP_veh_%1_processor",_faction];
 
 #include "ammo_tbox.sqf"
 if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes};
