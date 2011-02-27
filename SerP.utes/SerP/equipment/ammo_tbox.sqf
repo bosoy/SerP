@@ -39,7 +39,7 @@
 			[_box, "ACE_Tbox_RU", [["ACE_2B14HE_CSWDM",10]]] call SerP_addCargoBoxr;
 		};		
 		case "9M32" : {// 9M32 Strela
-			[_box, "ACE_Tbox_RU", [["Strela",2]],[["Strela",2]]] call SerP_addCargoBoxr;
+			[_box, "ACE_Tbox_RU", [["Strela",1]],[["Strela",1]]] call SerP_addCargoBoxr;
 		};
 		case "9M115" : {// 9К131 Metis-M Ammo DEP
 			[_box,"ACE_Tbox_RU",[["AT13",3]]] call SerP_addCargoBoxr;
