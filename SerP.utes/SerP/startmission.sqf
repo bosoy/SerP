@@ -195,7 +195,6 @@ if !(isDedicated) then {
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 	waitUntil{sleep .1;!isNil{warbegins}};
 	if (warbegins==1) exitWith {
-		forceMap false;
 		(findDisplay 46) displayRemoveEventHandler ["KeyDown",_blocker1];
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 	};
@@ -275,6 +274,7 @@ if !(isDedicated) then {
 				};
 				if (_dist>_size) then {
 					hint "Вы покидаете зону брифинга";
+					(vehicle player) setVelocity [0,0,0];
 					switch round(random 11) do {
 						case 0: {player say "r11"};
 						case 1: {player say "r15"};
