@@ -127,7 +127,13 @@ switch _type do {
 		addWeapons ["M16A2GL", "ACE_Map", "NVGoggles"];
 		addMagazines("HandGrenade_East",4);
 	};
-	
+	//Pzrk Operator
+	case "AA": {
+		addMagazines("30Rnd_762x39_AK47",3);
+		addMagazines("HandGrenade_East",3);
+		addWeapons ["AK_47_S", "ACE_Earplugs", "ACE_Map", "Strela","NVGoggles"];
+		addMagazines("Strela",1);
+	};
 	//DSHKM		
 	case "HMG" : {
 		addMagazines("30Rnd_762x39_AK47",3);
