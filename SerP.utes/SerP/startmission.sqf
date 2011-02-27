@@ -182,17 +182,9 @@ if (isServer) then {[] spawn {
 
 if !(isDedicated) then {
 	#include "const.sqf"
-	_antiFlood = (findDisplay 12) displayAddEventHandler ["KeyDown", '
-		hint format ["%1",_this];
-		if ((_this select 1) in [28,156]) then {
-			player globalChat "Your bunny wrote";
-		};
-		false
-	'];
 	waitUntil{player==player};
 	if !alive(player) exitWith {};
 	sleep .01;
-	//(findDisplay 12) displayRemoveEventHandler ["KeyDown",_antiFlood];
 	_veh = (vehicle player);
 	(_veh) enableSimulation false;
 	startLoadingScreen [localize 'STR_missionname', "RscDisplayLoadCustom"];
