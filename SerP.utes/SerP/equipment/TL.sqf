@@ -122,7 +122,7 @@ switch _type do {
 	};
 	//Grenadier
 	case "GL": {				
-		addMagazines("ACE_30Rnd_556x45_S_Stanag",4);
+		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("1Rnd_HE_M203",5);
 		addWeapons ["M16A2GL", "ACE_Map", "NVGoggles"];
 		addMagazines("HandGrenade_East",4);
