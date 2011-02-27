@@ -28,7 +28,7 @@ switch _type do {
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",4);
-		addWeapons ["M249_EP", "ACE_USPSD", "NVGoggles", "ACE_Rucksack_MOLLE_Green"];
+		addWeapons ["M249_EP1", "ACE_USPSD", "NVGoggles", "ACE_Rucksack_MOLLE_Green"];
 		addWeapons ["ACE_Earplugs", "ACE_GlassesLHD_glasses"];
 		_unit setVariable ["ACE_RuckMagContents",[["200Rnd_556x45_M249", 2]]];
 	};

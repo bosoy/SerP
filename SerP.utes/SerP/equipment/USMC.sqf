@@ -56,7 +56,7 @@ switch _type do {
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",8],["FlareRed_M203",4],["ACE_SSWhite_M203",4],["ACE_1Rnd_CS_M203",2]]];
 	};
 	case "AR" : {// Automatic Rifleman
-		addWeapons ["ACE_M249Para","NVGoggles"];
+		addWeapons ["M249","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("200Rnd_556x45_M249",4);
 		addMagazines("SmokeShell",2);
