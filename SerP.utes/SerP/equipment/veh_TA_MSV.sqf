@@ -1,7 +1,7 @@
 _veh = _this select 0;
 _loadout = toUpper (_this select 1);
 switch _loadout do {
-	case "UAZ" : {//
+	case "UAZ" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_762x39_AK47",10];
@@ -13,7 +13,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",2];
 		_veh addMagazineCargo ["ACE_Epinephrine",2];
 	};
-	case "UAZ_E" : {//
+	case "UAZ_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_762x39_AK47",10];
@@ -26,7 +26,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",2];
 		_veh addWeaponCargo ["ACE_RPG22",1];
 	};
-	case "UAZ_SN" : {//
+	case "UAZ_SN" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_762x39_AK47",5];
@@ -40,7 +40,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",2];
 		_veh addWeaponCargo ["ACE_RPG22",1];
 	};
-	case "MSV" : {//
+	case "MSV" : { //
 		_veh addMagazineCargo ["HandGrenade",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_762x39_AK47",39];
@@ -55,7 +55,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 	};
-	case "MSV_E" : {//
+	case "MSV_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_762x39_AK47",36];
@@ -68,7 +68,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG22",1];
 	};
-	case "RECON" : {//
+	case "RECON" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_762x39_AK47",36];
@@ -89,7 +89,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["PipeBomb",20];
 		_veh addWeaponCargo ["ACE_RPG22",2];
 	};
-	case "MED" : {//
+	case "MED" : { //
 		_veh addWeaponCargo ["ACE_RPG22",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 		_veh addMagazineCargo ["ACE_Bandage",20];

@@ -1,7 +1,7 @@
 _veh = _this select 0;
 _loadout = toUpper (_this select 1);
 switch _loadout do {
-	case "UAZ" : {//
+	case "UAZ" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
@@ -13,7 +13,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",2];
 		_veh addMagazineCargo ["ACE_Epinephrine",2];
 	};
-	case "UAZ_E" : {//
+	case "UAZ_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
@@ -26,7 +26,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",2];
 		_veh addWeaponCargo ["ACE_RPG27",1];
 	};
-	case "UAZ_AGS" : {//
+	case "UAZ_AGS" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
@@ -42,7 +42,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_AGS30_CSWDM",8];
 		_veh addWeaponCargo ["ACE_RPG27",1];
 	};
-	case "UAZ_SN" : {//
+	case "UAZ_SN" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",5];
@@ -56,7 +56,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",2];
 		_veh addWeaponCargo ["ACE_RPG27",1];
 	};
-	case "MSV" : {//
+	case "MSV" : { //
 		_veh addMagazineCargo ["HandGrenade",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
@@ -70,7 +70,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 	};
-	case "MSV_E" : {//
+	case "MSV_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",36];
@@ -83,7 +83,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG27",1];
 	};
-	case "TRUCK_METIS" : {//
+	case "TRUCK_METIS" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",20];
@@ -100,7 +100,7 @@ switch _loadout do {
 		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox;
 
 	};
-	case "TRUCK_KONKURS" : {//
+	case "TRUCK_KONKURS" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",20];
@@ -116,7 +116,7 @@ switch _loadout do {
 		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox;
 		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox;
 	};
-	case "RECON" : {//
+	case "RECON" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",36];
@@ -136,7 +136,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["PipeBomb",20];
 		_veh addWeaponCargo ["ACE_RPG27",2];
 	};
-	case "MED" : {//
+	case "MED" : { //
 		_veh addWeaponCargo ["ACE_RPG27",1];
 		_veh addMagazineCargo ["ACE_Bandage",20];
 		_veh addMagazineCargo ["ACE_Morphine",20];

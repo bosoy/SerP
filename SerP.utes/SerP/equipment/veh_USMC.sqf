@@ -2,7 +2,7 @@
 _veh = _this select 0;
 _loadout = toUpper (_this select 1);
 switch _loadout do {
-	case "HMW" : {//
+	case "HMW" : { //
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",5];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",15];
@@ -18,7 +18,7 @@ switch _loadout do {
 		_veh addWeaponCargo ["M136",2];
 	};
 
-	case "TRUCK" : {//
+	case "TRUCK" : { //
 		_veh addMagazineCargo ["HandGrenade_west",25];
 		_veh addMagazineCargo ["SmokeShell",15];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",36];
@@ -33,7 +33,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Bandage",9];
 		_veh addWeaponCargo ["M136",4];
 	};
-	case "MED" : {//
+	case "MED" : { //
 		_veh addWeaponCargo ["M136",1];
 		_veh addMagazineCargo ["ACE_Bandage",20];
 		_veh addMagazineCargo ["ACE_Morphine",20];

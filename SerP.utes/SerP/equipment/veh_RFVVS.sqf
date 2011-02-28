@@ -1,7 +1,7 @@
 _veh = _this select 0;
 _loadout = toUpper (_this select 1);
 switch _loadout do {
-	case "MI8" : {//
+	case "MI8" : { //
 		_veh addMagazineCargo ["HandGrenade",24];
 		_veh addMagazineCargo ["ACE_RDGM",20];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",20];
