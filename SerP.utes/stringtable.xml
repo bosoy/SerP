@@ -423,10 +423,18 @@
 	</Key>
 	<Key ID="STR_usarmy_call">
 		<Russian>
-		рейнджеры США
+		солдаты Армии США
 		</Russian>
 		<Original>
 		US Army soldiers
+		</Original>
+	</Key>
+	<Key ID="STR_75th_call">
+		<Russian>
+		рейнджеры США
+		</Russian>
+		<Original>
+		Rangers
 		</Original>
 	</Key>
 	<Key ID="STR_napa_call">
@@ -443,6 +451,14 @@
 		</Russian>
 		<Original>
 		TA troops
+		</Original>
+	</Key>
+	<Key ID="STR_cdkz_call">
+		<Russian>
+		бойцы ЧДКЗ
+		</Russian>
+		<Original>
+		CDKZ rebels
 		</Original>
 	</Key>
 	<Key ID="STR_pot_call">
