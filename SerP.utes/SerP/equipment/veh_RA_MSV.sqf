@@ -69,6 +69,9 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Bandage",9];
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
+		[_veh,"ACE_Tbox_RU",[["ACE_PG7VM_PGO7",6],["ACE_OG7_PGO7",6]],[]] call SerP_addCargoBox;
+		[_veh,"ACE_Tbox_RU",[["30Rnd_545x39_AK",26],["HandGrenade_East",15]],[]] call SerP_addCargoBox;
+		[_veh,"ACE_Tbox_RU",[["1Rnd_SMOKE_GP25",10],["1Rnd_SmokeRed_GP25",3],["1Rnd_SmokeGreen_GP25",3],["ACE_1Rnd_CS_GP25",10],["ACE_SSWhite_GP25",3],["ACE_SSRed_GP25",3],["ACE_SSGreen_GP25",3],["FlareWhite_GP25",3],["FlareRed_GP25",3],["FlareGreen_GP25",3]],[]] call SerP_addCargoBox;
 	};
 	case "MSV_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
