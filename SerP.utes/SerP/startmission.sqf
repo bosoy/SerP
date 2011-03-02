@@ -193,7 +193,8 @@ if !(isDedicated) then {
 	'];
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 	waitUntil{sleep .1;!isNil{warbegins}};
-	if (warbegins==1) exitWith {
+	if (warbegins==1) exitWith {		
+		endLoadingScreen;
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 	};
 
