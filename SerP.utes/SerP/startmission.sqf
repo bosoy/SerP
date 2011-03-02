@@ -109,8 +109,9 @@ if (isServer) then {[] spawn {
 	{//готовим список юнитов и данные для аттача что-бы он сработал быстрее при старте миссии
 		_corepos = (_x select 0);
 		_size = (_x select 1);
-		_core = createVehicle ["FlagCarrierChecked", _corepos, [], 0, "CAN_COLLIDE"];
-		_core setPos [_corepos select 0,_corepos select 1,-3];
+		_core = createVehicle ["Axe_woodblock", _corepos, [], 0, "CAN_COLLIDE"];
+		_core setPos [_corepos select 0,_corepos select 1,0];
+		_core setDir 0;
 		_corepos = getPosASL _core;
 		trashArray set [count trashArray, _core];
 		{
@@ -119,7 +120,7 @@ if (isServer) then {[] spawn {
 				_vUp = vectorUp _x;
 				_unitpos = getPosASL _x;
 				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
-				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[_vDir,_vUp]]];
+				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1)]],[_vDir,_vUp]]];
 			};
 		}forEach _unitList;
 		_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];

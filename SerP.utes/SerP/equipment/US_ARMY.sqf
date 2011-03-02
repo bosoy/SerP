@@ -21,14 +21,14 @@ switch _type do {
 		addMagazines("15Rnd_9x19_M9",2);
 	};
 	case "RATELO": { //RATELO
-		addWeapons ["M4A1","ACE_ANPRC77","M9","Binocular","NVGoggles"];
+		addWeapons ["M4A1","ACE_ANPRC77","Binocular","NVGoggles"];
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
 	};
 	case "FO": { // Forward observer
-		addWeapons ["M4A1","M9","Binocular","NVGoggles"];
+		addWeapons ["M4A1","Binocular","NVGoggles"];
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
