@@ -39,7 +39,7 @@ SerP_server_message = "";
 SerP_isCrew = compile preprocessFileLineNumbers "SerP\isCrew.sqf";
 SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
 [] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
-[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
+[] execVM "SerP\briefing.sqf";
 [] execVM "SerP\startmission.sqf";
 [] execVM "SerP\endmission.sqf";
 diag_log "SerP - init complete";
