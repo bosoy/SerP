@@ -195,6 +195,7 @@ if !(isDedicated) then {
 	waitUntil{sleep .1;!isNil{warbegins}};
 	if (warbegins==1) exitWith {
 		endLoadingScreen;
+		_veh enableSimulation false;
 		(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 	};
 
