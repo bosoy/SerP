@@ -116,7 +116,6 @@ switch _type do {
 		addMagazines("100Rnd_762x51_M240", 2);
 		addMagazines("SmokeShell", 2);
 		addMagazines("HandGrenade_West", 2);
-		addMagazines("ACE_M7A3", 2);
 		addMagazines("SmokeShellGreen", 2);
 		addMagazines("15Rnd_9x19_M9", 2);
 		addWeapons ["M9", "Mk_48_DES_EP1", "Binocular", "NVGoggles", "ACE_Earplugs"];
