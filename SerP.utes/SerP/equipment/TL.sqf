@@ -44,7 +44,7 @@ switch _type do {
 	
 	// Automatic Rifleman
 	case "AR": {
-		addMagazines("ACE_75Rnd_545x39_S_RPK",4);
+		addMagazines("75Rnd_545x39_RPK",4);
 		addWeapons ["RPK_74", "ACE_Earplugs", "ACE_Map","NVGoggles"];
 		addMagazines("HandGrenade_East",3);
 	};
