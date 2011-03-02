@@ -109,8 +109,7 @@ if (isServer) then {[] spawn {
 	{//готовим список юнитов и данные для аттача что-бы он сработал быстрее при старте миссии
 		_corepos = (_x select 0);
 		_size = (_x select 1);
-		_core = createVehicle ["FlagCarrierChecked", _corepos, [], 0, "CAN_COLLIDE"];
-		_core setPos [_corepos select 0,_corepos select 1,0];
+		_core = createVehicle ["FlagCarrierChecked", [_corepos select 0,_corepos select 1, -3], [], 0, "CAN_COLLIDE"];
 		_corepos = getPosASL _core;
 		trashArray set [count trashArray, _core];
 		{
