@@ -405,12 +405,45 @@
 		</Original>
 	</Key>
 <!-- названия сторон, используется при завершении миссии -->
-	<Key ID="STR_ru_call">
+<Key ID="STR_ru_call">
 		<Russian>
 		мотострелки РА
 		</Russian>
 		<Original>
 		russian troops
+		</Original>
+	</Key>
+	<Key ID="STR_ruspn_call">
+		<Russian>
+		бойцы СпН ГРУ
+		</Russian>
+		<Original>
+		SPEZNAZ troops
+		</Original>
+	</Key>
+	</Key>
+		<Key ID="STR_cdkz_call">
+		<Russian>
+		Бойцы ЧДКЗ
+		</Russian>
+		<Original>
+	    CDKZ rebels
+		</Original>
+	</Key>
+	<Key ID="STR_ta_call">
+		<Russian>
+		бойцы Армии Такистана
+		</Russian>
+		<Original>
+		TA troops
+		</Original>
+	</Key>
+	<Key ID="STR_tamil_call">
+		<Russian>
+		бойцы ИФОТ
+		</Russian>
+		<Original>
+		IFFT milita
 		</Original>
 	</Key>
 	<Key ID="STR_usmc_call">
@@ -431,10 +464,18 @@
 	</Key>
 	<Key ID="STR_75th_call">
 		<Russian>
-		рейнджеры США
+		рэйнджеры США
 		</Russian>
 		<Original>
 		Rangers
+		</Original>
+	</Key>
+	<Key ID="STR_cdf_call">
+		<Russian>
+		солдаты ЧСО
+		</Russian>
+		<Original>
+		CDF soldiers
 		</Original>
 	</Key>
 	<Key ID="STR_napa_call">
@@ -445,36 +486,12 @@
 		NAPA rebels
 		</Original>
 	</Key>
-	<Key ID="STR_ta_call">
-		<Russian>
-		бойцы ИФОТ
-		</Russian>
-		<Original>
-		TA troops
-		</Original>
-	</Key>
-	<Key ID="STR_cdkz_call">
-		<Russian>
-		бойцы ЧДКЗ
-		</Russian>
-		<Original>
-		CDKZ rebels
-		</Original>
-	</Key>
 	<Key ID="STR_pot_call">
 		<Russian>
 		Войны Аллаха
 		</Russian>
 		<Original>
 		Mujahideen
-		</Original>
-	</Key>
-	<Key ID="STR_SPN_call">
-		<Russian>
-		бойцы ГРАД 
-		</Russian>
-		<Original>
-		Russian Special Forces
 		</Original>
 	</Key>
     </Container>
