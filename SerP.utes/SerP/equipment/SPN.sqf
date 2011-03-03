@@ -149,10 +149,6 @@ switch _loadout do {
 		addWeapons ["ACE_Map"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
-<<<<<<< .mine
-		addMagazines("30Rnd_545x39_AK" ,8);
-=======
->>>>>>> .r195
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",5],["PipeBomb",2]]];
@@ -160,11 +156,7 @@ switch _loadout do {
 	case "R_SAB" : {// Разведчик - диверсант
 		addWeapons ["ACE_Val_Kobra","ACE_ALICE_Backpack","NVGoggles"];
 		addWeapons ["ACE_Map"];
-<<<<<<< .mine
 		addMagazines("20Rnd_9x39_SP5_VSS",8);
-=======
-		addMagazines("ACE_30Rnd_762x39_SD_AK47",8);
->>>>>>> .r195
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",2],["PipeBomb",3]]];
@@ -172,11 +164,7 @@ switch _loadout do {
 	case "R_ASD" : {// Разведчик - AKMSD
 		addWeapons ["ACE_Val_Kobra","ACE_RPG22","NVGoggles"];
 		addWeapons ["ACE_Map"];
-<<<<<<< .mine
 		addMagazines("20Rnd_9x39_SP5_VSS",8);
-=======
-		addMagazines("ACE_30Rnd_762x39_SD_AK47",8);
->>>>>>> .r195
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 	};
