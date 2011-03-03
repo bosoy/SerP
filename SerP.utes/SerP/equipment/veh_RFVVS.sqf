@@ -8,7 +8,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["10Rnd_762x54_SVD",20];
 		_veh addMagazineCargo ["100Rnd_762x54_PK",20];
 		_veh addMagazineCargo ["1Rnd_HE_GP25",40];
-		_veh addWeaponCargo ["ACE_ANPRC77",4];
+		_veh addWeaponCargo ["ACE_P159_RD90",4];
 		_veh addWeaponCargo ["ACE_BackPack",10];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 20];
 		_veh addMagazineCargo ["ACE_Bandage",20];
