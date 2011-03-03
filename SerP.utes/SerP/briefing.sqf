@@ -30,7 +30,7 @@ _grpText = "";
 _groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
 
 //условности, одни на всех
-_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];
+if (localize "convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];};
 //погода из настроек миссии
 _weather = player createDiaryRecord ["diary", [localize "STR_weather",
 format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2",
@@ -41,18 +41,18 @@ getArray(missionConfigFile >> "Params" >> "weather" >> "texts") select weather
 //задачи, вооружение и брифинги сторон
 switch true do {
 	case (_unitside == _sideREDFOR): {
-		_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_rf"]];
-		_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_rf"]];
-		_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_rf"]];
-		_mis = player createDiaryRecord ["diary", [localize "task_title",localize "task_rf"]];
-		_sit = player createDiaryRecord ["diary", [localize "situation_title",localize "situation_rf"]];
+		if (localize "machinery_rf" != "") then {_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_rf"]];};
+		if (localize "enemy_rf" != "") then {_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_rf"]];};
+		if (localize "execution_rf" != "") then {_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_rf"]];};
+		if (localize "task_rf" != "") then {_mis = player createDiaryRecord ["diary", [localize "task_title",localize "task_rf"]];};
+		if (localize "situation_rf" != "") then {_sit = player createDiaryRecord ["diary", [localize "situation_title",localize "situation_rf"]];};
 	};
 	case (_unitside == _sideBLUEFOR): {
-		_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_bf"]];
-		_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_bf"]];
-		_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_bf"]];
-		_mis = player createDiaryRecord ["diary", [localize "task_title",localize "task_bf"]];
-		_sit = player createDiaryRecord ["diary", [localize "situation_title",localize "situation_bf"]];
+		if (localize "machinery_bf" != "") then {_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_bf"]];};
+		if (localize "enemy_bf" != "") then {_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_bf"]];};
+		if (localize "execution_bf" != "") then {_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_bf"]];};
+		if (localize "task_bf" != "") then {_mis = player createDiaryRecord ["diary", [localize "task_title",localize "task_bf"]];};
+		if (localize "situation_bf" != "") then {_sit = player createDiaryRecord ["diary", [localize "situation_title",localize "situation_bf"]];};
 	};
 	default {//цивилы
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
