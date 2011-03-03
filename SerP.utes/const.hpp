@@ -11,7 +11,7 @@ zoneMultBLUEFOR = 1;
 sideREDFOR = "east";
 sideBLUEFOR = "west";
 //Текст который будет использован в сообщении о победе/проигрыше
-//Допустимые значения: STR_ru_call, STR_usmc_call, STR_usarmy_call, STR_75th_call, STR_napa_call, STR_ta_call, STR_cdkz_call, STR_pot_call
+//Допустимые значения: STR_ru_call, STR_usmc_call, STR_usarmy_call, STR_75th_call, STR_napa_call, STR_ta_call, STR_cdkz_call, STR_pot_call, STR_CDF_call, STR_SPN_call
 //Можно дописать свое в stringtable.xml
 titleREDFOR = $STR_ru_call;
 titleBLUEFOR = $STR_usarmy_call;
