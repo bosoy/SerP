@@ -41,18 +41,24 @@ getArray(missionConfigFile >> "Params" >> "weather" >> "texts") select weather
 //задачи, вооружение и брифинги сторон
 switch true do {
 	case (_unitside == _sideREDFOR): {
-		if (localize "machinery_rf" != "") then {_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_rf"]];};
-		if (localize "enemy_rf" != "") then {_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_rf"]];};
-		if (localize "execution_rf" != "") then {_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_rf"]];};
-		if (localize "task_rf" != "") then {_mis = player createDiaryRecord ["diary", [localize "task_title",localize "task_rf"]];};
-		if (localize "situation_rf" != "") then {_sit = player createDiaryRecord ["diary", [localize "situation_title",localize "situation_rf"]];};
+		{if (localize(_x select 1)!="") then {
+			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]
+		};} forEach [
+			["machinery_title","machinery_rf"],
+			["enemy_title","enemy_rf"],
+			["execution_title","execution_rf"],
+			["situation_title","situation_rf"]
+		];
 	};
 	case (_unitside == _sideBLUEFOR): {
-		if (localize "machinery_bf" != "") then {_wpn = player createDiaryRecord ["diary", [localize "machinery_title",localize "machinery_bf"]];};
-		if (localize "enemy_bf" != "") then {_enm = player createDiaryRecord ["diary", [localize "enemy_title",localize "enemy_bf"]];};
-		if (localize "execution_bf" != "") then {_exe = player createDiaryRecord ["diary", [localize "execution_title",localize "execution_bf"]];};
-		if (localize "task_bf" != "") then {_mis = player createDiaryRecord ["diary", [localize "task_title",localize "task_bf"]];};
-		if (localize "situation_bf" != "") then {_sit = player createDiaryRecord ["diary", [localize "situation_title",localize "situation_bf"]];};
+		{if (localize(_x select 1)!="") then {
+			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]
+		};} forEach [
+			["machinery_title","machinery_bf"],
+			["enemy_title","enemy_bf"],
+			["execution_title","execution_bf"],
+			["situation_title","situation_bf"]
+		];
 	};
 	default {//цивилы
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];

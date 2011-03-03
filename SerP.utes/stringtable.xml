@@ -469,6 +469,14 @@
 		Mujahideen
 		</Original>
 	</Key>
+	<Key ID="STR_SPN_call">
+		<Russian>
+		бойцы ГРАД 
+		</Russian>
+		<Original>
+		Russian Special Forces
+		</Original>
+	</Key>
     </Container>
   </Package>
 </Project>

@@ -101,7 +101,7 @@ switch _loadout do {
 	};
 //Разведотделение
 	case "R_SL_GP" : {//Командир отделения разведки
-		addWeapons ["ACE_AKS74P_GL_Kobra","ACE_P159_RD90","Binocular","NVGoggles"];
+		addWeapons ["ACE_AK74M_GL_1P29","ACE_P159_RD90","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",6);
 		addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -147,15 +147,30 @@ switch _loadout do {
 	case "R_SAP" : {// Разведчик - сапер
 		addWeapons ["ACE_AKS74P_Kobra","ACE_ALICE_Backpack","NVGoggles"];
 		addWeapons ["ACE_Map"];
+<<<<<<< .mine
+		addMagazines("30Rnd_545x39_AK",7);
+		addMagazines("ACE_30Rnd_545x39_T_AK",1);
+=======
 		addMagazines("30Rnd_545x39_AK" ,8);
+>>>>>>> .r193
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",5],["PipeBomb",2]]];
 	};
+	case "R_SAB" : {// Разведчик - диверсант
+		addWeapons ["ACE_AKMS_SD","ACE_ALICE_Backpack","NVGoggles"];
+		addWeapons ["ACE_Map"];
+		addMagazines("ACE_30Rnd_762x39_SD_AK47",4);
+		addMagazines("30Rnd_545x39_AK",4);
+		addMagazines("ACE_RDGM",2);
+		addMagazines("HandGrenade_East",2);
+		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",2],["PipeBomb",3]]];
+	};
 	case "R_ASD" : {// Разведчик - AKMSD
 		addWeapons ["ACE_AKMS_SD","ACE_RPG22","NVGoggles"];
 		addWeapons ["ACE_Map"];
-		addMagazines("ACE_30Rnd_762x39_SD_AK47",8);
+		addMagazines("ACE_30Rnd_762x39_SD_AK47",4);
+		addMagazines("30Rnd_545x39_AK",4);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 	};
