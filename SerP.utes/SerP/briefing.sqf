@@ -42,7 +42,7 @@ getArray(missionConfigFile >> "Params" >> "weather" >> "texts") select weather
 switch true do {
 	case (_unitside == _sideREDFOR): {
 		{if (localize(_x select 1)!="") then {
-			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]
+			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_rf"],
 			["enemy_title","enemy_rf"],
