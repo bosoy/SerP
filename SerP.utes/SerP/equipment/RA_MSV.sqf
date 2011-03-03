@@ -56,6 +56,14 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",4]]];
 	};
+	case "AR" : { //Пулеметчик РПК
+		addWeapons ["ACE_RPK74M_1P29","NVGoggles"];
+		addWeapons ["ACE_Earplugs"];
+		addMagazines("ACE_75Rnd_545x39_T_RPK",6);
+		addMagazines("ACE_RDGM",2);
+		addMagazines("HandGrenade_East",2);
+		{_unit addMagazine "ACE_75Rnd_545x39_T_RPK"} forEach [0,0,0,0,0,0,0];
+	};
 	case "AT" : { //1й номер расчета РПГ
 		addWeapons ["ACE_AK74M","ACE_RPG7V_PGO7","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];

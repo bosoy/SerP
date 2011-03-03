@@ -147,7 +147,7 @@ switch _loadout do {
 	case "R_SAP" : {// Разведчик - сапер
 		addWeapons ["ACE_AKS74P_Kobra","ACE_ALICE_Backpack","NVGoggles"];
 		addWeapons ["ACE_Map"];
-		addMagazines("20Rnd_9x39_SP5_VSS" ,8);
+		addMagazines("30Rnd_545x39_AK" ,8);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",5],["PipeBomb",2]]];
