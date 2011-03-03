@@ -1,10 +1,10 @@
-#define addWeapons {_unit addWeapon _x} forEach 
+п»ї#define addWeapons {_unit addWeapon _x} forEach
 #define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 _unit = _this select 0;
 _loadout = toUpper (_this select 1);
 switch _loadout do {
-//командование взвода
-	case "OFF" : {//Командир взвода
+//РєРѕРјР°РЅРґРѕРІР°РЅРёРµ РІР·РІРѕРґР°
+	case "OFF" : {//РљРѕРјР°РЅРґРёСЂ РІР·РІРѕРґР°
 		addWeapons ["ACE_AK74M_GL_1P29","ACE_P159_RD90","Makarov","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",6);
@@ -14,8 +14,8 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",4);
 	};
-//Штурм
-	case "SL_R" : {//Комод
+//РЁС‚СѓСЂРј
+	case "SL_R" : {//РљРѕРјРѕРґ
 		addWeapons ["ACE_AK74M_GL_Kobra","ACE_P159_RD90","Makarov","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",6);
@@ -26,7 +26,7 @@ switch _loadout do {
 		addMagazines("1Rnd_HE_GP25",4);
 		_unit setVariable ["ACE_weapononback","ACE_RPG22"];
 	};
-	case "SL_GP" : {//Комод с ГП
+	case "SL_GP" : {//РљРѕРјРѕРґ СЃ Р“Рџ
 		addWeapons ["ACE_AK74M_GL_Kobra","ACE_P159_RD90","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",6);
@@ -35,7 +35,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",4);
 	};
-	case "TL" : {//Старший стрелок
+	case "TL" : {//РЎС‚Р°СЂС€РёР№ СЃС‚СЂРµР»РѕРє
 		addWeapons ["ACE_AK74M_1P29","ACE_RPG22","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools"];
 		addMagazines("30Rnd_545x39_AK",6);
@@ -44,14 +44,14 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",4);
 	};
-	case "MG" : {//Пулеметчик
+	case "MG" : {//РџСѓР»РµРјРµС‚С‡РёРє
 		addWeapons ["Pecheneg","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("100Rnd_762x54_PK",4);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 	};
-	case "AMG" : {//Помошник пулеметчика
+	case "AMG" : {//РџРѕРјРѕС€РЅРёРє РїСѓР»РµРјРµС‚С‡РёРєР°
 		addWeapons ["ACE_AK74M_Kobra","ACE_ALICE_Backpack","Binocular","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("30Rnd_545x39_AK",7);
@@ -60,13 +60,13 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",4]]];
 	};
-	case "AT" : {//1й номер расчета РПГ
+	case "AT" : {//1Р№ РЅРѕРјРµСЂ СЂР°СЃС‡РµС‚Р° Р РџР“
 		addWeapons ["ACE_AK74M_Kobra","ACE_RPG7V_PGO7","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("30Rnd_545x39_AK",6);
 		addMagazines("ACE_PG7VM_PGO7",3);
 	};
-	case "AAT" : {//2й номер расчета РПГ
+	case "AAT" : {//2Р№ РЅРѕРјРµСЂ СЂР°СЃС‡РµС‚Р° Р РџР“
 		addWeapons ["ACE_AK74M_Kobra","ACE_ALICE_Backpack","Binocular","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("30Rnd_545x39_AK",7);
@@ -75,7 +75,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_PG7VM_PGO7",4]]];
 	};
-	case "GL" : {//Стрелок с ГП
+	case "GL" : {//РЎС‚СЂРµР»РѕРє СЃ Р“Рџ
 		addWeapons ["ACE_AK74M_GL_Kobra","NVGoggles"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -83,7 +83,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",8);
 	};
-	case "GLAT" : {//Стрелок с ГП РПГ22
+	case "GLAT" : {//РЎС‚СЂРµР»РѕРє СЃ Р“Рџ Р РџР“22
 		addWeapons ["ACE_AK74M_GL","ACE_RPG22","NVGoggles"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -91,7 +91,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",8);
 	};
-	case "LAT" : {// Стрелок РПГ-22
+	case "LAT" : {// РЎС‚СЂРµР»РѕРє Р РџР“-22
 		addWeapons ["ACE_AK74M_Kobra","ACE_RPG22","NVGoggles"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -99,9 +99,9 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_weapononback","ACE_RPG22"];
 	};
-//Разведотделение
-	case "R_SL_GP" : {//Командир отделения разведки
-		addWeapons ["ACE_AK74M_GL_1P29","ACE_P159_RD90","Binocular","NVGoggles"];
+//Р Р°Р·РІРµРґРѕС‚РґРµР»РµРЅРёРµ
+	case "R_SL_GP" : {//РљРѕРјР°РЅРґРёСЂ РѕС‚РґРµР»РµРЅРёСЏ СЂР°Р·РІРµРґРєРё
+		addWeapons ["ACE_AKS74P_GL_Kobra","ACE_P159_RD90","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",6);
 		addMagazines("ACE_30Rnd_545x39_T_AK",2);
@@ -109,7 +109,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",4);
 	};
-	case "R_TL" : {//Старший разведчик
+	case "R_TL" : {//РЎС‚Р°СЂС€РёР№ СЂР°Р·РІРµРґС‡РёРє
 		addWeapons ["ACE_AKS74P_1P29","ACE_RPG27","ACE_APSB","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",6);
@@ -118,7 +118,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 	};
-	case "R_SN" : {//Разведчик - снайпер
+	case "R_SN" : {//Р Р°Р·РІРµРґС‡РёРє - СЃРЅР°Р№РїРµСЂ
 		addWeapons ["ACE_gr1sdsp","ACE_APSB","ACE_YardAge450","NVGoggles"];
 		addMagazines("ACE_Battery_Rangefinder", 2);
 		addMagazines("ACE_30Rnd_762x39_SD_AK47",7);
@@ -127,7 +127,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_MON50_M",2);
 	};
-	case "R_MG" : {//Разведчик - пулеметчик
+	case "R_MG" : {//Р Р°Р·РІРµРґС‡РёРє - РїСѓР»РµРјРµС‚С‡РёРє
 		addWeapons ["Pecheneg","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("100Rnd_762x54_PK",4);
@@ -136,7 +136,7 @@ switch _loadout do {
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",4]]];
 	};
-	case "R_R" : {// Разведчик - радиотелефонист
+	case "R_R" : {// Р Р°Р·РІРµРґС‡РёРє - СЂР°РґРёРѕС‚РµР»РµС„РѕРЅРёСЃС‚
 		addWeapons ["ACE_AKS74P_GL_Kobra","ACE_P159_RD90","NVGoggles"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -144,39 +144,33 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addMagazines("1Rnd_HE_GP25",4);
 	};
-	case "R_SAP" : {// Разведчик - сапер
+	case "R_SAP" : {// Р Р°Р·РІРµРґС‡РёРє - СЃР°РїРµСЂ
 		addWeapons ["ACE_AKS74P_Kobra","ACE_ALICE_Backpack","NVGoggles"];
 		addWeapons ["ACE_Map"];
-<<<<<<< .mine
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
-=======
-		addMagazines("30Rnd_545x39_AK" ,8);
->>>>>>> .r193
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",5],["PipeBomb",2]]];
 	};
-	case "R_SAB" : {// Разведчик - диверсант
+	case "R_SAB" : {// Р Р°Р·РІРµРґС‡РёРє - РґРёРІРµСЂСЃР°РЅС‚
 		addWeapons ["ACE_AKMS_SD","ACE_ALICE_Backpack","NVGoggles"];
 		addWeapons ["ACE_Map"];
-		addMagazines("ACE_30Rnd_762x39_SD_AK47",4);
-		addMagazines("30Rnd_545x39_AK",4);
+		addMagazines("ACE_30Rnd_762x39_SD_AK47",8);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",2],["PipeBomb",3]]];
 	};
-	case "R_ASD" : {// Разведчик - AKMSD
+	case "R_ASD" : {// Р Р°Р·РІРµРґС‡РёРє - AKMSD
 		addWeapons ["ACE_AKMS_SD","ACE_RPG22","NVGoggles"];
 		addWeapons ["ACE_Map"];
-		addMagazines("ACE_30Rnd_762x39_SD_AK47",4);
-		addMagazines("30Rnd_545x39_AK",4);
+		addMagazines("ACE_30Rnd_762x39_SD_AK47",8);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
 	};
 
-// Снайперские пары
-	case "MR" : {//Стрелок СВД
+// РЎРЅР°Р№РїРµСЂСЃРєРёРµ РїР°СЂС‹
+	case "MR" : {//РЎС‚СЂРµР»РѕРє РЎР’Р”
 		addWeapons ["SVD","ACE_APSB","Binocular","NVGoggles"];
 		addMagazines("10Rnd_762x54_SVD",7);
 		addMagazines("ACE_10Rnd_762x54_T_SVD",1);
@@ -184,7 +178,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_MON50_M",2);
 	};
-	case "MRN" : {//Стрелок СВД-NSPU
+	case "MRN" : {//РЎС‚СЂРµР»РѕРє РЎР’Р”-NSPU
 		addWeapons ["SVD_NSPU_EP1","ACE_APSB","Binocular","NVGoggles"];
 		addMagazines("10Rnd_762x54_SVD",7);
 		addMagazines("ACE_10Rnd_762x54_T_SVD",1);
@@ -192,7 +186,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_MON50_M",2);
 	};
-	case "SN" : {//Снайпер
+	case "SN" : {//РЎРЅР°Р№РїРµСЂ
 		addWeapons ["ACE_SVD_Bipod","ACE_APSB","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ItemGPS"];
 		addMagazines("10Rnd_762x54_SVD",7);
@@ -203,7 +197,7 @@ switch _loadout do {
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",10]]];
 	};
-	case "HSN" : {//Снайпер КСВК
+	case "HSN" : {//РЎРЅР°Р№РїРµСЂ РљРЎР’Рљ
 		addWeapons ["KSVK","ACE_APSB","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ItemGPS"];
 		addMagazines("5Rnd_127x108_KSVK",8);
@@ -213,7 +207,7 @@ switch _loadout do {
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",10],["ACE_MON50_M",1]]];
 	};
-	case "ASL" : {//наблюдатель-наводчик СВД
+	case "ASL" : {//РЅР°Р±Р»СЋРґР°С‚РµР»СЊ-РЅР°РІРѕРґС‡РёРє РЎР’Р”
 		addWeapons ["VSS_vintorez","ACE_APSB","Binocular_Vector","NVGoggles"];
 		addWeapons ["ACE_Map","ItemGPS","ACE_Kestrel4500"];
 		addMagazines("20Rnd_9x39_SP5_VSS",5);
@@ -223,9 +217,9 @@ switch _loadout do {
 		addMagazines("ACE_MON50_M",2);
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",5],["20Rnd_9x39_SP5_VSS",5],["ACE_MON50_M",3]]];
-		
+
 	};
-	case "ASH" : {//наблюдатель-наводчик КВСК
+	case "ASH" : {//РЅР°Р±Р»СЋРґР°С‚РµР»СЊ-РЅР°РІРѕРґС‡РёРє РљР’РЎРљ
 		addWeapons ["VSS_vintorez","ACE_APSB","Binocular_Vector","NVGoggles"];
 		addWeapons ["ACE_Map","ItemGPS","ACE_Kestrel4500"];
 		addMagazines("20Rnd_9x39_SP5_VSS",5);
@@ -235,9 +229,9 @@ switch _loadout do {
 		addMagazines("ACE_MON50_M",2);
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",5],["20Rnd_9x39_SP5_VSS",5],["ACE_MON50_M",3]]];
-		
+
 	};
-	case "ASKSL" : {//наблюдатель-наводчик СВД
+	case "ASKSL" : {//РЅР°Р±Р»СЋРґР°С‚РµР»СЊ-РЅР°РІРѕРґС‡РёРє РЎР’Р”
 		addWeapons ["ACE_AKS74P_GL_1P29","ACE_APSB","Binocular_Vector","NVGoggles"];
 		addWeapons ["ACE_Map","ItemGPS","ACE_Kestrel4500"];
 		addMagazines("ACE_30Rnd_545x39_S_AK",4);
@@ -248,9 +242,9 @@ switch _loadout do {
 		addMagazines("ACE_MON50_M",2);
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",5],["ACE_30Rnd_545x39_S_AK",5],["ACE_MON50_M",3]]];
-		
+
 	};
-	case "ASKSH" : {//наблюдатель-наводчик КВСК
+	case "ASKSH" : {//РЅР°Р±Р»СЋРґР°С‚РµР»СЊ-РЅР°РІРѕРґС‡РёРє РљР’РЎРљ
 		addWeapons ["ACE_AKS74P_GL_1P29","ACE_APSB","Binocular_Vector","NVGoggles"];
 		addWeapons ["ACE_Map","ItemGPS","ACE_Kestrel4500"];
 		addMagazines("ACE_30Rnd_545x39_S_AK",4);
@@ -261,12 +255,12 @@ switch _loadout do {
 		addMagazines("ACE_MON50_M",2);
 		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",5],["ACE_30Rnd_545x39_S_AK",5],["ACE_MON50_M",3]]];
-		
+
 	};
 
 
-//экипаж
-	case "CRWVC" : {//Командир техники
+//СЌРєРёРїР°Р¶
+	case "CRWVC" : {//РљРѕРјР°РЅРґРёСЂ С‚РµС…РЅРёРєРё
 		addWeapons ["AKS_74_U","Makarov","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",5);
@@ -274,13 +268,13 @@ switch _loadout do {
 		addMagazines("8Rnd_9x18_Makarov",4);
 		addMagazines("ACE_RDGM",2);
 	};
-	case "CRW" : {//Экипаж
+	case "CRW" : {//Р­РєРёРїР°Р¶
 		addWeapons ["AKS_74_U","NVGoggles"];
 		addMagazines("30Rnd_545x39_AK",5);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
 		addMagazines("ACE_RDGM",2);
 	};
-	case "PL" : {//Пилот
+	case "PL" : {//РџРёР»РѕС‚
 		addWeapons ["AKS_74_U","Makarov","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_GlassesSunglasses","ItemGPS"];
 		addMagazines("30Rnd_545x39_AK",5);
