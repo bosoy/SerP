@@ -37,7 +37,7 @@ switch _type do {
 	//Asst. Machinegunner
 	case "AMG": {				
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles", "ACE_ALICE_Backpack"];
+		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles", "ACE_Combat_Pack"];
 		addMagazines("HandGrenade_West",3);
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",2]]];			
 	};
@@ -60,7 +60,7 @@ switch _type do {
 	case "AAT": { 	
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);
-		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles", "ACE_ALICE_Backpack", "ACE_Earplugs"];
+		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles", "ACE_Combat_Pack", "ACE_Earplugs"];
 		_unit setVariable ["ACE_RuckMagContents", [["PG7V",2],["OG7",2]]];
 	};
 	// Rifleman AT
@@ -71,20 +71,20 @@ switch _type do {
 	};	
 	// Saboteur
 	case "SAB": {
-		addWeapons ["AK_47_S", "ACE_Map", "NVGoggles","ACE_ALICE_Backpack"];
+		addWeapons ["AK_47_S", "ACE_Map", "NVGoggles","ACE_Combat_Pack"];
 		addMagazines("30Rnd_762x39_AK47",3);
 		_unit setVariable ["ACE_RuckMagContents", [["PipeBomb",2]]];
 	};
 	// Sapper
 	case "SAP": {
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_S", "ACE_Map", "NVGoggles","ACE_ALICE_Backpack"];
+		addWeapons ["AK_47_S", "ACE_Map", "NVGoggles","ACE_Combat_Pack"];
 		_unit setVariable ["ACE_RuckMagContents", [["BAF_ied_v2",2],["BAF_ied_v4",2]]];
 	};
 	// Asst. Sapper
 	case "ASAP": { 	
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_S", "ACE_Map", "NVGoggles","ACE_ALICE_Backpack"];
+		addWeapons ["AK_47_S", "ACE_Map", "NVGoggles","ACE_Combat_Pack"];
 		_unit setVariable ["ACE_RuckMagContents", [["BAF_ied_v1",2],["BAF_ied_v3",2]]];
 	};
 	// Recon
@@ -117,7 +117,7 @@ switch _type do {
 		addMagazines("ACE_Morphine",2);
 		addMagazines("ACE_Epinephrine",2);
 		addMagazines("ACE_Medkit",2);
-		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles","ACE_ALICE_Backpack"];
+		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles","ACE_Combat_Pack"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 	//Grenadier
