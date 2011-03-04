@@ -52,7 +52,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 	};
 	case "AMG" : {//Помошник пулеметчика
-		addWeapons ["ACE_AK74M_Kobra","ACE_ALICE_Backpack","Binocular","NVGoggles"];
+		addWeapons ["ACE_AK74M_Kobra","ACE_CharliePack","Binocular","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -67,7 +67,7 @@ switch _loadout do {
 		addMagazines("ACE_PG7VM_PGO7",3);
 	};
 	case "AAT" : {//2й номер расчета РПГ
-		addWeapons ["ACE_AK74M_Kobra","ACE_ALICE_Backpack","Binocular","NVGoggles"];
+		addWeapons ["ACE_AK74M_Kobra","ACE_CharliePack","Binocular","NVGoggles"];
 		addWeapons ["ACE_Earplugs"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -133,7 +133,7 @@ switch _loadout do {
 		addMagazines("100Rnd_762x54_PK",4);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",4]]];
 	};
 	case "R_R" : {// Разведчик - радиотелефонист
@@ -145,7 +145,7 @@ switch _loadout do {
 		addMagazines("1Rnd_HE_GP25",4);
 	};
 	case "R_SAP" : {// Разведчик - сапер
-		addWeapons ["ACE_AKS74P_Kobra","ACE_ALICE_Backpack","NVGoggles"];
+		addWeapons ["ACE_AKS74P_Kobra","ACE_CharliePack","NVGoggles"];
 		addWeapons ["ACE_Map"];
 		addMagazines("30Rnd_545x39_AK",7);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
@@ -154,7 +154,7 @@ switch _loadout do {
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_MON50_M",5],["PipeBomb",2]]];
 	};
 	case "R_SAB" : {// Разведчик - диверсант
-		addWeapons ["ACE_Val_Kobra","ACE_ALICE_Backpack","NVGoggles"];
+		addWeapons ["ACE_Val_Kobra","ACE_CharliePack","NVGoggles"];
 		addWeapons ["ACE_Map"];
 		addMagazines("20Rnd_9x39_SP5_VSS",8);
 		addMagazines("ACE_RDGM",2);
@@ -194,7 +194,7 @@ switch _loadout do {
 		addMagazines("ACE_20Rnd_9x18_APSB",4);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_MON50_M",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",10]]];
 	};
 	case "HSN" : {//Снайпер КСВК
@@ -204,7 +204,7 @@ switch _loadout do {
 		addMagazines("ACE_20Rnd_9x18_APSB",4);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_MON50_M",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",10],["ACE_MON50_M",1]]];
 	};
 	case "ASL" : {//наблюдатель-наводчик СВД
@@ -215,7 +215,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_Battery_Rangefinder",1);
 		addMagazines("ACE_MON50_M",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",5],["20Rnd_9x39_SP5_VSS",5],["ACE_MON50_M",3]]];
 
 	};
@@ -227,7 +227,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_Battery_Rangefinder",1);
 		addMagazines("ACE_MON50_M",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",5],["20Rnd_9x39_SP5_VSS",5],["ACE_MON50_M",3]]];
 
 	};
@@ -240,7 +240,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_Battery_Rangefinder",1);
 		addMagazines("ACE_MON50_M",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",5],["ACE_30Rnd_545x39_S_AK",5],["ACE_MON50_M",3]]];
 
 	};
@@ -253,7 +253,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_Battery_Rangefinder",1);
 		addMagazines("ACE_MON50_M",2);
-		_unit setVariable ["ACE_weapononback","ACE_ALICE_Backpack"];
+		_unit setVariable ["ACE_weapononback","ACE_CharliePack"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_127x108_KSVK",5],["ACE_30Rnd_545x39_S_AK",5],["ACE_MON50_M",3]]];
 
 	};
