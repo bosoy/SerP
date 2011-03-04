@@ -29,7 +29,7 @@ switch _type do {
 	};
 	//Machinegunner
 	case "MG": {
-		addWeapons ["ACE_Map","PK","Binocular","NVGoggles","ACE_PRC119_ACU","ACE_Earplugs"];
+		addWeapons ["ACE_Map","PK","Binocular","NVGoggles","ACE_Earplugs"];
 		addMagazines("100Rnd_762x54_PK",2);
 		addMagazines("HandGrenade_West",3);
 	};
