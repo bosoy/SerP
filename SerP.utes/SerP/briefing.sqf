@@ -45,8 +45,9 @@ switch true do {
 			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_rf"],
-			["enemy_title","enemy_rf"],
+			["enemy_title","enemy_rf"],			
 			["execution_title","execution_rf"],
+			["task_title","task_rf"],
 			["situation_title","situation_rf"]
 		];
 	};
@@ -56,7 +57,8 @@ switch true do {
 		};} forEach [
 			["machinery_title","machinery_bf"],
 			["enemy_title","enemy_bf"],
-			["execution_title","execution_bf"],
+			["execution_title","execution_bf"],			
+			["task_title","task_bf"],
 			["situation_title","situation_bf"]
 		];
 	};
