@@ -6,7 +6,7 @@
 respawn = 1;
 respawndelay = 3;
 
-onLoadMission = "SerP demo";
+onLoadMission = $STR_missionname;
 
 class Params {
 #include "SerP\params_default.hpp"

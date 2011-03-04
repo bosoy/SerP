@@ -7,7 +7,11 @@ hintzonesize = 30;
 zoneMultREDFOR = 1;
 //стартовая зона BLUEFOR будет равна defZoneSize*zoneMultBLUEFOR
 zoneMultBLUEFOR = 1;
-//Воюющие стороны: "west", "east", "resistance", "civilian"
+//Воюющие стороны:
+//"west" - USMC, US Army, CDF, Rangers and etc.
+//"east" - MSV, TA, CDKZ and etc.
+//"resistance" - NAPA, Peaple of Takistan, PMC, UN and etc
+//"civilian"
 sideREDFOR = "east";
 sideBLUEFOR = "west";
 //Текст который будет использован в сообщении о победе/проигрыше
