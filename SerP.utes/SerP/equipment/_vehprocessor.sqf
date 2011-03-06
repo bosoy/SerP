@@ -36,7 +36,7 @@ if (isNil {SerP_addCargoBox}) then {
 		_magazines = _this select 2;	
 		if (isNil {_magazines}) then {_magazines = [];};
 		_weapons = _this select 3;
-		if (isNil {_waspons}) then {_weapons = [];};
+		if (isNil {_weapons}) then {_weapons = [];};
 		if (isServer) then {
 			_tbox = _boxtype createVehicle [0,0,0];
 			_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
