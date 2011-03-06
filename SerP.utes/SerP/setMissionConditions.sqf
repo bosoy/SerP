@@ -33,6 +33,9 @@ switch (timeOfDay) do	{
 	case 7:	{
 		setDate [2010, 10, 21, 0, 0];
 	};
+	case 8:	{
+		setDate getArray(missionConfigFile >> "SerP_const" >> "defaultTime");
+	};
 	default	{};
 };
 };
@@ -72,11 +75,15 @@ switch (weather) do	{
 		0 setOvercast _MissionOvercast;
 		0 setFog _MissionFog;
 	};
-// Overcast
+//default
+	case 5: {
+		0 setOvercast getNumber(missionConfigFile >> "SerP_const" >> "defaultOvercast");
+		0 setFog getNumber(missionConfigFile >> "SerP_const" >> "defaultFog");
+	};
 	default {};
 };
 
-setViewDistance 3200;
+setViewDistance getNumber(missionConfigFile >> "SerP_const" >> "viewDistance");
 
 if (isNil{briefing_mode}&&isServer) then {
 	briefing_mode = 1;publicVariable "briefing_mode";
