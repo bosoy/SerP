@@ -15,11 +15,11 @@ enableEngineArtillery false;
 SerP_isCrew = compile preprocessFileLineNumbers "SerP\isCrew.sqf";
 SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
 [] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
+[] execVM "SerP\endmission.sqf";
 
 if (isServer) then {
 	publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones"];
 	onPlayerConnected "{publicVariable _x} forEach publicVars";
-	[] execVM "SerP\endmission.sqf";
 	[] execVM "SerP\startmission_server.sqf";
 };
 

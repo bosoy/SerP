@@ -1,19 +1,11 @@
-﻿#include "SerP\XEH.hpp"
-class Header	{
-	gameType = Unknown;
-	minPlayers = 1;
-	maxPlayers = 200;
+﻿#include "SerP\header.hpp"
+//#include "mission.sqm"
+
+class SerP_const {
+	#include "const.hpp"
 };
-respawn = 1;
-respawndelay = 3;
-
-onLoadMission = $STR_missionname;
-
 class Params {
 #include "SerP\params_default.hpp"
 //здесь можно описать дополнительные параметры игры
 };
-//#include "mission.sqm"
-class SerP_const {
-	#include "const.hpp"
-};
+
