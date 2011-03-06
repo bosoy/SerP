@@ -15,7 +15,6 @@ _common_processor = {
 	removeAllItems _unit;
 	{_unit removeMagazine _x} forEach (magazines _unit); 
 	_unit removeWeapon "ItemGPS";
-	{_unit addMagazine "ACE_Bandage";} forEach [0,0];
 	_unit addMagazine "ACE_Morphine";
 	_unit addMagazine "ACE_Epinephrine";
 	_unit addWeapon "ItemMap";

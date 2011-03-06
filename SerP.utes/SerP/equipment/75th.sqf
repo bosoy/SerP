@@ -50,7 +50,7 @@ switch _type do {
 		addMagazines("200Rnd_556x45_M249",3);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["M249_m145_EP1", "NVGoggles"];
+		addWeapons ["M249_EP1", "NVGoggles"];
 		addWeapons ["ACE_Earplugs", "ACE_GlassesLHD_glasses"];
 	};
 	case "AT" : { // Operator "Javelin"
