@@ -33,9 +33,7 @@ switch (timeOfDay) do	{
 	case 7:	{
 		setDate [2010, 10, 21, 0, 0];
 	};
-	default	{
-		setDate [2010, 10, 21, 12, 0];
-	};
+	default	{};
 };
 };
 switch (weather) do	{
@@ -43,36 +41,41 @@ switch (weather) do	{
 	case 0: {
 		_MissionOvercast = 00.00;
 		_MissionFog = 00.00;
+		0 setOvercast _MissionOvercast;
+		0 setFog _MissionFog;
 	};
 // Overcast
 	case 1: {
 		_MissionOvercast = 00.60;
 		_MissionFog = 00.10;
+		0 setOvercast _MissionOvercast;
+		0 setFog _MissionFog;
 	};
 // Light Fog
 	case 2: {
 		_MissionOvercast = 00.60;
 		_MissionFog = 00.60;
+		0 setOvercast _MissionOvercast;
+		0 setFog _MissionFog;
 	};
 // Heavy Fog
 	case 3: {
 		_MissionOvercast = 00.60;
 		_MissionFog = 00.96;
+		0 setOvercast _MissionOvercast;
+		0 setFog _MissionFog;
 	};
 // Storm
 	case 4: {
 		_MissionOvercast = 01.00;
 		_MissionFog = 00.50;
+		0 setOvercast _MissionOvercast;
+		0 setFog _MissionFog;
 	};
 // Overcast
-	default {
-		_MissionOvercast = 00.60;
-		_MissionFog = 00.10;
-	};
+	default {};
 };
 
-0 setOvercast _MissionOvercast;
-0 setFog _MissionFog;
 setViewDistance 3200;
 
 if (isNil{briefing_mode}&&isServer) then {

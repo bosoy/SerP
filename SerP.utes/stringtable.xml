@@ -113,7 +113,7 @@
 	<Key ID="groups_title">
 		<Original>
 		Отряды
-		</Original> 
+		</Original>
 	</Key>
 	<Key ID="credits_title">
 		<Original>
@@ -144,7 +144,7 @@
 		<Original>
 		Противник
 		</Original>
-	</Key>	
+	</Key>
 	<Key ID="convent_title">
 		<Original>
 		Условности
@@ -224,6 +224,14 @@
 		Ночь
 		</Russian>
 	</Key>
+	<Key ID="STR_timeOfDay_Option8">
+		<Original>
+		Default
+		</Original>
+		<Russian>
+		По настройкам карты
+		</Russian>
+	</Key>
 	<Key ID="STR_weather">
 		<Original>
 		Weather
@@ -272,45 +280,53 @@
 		Гроза
 		</Russian>
 	</Key>
+	<Key ID="STR_weather_Option5">
+		<Original>
+		Default
+		</Original>
+		<Russian>
+		По настройкам карты
+		</Russian>
+	</Key>
 	<Key ID="STR_briefing_mode">
 		<Original>
 		Briefing ingame
-		</Original> 
+		</Original>
 		<Russian>
 		Брифинг ингейм
-		</Russian> 
+		</Russian>
 	</Key>
 	<Key ID="STR_briefing_mode_Option0">
 		<Original>
 		Without briefing
-		</Original> 
+		</Original>
 		<Russian>
 		Без брифинга
-		</Russian> 
+		</Russian>
 	</Key>
 	<Key ID="STR_briefing_mode_Option1">
 		<Original>
 		7 min
-		</Original> 
+		</Original>
 		<Russian>
 		7 минут
-		</Russian> 
+		</Russian>
 	</Key>
 	<Key ID="STR_briefing_mode_Option2">
 		<Original>
 		15 min
-		</Original> 
+		</Original>
 		<Russian>
 		15 минут
-		</Russian> 
+		</Russian>
 	</Key>
 	<Key ID="STR_briefing_mode_Option3">
 		<Original>
 		Start when ready
-		</Original> 
+		</Original>
 		<Russian>
 		Старт по готовности
-		</Russian> 
+		</Russian>
 	</Key>
 
 <!-- это добавил Зу хз зачем -->
@@ -373,15 +389,15 @@
 	<Key ID="STR_UnauthorisedCrew">
 		<Original>
 		You are not authorised to crew this vehicle!
-		</Original> 
+		</Original>
 		<Russian>
 		Вы не уполномочены управлять этой техникой!
-		</Russian> 
+		</Russian>
 	</Key>
 <!-- сообщения при завершении миссии -->
 	<Key ID="STR_win_call">
 		<Russian>
-		В миссии победили %1 
+		В миссии победили %1
 		</Russian>
 		<Original>
 		%1 wins
