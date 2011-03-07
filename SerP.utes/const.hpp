@@ -10,7 +10,7 @@ zoneMultBLUEFOR = 1;
 //Воюющие стороны:
 //"west" - USMC, US Army, CDF, Rangers and etc.
 //"east" - MSV, TA, CDKZ and etc.
-//"resistance" - NAPA, Peaple of Takistan, PMC, UN and etc
+//"resistance" - NAPA, People of Takistan, PMC, UN and etc
 //"civilian"
 sideREDFOR = "east";
 sideBLUEFOR = "west";
@@ -32,6 +32,6 @@ defaultTime[] = {2010, 10, 21, 17, 50};
 //туман который будет установлен если в лобби выбрать погоду по умолчанию
 defaultFog = 0;
 //облачность которая будет установлена если в лобби выбрать погоду по умолчанию
-defaultOvercast = 0.5;
+defaultOvercast = 0.9;
 //дальность обзора
 viewDistance = 3500;

@@ -320,10 +320,6 @@ switch _loadout do {
 		_unit addWeapon "ACE_AKM";
 		{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 		{_unit addMagazine "HandGrenade_East"} forEach [0,0];
-		{_unit addMagazine "ACE_LargeBandage"} forEach [0,0];
-		{_unit addMagazine "ACE_Bandage"} forEach [0,0];
-		{_unit addMagazine "ACE_Morphine"} forEach [0,0];
-		{_unit addMagazine "ACE_Epinephrine"} forEach [0,0];
 		_unit addWeapon "NVGoggles";
 		_unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT_Medic";
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3],["ACE_Splint",3],["ACE_IV",3],["ACE_Plasma",3]]]
@@ -333,10 +329,6 @@ switch _loadout do {
 		_unit addWeapon "ACE_AKM";
 		{_unit addMagazine "ACE_RDGM"} forEach [0,0];
 		{_unit addMagazine "HandGrenade_East"} forEach [0,0];
-		{_unit addMagazine "ACE_LargeBandage"} forEach [0,0];
-		{_unit addMagazine "ACE_Bandage"} forEach [0,0];
-		{_unit addMagazine "ACE_Morphine"} forEach [0,0];
-		{_unit addMagazine "ACE_Epinephrine"} forEach [0,0];
 		_unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT_Medic";
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};

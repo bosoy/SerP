@@ -312,11 +312,6 @@ switch _loadout do {
 		addMagazines("30Rnd_545x39_AK",5);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
 		addMagazines("ACE_RDGM",4);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Bandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
-		addMagazines("ACE_Medkit",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3],["ACE_Splint",3],["ACE_IV",3],["ACE_Plasma",3]]]
 	};
 	case "MED" : { //Санитар
@@ -324,11 +319,6 @@ switch _loadout do {
 		addMagazines("30Rnd_545x39_AK",5);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
 		addMagazines("ACE_RDGM",4);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Bandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
-		addMagazines("ACE_Medkit",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3],["ACE_Splint",3],["ACE_IV",3],["ACE_Plasma",3]]]
 	};
 //экипаж

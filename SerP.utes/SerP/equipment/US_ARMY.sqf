@@ -169,11 +169,6 @@ switch _type do {
 		addWeapons ["ACE_Map"];
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("SmokeShell",4);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Bandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
-		addMagazines("ACE_Medkit",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 
@@ -181,11 +176,6 @@ switch _type do {
 		addWeapons ["M4A1","ACE_Rucksack_MOLLE_DMARPAT_Medic","NVGoggles"];
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("SmokeShell",4);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Bandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
-		addMagazines("ACE_Medkit",2);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 

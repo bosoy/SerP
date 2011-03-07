@@ -112,11 +112,6 @@ switch _type do {
 	//Medic
 	case "MED": {
 		addMagazines("30Rnd_762x39_AK47",3);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Bandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
-		addMagazines("ACE_Medkit",2);
 		addWeapons ["AK_47_M", "ACE_Map", "NVGoggles","ACE_Combat_Pack"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};

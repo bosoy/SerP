@@ -14,6 +14,7 @@ titleCustomWin = '';
 waitUntil {sleep 1;!isNil{warbegins}};
 waitUntil {sleep 1;warbegins==1};
 
+sleep 10;
 //админ может завершить миссию досрочно нажав комбинацию клавиш ctrl+alt+shift+end
 if ((serverCommandAvailable "#kick")||isServer) then {
 	(findDisplay 46) displayAddEventHandler ["KeyDown", '
@@ -25,6 +26,7 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 		_handled = false;
 		if ((_dikCode==207)&&_shift&&_ctrlKey&&_alt) then {
 			endAdmin = true; publicVariable "endAdmin";
+			hint format "Завершаем миссию";
 		};
 	'];
 };

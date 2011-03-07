@@ -83,9 +83,6 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",2);
 		addMagazines("SmokeShell",2);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
 		addWeapons ["ACE_HK416_D14", "ACE_USPSD", "NVGoggles", "ACE_Rucksack_MOLLE_Green_Medic", "ACE_GlassesLHD_glasses"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 
