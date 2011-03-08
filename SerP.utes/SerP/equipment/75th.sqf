@@ -101,11 +101,6 @@ switch _type do {
 	case "MED": {//Medic
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("SmokeShell",4);
-		addMagazines("ACE_LargeBandage",2);
-		addMagazines("ACE_Bandage",2);
-		addMagazines("ACE_Morphine",2);
-		addMagazines("ACE_Epinephrine",2);
-		addMagazines("ACE_Medkit",2);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["ACE_GlassesLHD_glasses"];
 		addWeapons ["m16a4", "M9", "ACE_Rucksack_MOLLE_DMARPAT_Medic", "NVGoggles"];
