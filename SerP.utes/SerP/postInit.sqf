@@ -6,6 +6,7 @@ if (isServer) then {
 
 if (!isDedicated) then {
 	[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
+	[] execVM "SerP\startmission_client.sqf";
 /*//uncomment to disable spectator's map
 ace_sys_spectator_fnc_spectate_events_old = ace_sys_spectator_fnc_spectate_events;
 ace_sys_spectator_fnc_spectate_events = {

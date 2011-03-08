@@ -63,7 +63,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=70;
+		items=74;
 		class Item0
 		{
 			side="EAST";
@@ -5800,7 +5800,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={3623.2983,19,3615.9783};
+					position[]={3585.2827,19,3619.5349};
 					azimut=128.93115;
 					special="NONE";
 					id=467;
@@ -5810,26 +5810,26 @@ class Mission
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.46666664;
-					init="[this,""TL"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Полевой командир Бздышек";
 				};
 				class Item1
 				{
-					position[]={3624.53,19,3612.8552};
-					azimut=0.47429195;
+					position[]={3586.5144,19,3616.4119};
+					azimut=0.47429201;
 					special="NONE";
 					id=468;
 					side="GUER";
-					vehicle="GUE_Soldier_AA";
+					vehicle="GUE_Soldier_3";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""TL"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 				};
 				class Item2
 				{
-					position[]={3626.5332,19,3612.8394};
-					azimut=0.47429195;
+					position[]={3588.5176,19,3616.396};
+					azimut=0.47429201;
 					special="NONE";
 					id=469;
 					side="GUER";
@@ -5837,19 +5837,20 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""TL"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AR""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Пулеметчик РПК";
 				};
 				class Item3
 				{
-					position[]={3628.5315,19,3612.824};
-					azimut=0.47429195;
+					position[]={3590.5159,19,3616.3806};
+					azimut=0.47429201;
 					special="NONE";
 					id=470;
 					side="GUER";
 					vehicle="GUE_Soldier_Medic";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""MED""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Медик";
 				};
 			};
@@ -5862,7 +5863,7 @@ class Mission
 				items=10;
 				class Item0
 				{
-					position[]={3633.0596,19,3615.5725};
+					position[]={3595.0439,19,3619.1292};
 					azimut=115.67564;
 					special="NONE";
 					id=471;
@@ -5872,12 +5873,12 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.46666664;
-					init="[this,""TL"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Командир отделения 1";
 				};
 				class Item1
 				{
-					position[]={3633.7795,19,3612.8386};
+					position[]={3595.7639,19,3616.3953};
 					azimut=0.11084719;
 					special="NONE";
 					id=472;
@@ -5886,12 +5887,12 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""TL"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Старший стрелок";
 				};
 				class Item2
 				{
-					position[]={3635.7786,19,3612.8335};
+					position[]={3597.7629,19,3616.3901};
 					azimut=0.11084719;
 					special="NONE";
 					id=473;
@@ -5900,38 +5901,38 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""TL"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Пулеметчик ПКМ";
 				};
 				class Item3
 				{
-					position[]={3637.7793,19,3612.8325};
-					azimut=0.11084719;
+					position[]={3599.7637,19,3616.3892};
+					azimut=0.110847;
 					special="NONE";
 					id=474;
 					side="GUER";
 					vehicle="GUE_Soldier_1";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Помощник пулеметчика";
 				};
 				class Item4
 				{
-					position[]={3639.7815,19,3612.825};
-					azimut=0.11084719;
+					position[]={3601.7659,19,3616.3816};
+					azimut=0.110847;
 					special="NONE";
 					id=475;
 					side="GUER";
 					vehicle="GUE_Soldier_Sniper";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""SNP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SN""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Снайпер";
 				};
 				class Item5
 				{
-					position[]={3641.7795,19,3612.8237};
+					position[]={3603.7639,19,3616.3804};
 					azimut=0.11084719;
 					special="NONE";
 					id=476;
@@ -5939,12 +5940,12 @@ class Mission
 					vehicle="ACE_GUE_Soldier_RPG";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""AT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Гранатометчик";
 				};
 				class Item6
 				{
-					position[]={3643.7786,19,3612.8179};
+					position[]={3605.7629,19,3616.3745};
 					azimut=0.11084719;
 					special="NONE";
 					id=477;
@@ -5952,12 +5953,12 @@ class Mission
 					vehicle="GUE_Soldier_2";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""AAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Помощник гранатометчика";
 				};
 				class Item7
 				{
-					position[]={3645.6589,19,3612.8386};
+					position[]={3607.6433,19,3616.3953};
 					azimut=0.11084719;
 					special="NONE";
 					id=478;
@@ -5965,12 +5966,12 @@ class Mission
 					vehicle="GUE_Soldier_Sab";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""SAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Сапер";
 				};
 				class Item8
 				{
-					position[]={3647.6589,19,3612.8354};
+					position[]={3609.6433,19,3616.3921};
 					azimut=0.11084719;
 					special="NONE";
 					id=479;
@@ -5978,12 +5979,12 @@ class Mission
 					vehicle="GUE_Soldier_Sab";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""ASAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""ASAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Помощник сапера";
 				};
 				class Item9
 				{
-					position[]={3649.6606,19,3612.8306};
+					position[]={3611.645,19,3616.3872};
 					azimut=0.11084719;
 					special="NONE";
 					id=480;
@@ -5991,7 +5992,7 @@ class Mission
 					vehicle="GUE_Soldier_GL";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Стрелок ГП";
 				};
 			};
@@ -6004,7 +6005,7 @@ class Mission
 				items=10;
 				class Item0
 				{
-					position[]={3652.9548,19,3616.022};
+					position[]={3614.9392,19,3619.5786};
 					azimut=115.676;
 					special="NONE";
 					id=481;
@@ -6014,12 +6015,12 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.46666664;
-					init="[this,""TL"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Командир отделения 2";
 				};
 				class Item1
 				{
-					position[]={3653.6748,19,3613.2881};
+					position[]={3615.6592,19,3616.8447};
 					azimut=0.11084719;
 					special="NONE";
 					id=482;
@@ -6028,12 +6029,12 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""TL"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Старший стрелок";
 				};
 				class Item2
 				{
-					position[]={3655.6738,19,3613.283};
+					position[]={3617.6582,19,3616.8396};
 					azimut=0.11084719;
 					special="NONE";
 					id=483;
@@ -6042,38 +6043,38 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
-					init="[this,""TL"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Пулеметчик ПКМ";
 				};
 				class Item3
 				{
-					position[]={3657.6746,19,3613.282};
-					azimut=0.11084719;
+					position[]={3619.6589,19,3616.8386};
+					azimut=0.110847;
 					special="NONE";
 					id=484;
 					side="GUER";
 					vehicle="GUE_Soldier_1";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""AMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Помощник пулеметчика";
 				};
 				class Item4
 				{
-					position[]={3659.6768,19,3613.2744};
-					azimut=0.11084719;
+					position[]={3621.6611,19,3616.8311};
+					azimut=0.110847;
 					special="NONE";
 					id=485;
 					side="GUER";
 					vehicle="GUE_Soldier_Sniper";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""SNP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SN""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Снайпер";
 				};
 				class Item5
 				{
-					position[]={3661.6748,19,3613.2732};
+					position[]={3623.6592,19,3616.8298};
 					azimut=0.11084719;
 					special="NONE";
 					id=486;
@@ -6081,12 +6082,12 @@ class Mission
 					vehicle="ACE_GUE_Soldier_RPG";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""AT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Гранатометчик";
 				};
 				class Item6
 				{
-					position[]={3663.6738,19,3613.2673};
+					position[]={3625.6582,19,3616.824};
 					azimut=0.11084719;
 					special="NONE";
 					id=487;
@@ -6094,12 +6095,12 @@ class Mission
 					vehicle="GUE_Soldier_2";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""AAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""AAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Помощник гранатометчика";
 				};
 				class Item7
 				{
-					position[]={3665.5542,19,3613.2881};
+					position[]={3627.5386,19,3616.8447};
 					azimut=0.11084719;
 					special="NONE";
 					id=488;
@@ -6107,12 +6108,12 @@ class Mission
 					vehicle="GUE_Soldier_Sab";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""SAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""SAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Сапер";
 				};
 				class Item8
 				{
-					position[]={3667.5542,19,3613.2849};
+					position[]={3629.5386,19,3616.8416};
 					azimut=0.11084719;
 					special="NONE";
 					id=489;
@@ -6120,12 +6121,12 @@ class Mission
 					vehicle="GUE_Soldier_Sab";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""ASAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""ASAP""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Помощник сапера";
 				};
 				class Item9
 				{
-					position[]={3669.5559,19,3613.28};
+					position[]={3631.5403,19,3616.8367};
 					azimut=0.11084719;
 					special="NONE";
 					id=490;
@@ -6133,7 +6134,7 @@ class Mission
 					vehicle="GUE_Soldier_GL";
 					player="PLAY CDG";
 					skill=0.2;
-					init="[this,""TL"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					init="[this,""GUER"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Стрелок ГП";
 				};
 			};
@@ -6146,7 +6147,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={3326.0679,19,3646.8289};
+					position[]={3282.8967,18.928961,3647.4458};
 					azimut=-226.31194;
 					special="NONE";
 					id=491;
@@ -6161,7 +6162,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3327.0808,19,3643.8708};
+					position[]={3283.9097,18.955116,3644.4878};
 					azimut=-0.8486588;
 					special="NONE";
 					id=492;
@@ -6175,7 +6176,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={3329.0798,19,3643.9011};
+					position[]={3285.9087,18.959084,3644.5181};
 					azimut=-0.8486588;
 					special="NONE";
 					id=493;
@@ -6189,7 +6190,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={3331.0771,19,3643.9329};
+					position[]={3287.906,18.979059,3644.5498};
 					azimut=-0.8486588;
 					special="NONE";
 					id=494;
@@ -6203,7 +6204,7 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={3333.0798,19,3643.9602};
+					position[]={3289.9087,18.999088,3644.5771};
 					azimut=-0.8486588;
 					special="NONE";
 					id=495;
@@ -6217,7 +6218,7 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={3335.0776,19,3643.9902};
+					position[]={3291.9065,19,3644.6072};
 					azimut=-0.84865898;
 					special="NONE";
 					id=496;
@@ -6239,7 +6240,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={3337.6626,19,3646.8486};
+					position[]={3294.4915,19,3647.4656};
 					azimut=-226.127;
 					special="NONE";
 					id=497;
@@ -6254,7 +6255,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3338.666,19,3643.8889};
+					position[]={3295.4949,19,3644.5059};
 					azimut=-0.66392308;
 					special="NONE";
 					id=498;
@@ -6268,7 +6269,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={3340.6641,19,3643.9138};
+					position[]={3297.4929,19,3644.5308};
 					azimut=-0.66392308;
 					special="NONE";
 					id=499;
@@ -6282,7 +6283,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={3342.6626,19,3643.9375};
+					position[]={3299.4915,19,3644.5544};
 					azimut=-0.66392308;
 					special="NONE";
 					id=500;
@@ -6296,7 +6297,7 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={3344.6641,19,3643.9585};
+					position[]={3301.4929,19,3644.5754};
 					azimut=-0.66392308;
 					special="NONE";
 					id=501;
@@ -6310,7 +6311,7 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={3346.6619,19,3643.9817};
+					position[]={3303.4907,19,3644.5986};
 					azimut=-0.66392303;
 					special="NONE";
 					id=502;
@@ -6332,7 +6333,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={3350.9929,19,3646.916};
+					position[]={3307.8218,19,3647.533};
 					azimut=-225.89461;
 					special="NONE";
 					id=503;
@@ -6347,7 +6348,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3351.9839,19,3643.9551};
+					position[]={3308.8127,19,3644.572};
 					azimut=-0.43130964;
 					special="NONE";
 					id=504;
@@ -6361,7 +6362,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={3353.9844,19,3643.9692};
+					position[]={3310.8132,19,3644.5862};
 					azimut=-0.43130964;
 					special="NONE";
 					id=505;
@@ -6375,7 +6376,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={3355.9839,19,3643.9851};
+					position[]={3312.8127,19,3644.6021};
 					azimut=-0.43131;
 					special="NONE";
 					id=506;
@@ -6389,7 +6390,7 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={3357.9807,19,3643.9993};
+					position[]={3314.8096,19,3644.6162};
 					azimut=-0.43131;
 					special="NONE";
 					id=507;
@@ -6403,7 +6404,7 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={3359.9812,19,3644.0134};
+					position[]={3316.8101,19,3644.6304};
 					azimut=-0.43131;
 					special="NONE";
 					id=508;
@@ -6425,7 +6426,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={3365.1741,19,3643.6826};
+					position[]={3322.0029,19,3644.2996};
 					azimut=-0.63019896;
 					special="NONE";
 					id=509;
@@ -6440,7 +6441,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3367.1638,19,3643.7483};
+					position[]={3323.9927,19,3644.3652};
 					azimut=-0.63019896;
 					special="NONE";
 					id=510;
@@ -6462,7 +6463,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={3371.4004,19,3643.7175};
+					position[]={3328.2292,19,3644.3345};
 					special="NONE";
 					id=511;
 					side="EAST";
@@ -6476,7 +6477,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3373.4004,19,3643.7175};
+					position[]={3330.2292,19,3644.3345};
 					special="NONE";
 					id=512;
 					side="EAST";
@@ -6496,7 +6497,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={3377.0151,19,3643.8052};
+					position[]={3333.844,19,3644.4221};
 					special="NONE";
 					id=513;
 					side="EAST";
@@ -6510,7 +6511,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3379.0151,19,3643.8052};
+					position[]={3335.844,19,3644.4221};
 					special="NONE";
 					id=514;
 					side="EAST";
@@ -6519,6 +6520,277 @@ class Mission
 					skill=1;
 					init="[this,""RA_MSV"",""PL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
 					description="Стрелок";
+				};
+			};
+		};
+		class Item70
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=9;
+				class Item0
+				{
+					position[]={3671.9446,19,3622.2195};
+					azimut=130;
+					id=515;
+					side="WEST";
+					vehicle="CDF_Soldier_TL";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.59999996;
+					init="[this,""USO"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Командир отделения";
+				};
+				class Item1
+				{
+					position[]={3674.9446,19,3617.2195};
+					id=516;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					rank="CORPORAL";
+					skill=0.46666664;
+					init="[this,""USO"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Старший стрелок";
+				};
+				class Item2
+				{
+					position[]={3676.9446,19,3617.2195};
+					id=517;
+					side="WEST";
+					vehicle="CDF_Soldier_RPG";
+					skill=0.33333331;
+					init="[this,""USO"",""LAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Стрелок АТ";
+				};
+				class Item3
+				{
+					position[]={3678.9446,19,3617.2195};
+					id=518;
+					side="WEST";
+					vehicle="CDF_Soldier_GL";
+					skill=0.33333331;
+					init="[this,""USO"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Стрелок ГП";
+				};
+				class Item4
+				{
+					position[]={3680.9446,19,3617.2195};
+					id=519;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					skill=0.33333331;
+					init="[this,""USO"",""DM""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Снайпер";
+				};
+				class Item5
+				{
+					position[]={3682.9446,19,3617.2195};
+					id=520;
+					side="WEST";
+					vehicle="CDF_Soldier_MG";
+					skill=0.33333331;
+					init="[this,""USO"",""MG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Пулеметчик";
+				};
+				class Item6
+				{
+					position[]={3684.9446,19,3617.2195};
+					id=521;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					skill=0.2;
+					init="[this,""USO"",""AG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Помошник пулеметчика";
+				};
+				class Item7
+				{
+					position[]={3686.9446,19,3617.2195};
+					id=522;
+					side="WEST";
+					vehicle="CDF_Soldier_RPG";
+					skill=0.2;
+					init="[this,""USO"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Стрелок ГП";
+				};
+				class Item8
+				{
+					position[]={3688.9446,19,3617.2195};
+					id=523;
+					side="WEST";
+					vehicle="CDF_Soldier_Medic";
+					skill=0.2;
+					init="[this,""USO"",""MED""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Санинструктор";
+				};
+			};
+		};
+		class Item71
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={3660.3208,19,3622.1147};
+					azimut=130;
+					id=524;
+					side="WEST";
+					vehicle="CDF_Soldier_TL";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.59999996;
+					init="[this,""USO"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Командир взвода";
+				};
+				class Item1
+				{
+					position[]={3663.3208,19,3617.1147};
+					id=525;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					rank="LIEUTENANT";
+					skill=0.46666664;
+					init="[this,""USO"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="ЗамКомВзвода";
+				};
+				class Item2
+				{
+					position[]={3665.3208,19,3617.1147};
+					id=526;
+					side="WEST";
+					vehicle="CDF_Soldier_RPG";
+					rank="CORPORAL";
+					skill=0.33333331;
+					init="[this,""USO"",""GL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Стрелок ГП";
+				};
+				class Item3
+				{
+					position[]={3667.3208,19,3617.1147};
+					id=527;
+					side="WEST";
+					vehicle="CDF_Soldier_Medic";
+					skill=0.33333331;
+					init="[this,""USO"",""MED""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Санинструктор";
+				};
+			};
+		};
+		class Item72
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={3693.6914,19,3622.5488};
+					azimut=130;
+					id=528;
+					side="WEST";
+					vehicle="CDF_Soldier_TL";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.59999996;
+					init="[this,""USO"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Командир отделения ПТУР";
+				};
+				class Item1
+				{
+					position[]={3696.6914,19,3617.5488};
+					id=529;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					rank="CORPORAL";
+					skill=0.46666664;
+					init="[this,""USO"",""HAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Старший наводчик";
+				};
+				class Item2
+				{
+					position[]={3698.6914,19,3617.5488};
+					id=530;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					rank="CORPORAL";
+					skill=0.33333331;
+					init="[this,""USO"",""AHAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Наводчик";
+				};
+				class Item3
+				{
+					position[]={3700.6914,19,3617.5488};
+					id=531;
+					side="WEST";
+					vehicle="CDF_Soldier_GL";
+					skill=0.33333331;
+					init="[this,""USO"",""HAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Старший наводчик";
+				};
+				class Item4
+				{
+					position[]={3702.6914,19,3617.5488};
+					id=532;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					skill=0.33333331;
+					init="[this,""USO"",""AHAT""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Наводчик";
+				};
+			};
+		};
+		class Item73
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={3708.2063,19,3623.0676};
+					azimut=130;
+					id=533;
+					side="WEST";
+					vehicle="CDF_Soldier_TL";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.59999996;
+					init="[this,""USO"",""SL""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Командир расчета М2";
+				};
+				class Item1
+				{
+					position[]={3711.2063,19,3618.0676};
+					id=534;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					rank="CORPORAL";
+					skill=0.46666664;
+					init="[this,""USO"",""HMG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Старший наводчик";
+				};
+				class Item2
+				{
+					position[]={3713.2063,19,3618.0676};
+					id=535;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					rank="CORPORAL";
+					skill=0.33333331;
+					init="[this,""USO"",""HMGAG""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Наводчик";
+				};
+				class Item3
+				{
+					position[]={3715.2063,19,3618.0676};
+					id=536;
+					side="WEST";
+					vehicle="CDF_Soldier";
+					skill=0.33333331;
+					init="[this,""USO"",""HMGAB""] call compile preprocessFileLineNumbers ""SerP\process_units.sqf""";
+					description="Номер расчета";
 				};
 			};
 		};
@@ -7146,10 +7418,10 @@ class Mission
 	};
 	class Markers
 	{
-		items=13;
+		items=12;
 		class Item0
 		{
-			position[]={3288.7896,18.990789,3640.9209};
+			position[]={3287.2839,19,3626.7153};
 			name="r1";
 			text="РА МСВ ОДКБ";
 			type="Faction_RU";
@@ -7191,7 +7463,7 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={3531.4922,19,3631.0723};
+			position[]={3486.1697,19,3584.7581};
 			name="ta";
 			text="TA Army";
 			type="Faction_TKA_EP1";
@@ -7212,31 +7484,25 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={3897.5818,18.919594,3568.0398};
-			name="w1_1_5_1";
-			text="Platoon HQ";
-			type="b_hq";
+			position[]={3288.9092,18.723928,3662.7126};
+			name="Grad";
+			text="СПН ""Град""";
+			type="Faction_RU";
+			angle=-0.43131;
 		};
 		class Item10
 		{
-			position[]={3917.5146,18.927931,3567.2061};
-			name="w1_1_5_1_1";
-			text="Rifle section";
-			type="b_inf";
+			position[]={3592.0405,18.997671,3640.2329};
+			name="gld";
+			text="Голодранцы";
+			type="Faction_GUE";
 		};
 		class Item11
 		{
-			position[]={3946.0469,18.921318,3567.8674};
-			name="w1_1_5_1_1_1";
-			text="Weapon section";
-			type="b_inf";
-		};
-		class Item12
-		{
-			position[]={3349.8733,19,3643.8826};
-			name="Grad";
-			type="Empty";
-			angle=-0.43130964;
+			position[]={3664.3582,19,3639.8853};
+			name="gld_1";
+			text="ЧСО";
+			type="Faction_INDFOR_EP1";
 		};
 	};
 };

@@ -26,7 +26,8 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 		_handled = false;
 		if ((_dikCode==207)&&_shift&&_ctrlKey&&_alt) then {
 			endAdmin = true; publicVariable "endAdmin";
-			hint format "Завершаем миссию";
+			SerP_server_message = localize(STR_mission_end_admin);publicVariable "SerP_server_message";
+			hint SerP_server_message;
 		};
 	'];
 };
