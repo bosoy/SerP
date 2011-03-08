@@ -39,7 +39,7 @@
 			[_veh, "ACE_Tbox_RU", [["ACE_2B14HE_CSWDM",10]]] call SerP_addCargoBox;
 		};		
 		case "9M32" : {// 9M32 Strela
-			[_veh, "ACE_Tbox_RU", [["Strela",2]],[["Strela",1]]] call SerP_addCargoBox;
+			[_veh, "ACE_Tbox_RU", [["Strela",1]],[["Strela",1]]] call SerP_addCargoBox;
 		};
 		case "9M39" : {// 9M39 Igla
 			[_veh,"ACE_Tbox_RU", [["Igla",2]],[["Igla",1]]] call SerP_addCargoBox;
