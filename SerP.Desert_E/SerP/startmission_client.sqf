@@ -24,19 +24,19 @@ if (warbegins==1) exitWith {
 _radio=createTrigger["EmptyDetector",[0,0]];
 _radio setTriggerActivation["INDIA","PRESENT",true];
 _radio setTriggerStatements["this",format ["
-	if (side player == %1) then {
-		if ((readyArray select 1) == 0) then 
+	if (%1) then {
+		if ((readyArray select 1) == 0) then
 			{readyArray set [1, 1];publicVariable ""readyArray"";}
-		else 
+		else
 			{readyArray set [1, 0];publicVariable ""readyArray"";};
 	};
-	if (side player == %2) then {
-		if ((readyArray select 0) == 0) then 
+	if (%2) then {
+		if ((readyArray select 0) == 0) then
 			{readyArray set [0, 1];publicVariable ""readyArray"";}
-		else 
+		else
 			{readyArray set [0, 0];publicVariable ""readyArray"";}
 	;};
-	",_sideREDFOR,_sideBLUEFOR],
+	", side player == _sideREDFOR, side player == _sideBLUEFOR],
 	""];
 trashArray set [count trashArray, _radio];
 
@@ -62,7 +62,7 @@ _waitTime = time + 90;
 waitUntil{sleep 1;progressLoadingScreen (0.3-0.3*(_waitTime - time)/90);
 !isNil{startZones}||(time>_waitTime)
 };
-if isNil{startZones} then { 
+if isNil{startZones} then {
 	startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]];
 };
 {
