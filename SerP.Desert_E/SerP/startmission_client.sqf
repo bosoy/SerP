@@ -44,8 +44,8 @@ _endTrigger = createTrigger["EmptyDetector",[0,0]];
 _endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 _endTrigger setTriggerStatements[
 	"(((readyArray select 0) == 1))",format [
-	"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Продолжить брифинг"";};",_sideBLUEFOR],format [
-	"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Закончить брифинг"";};",_sideBLUEFOR]
+	"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Продолжить брифинг"";};",side player == _sideBLUEFOR],format [
+	"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Закончить брифинг"";};",side player == _sideBLUEFOR]
 	];
 trashArray set [count trashArray, _endTrigger];
 
@@ -53,8 +53,8 @@ _endTrigger = createTrigger["EmptyDetector",[0,0]];
 _endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 _endTrigger setTriggerStatements[
 	"(((readyArray select 1) == 1))",format [
-	"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Продолжить брифинг"";};",_sideREDFOR],format [
-	"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (side player == %1) then {9 setRadioMsg ""Закончить брифинг"";};",_sideREDFOR]
+	"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Продолжить брифинг"";};",side player == _sideREDFOR],format [
+	"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Закончить брифинг"";};",side player == _sideREDFOR]
 	];
 trashArray set [count trashArray, _endTrigger];
 9 setRadioMsg "Закончить брифинг";
