@@ -125,8 +125,7 @@ _actionList spawn {
 	{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
 		_unit = _x;
 		_unit setPos [0,30000,0];
-		[_unit] joinSilent grpNull;
-		_unit setDamage 1;
+		deleteVehicle _x;
 	}} forEach playableUnits;
 	'logic' createUnit [[0,0,0], createGroup sideLogic,'
 		taskHint ["War begins", [1, 0, 0, 1], "taskNew"];
