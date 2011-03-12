@@ -67,7 +67,7 @@
 		case "IED_GRB" : {// Flaregun
 			[_veh, "ACE_Tbox_RU", [["BAF_ied_v2",5]]] call SerP_addCargoBox;
 		};
-		case "IED_GNR" : {// Flaregun
+		case "IED_GND" : {// Flaregun
 			[_veh, "ACE_Tbox_RU", [["BAF_ied_v4",5]]] call SerP_addCargoBox;
 		};
 		default {diag_log format ["SerP - ammo_tbox.sqf, undefined box type - %1", _loadout];};
