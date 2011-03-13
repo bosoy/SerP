@@ -3,29 +3,64 @@
 _unit = _this select 0;
 _type = toUpper (_this select 1);
 switch _type do {
-	case "WL": {// Warlord
-		addMagazines("30Rnd_762x39_AK47",3);
-		addMagazines("ACE_33Rnd_9x19_G18",2);
+// Taliban
+	case "T_WL": {// Warlord
+		addMagazines("ACE_20Rnd_762x51_B_G3",3);
+		addMagazines("7Rnd_45ACP_1911 ",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_East",2);
-		addWeapons ["AK_47_M","ACE_Glock18","Binocular","NVGoggles","ACE_PRC119_ACU"];
+		addWeapons ["ACE_G3A3","Colt1911","Binocular","NVGoggles","ACE_PRC119_ACU"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
 	};
-	case "SL": {// Squad Lider
+	case "T_SL": {// Squad Lider
 		addMagazines("ACE_20Rnd_762x51_B_G3",3);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["ACE_G3A3","Binocular","NVGoggles","ACE_PRC119_ACU"];
 		addWeapons ["ACE_Map","ACE_Map_Tools"];
 	};
-	case "TL": {// Watch Leader
+	case "T_TL": {// Watch Leader
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_East",2);
 		addMagazines("30Rnd_762x39_AK47",3);
-		addMagazines("ACE_33Rnd_9x19_G18",2);
-		addWeapons ["AK_47_S","ACE_Glock18","Binocular","NVGoggles"];
+		addMagazines("7Rnd_45ACP_1911 ",2);
+		addWeapons ["AK_47_S","Colt1911","Binocular","NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Map_Tools"];
 	};
+	case "T_MR": {// Lee-Endfield
+		addMagazines("10x_303",4);
+		addMagazines("HandGrenade_East",4);
+		addWeapons ["LeeEnfield", "RPG18"];
+		addWeapons ["ACE_Map"];
+	};
+	case "T_SN": {// G3A3G1
+		addMagazines("ACE_20Rnd_762x51_B_G3",4);
+		addMagazines("HandGrenade_East",4);
+		addWeapons ["ACE_G3SG1","NVGoggles"];
+		addWeapons ["ACE_Map"];
+	};
+	case "T_MG": {//Machinegunner
+		addMagazines("100Rnd_762x51_M240",2);
+		addMagazines("HandGrenade_West",3);
+		addWeapons ["ACE_M60","Binocular","NVGoggles"];
+		addWeapons ["ACE_Map","ACE_Earplugs"];
+	};
+	case "T_AG": {//Asst. Machinegunner
+		addMagazines("30Rnd_762x39_AK47",3);
+		addMagazines("HandGrenade_West",3);
+		addWeapons ["AK_47_M", "ACE_Combat_Pack"];
+		addWeapons ["ACE_Map","ACE_Earplugs"];
+		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240",2]]];
+	};
+	case "T_GL": {//Grenadier
+		addMagazines("30Rnd_556x45_Stanag",4);
+		addMagazines("1Rnd_HE_M203",5);
+		addWeapons ["M16A2GL"];		
+		addWeapons ["ACE_Map"];
+		addMagazines("HandGrenade_West",4);
+		_unit setVariable ["ACE_weapononback","M79_EP1"];
+	};
+//NAPA
 	case "MG": {//Machinegunner
 		addMagazines("100Rnd_762x54_PK",2);
 		addMagazines("HandGrenade_West",3);
@@ -35,7 +70,7 @@ switch _type do {
 	case "AG": {//Asst. Machinegunner
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_West",3);
-		addWeapons ["AK_47_M", "NVGoggles", "ACE_BackPack"];
+		addWeapons ["AK_47_M", "NVGoggles", "ACE_Combat_Pack"];
 		addWeapons ["ACE_Earplugs"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",2]]];
 	};
@@ -55,31 +90,31 @@ switch _type do {
 	case "AAT": {// Asst. AT Operator
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);
-		addWeapons ["AK_47_M", "ACE_BackPack", "NVGoggles"];
+		addWeapons ["AK_47_M", "ACE_Combat_Pack", "NVGoggles"];
 		addWeapons ["ACE_Map","ACE_Earplugs"];
 		_unit setVariable ["ACE_RuckMagContents", [["PG7V",2],["OG7",2]]];
 	};
 	case "LAT": {// Rifleman AT
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);	
-		addWeapons ["AK_47_S","NVGoggles", "ACE_RPG22"];
+		addWeapons ["AK_47_S","NVGoggles", "RPG18"];
 		addWeapons ["ACE_Map"];
 	};	
 	case "SAB": {// Saboteur
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_S", "NVGoggles","ACE_BackPack"];
+		addWeapons ["AK_47_S", "NVGoggles","ACE_Combat_Pack"];
 		addWeapons ["ACE_Map"];
 		_unit setVariable ["ACE_RuckMagContents", [["PipeBomb",2]]];
 	};
 	case "SAP": {// Sapper
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_S", "NVGoggles","ACE_BackPack"];
+		addWeapons ["AK_47_S", "NVGoggles","ACE_Combat_Pack"];
 		addWeapons ["ACE_Map"];
 		_unit setVariable ["ACE_RuckMagContents", [["BAF_ied_v2",2],["BAF_ied_v4",2]]];
 	};
 	case "ASAP": {// Asst. Sapper
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_S", "NVGoggles","ACE_BackPack"];
+		addWeapons ["AK_47_S", "NVGoggles","ACE_Combat_Pack"];
 		addWeapons ["ACE_Map"];
 		_unit setVariable ["ACE_RuckMagContents", [["BAF_ied_v1",2],["BAF_ied_v3",2]]];
 	};
@@ -90,19 +125,13 @@ switch _type do {
 	};
 	case "RC": {// Recon
 		addMagazines("30Rnd_762x39_AK47",3);
-		addMagazines("ACE_33Rnd_9x19_G18",2);
+		addMagazines("7Rnd_45ACP_1911 ",2);
 		addMagazines("BAF_ied_v3",1);
 		addMagazines("HandGrenade_East",4);
-		addWeapons ["AK_47_M", "ACE_Glock18", "NVGoggles"];
+		addWeapons ["AK_47_M", "Colt1911", "NVGoggles"];
 		addWeapons ["ACE_Map"];
 	};
-	case "MR": {// Lee-Endfield
-		addMagazines("10x_303",4);
-		addMagazines("HandGrenade_East",4);
-		addWeapons ["LeeEnfield","NVGoggles", "RPG18"];
-		addWeapons ["ACE_Map"];
-	};
-	case "SN": {// Sniper
+	case "N_SN": {// Sniper
 		addMagazines("5x_22_LR_17_HMR",6);
 		addMagazines("ACE_Pomz_M",2);
 		addMagazines("SmokeShell",2);
@@ -112,16 +141,9 @@ switch _type do {
 	};
 	case "MED": {//Medic
 		addMagazines("30Rnd_762x39_AK47",3);
-		addWeapons ["AK_47_S", "NVGoggles","ACE_BackPack"];
+		addWeapons ["AK_47_S", "NVGoggles","ACE_Combat_Pack"];
 		addWeapons ["ACE_Map"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
-	};
-	case "GL": {//Grenadier
-		addMagazines("30Rnd_762x39_AK47",4);
-		addMagazines("1Rnd_HE_M203",5);
-		addWeapons ["AK_47_S", "NVGoggles"];
-		addMagazines("HandGrenade_West",4);
-		_unit setVariable ["ACE_weapononback","M79_EP1"];
 	};
 	case "AA": {//Pzrk Operator
 		addMagazines("30Rnd_762x39_AK47",3);
@@ -162,9 +184,9 @@ switch _type do {
 		addWeapons ["revolver_EP1"];
 	};
 	case "L_GLOCK" : {
-		addMagazines("ACE_33Rnd_9x19_G18",4);
+		addMagazines("7Rnd_45ACP_1911 ",4);
 		addMagazines("HandGrenade_East",2);
-		addWeapons ["ACE_Glock18"];
+		addWeapons ["Colt1911"];
 	};
 	case "L_UZI" : {
 		addMagazines("30Rnd_9x19_UZI",4);
