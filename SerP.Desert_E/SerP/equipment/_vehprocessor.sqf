@@ -3,6 +3,7 @@ _faction = _this select 1;
 call compile format ["if (isNil {SerP_veh_%1_processor}) then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}",_faction];
 _loadout = _this select 2;
 _cargoBoxes = _this select 3;
+//prepare functions
 _common_processor = {
 	clearWeaponCargo _this;
 	clearMagazineCargo _this;
@@ -28,18 +29,21 @@ _addTyre = {
 		};
 	};
 };
+
+if (isNil {SerP_cargoCrateProcessor}) then {SerP_cargoCrateProcessor = compile preprocessFileLineNumbers "SerP\equipment\_cargoCrateProcessor.sqf"};
 if (isNil {SerP_addCargoBox}) then {
 	SerP_addCargoBox = {
 	// (c) Zu-23-2
 		_veh = _this select 0;
-		_boxtype = _this select 1;
-		_magazines = _this select 2;	
+		_boxname = _this select 1;
+		_boxtype = _this select 2;
+		_magazines = _this select 3;	
 		if (isNil {_magazines}) then {_magazines = [];};
-		_weapons = _this select 3;
+		_weapons = _this select 4;
 		if (isNil {_weapons}) then {_weapons = [];};
 		if (isServer) then {
 			_tbox = _boxtype createVehicle [0,0,0];
-			_tbox setVariable ["ace_sys_cargo_UnloadPos", [round(random(4)),5+round(random(2)),0], true];
+			_tbox setVariable ["ace_sys_cargo_name", _boxname, true];
 			if ((count _weapons > 0)||(count _magazines > 0)) then {
 				clearWeaponCargoGlobal _tbox;
 				clearMagazineCargoGlobal _tbox;
@@ -50,9 +54,8 @@ if (isNil {SerP_addCargoBox}) then {
 		};
 	};
 };
+//call functions
 _veh call _common_processor;
 _veh call _addTyre;
 [_veh, _loadout] call compile format ["if isNil {SerP_veh_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}; _this call SerP_veh_%1_processor",_faction];
-
-#include "ammo_tbox.sqf"
-if (!isNil {_cargoBoxes}) then { {[_veh, _x] call _cargoCrate_processor;} forEach _cargoBoxes};
+if (!isNil {_cargoBoxes}) then { {[_veh, _x] call SerP_cargoCrateProcessor} forEach _cargoBoxes};

@@ -5,7 +5,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",2];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 5];
@@ -17,7 +17,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",3];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 5];
@@ -30,7 +30,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",10];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 5];
@@ -46,7 +46,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",5];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",1];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 5];
 		_veh addMagazineCargo ["10Rnd_762x54_SVD", 20];
@@ -63,21 +63,23 @@ switch _loadout do {
 		_veh addMagazineCargo ["10Rnd_762x54_SVD",20];
 		_veh addMagazineCargo ["100Rnd_762x54_PK",10];
 		_veh addMagazineCargo ["1Rnd_HE_GP25",20];
-		_veh addWeaponCargo ["ACE_P159_RD90",2];
+		_veh addWeaponCargo ["ACE_P168_RD90",2];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",8];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["ACE_Bandage",9];
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
-		[_veh,"ACE_Tbox_RU",[["ACE_PG7VM_PGO7",6],["ACE_OG7_PGO7",6]],[]] call SerP_addCargoBox;
-		[_veh,"ACE_Tbox_RU",[["30Rnd_545x39_AK",26],["HandGrenade_East",15]],[]] call SerP_addCargoBox;
-		[_veh,"ACE_Tbox_RU",[["1Rnd_SMOKE_GP25",10],["1Rnd_SmokeRed_GP25",3],["1Rnd_SmokeGreen_GP25",3],["ACE_1Rnd_CS_GP25",10],["ACE_SSWhite_GP25",3],["ACE_SSRed_GP25",3],["ACE_SSGreen_GP25",3],["FlareWhite_GP25",3],["FlareRed_GP25",3],["FlareGreen_GP25",3]],[]] call SerP_addCargoBox;
+		[_veh,"545M_BIG"] call SerP_cargoCrateProcessor;
+		[_veh,"GREN_EAST"] call SerP_cargoCrateProcessor;
+		[_veh,"GP25_AMMO"] call SerP_cargoCrateProcessor;
+		[_veh,"RPG7_AMMO"] call SerP_cargoCrateProcessor;
+
 	};
 	case "MSV_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",36];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",2];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 15];
@@ -90,7 +92,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",20];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 15];
@@ -98,16 +100,15 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG27",2];
-		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox;
-		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox;
-		[_veh,"ACE_Tbox_RU",[["AT13",2],["ACE_AT13TB",1]],[["MetisLauncher",1]]] call SerP_addCargoBox;
-
+		[_veh,"9M113"] call SerP_cargoCrateProcessor;
+		[_veh,"9M113"] call SerP_cargoCrateProcessor;
+		[_veh,"9M113"] call SerP_cargoCrateProcessor;
 	};
 	case "TRUCK_KONKURS" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];
 		_veh addMagazineCargo ["30Rnd_545x39_AK",20];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",9];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 15];
@@ -115,9 +116,9 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG27",2];
-		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox;
-		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox;
-		[_veh,"ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox;
+		[_veh,"9P135"] call SerP_cargoCrateProcessor;
+		[_veh,"9P135"] call SerP_cargoCrateProcessor;
+		[_veh,"9P135"] call SerP_cargoCrateProcessor;
 	};
 	case "RECON" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
@@ -127,7 +128,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["100Rnd_762x54_PK",10];
 		_veh addMagazineCargo ["1Rnd_HE_GP25",20];
 		_veh addMagazineCargo ["20Rnd_9x39_SP5_VSS",10];
-		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_P168_RD90",1];
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",4];
 		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
 		_veh addMagazineCargo ["HandGrenade", 15];
