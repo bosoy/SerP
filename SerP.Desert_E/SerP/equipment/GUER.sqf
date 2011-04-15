@@ -98,7 +98,7 @@ switch _type do {
 	case "RF": {// Rifleman
 		addMagazines("ACE_10Rnd_762x39_B_SKS",6);
 		addMagazines("HandGrenade_East",4);
-		addWeapons ["ACE_SKS"];];
+		addWeapons ["ACE_SKS"];
 		addItems ["F","M"];
 	};
 	case "RC": {// Recon
@@ -106,7 +106,7 @@ switch _type do {
 		addMagazines("ACE_33Rnd_9x19_G18",2);
 		addMagazines("BAF_ied_v3",1);
 		addMagazines("HandGrenade_East",4);
-		addWeapons ["AK_47_M", "ACE_Glock18"];
+		addWeapons ["AK_47_M", "ACE_Glock18","ACE_PRC119_ACU"];
 		addItems ["F","M"];
 	};
 	case "MR": {// Lee-Endfield

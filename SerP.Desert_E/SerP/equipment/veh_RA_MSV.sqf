@@ -73,7 +73,6 @@ switch _loadout do {
 		[_veh,"GREN_EAST"] call SerP_cargoCrateProcessor;
 		[_veh,"GP25_AMMO"] call SerP_cargoCrateProcessor;
 		[_veh,"RPG7_AMMO"] call SerP_cargoCrateProcessor;
-
 	};
 	case "MSV_E" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];

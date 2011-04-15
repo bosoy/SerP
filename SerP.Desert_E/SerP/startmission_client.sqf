@@ -7,14 +7,18 @@ waitUntil{player==player};
 if !alive(player) exitWith {};
 sleep .01;
 _veh = (vehicle player);
-_veh enableSimulation false;
 startLoadingScreen [localize 'STR_missionname', "RscDisplayLoadCustom"];
+_veh enableSimulation false;
 _blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
 	false
 '];
 [0,-1] call ace_sys_weaponselect_fnc_keypressed;
-waitUntil{sleep .1;!isNil{warbegins}};
+_waitTime = time + 90;
+waitUntil{sleep 1;progressLoadingScreen (0.1-0.1*(_waitTime - time)/90);
+!isNil{warbegins}||(time>_waitTime)
+};
+if isNil{warbegins} then {warbegins = 1};
 if (warbegins==1) exitWith {
 	endLoadingScreen;
 	_veh enableSimulation true;
@@ -59,17 +63,17 @@ _endTrigger setTriggerStatements[
 trashArray set [count trashArray, _endTrigger];
 9 setRadioMsg "Закончить брифинг";
 _waitTime = time + 90;
-waitUntil{sleep 1;progressLoadingScreen (0.3-0.3*(_waitTime - time)/90);
+waitUntil{sleep 1;progressLoadingScreen (0.3-0.2*(_waitTime - time)/90);
 !isNil{startZones}||(time>_waitTime)
 };
 if isNil{startZones} then {
 	startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]];
 };
+_inZone = false;
 {
 	_pos = (_x select 0);
 	_size = (_x select 1);
 	_helper = (_x select 3);
-	_inZone = false;
 	if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
 		_inZone = true;
 		_waitTime = time + 90;
@@ -82,6 +86,16 @@ if isNil{startZones} then {
 		waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/90);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
 		endLoadingScreen;
 		_veh enableSimulation true;
+		{//обновляем информацию о положении игроков в "отрядах"
+			_leader = leader _x;
+			_markerName = "SerP_startposMarker"+str _x;
+			{
+				if ((alive _x)&&(isPlayer _x)&&(side _x == side player)) exitWith {
+					_markerName setMarkerPosLocal getPos _leader;
+				};
+			} forEach units _x;
+		} forEach allGroups;
+		_act = _veh addAction ["Change optics", "SerP\opticsChange.sqf"];
 		while {(warbegins!=1)} do {
 			sleep 1;
 			_dist = (vehicle player) distance _pos;
@@ -92,7 +106,7 @@ if isNil{startZones} then {
 				player say "All_haha";
 				//player say "ACE_rus_combat143";
 				sleep 4;
-				player setDamage 1;
+				player setPos [_pos select 0,_pos select 1,0];
 			};
 			if (_dist>_size) then {
 				hint "Вы покидаете зону брифинга";
@@ -114,6 +128,7 @@ if isNil{startZones} then {
 				sleep 3;
 			};
 		};
+		_veh removeAction _act;
 	};
 } forEach startZones;
 if (!_inZone) then {

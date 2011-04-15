@@ -69,7 +69,7 @@ switch _type do {
 		addMagazines("200Rnd_556x45_M249",4);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["M249_EP1",];
+		addWeapons ["M249_EP1"];
 		addItems ["N","E"];
 	};
 
@@ -152,7 +152,7 @@ switch _type do {
 		addMagazines("20Rnd_762x51_B_SCAR",6);
 		addMagazines("15Rnd_9x19_M9",2);
 		addMagazines("SmokeShell",2);
-		addWeapons ["ACE_M110","M9","NVGoggles"];
+		addWeapons ["ACE_M110","M9"];
 		addItems ["N","M","MT","G"];
 	};
 	
@@ -163,7 +163,7 @@ switch _type do {
 		addMagazines("ACE_SSWhite_M203",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("ACE_Battery_Rangefinder",2);
-		addWeapons ["ACE_M4A1_AIM_GL","ACE_Rangefinder_OD""ACE_FAST_PackEDC_ACU"];
+		addWeapons ["ACE_M4A1_AIM_GL","ACE_Rangefinder_OD","ACE_FAST_PackEDC_ACU"];
 		addItems ["N","K"];
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",2],["FlareRed_M203",4],["ACE_SSWhite_M203",2],["5Rnd_762x51_M24",4]]];
 	};

@@ -8,33 +8,34 @@ for [ { _i = 0 }, { _i < count(paramsArray) }, { _i = _i + 1 } ] do	{
 	call compile _code;
 };
 if (time<10) then {//time will be automatically synchronised during JIP
+_defDate = date;
 switch (timeOfDay) do	{
 	case 0:	{
-		setDate [2010, 10, 21, 4, 50];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 4, 50];
 	};
 	case 1:	{
-		setDate [2010, 10, 21, 5, 50];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 5, 50];
 	};
 	case 2:	{
-		setDate [2010, 10, 21, 9, 00];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 9, 00];
 	};
 	case 3:	{
-		setDate [2010, 10, 21, 12, 0];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 12, 0];
 	};
 	case 4:	{
-		setDate [2010, 10, 21, 15, 00];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 15, 00];
 	};
 	case 5:	{
-		setDate [2010, 10, 21, 17, 50];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 17, 50];
 	};
 	case 6:	{
-		setDate [2010, 10, 21, 18, 50];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 18, 50];
 	};
 	case 7:	{
-		setDate [2010, 10, 21, 0, 0];
+		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 0, 0];
 	};
 	case 8:	{
-		setDate getArray(missionConfigFile >> "SerP_const" >> "defaultTime");
+		//do nothing
 	};
 	default	{};
 };

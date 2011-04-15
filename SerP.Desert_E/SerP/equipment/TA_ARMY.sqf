@@ -6,9 +6,9 @@ switch _loadout do {
 	case "OFF" : { //Командир взвода
 		addMagazines("ACE_30Rnd_762x39_T_AK47",4);
 		addMagazines("30Rnd_762x39_AK47",4);
-		addMagazines("ACE_RDGM",4 2);
+		addMagazines("ACE_RDGM",4);
 		addMagazines("HandGrenade_East",2);
-		addMagazines("8Rnd_9x18_Makarov",5) ;
+		addMagazines("8Rnd_9x18_Makarov",5);
 		addWeapons ["Makarov","ACE_AKMS","ACE_ANPRC77"];
 		addItems ["B","N","M","MT","G"];
 	};

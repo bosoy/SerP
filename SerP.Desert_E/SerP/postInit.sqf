@@ -1,7 +1,7 @@
 
 
 if (isServer) then {
-
+	[] call compile preprocessFileLineNumbers "SerP\startmission_server.sqf";
 };
 
 if (!isDedicated) then {

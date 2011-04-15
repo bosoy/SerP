@@ -31,11 +31,24 @@ readyArray = [0,0];publicVariable "readyArray";
 _zones = [];//[_pos,_size,_unitsInZone,_side]
 {
 	_unitPos = getPos vehicle(_x);
+	_unit = _x;
 	_side = side _x;
 	_size = switch true do {
 		case (_side==_sideREDFOR): {_defZoneSize*_zoneMultREDFOR};
 		case (_side==_sideBLUEFOR): {_defZoneSize*_zoneMultBLUEFOR};
 		default {_defZoneSize};
+	};
+	_teleportTo = [];
+	if (count waypoints(group _unit) > 1) then {
+		{
+			if (waypointDescription(_x)=="teleport") then {
+				_teleportTo = _teleportTo + [waypointPosition(_x)];
+				deleteWaypoint(_x);
+			};
+		} forEach waypoints(group _unit);
+		/*while {(waypointDescription(waypoints(group _unit) select 1)=="teleport")} do {
+			deleteWaypoint (waypoints(group _unit) select 0);
+		};*/
 	};
 	_outOfZone = true;
 	{
@@ -43,18 +56,20 @@ _zones = [];//[_pos,_size,_unitsInZone,_side]
 		_zoneSize = _x select 1;
 		_unitsInZone = _x select 2;
 		_zoneSide = _x select 3;
+		_units = _x select 4;
+		_zoneTeleportTo = _x select 5;
 		_dist = (_unitPos distance _zonePos);
 		if ((_dist < (_size + _zoneSize))&&(_side==_zoneSide)) exitWith {//zone concat
 			_unitmod = 1/_unitsInZone;
 			_sizemod = (_unitsInZone-1)/_unitsInZone;
 			_pos = [(_unitPos select 0)*_unitmod+(_zonePos select 0)*_sizemod,(_unitPos select 1)*_unitmod+(_zonePos select 1)*_sizemod,0];
 			_zoneSize = (_size+_dist) max _zoneSize;
-			_zones set [_forEachIndex,[_pos,_zoneSize,_unitsInZone+1,_zoneSide]];
+			_zones set [_forEachIndex,[_pos,_zoneSize,_unitsInZone+1,_zoneSide,_units + [_unit],_zoneTeleportTo+_teleportTo]];
 			_outOfZone = false;
 		};
 	} forEach _zones;
 	if (_outOfZone) then {
-		_zones set [count _zones,[_unitPos,_size,1,_side]]
+		_zones set [count _zones,[_unitPos,_size,1,_side,[_x],_teleportTo]]
 	};
 	_x setVariable ["SerP_isPlayer",(isPlayer _x)];
 } forEach playableUnits;
@@ -65,17 +80,21 @@ waitUntil{
 		_size1 = _x select 1;
 		_unitsInZone1 = _x select 2;
 		_zoneSide1 = _x select 3;
+		_units1 = _x select 4;
+		_zoneTeleportTo1 = _x select 5;
 		_i = _forEachIndex;
 		{
 			_zonePos2 = _x select 0;
 			_size2 = _x select 1;
 			_unitsInZone2 = _x select 2;
 			_zoneSide2 = _x select 3;
+			_units2 = _x select 4;
+			_zoneTeleportTo2 = _x select 5;
 			_j = _forEachIndex;
 			if ((_i!=_j)&&(_zonePos1 distance _zonePos2)<(_size1+_size2)&&(_zoneSide1==_zoneSide2)) exitWith {
 				_pos = [((_zonePos1 select 0)+(_zonePos2 select 0))/2,((_zonePos1 select 1)+(_zonePos2 select 1))/2,0];
 				_size = ((_zonePos1 distance _zonePos2)/2 + _size1 max _size2);
-				_zones set [_i,[_pos,_size,_unitsInZone1+_unitsInZone2]];
+				_zones set [_i,[_pos,_size,_unitsInZone1+_unitsInZone2,_zoneSide1,_units1+_units2,_zoneTeleportTo1+_zoneTeleportTo2]];
 				_zones set [_j,-1];
 				_zones = _zones - [-1];
 				_exit = false;
@@ -85,49 +104,90 @@ waitUntil{
 	} forEach _zones;
 	_exit
 };
-_unitList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
-_actionList = [];
-{//готовим список юнитов и данные для аттача что-бы он сработал быстрее при старте миссии
-	_corepos = (_x select 0);
-	_size = (_x select 1);
-	_core = createVehicle ["FlagCarrierChecked", [_corepos select 0,_corepos select 1, -3], [], 0, "CAN_COLLIDE"];
-	_corepos = getPosASL _core;
-	trashArray set [count trashArray, _core];
-	{
-		if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
-			_vDir = vectorDir _x;
-			_vUp = vectorUp _x;
-			_unitpos = getPosASL _x;
-			_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
-			_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[_vDir,_vUp]]];
+_objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
+//teleportarium
+_teleportList = [];
+{
+	_zone = _x;
+	_zonePos = _x select 0;
+	_size = _x select 1;
+	_units = _x select 4;
+	_zoneTeleportTo = _x select 5;
+	if (count(_zoneTeleportTo)>0) then {
+		_teleportTo = 0;
+		while {(random(10)>3)} do {
+		_teleportTo = round(random(count(_zoneTeleportTo)));
 		};
-	}forEach _unitList;
-	_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];
-	_actionList set [count _actionList,[_helper,[_core,[0,0,-5]],[[1,0,0],[0,0,1]]]];
-	trashArray set [count trashArray, _helper];
-	_x set [2,_core];
-	_x set [3,_helper];
+		if (_teleportTo>0) then {//0 means that units stay still
+			_newZonePos = _zoneTeleportTo select(_teleportTo-1);
+			_zone set [0,_newZonePos];
+			{
+				if (vehicle(_x) == _x) then {
+					_unitpos = getPosASL _x;
+					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
+					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
+					_teleportList set [count _teleportList,[_x,_newPos]];
+				};
+			} forEach _units;
+			{
+				if ((_x distance _zonePos)<_hintzonesize+_size) then {
+					_unitpos = getPosASL _x;
+					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
+					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
+					_teleportList set [count _teleportList,[_x,_newPos]];
+				};
+			} forEach _objectList;
+		};
+	};
 } forEach _zones;
-startZones = _zones;
-_actionList spawn {
-	sleep .01;
-	publicVariable "startZones";
+//end teleportarium
+[_zones,_hintzonesize,_objectList,_teleportList] spawn {
+	_zones = _this select 0;
+	_hintzonesize = _this select 1;
+	_objectList = _this select 2;
+	_teleportList = _this select 3;
+	sleep 5;
+	{(_x select 0) setPos (_x select 1)} forEach _teleportList; //move objects
+	sleep 1;
+	_actionList = [];
+	startZones = [];
+	{
+		_corepos = _x select 0;
+		_size = _x select 1;
+		_core = createVehicle ["FlagCarrierChecked", [_corepos select 0,_corepos select 1, -3], [], 0, "CAN_COLLIDE"];
+		_corepos = getPosASL _core;
+		trashArray set [count trashArray, _core];
+		{
+			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
+				_unitpos = getPosASL _x;
+				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
+				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[(vectorDir _x),(vectorUp _x)]]];
+			};
+		}forEach _objectList;
+		_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];
+		_actionList set [count _actionList,[_helper,[_core,[0,0,-5]],[[1,0,0],[0,0,1]]]];
+		trashArray set [count trashArray, _helper];
+		startZones set [count startZones,[_corepos,_size,_core,_helper]];
+	} forEach _zones;
 	{
 		(_x select 0) attachTo (_x select 1);
 		(_x select 0) setVectorDirAndUp (_x select 2);
-	} forEach _this;
-	publicVariable "startZones";
+	} forEach _actionList;
+	publicVariable "startZones";publicVariable "warbegins";publicVariable "readyArray";
 	//control
 	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
 
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";
-	{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
-		_unit = _x;
-		_unit setPos [0,30000,0];
-		deleteVehicle _x;
-	}} forEach playableUnits;
 	'logic' createUnit [[0,0,0], createGroup sideLogic,'
+		{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
+			_unit = _x;
+			_unit setPos [0,30000,100];
+			[_unit] joinSilent grpNull;
+			removeAllWeapons _unit;
+			removeAllItems _unit;
+			{_unit removeMagazine _x} forEach magazines(_unit);
+		}} forEach playableUnits;
 		taskHint ["War begins", [1, 0, 0, 1], "taskNew"];
 		{deleteVehicle _x} forEach trashArray;
 		{
