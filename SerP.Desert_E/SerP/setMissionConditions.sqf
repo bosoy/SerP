@@ -34,9 +34,6 @@ switch (timeOfDay) do	{
 	case 7:	{
 		setDate [_defDate select 0, _defDate select 1, _defDate select 2, 0, 0];
 	};
-	case 8:	{
-		//do nothing
-	};
 	default	{};
 };
 };
@@ -77,10 +74,6 @@ switch (weather) do	{
 		0 setFog _MissionFog;
 	};
 //default
-	case 5: {
-		0 setOvercast getNumber(missionConfigFile >> "SerP_const" >> "defaultOvercast");
-		0 setFog getNumber(missionConfigFile >> "SerP_const" >> "defaultFog");
-	};
 	default {};
 };
 
