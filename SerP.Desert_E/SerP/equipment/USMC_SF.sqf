@@ -94,7 +94,7 @@ switch _type do {
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addMagazines("HandGrenade_West",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
-		addWeapons ["ACE_HK416_D10_AIM", "ACE_USPSD","ACE_Rucksack_MOLLE_Green",];
+		addWeapons ["ACE_HK416_D10_AIM", "ACE_USPSD","ACE_Rucksack_MOLLE_Green"];
 		addItems ["L","B","N","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["PipeBomb", 3]]];
 	};
