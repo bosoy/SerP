@@ -167,7 +167,7 @@ _teleportList = [];
 		_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];
 		_actionList set [count _actionList,[_helper,[_core,[0,0,-5]],[[1,0,0],[0,0,1]]]];
 		trashArray set [count trashArray, _helper];
-		startZones set [count startZones,[_corepos,_size,_core,_helper]];
+		startZones set [count startZones,[[_corepos select 0,_corepos select 1,0],_size,_core,_helper]];
 	} forEach _zones;
 	{
 		(_x select 0) attachTo (_x select 1);

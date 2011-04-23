@@ -74,7 +74,9 @@ _inZone = false;
 	_pos = (_x select 0);
 	_size = (_x select 1);
 	_helper = (_x select 3);
-	if ((getPos (vehicle player) distance _pos)<(_size+_hintzonesize)) exitWith {
+	_ppos = getPos vehicle player;
+	_dist = [_ppos select 0,_ppos select 1,0] distance [_pos select 0,_pos select 1,0];
+	if (_dist<(_size+_hintzonesize)) exitWith {
 		_inZone = true;
 		_waitTime = time + 90;
 		createMarkerLocal ["SerP_startZoneMarker",_pos];
@@ -98,8 +100,9 @@ _inZone = false;
 		_act = _veh addAction ["Change optics", "SerP\opticsChange.sqf"];
 		while {(warbegins!=1)} do {
 			sleep 1;
-			_dist = (vehicle player) distance _pos;
-			if (_dist>(_size+_hintzonesize)) exitWith {
+			_ppos = getPos vehicle player;
+			_dist = [_ppos select 0,_ppos select 1,0] distance [_pos select 0,_pos select 1,0];
+			if (_dist>(_size+_hintzonesize)) then {
 				hint "Мне очень жаль";
 				player say "r44";
 				player say "svd_single_shot_v2";
@@ -134,6 +137,7 @@ _inZone = false;
 if (!_inZone) then {
 	_veh enableSimulation true;
 	endLoadingScreen;
+	diag_log "startmission_client.sqf - player is out of zones";
 };
 deleteMarkerLocal "SerP_startZoneMarker";
 (findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];

@@ -273,7 +273,7 @@ switch _loadout do {
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
 		addMagazines("8Rnd_9x18_Makarov",4);
 		addMagazines("ACE_RDGM",2);
-		addWeapons ["AKS_74_U","Makarov];
+		addWeapons ["AKS_74_U","Makarov"];
 		addItems ["N","M","G"];
 	};
 // специалисты

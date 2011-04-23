@@ -26,8 +26,8 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 		_handled = false;
 		if ((_dikCode==207)&&_shift&&_ctrlKey&&_alt) then {
 			endAdmin = true; publicVariable "endAdmin";
-			SerP_server_message = localize(STR_mission_end_admin);publicVariable "SerP_server_message";
-			hint SerP_server_message;
+			SerP_server_message = localize "STR_mission_end_admin";publicVariable "SerP_server_message";
+			taskHint [SerP_server_message,[1, 0, 0, 1],, "taskNew"];
 		};
 	'];
 };
@@ -44,7 +44,6 @@ _processorEND = {
 				diag_log _x;
 			} forEach %2;
 			cutText ['','BLACK',5];
-			titleFadeOut 3;
 			sleep 5;
 			cutText['%1','BLACK FADED',5];
 			sleep 1;
@@ -90,7 +89,7 @@ _initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playa
 _initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
 
 while {true} do {
-	sleep 10;
+	sleep 1;
 	_RFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
 	_BFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
 	//REDFOR retreat

@@ -24,7 +24,7 @@ switch _type do {
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["M16A4","ACE_ANPRC77","M9"];
+		addWeapons ["M16A4","ACE_ANPRC77"];
 		addItems ["N"];
 	};
 //Squad
