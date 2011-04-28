@@ -11,6 +11,7 @@ class Extended_PostInit_EventHandlers {
 	};
 };
 
+SerP_version = 13;
 respawn = 1;
 respawndelay = 3;
 class Header	{

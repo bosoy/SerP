@@ -27,7 +27,7 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 		if ((_dikCode==207)&&_shift&&_ctrlKey&&_alt) then {
 			endAdmin = true; publicVariable "endAdmin";
 			SerP_server_message = localize "STR_mission_end_admin";publicVariable "SerP_server_message";
-			taskHint [SerP_server_message,[1, 0, 0, 1],, "taskNew"];
+			taskHint [SerP_server_message,[1, 0, 0, 1], "taskNew"];
 		};
 	'];
 };

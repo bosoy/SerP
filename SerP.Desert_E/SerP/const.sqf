@@ -15,3 +15,4 @@ getParamText(titleBLUEFOR);
 getParamNumber(domiMult);
 getParamNumber(RFRetreat);
 getParamNumber(BFRetreat);
+getParamNumber(synchronizedRespawn);

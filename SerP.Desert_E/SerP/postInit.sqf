@@ -5,6 +5,7 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
+	enableRadio false;
 	[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
 	[] execVM "SerP\startmission_client.sqf";
 /*//uncomment to disable spectator's map

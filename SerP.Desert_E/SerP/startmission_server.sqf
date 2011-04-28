@@ -39,16 +39,15 @@ _zones = [];//[_pos,_size,_unitsInZone,_side]
 		default {_defZoneSize};
 	};
 	_teleportTo = [];
-	if (count waypoints(group _unit) > 1) then {
+	if (waypointDescription(waypoints(group _unit) select 1)=="teleport") then {
 		{
 			if (waypointDescription(_x)=="teleport") then {
 				_teleportTo = _teleportTo + [waypointPosition(_x)];
-				deleteWaypoint(_x);
 			};
 		} forEach waypoints(group _unit);
-		/*while {(waypointDescription(waypoints(group _unit) select 1)=="teleport")} do {
-			deleteWaypoint (waypoints(group _unit) select 0);
-		};*/
+		while {(waypointDescription(waypoints(group _unit) select 1)=="teleport")} do {
+			deleteWaypoint (waypoints(group _unit) select 1);
+		};
 	};
 	_outOfZone = true;
 	{
@@ -106,6 +105,12 @@ waitUntil{
 };
 _objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
 //teleportarium
+SerP_startSeed = if (_synchronizedRespawn==0) then {
+	_synchronizedRespawn
+}else{
+	round(random(1000+({isPlayer(_x)} count playableUnits)))
+};
+
 _teleportList = [];
 {
 	_zone = _x;
@@ -114,9 +119,10 @@ _teleportList = [];
 	_units = _x select 4;
 	_zoneTeleportTo = _x select 5;
 	if (count(_zoneTeleportTo)>0) then {
-		_teleportTo = 0;
-		while {(random(10)>3)} do {
-		_teleportTo = round(random(count(_zoneTeleportTo)));
+		_teleportTo = if (_synchronizedRespawn!=0) then {
+			(SerP_startSeed%(count(_zoneTeleportTo)+1))
+		}else{
+			round(random(1000+({isPlayer(_x)} count playableUnits)))%(count(_zoneTeleportTo)+1)
 		};
 		if (_teleportTo>0) then {//0 means that units stay still
 			_newZonePos = _zoneTeleportTo select(_teleportTo-1);
