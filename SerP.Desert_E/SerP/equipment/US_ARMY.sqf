@@ -9,7 +9,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["M4A1","M9"];
-		addItems ["B","N","D","M","MT","G"];
+		addItems ["R","B","N","D","M","MT","G"];
 	};
 	case "PSG" : { //Platoon sergant
 		addMagazines("30Rnd_556x45_Stanag",4);
@@ -17,7 +17,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["ACE_M4A1_ACOG","M136","M9"];
-		addItems ["B","N","M","MT","G"];
+		addItems ["R","B","N","M","MT","G"];
 	};
 	case "RATELO": { //RATELO
 		addMagazines("30Rnd_556x45_Stanag",4);
@@ -26,7 +26,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",2);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["M4A1","ACE_ANPRC77"];
-		addItems ["B","N"];
+		addItems ["R","B","N"];
 	};
 	case "FO": { // Forward observer
 		addMagazines("30Rnd_556x45_Stanag",4);
@@ -35,7 +35,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",2);		
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["M4A1"];
-		addItems ["B","N","M"];
+		addItems ["R","B","N","M"];
 	};
 //Rifle squad
 	case "SL": { // Squad Lider
@@ -44,7 +44,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["M4A1","ACE_ANPRC77","M9"];
-		addItems ["B","N","M","MT","G"];
+		addItems ["R","B","N","M","MT","G"];
 	};
 	
 	case "TL": { // FT Leader
@@ -52,7 +52,7 @@ switch _type do {
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addWeapons ["ACE_M4A1_ACOG"];
-		addItems ["B","N","M"];
+		addItems ["R","B","N","M"];
 	};
 
 	case "GL": { // Greanadier
@@ -62,7 +62,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",2);
 		addMagazines("1Rnd_HE_M203",4);
 		addWeapons ["ACE_M16A4_CCO_GL","ACE_Rucksack_MOLLE_ACU"];
-		addItems ["N"];
+		addItems ["R","N"];
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",8],["FlareRed_M203",4],["ACE_SSWhite_M203",4],["ACE_1Rnd_CS_M203",2]]];
 	};
 	case "AR" : { // Automatic Rifleman
@@ -70,7 +70,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
 		addWeapons ["M249_EP1"];
-		addItems ["N","E"];
+		addItems ["R","N","E"];
 	};
 
 	case "LAT": { // Rifleman AT
@@ -79,7 +79,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);	
 		addWeapons ["m16a4","M136"];
-		addItems ["N"];
+		addItems ["R","N"];
 	};
 
 	case "AT": { //AT Operator
@@ -87,20 +87,20 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("Dragon_EP1",1);
 		addWeapons ["M4A1","M47Launcher_EP1"];
-		addItems ["N"];
+		addItems ["R","N"];
 	};
 
 	case "HAT" : { //Javelin Operator 
 		addMagazines("30Rnd_556x45_Stanag",6);
 		addMagazines("SmokeShell",2);
 		addWeapons ["M4A1","Javelin","ACE_Javelin_CLU"];
-		addItems ["N"];
+		addItems ["R","N"];
 	};
 	case "AHAT" : { //Assistant Javelin Operator 
 		addMagazines("30Rnd_556x45_Stanag",6);
 		addMagazines("SmokeShell",2);
 		addWeapons ["M4A1","Javelin"];
-		addItems ["B","N"];
+		addItems ["R","B","N"];
 		_unit setVariable ["ACE_weapononback","Javelin"];
 	};
 	case "DM" : { //Designated marksman
@@ -109,7 +109,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
 		addWeapons ["ACE_Mk12mod1"];
-		addItems ["N"];
+		addItems ["R","N"];
 	};
 //weapon squad
 	case "MG": { // Machinegunner
@@ -118,7 +118,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",2);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["m240_scoped_EP1","M9"];
-		addItems ["N","E"];
+		addItems ["R","N","E"];
 	};
 	
 	case "AG": { //Asst. Machinegunner
@@ -127,7 +127,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
 		addWeapons ["ACE_M16A4_Iron","ACE_Rucksack_MOLLE_ACU"];
-		addItems ["B","N","E"];
+		addItems ["R","B","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 2]]];
 	};
 	case "AB": { //Ammo bearer
@@ -136,7 +136,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
 		addWeapons ["ACE_M16A4_Iron","ACE_Rucksack_MOLLE_ACU"];
-		addItems ["N","E"];
+		addItems ["R","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 4]]];
 	};
 	
@@ -146,14 +146,14 @@ switch _type do {
 		addMagazines("15Rnd_9x19_M9",2);
 		addMagazines("SmokeShell",2);
 		addWeapons ["M24_des_EP1","M9"];
-		addItems ["N","M","MT","G"];
+		addItems ["R","N","M","MT","G"];
 	};
 	case "SN2": { // Sniper
 		addMagazines("20Rnd_762x51_B_SCAR",6);
 		addMagazines("15Rnd_9x19_M9",2);
 		addMagazines("SmokeShell",2);
 		addWeapons ["ACE_M110","M9"];
-		addItems ["N","M","MT","G"];
+		addItems ["R","N","M","MT","G"];
 	};
 	
 	// Assist. Sniper SF
@@ -164,7 +164,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("ACE_Battery_Rangefinder",2);
 		addWeapons ["ACE_M4A1_AIM_GL","ACE_Rangefinder_OD","ACE_FAST_PackEDC_ACU"];
-		addItems ["N","K"];
+		addItems ["R","N","K"];
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",2],["FlareRed_M203",4],["ACE_SSWhite_M203",2],["5Rnd_762x51_M24",4]]];
 	};
 
@@ -176,14 +176,14 @@ switch _type do {
 		addMagazines("ACE_M224HE_CSWDM",3);
 		addMagazines("ACE_M224IL_CSWDM",2);
 		addWeapons ["ACE_M4_AIM","ACE_M224Proxy"];
-		addItems ["B","N","M","MT","G"];
+		addItems ["R","B","N","M","MT","G"];
 	};
 	case "MOAG" : { //Mortar Asst. Gunner
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addWeapons ["ACE_M4_AIM","ACE_M224TripodProxy"];
-		addItems ["N","B","E"];
+		addItems ["R","N","B","E"];
 		_unit setVariable ["ACE_weapononback","ACE_Rucksack_MOLLE_Green"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_M224WP_CSWDM",3],["ACE_M224HE_CSWDM",2]]];
 	};
@@ -192,7 +192,7 @@ switch _type do {
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addWeapons ["ACE_M4_AIM","ACE_Rucksack_MOLLE_Green"];
-		addItems ["N","E"];
+		addItems ["R","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_M224HE_CSWDM",10]]];
 	};
 
@@ -201,7 +201,7 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("SmokeShell",4);
 		addWeapons ["M4A1","ACE_Rucksack_MOLLE_DMARPAT_Medic"];
-		addItems ["B","N","M"];
+		addItems ["R","B","N","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 
@@ -209,7 +209,7 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("SmokeShell",4);
 		addWeapons ["M4A1","ACE_Rucksack_MOLLE_DMARPAT_Medic"];
-		addItems ["N"];
+		addItems ["R","N"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 
@@ -217,17 +217,17 @@ switch _type do {
 	case "CRW": { // Crewman
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addWeapons ["ACE_M4"];
-		addItems ["N"];
+		addItems ["R","N"];
 	};
 	case "LPL": { //Pilot
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["M9"];
-		addItems ["N","M","G"];
+		addItems ["R","N","M","G"];
 	};
 	case "PL": { //Pilot
 		addMagazines("30Rnd_9x19_MP5",4);
 		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["MP5A5","M9"];
-		addItems ["N","M","G"];
+		addItems ["R","N","M","G"];
 	};
 };

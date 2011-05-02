@@ -2,7 +2,7 @@
 private ["_unitside"];
 _unitside = side player;
 _JIP = if (time>10) then {true}else{false};
-_cred = player createDiaryRecord ["diary", [localize "credits_title",localize "credits"]];
+_cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
 //отобразит игроков стороны в отрядах
 _grpText = "";
 {

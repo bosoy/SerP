@@ -2,11 +2,12 @@
 #define addMagazines(a,b) for "_i" from 1 to b do {_unit addMagazine a}
 #define addItems {switch (_x) do \
 		{ \
+			case "R": {_unit addWeapon "ItemRadio"}; \
 			case "G": {_unit addWeapon "ItemGPS"}; \
 			case "M": {_unit addWeapon "ACE_Map"}; \
 			case "MT":{_unit addWeapon "ACE_Map_Tools"}; \
 			case "D": {_unit addWeapon "ACE_DAGR"}; \
-			case "N": {unit addWeapon "NVGoggles"}; \
+			case "N": {_unit addWeapon "NVGoggles"}; \
 			case "F": {_unit addWeapon "ACE_MugLite"}; \
 			case "E": {_unit addWeapon "ACE_Earplugs"}; \
 			case "B": {_unit addWeapon "Binocular"}; \

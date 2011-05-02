@@ -8,14 +8,14 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["AK_47_M","ACE_Glock18","ACE_PRC119_ACU"];
-		addItems ["B","N","M","MT","G"];
+		addItems ["R","B","N","M","MT","G"];
 	};
 	case "SL": {// Squad Lider
 		addMagazines("ACE_20Rnd_762x51_B_G3",3);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["ACE_G3A3","ACE_PRC119_ACU"];
-		addItems ["B","N","M","MT","G"];
+		addItems ["R","B","N","M","MT","G"];
 	};
 	case "TL": {// Watch Leader
 		addMagazines("SmokeShell",2);
@@ -23,7 +23,7 @@ switch _type do {
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("ACE_33Rnd_9x19_G18",2);
 		addWeapons ["AK_47_S","ACE_Glock18","Binocular","NVGoggles"];
-		addItems ["B","M","F"];
+		addItems ["R","B","M","F"];
 	};
 	case "MG": {//Machinegunner
 		addMagazines("100Rnd_762x54_PK",2);
@@ -80,7 +80,7 @@ switch _type do {
 	case "SAB": {// Saboteur
 		addMagazines("30Rnd_762x39_AK47",3);
 		addWeapons ["AK_47_S","ACE_BackPack"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 		_unit setVariable ["ACE_RuckMagContents", [["PipeBomb",2]]];
 	};
 	case "SAP": {// Sapper
@@ -107,7 +107,7 @@ switch _type do {
 		addMagazines("BAF_ied_v3",1);
 		addMagazines("HandGrenade_East",4);
 		addWeapons ["AK_47_M", "ACE_Glock18","ACE_PRC119_ACU"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 	};
 	case "MR": {// Lee-Endfield
 		addMagazines("10x_303",4);
@@ -121,12 +121,12 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("8Rnd_9x18_Makarov",2);
 		addWeapons ["huntingrifle", "Makarov"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 	};
 	case "MED": {//Medic
 		addMagazines("30Rnd_762x39_AK47",3);
 		addWeapons ["AK_47_S","ACE_BackPack"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 	case "GL": {//Grenadier
@@ -142,14 +142,14 @@ switch _type do {
 		addMagazines("HandGrenade_East",3);
 		addMagazines("Strela",1);
 		addWeapons ["AK_47_S","Strela"];
-		addItems ["F","M","E"];
+		addItems ["R","F","M","E"];
 	};
 //DSHKM		
 	case "HMG" : {//DSHKM Gunner
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("ACE_DSHKM_CSWDM",1);
 		addWeapons ["AK_47_S", "ACE_DSHKMProxy"];
-		addItems ["N","M","E"];
+		addItems ["R","N","M","E"];
 	};
 	case "HMGAG" : {//DSHKM Asst. Gunner
 		addMagazines("30Rnd_762x39_AK47",3);

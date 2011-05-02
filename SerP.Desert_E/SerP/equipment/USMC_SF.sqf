@@ -8,7 +8,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addWeapons ["ACE_USPSD", "ACE_HK416_D10_AIM"];
-		addItems ["B","N","D","M","MT","G","L","H"];
+		addItems ["R","B","N","D","M","MT","G","L","H"];
 	};
 	case "TL" : { // FT Leader SF
 		addMagazines("30Rnd_556x45_Stanag",8);
@@ -18,7 +18,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",4);
 		addWeapons ["ACE_HK416_D10_M320", "ACE_PRC119","ACE_YardAge450"];
-		addItems ["L","B","N","D","M","H","G"];
+		addItems ["R","L","B","N","D","M","H","G"];
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",4],["ACE_SSWhite_M203",4]]];
 	};
 	case "AR" : { // Automatic Rifleman SF
@@ -27,7 +27,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",4);
 		addWeapons ["M249_EP1", "ACE_USPSD","ACE_Rucksack_MOLLE_Green"];
-		addItems ["L","N","E"];
+		addItems ["R","L","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["200Rnd_556x45_M249", 2]]];
 	};
 	case "AR2" : { // Automatic Rifleman SF
@@ -36,7 +36,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",4);
 		addWeapons ["M249_m145_EP1", "ACE_USPSD","ACE_Rucksack_MOLLE_Green"];
-		addItems ["L","N","E"];
+		addItems ["R","L","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_556x45_M249", 2]]];
 	};
 	case "SN" : { // Sniper SF M24
@@ -44,7 +44,7 @@ switch _type do {
 		addMagazines("SmokeShell",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addWeapons ["M40A3", "ACE_USPSD"];
-		addItems ["L","B","N","M"];
+		addItems ["R","L","B","N","M"];
 
 	};
 	case "HSN" : { // Sniper SF M107
@@ -53,7 +53,7 @@ switch _type do {
 		addMagazines("SmokeShell",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addWeapons ["m107", "ACE_USPSD"];
-		addItems ["L","B","N","M"];
+		addItems ["R","L","B","N","M"];
 	};
 	case "ASN" : { // Assist. Sniper SF
 		addMagazines("20Rnd_762x51_DMR",6);
@@ -62,7 +62,7 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("ACE_Battery_Rangefinder",2);
 		addWeapons ["DMR", "ACE_Rangefinder_OD","ACE_Rucksack_MOLLE_Green"];
-		addItems ["L","N","K"];
+		addItems ["R","L","N","K"];
 		_unit setVariable ["ACE_weapononback","ACE_HK416_D14"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Claymore_M", 3], ["HandGrenade_West", 2], ["SmokeShell", 2], ["30Rnd_556x45_Stanag", 4]]];
 	};
@@ -72,14 +72,14 @@ switch _type do {
 		addMagazines("SmokeShell",3);
 		addMagazines("HandGrenade_West",4);
 		addWeapons ["DMR", "ACE_USPSD"];
-		addItems ["L","B","N","M"];
+		addItems ["R","L","B","N","M"];
 	};
 	case "MED" : { // Medic SF
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",2);
 		addMagazines("SmokeShell",2);
 		addWeapons ["ACE_HK416_D14", "ACE_USPSD", "ACE_Rucksack_MOLLE_Green_Medic"];
-		addItems ["L","N"];
+		addItems ["R","L","N"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
 	case "RC" : { // Recon SF
@@ -87,7 +87,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addWeapons ["ACE_HK416_D14_SD", "ACE_USPSD"];
-		addItems ["L","B","N","M"];
+		addItems ["R","L","B","N","M"];
 	};
 	case "SAB" : { // Saboteur SF
 		addMagazines("30Rnd_556x45_Stanag",8);
@@ -95,7 +95,7 @@ switch _type do {
 		addMagazines("HandGrenade_West",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
 		addWeapons ["ACE_HK416_D10_AIM", "ACE_USPSD","ACE_Rucksack_MOLLE_Green"];
-		addItems ["L","B","N","M"];
+		addItems ["R","L","B","N","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["PipeBomb", 3]]];
 	};
 };
