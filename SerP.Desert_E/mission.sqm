@@ -9067,7 +9067,7 @@ class Mission
 			special="NONE";
 			id=581;
 			side="EMPTY";
-			vehicle="LandRover_MG_TK_INS_EP1";
+			vehicle="LandRover_SPG9_TK_INS_EP1";
 			leader=1;
 			skill=0.46666664;
 			init="[this,""TA"",""TL""] call compile preprocessFileLineNumbers ""SerP\process_vehicles.sqf""";
