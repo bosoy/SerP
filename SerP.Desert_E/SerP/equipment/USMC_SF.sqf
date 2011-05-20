@@ -89,6 +89,15 @@ switch _type do {
 		addWeapons ["ACE_HK416_D14_SD", "ACE_USPSD"];
 		addItems ["R","L","B","N","M"];
 	};
+	case "FAS": {// Forvard Aircraft Spotter
+		addMagazines("30Rnd_556x45_Stanag",8);
+		addMagazines("SmokeShell",2);
+		addMagazines("HandGrenade_West",4);
+		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
+		addMagazines("Laserbatteries",2);
+		addWeapons ["ACE_USPSD", "ACE_HK416_D10_AIM", "ACE_PRC119", "Laserdesignator"];
+		addItems ["R","L","N","D","M","MT","G","H"];
+	};	
 	case "SAB" : { // Saboteur SF
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);

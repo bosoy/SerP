@@ -45,7 +45,7 @@ switch _type do {
 		addMagazines("SmokeShellRed",2);
 		addMagazines("IR_Strobe_Target",3);
 		addMagazines("HandGrenade_West",3);
-		addWeapons ["ACE_SOC_M4A1_GL_SD", "M9SD"];
+		addWeapons ["ACE_SOC_M4A1_GL_SD", "M9SD", "ACE_MX2A"];
 		addItems ["R","L","N","H"];
 	};
 	case "INF": {// Infiltrator
@@ -123,7 +123,7 @@ switch _type do {
 		addMagazines("15Rnd_9x19_M9SD",4);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",3);
-		addWeapons ["M24_des_EP1", "M9SD", "NVGoggles"];
+		addWeapons ["M24_des_EP1", "M9SD"];
 		addItems ["R","L","N","M","G"];
 	};
 	case "SNNV": { // Sniper
@@ -153,6 +153,15 @@ switch _type do {
 		addWeapons ["ACE_SOC_M4A1_RCO_GL", "Binocular_Vector", "ACE_PRC119_ACU"];
 		addItems ["R","L","N","M","G","D","K"];
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",2],["ACE_SSWhite_M203",2], ["ACE_Claymore_M",3]]];
+	};
+	case "FAS": {// Forvard Aircraft Spotter
+		addMagazines("30Rnd_556x45_Stanag",8);
+		addMagazines("15Rnd_9x19_M9SD",4);
+		addMagazines("SmokeShell",2);
+		addMagazines("HandGrenade_West",2);
+		addMagazines("Laserbatteries",2);
+		addWeapons ["ACE_SOC_M4A1_Eotech_4x", "M9SD", "ACE_PRC119_ACU", "Laserdesignator"];
+		addItems ["R","L","N","D","M","MT","G"];
 	};
 	//Medic
 	case "MED": {

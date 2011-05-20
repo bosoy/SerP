@@ -173,6 +173,15 @@ switch _loadout do {
 		addWeapons ["VSS_vintorez","ACE_RPG27","NVGoggles"];
 		addItems ["R","N","M"];
 	};
+	case "R_AN" : { // Авианаводчик
+		addMagazines("30Rnd_545x39_AK",7);
+		addMagazines("ACE_30Rnd_545x39_T_AK",1);
+		addMagazines("ACE_RDGM",2);
+		addMagazines("HandGrenade_East",2);
+		addMagazines("Laserbatteries",2);
+		addWeapons ["ACE_AKS74P","ACE_P168_RD90","Laserdesignator"];
+		addItems ["R","N","M","MT","D","G"];
+	};
 //Отделение АГС/миномета/ПТРК когда оружие погружено в технику
 	case "ACOM" : { // Командир расчета АГС/Миномета
 		addMagazines("30Rnd_545x39_AK",7);
