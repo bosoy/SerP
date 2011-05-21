@@ -29,53 +29,53 @@ switch _type do {
 		addMagazines("100Rnd_762x54_PK",2);
 		addMagazines("HandGrenade_West",3);
 		addWeapons ["PK"];
-		addItems ["N","M","E"];
+		addItems ["R","N","M","E"];
 	};
 	case "AG": {//Asst. Machinegunner
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_West",3);
 		addWeapons ["AK_47_M","ACE_BackPack"];
-		addItems ["B","F"];
+		addItems ["R","B","F"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",2]]];
 	};
 	case "MGM60": {//Machinegunner
 		addMagazines("100Rnd_762x51_M240",2);
 		addMagazines("HandGrenade_West",3);
 		addWeapons ["ACE_M60"];
-		addItems ["N","M","E"];
+		addItems ["R","N","M","E"];
 	};
 	case "AGM60": {//Asst. Machinegunner
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_West",3);
 		addWeapons ["AK_47_M","ACE_BackPack"];
-		addItems ["B","F"];
+		addItems ["R","B","F"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240",2]]];
 	};
 	case "AR": {// Automatic Rifleman
 		addMagazines("75Rnd_545x39_RPK",4);
 		addMagazines("HandGrenade_East",3);
 		addWeapons ["RPK_74"];
-		addItems ["B","F","M"];
+		addItems ["R","B","F","M"];
 	};
 	case "AT": {//AT Operator
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);
 		addMagazines("PG7V",2);
 		addWeapons ["AK_47_S", "RPG7V"];
-		addItems ["N","M","E"];
+		addItems ["R","N","M","E"];
 	};
 	case "AAT": {// Asst. AT Operator
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);
 		addWeapons ["AK_47_M", "ACE_BackPack"];
-		addItems ["F","E"];
+		addItems ["R","F","E","M"];
 		_unit setVariable ["ACE_RuckMagContents", [["PG7V",2],["OG7",2]]];
 	};
 	case "LAT": {// Rifleman AT
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);	
 		addWeapons ["AK_47_S","ACE_RPG22"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 	};	
 	case "SAB": {// Saboteur
 		addMagazines("30Rnd_762x39_AK47",3);
@@ -86,20 +86,20 @@ switch _type do {
 	case "SAP": {// Sapper
 		addMagazines("30Rnd_762x39_AK47",3);
 		addWeapons ["AK_47_S", "NVGoggles","ACE_BackPack"];
-		addWeapons ["ACE_Map"];
+		addItems ["R","F","M"];
 		_unit setVariable ["ACE_RuckMagContents", [["BAF_ied_v2",2],["BAF_ied_v4",2]]];
 	};
 	case "ASAP": {// Asst. Sapper
 		addMagazines("30Rnd_762x39_AK47",3);
 		addWeapons ["AK_47_S","ACE_BackPack"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 		_unit setVariable ["ACE_RuckMagContents", [["BAF_ied_v1",2],["BAF_ied_v3",2]]];
 	};
 	case "RF": {// Rifleman
 		addMagazines("ACE_10Rnd_762x39_B_SKS",6);
 		addMagazines("HandGrenade_East",4);
 		addWeapons ["ACE_SKS"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 	};
 	case "RC": {// Recon
 		addMagazines("30Rnd_762x39_AK47",3);
@@ -113,7 +113,7 @@ switch _type do {
 		addMagazines("10x_303",4);
 		addMagazines("HandGrenade_East",4);
 		addWeapons ["LeeEnfield","RPG18"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 	};
 	case "SN": {// Sniper
 		addMagazines("5x_22_LR_17_HMR",6);
@@ -121,7 +121,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("8Rnd_9x18_Makarov",2);
 		addWeapons ["huntingrifle", "Makarov"];
-		addItems ["R","F","M"];
+		addItems ["R","F","M","B"];
 	};
 	case "MED": {//Medic
 		addMagazines("30Rnd_762x39_AK47",3);
@@ -134,7 +134,7 @@ switch _type do {
 		addMagazines("1Rnd_HE_M203",5);
 		addMagazines("HandGrenade_West",4);
 		addWeapons ["AK_47_S"];
-		addItems ["F","M"];
+		addItems ["R","F","M"];
 		_unit setVariable ["ACE_weapononback","M79_EP1"];
 	};
 	case "AA": {//Pzrk Operator
@@ -156,13 +156,13 @@ switch _type do {
 		addMagazines("ACE_DSHKM_CSWDM",1);
 		addMagazines("HandGrenade_West",2);
 		addWeapons ["AK_47_S", "ACE_DSHKMTripodProxy"];
-		addItems ["F","M","E","B"];
+		addItems ["R","F","M","E","B"];
 	};
 	case "HMGAB" : {
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["AK_47_S","ACE_BackPack_ACR"];
-		addItems ["F","M","E"];
+		addItems ["R","F","M","E"];
 		_unit setVariable ["ACE_RuckMagContents", [["ACE_DSHKM_CSWDM",4]]];
 	};
 //голодранцы
