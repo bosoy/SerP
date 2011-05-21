@@ -1,4 +1,4 @@
-#include "macros.hpp"
+п»ї#include "macros.hpp"
 _unit = _this select 0;
 _type = toUpper (_this select 1);
 switch _type do {
@@ -165,7 +165,7 @@ switch _type do {
 		addItems ["F","M","E"];
 		_unit setVariable ["ACE_RuckMagContents", [["ACE_DSHKM_CSWDM",4]]];
 	};
-//голодранцы
+//РіРѕР»РѕРґСЂР°РЅС†С‹
 	case "L_PM" : {
 		addMagazines("8Rnd_9x18_Makarov",4);
 		addMagazines("HandGrenade_East",2);

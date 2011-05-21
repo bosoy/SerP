@@ -1,4 +1,4 @@
-private ["_fromEH","_vehicle","_vehicleRole","_unitToCheck","_typeToCheck","_strTypeToCheck","_allowedCrewType","_warningMsg"];
+﻿private ["_fromEH","_vehicle","_vehicleRole","_unitToCheck","_typeToCheck","_strTypeToCheck","_allowedCrewType","_warningMsg"];
 
 _fromEH = _this select 0;
 _vehicle = _fromEH select 0;

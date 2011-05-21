@@ -1,9 +1,9 @@
-#include "const.sqf"
+п»ї#include "const.sqf"
 private ["_unitside"];
 _unitside = side player;
 _JIP = if (time>10) then {true}else{false};
 _cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
-//отобразит игроков стороны в отрядах
+//РѕС‚РѕР±СЂР°Р·РёС‚ РёРіСЂРѕРєРѕРІ СЃС‚РѕСЂРѕРЅС‹ РІ РѕС‚СЂСЏРґР°С…
 _grpText = "";
 {
 	_show = false;
@@ -29,16 +29,16 @@ _grpText = "";
 } forEach allGroups;
 _groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
 
-//условности, одни на всех
+//СѓСЃР»РѕРІРЅРѕСЃС‚Рё, РѕРґРЅРё РЅР° РІСЃРµС…
 if (localize "convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];};
-//погода из настроек миссии
+//РїРѕРіРѕРґР° РёР· РЅР°СЃС‚СЂРѕРµРє РјРёСЃСЃРёРё
 _weather = player createDiaryRecord ["diary", [localize "STR_weather",
 format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2",
 getArray(missionConfigFile >> "Params" >> "timeOfDay" >> "texts") select timeOfDay,
 getArray(missionConfigFile >> "Params" >> "weather" >> "texts") select weather
 ]
 ]];
-//задачи, вооружение и брифинги сторон
+//Р·Р°РґР°С‡Рё, РІРѕРѕСЂСѓР¶РµРЅРёРµ Рё Р±СЂРёС„РёРЅРіРё СЃС‚РѕСЂРѕРЅ
 switch true do {
 	case (_unitside == _sideREDFOR): {
 		{if (localize(_x select 1)!="") then {
@@ -62,7 +62,7 @@ switch true do {
 			["situation_title","situation_bf"]
 		];
 	};
-	default {//цивилы
+	default {//С†РёРІРёР»С‹
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
 	};
 };

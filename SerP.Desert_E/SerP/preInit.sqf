@@ -1,4 +1,4 @@
-enableSaving [false, false];
+﻿enableSaving [false, false];
 //init global variables
 if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_wounds_enabled = true;

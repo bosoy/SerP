@@ -1,4 +1,4 @@
-#include "const.sqf"
+﻿#include "const.sqf"
 trashArray = [];
 planeList = [];
 _bCounter = {

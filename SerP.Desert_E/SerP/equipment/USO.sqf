@@ -1,4 +1,4 @@
-#include "macros.hpp"
+﻿#include "macros.hpp"
 _unit = _this select 0;
 _type = toUpper (_this select 1);
 switch _type do {

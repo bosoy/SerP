@@ -1,4 +1,4 @@
-	class timeOfDay {
+﻿	class timeOfDay {
 		title = "$STR_timeOfDay";
 		values[] = {0,1,2,3,4,5,6,7,8};
 		texts[] = {$STR_timeOfDay_Option0,$STR_timeOfDay_Option1,$STR_timeOfDay_Option2,$STR_timeOfDay_Option3,$STR_timeOfDay_Option4,$STR_timeOfDay_Option5,$STR_timeOfDay_Option6,$STR_timeOfDay_Option7,$STR_timeOfDay_Option8};
