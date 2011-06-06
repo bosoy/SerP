@@ -1,4 +1,4 @@
-﻿enableSaving [false, false];
+enableSaving [false, false];
 //init global variables
 if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_wounds_enabled = true;
@@ -23,6 +23,9 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
+	[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
 	SerP_server_message = "";
 	"SerP_server_message" addPublicVariableEventHandler {hint (_this select 1)};
+	SerP_taskhint = "";
+	"SerP_taskhint" addPublicVariableEventHandler {taskHint [(_this select 1),[1, 0, 0, 1], "taskNew"];};
 };

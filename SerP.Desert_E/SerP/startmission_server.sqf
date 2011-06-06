@@ -1,4 +1,4 @@
-﻿#include "const.sqf"
+#include "const.sqf"
 trashArray = [];
 planeList = [];
 _bCounter = {
@@ -193,6 +193,8 @@ _teleportList = [];
 			removeAllWeapons _unit;
 			removeAllItems _unit;
 			{_unit removeMagazine _x} forEach magazines(_unit);
+		}else{
+			[_unit] joinSilent createGroup(side _unit);
 		}} forEach playableUnits;
 		taskHint ["War begins", [1, 0, 0, 1], "taskNew"];
 		{deleteVehicle _x} forEach trashArray;

@@ -1,9 +1,11 @@
-п»ї#include "const.sqf"
+#include "const.sqf"
 private ["_unitside"];
 _unitside = side player;
 _JIP = if (time>10) then {true}else{false};
-_cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
-//РѕС‚РѕР±СЂР°Р·РёС‚ РёРіСЂРѕРєРѕРІ СЃС‚РѕСЂРѕРЅС‹ РІ РѕС‚СЂСЏРґР°С…
+SerP_briefing = [];
+//авторы
+SerP_briefing = set[count SerP_briefing,[localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
+//отобразит игроков стороны в отрядах
 _grpText = "";
 {
 	_show = false;
@@ -27,22 +29,45 @@ _grpText = "";
 		_grpText = _grpText + _tmpText + "<br/>";
 	};
 } forEach allGroups;
-_groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
+SerP_briefing = set[count SerP_briefing,[localize "groups_title",_grpText]];
 
-//СѓСЃР»РѕРІРЅРѕСЃС‚Рё, РѕРґРЅРё РЅР° РІСЃРµС…
-if (localize "convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];};
-//РїРѕРіРѕРґР° РёР· РЅР°СЃС‚СЂРѕРµРє РјРёСЃСЃРёРё
-_weather = player createDiaryRecord ["diary", [localize "STR_weather",
-format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2",
-getArray(missionConfigFile >> "Params" >> "timeOfDay" >> "texts") select timeOfDay,
-getArray(missionConfigFile >> "Params" >> "weather" >> "texts") select weather
-]
+//условности, одни на всех
+if (localize "convent" != "") then {
+	SerP_briefing = set[count SerP_briefing,[localize "convent_title",localize "convent"]];
+};
+//погода из настроек миссии
+
+_hour = date select 3;
+_time = switch true do {
+	case (_hour>=21||_hour<4): {localize "STR_timeOfDay_Option7"};
+	case (_hour<5): {localize "STR_timeOfDay_Option0"};
+	case (_hour<8): {localize "STR_timeOfDay_Option1"};
+	case (_hour<10): {localize "STR_timeOfDay_Option2"};
+	case (_hour<14): {localize "STR_timeOfDay_Option3"};
+	case (_hour<16): {localize "STR_timeOfDay_Option4"};
+	case (_hour<18): {localize "STR_timeOfDay_Option5"};
+	case (_hour<21): {localize "STR_timeOfDay_Option6"};
+	default {localize "STR_timeOfDay_Option8"};
+};
+
+_weather = switch true do {
+	case (overcast>0.9): {localize "STR_weather_Option4"};
+	case (overcast<0.1): {localize "STR_weather_Option0"};
+	case (overcast>0.1): {localize "STR_weather_Option1"};
+	case (fog>0.9): {localize "STR_weather_Option3"};
+	case (fog>0.5): {localize "STR_weather_Option2"};
+	default {localize "STR_weather_Option5"};
+};
+
+//погода
+SerP_briefing = set[count SerP_briefing,[localize "STR_weather",
+format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2",_time,_weather]
 ]];
-//Р·Р°РґР°С‡Рё, РІРѕРѕСЂСѓР¶РµРЅРёРµ Рё Р±СЂРёС„РёРЅРіРё СЃС‚РѕСЂРѕРЅ
+//задачи, вооружение и брифинги сторон
 switch true do {
 	case (_unitside == _sideREDFOR): {
 		{if (localize(_x select 1)!="") then {
-			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
+			SerP_briefing = set[count SerP_briefing,[localize(_x select 0),localize(_x select 1)]];
 		};} forEach [
 			["machinery_title","machinery_rf"],
 			["enemy_title","enemy_rf"],			
@@ -53,7 +78,7 @@ switch true do {
 	};
 	case (_unitside == _sideBLUEFOR): {
 		{if (localize(_x select 1)!="") then {
-			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
+			SerP_briefing = set[count SerP_briefing,[localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_bf"],
 			["enemy_title","enemy_bf"],
@@ -62,7 +87,7 @@ switch true do {
 			["situation_title","situation_bf"]
 		];
 	};
-	default {//С†РёРІРёР»С‹
-		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
+	default {//цивилы
+		SerP_briefing = set[count SerP_briefing,[localize(_x select 0),localize(_x select 1)]]
 	};
 };

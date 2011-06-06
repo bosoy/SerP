@@ -1,4 +1,4 @@
-﻿_pairs = [
+_pairs = [
 	["AKS_74_pso","AKS_74_NSPU"],
 	["ACE_AK74M_PSO","AKS_74_NSPU"],
 	["ACE_AKS74P_1P29","AKS_74_NSPU"],

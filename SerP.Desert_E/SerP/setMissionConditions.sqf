@@ -1,4 +1,4 @@
-﻿private ["_timeOfDay","_weather","_MissionOvercast","_MissionFog"];
+private ["_timeOfDay","_weather","_MissionOvercast","_MissionFog"];
 
 for [ { _i = 0 }, { _i < count(paramsArray) }, { _i = _i + 1 } ] do	{
 	_paramName =(configName ((missionConfigFile >> "Params") select _i));
