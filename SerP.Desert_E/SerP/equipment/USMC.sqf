@@ -140,7 +140,7 @@ switch _type do {
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["m16a4","ACE_Rucksack_MOLLE_ACU","NVGoggles"];
+		addWeapons ["m16a4","ACE_Rucksack_MOLLE_ACU"];
 		addItems ["R","L","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 4]]];
 	};
@@ -152,16 +152,17 @@ switch _type do {
 		addMagazines("SMAW_HEAA",1);
 		addMagazines("ACE_SMAW_NE",1);
 		addMagazines("ACE_ANM14",2);
-		addWeapons ["m16a4","SMAW","NVGoggles"];
+		addWeapons ["m16a4","SMAW"];
 		addItems ["R","L","N","E","M"];
 	};
 	case "ASAG" : { // ASSAULT SECTION assistant GUNNER
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("SmokeShell",2);
-		addMagazines("ACE_C4_M",3);
+		addMagazines("ACE_C4_M",2);
 		addMagazines("SMAW_HEDP",1);
-		addWeapons ["m16a4","ACE_Rucksack_MOLLE_Green","ACE_YardAge450","NVGoggles"];
-		addWeapons ["ACE_Earplugs","ACE_Map","ItemGPS"];
+		addMagazines("ACE_Battery_Rangefinder",1);
+		addWeapons ["m16a4","ACE_Rucksack_MOLLE_Green","ACE_YardAge450"];
+		addItems ["R","L","N","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["SMAW_HEDP",1],["SMAW_HEAA",1]]];
 	};
 //mortar
@@ -171,7 +172,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("ACE_M224HE_CSWDM",3);
 		addMagazines("ACE_M224IL_CSWDM",2);
-		addWeapons ["M16A4","ACE_M224Proxy"];
+		addWeapons ["M16A4","ACE_M224Proxy","ace_arty_rangeTable_m252_legacy"];
 		addItems ["R","B","N","M","MT","G"];
 	};
 	case "MOAG" : { //Mortar Asst. Gunner

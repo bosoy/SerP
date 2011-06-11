@@ -103,6 +103,24 @@ switch _loadout do {
 		[_veh,"9M113"] call SerP_cargoCrateProcessor;
 		[_veh,"9M113"] call SerP_cargoCrateProcessor;
 	};
+	case "TRUCK_MORTAR" : { //
+		_veh addMagazineCargo ["HandGrenade_East",12];
+		_veh addMagazineCargo ["ACE_RDGM",10];
+		_veh addMagazineCargo ["30Rnd_545x39_AK",36];
+		_veh addWeaponCargo ["ACE_P159_RD90",1];
+		_veh addWeaponCargo ["ACE_Rucksack_RD90",2];
+		_veh addMagazineCargo ["ACE_30Rnd_545x39_T_AK", 10];
+		_veh addMagazineCargo ["HandGrenade", 15];
+		_veh addMagazineCargo ["ACE_Bandage",9];
+		_veh addMagazineCargo ["ACE_Morphine",9];
+		_veh addMagazineCargo ["ACE_Epinephrine",9];
+		_veh addWeaponCargo ["ACE_RPG27",1];
+		_veh addMagazineCargo ["ACE_2b14Proxy",1];
+		_veh addMagazineCargo ["ACE_2b14TripodProxy",1];
+		_veh addWeaponCargo ["ace_arty_rangeTable_2b14_legacy",2];
+		[_veh,"82MMHE",10] call SerP_cargoCrateProcessor;
+		[_veh,"82MMWP",2] call SerP_cargoCrateProcessor;
+	};
 	case "TRUCK_KONKURS" : { //
 		_veh addMagazineCargo ["HandGrenade_East",12];
 		_veh addMagazineCargo ["ACE_RDGM",10];

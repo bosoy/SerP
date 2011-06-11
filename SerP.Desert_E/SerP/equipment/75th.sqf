@@ -189,7 +189,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("ACE_M224HE_CSWDM",3);
 		addMagazines("ACE_M224IL_CSWDM",2);
-		addWeapons ["M16A4","ACE_M224Proxy","Binocular","NVGoggles"];
+		addWeapons ["M16A4","ACE_M224Proxy","Binocular","NVGoggles","ace_arty_rangeTable_m224_legacy"];
 		addWeapons ["ACE_Earplugs","ACE_Map","ACE_Map_Tools","ACE_DAGR","ItemGPS", "ACE_GlassesLHD_glasses"];
 	};
 	case "MOAG" : {//Mortar Asst. Gunner

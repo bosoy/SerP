@@ -2,9 +2,7 @@
 private ["_unitside"];
 _unitside = side player;
 _JIP = if (time>10) then {true}else{false};
-SerP_briefing = [];
-//авторы
-SerP_briefing = set[count SerP_briefing,[localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
+_cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
 //отобразит игроков стороны в отрядах
 _grpText = "";
 {
@@ -29,12 +27,10 @@ _grpText = "";
 		_grpText = _grpText + _tmpText + "<br/>";
 	};
 } forEach allGroups;
-SerP_briefing = set[count SerP_briefing,[localize "groups_title",_grpText]];
+_groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
 
 //условности, одни на всех
-if (localize "convent" != "") then {
-	SerP_briefing = set[count SerP_briefing,[localize "convent_title",localize "convent"]];
-};
+if (localize "convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];};
 //погода из настроек миссии
 
 _hour = date select 3;
@@ -59,15 +55,15 @@ _weather = switch true do {
 	default {localize "STR_weather_Option5"};
 };
 
-//погода
-SerP_briefing = set[count SerP_briefing,[localize "STR_weather",
+
+_weather = player createDiaryRecord ["diary", [localize "STR_weather",
 format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2",_time,_weather]
 ]];
 //задачи, вооружение и брифинги сторон
 switch true do {
 	case (_unitside == _sideREDFOR): {
 		{if (localize(_x select 1)!="") then {
-			SerP_briefing = set[count SerP_briefing,[localize(_x select 0),localize(_x select 1)]];
+			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_rf"],
 			["enemy_title","enemy_rf"],			
@@ -78,7 +74,7 @@ switch true do {
 	};
 	case (_unitside == _sideBLUEFOR): {
 		{if (localize(_x select 1)!="") then {
-			SerP_briefing = set[count SerP_briefing,[localize(_x select 0),localize(_x select 1)]]
+			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_bf"],
 			["enemy_title","enemy_bf"],
@@ -88,6 +84,6 @@ switch true do {
 		];
 	};
 	default {//цивилы
-		SerP_briefing = set[count SerP_briefing,[localize(_x select 0),localize(_x select 1)]]
+		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
 	};
 };

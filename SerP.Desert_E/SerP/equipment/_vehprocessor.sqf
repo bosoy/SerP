@@ -7,7 +7,7 @@ _cargoBoxes = _this select 3;
 _common_processor = {
 	clearWeaponCargo _this;
 	clearMagazineCargo _this;
-	_this disableTIEquipment true;
+	//_this disableTIEquipment true;
 	_this addWeaponCargo ["ACE_JerryCan_Dummy_15",1];
 	_this addMagazineCargo ["ACE_Rope_TOW_M_5",1];
 };
@@ -37,7 +37,7 @@ if (isNil {SerP_addCargoBox}) then {
 		_veh = _this select 0;
 		_boxname = _this select 1;
 		_boxtype = _this select 2;
-		_magazines = _this select 3;	
+		_magazines = _this select 3;
 		if (isNil {_magazines}) then {_magazines = [];};
 		_weapons = _this select 4;
 		if (isNil {_weapons}) then {_weapons = [];};

@@ -175,7 +175,7 @@ switch _type do {
 		addMagazines("SmokeShell",2);
 		addMagazines("ACE_M224HE_CSWDM",3);
 		addMagazines("ACE_M224IL_CSWDM",2);
-		addWeapons ["ACE_M4_AIM","ACE_M224Proxy"];
+		addWeapons ["ACE_M4_AIM","ACE_M224Proxy","ace_arty_rangeTable_m224_legacy"];
 		addItems ["R","B","N","M","MT","G"];
 	};
 	case "MOAG" : { //Mortar Asst. Gunner

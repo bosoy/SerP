@@ -186,16 +186,22 @@ _teleportList = [];
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";
 	'logic' createUnit [[0,0,0], createGroup sideLogic,'
+		_toNull = [];
 		{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
-			_unit = _x;
-			_unit setPos [0,30000,100];
-			[_unit] joinSilent grpNull;
-			removeAllWeapons _unit;
-			removeAllItems _unit;
-			{_unit removeMagazine _x} forEach magazines(_unit);
-		}else{
-			[_unit] joinSilent createGroup(side _unit);
-		}} forEach playableUnits;
+			_toNull = _toNull + [_x];
+		}else{if local(_x) then {
+			[_x] join (createGroup(side _x))
+		}}} forEach playableUnits;
+		_toNull joinSilent grpNull;
+		{
+			_x setPos [0,30000,100];
+			if local(_x) then {
+				_unit = _x;
+				removeAllWeapons _unit;
+				removeAllItems _unit;
+				{_unit removeMagazine _x} forEach magazines(_unit);
+			};
+		} forEach _toNull;
 		taskHint ["War begins", [1, 0, 0, 1], "taskNew"];
 		{deleteVehicle _x} forEach trashArray;
 		{

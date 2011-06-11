@@ -5,6 +5,7 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
+	[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
 	enableRadio false;
 	{
 		player createDiaryRecord ["diary", _x]

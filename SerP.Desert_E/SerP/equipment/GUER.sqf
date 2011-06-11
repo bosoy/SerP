@@ -11,10 +11,11 @@ switch _type do {
 		addItems ["R","B","N","M","MT","G"];
 	};
 	case "SL": {// Squad Lider
-		addMagazines("ACE_20Rnd_762x51_B_G3",3);
+		addMagazines("ACE_10Rnd_762x39_B_SKS",6);
+		addMagazines("ACE_33Rnd_9x19_G18",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_East",2);
-		addWeapons ["ACE_G3A3","ACE_PRC119_ACU"];
+		addWeapons ["ACE_SKS","ACE_Glock18","ACE_PRC119_ACU"];
 		addItems ["R","B","N","M","MT","G"];
 	};
 	case "TL": {// Watch Leader

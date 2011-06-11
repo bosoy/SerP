@@ -18,12 +18,11 @@ SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
 [] execVM "SerP\endmission.sqf";
 
 if (isServer) then {
-	publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones"];
+	publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones","SerP_end"];
 	onPlayerConnected "{publicVariable _x} forEach publicVars";
 };
 
 if (!isDedicated) then {
-	[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
 	SerP_server_message = "";
 	"SerP_server_message" addPublicVariableEventHandler {hint (_this select 1)};
 	SerP_taskhint = "";

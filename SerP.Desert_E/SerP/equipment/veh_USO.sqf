@@ -32,6 +32,26 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Bandage",9];
 		_veh addWeaponCargo ["ACE_M72",4];
 	};
+	case "TRUCK_MORTAR" : { //
+		_veh addMagazineCargo ["HandGrenade_west",5];
+		_veh addMagazineCargo ["SmokeShell",5];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
+		_veh addMagazineCargo ["ACE_200Rnd_556x45_T_M249",5];
+		_veh addMagazineCargo ["1Rnd_HE_M203",10];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+		_veh addMagazineCargo ["ACE_Morphine",9];
+		_veh addMagazineCargo ["ACE_Epinephrine",9];
+		_veh addMagazineCargo ["ACE_Bandage",9];
+		_veh addWeaponCargo ["M136",1];
+		_veh addMagazineCargo ["ACE_M252Proxy",1];
+		_veh addMagazineCargo ["ACE_M252TripodProxy",1];
+		_veh addWeaponCargo ["ace_arty_rangeTable_m252_legacy",2];
+		[_veh,"81MMHE",10] call SerP_cargoCrateProcessor;
+		[_veh,"81MMWP",2] call SerP_cargoCrateProcessor;
+	};
 	case "MED" : { //
 		_veh addWeaponCargo ["ACE_M72",1];
 		_veh addMagazineCargo ["ACE_Bandage",20];

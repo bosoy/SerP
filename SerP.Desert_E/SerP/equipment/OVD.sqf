@@ -150,7 +150,7 @@ switch _loadout do {
 		addMagazines("30Rnd_545x39_AK",4);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("ACE_2B14HE_CSWDM",2);
-		addWeapons ["AK_74","ACE_2b14Proxy"];
+		addWeapons ["AK_74","ACE_2b14Proxy","ace_arty_rangeTable_2b14_legacy"];
 		addItems ["R","B","N","M","MT","G"];
 	};
 	case "MOAG" : { //Наводчик
