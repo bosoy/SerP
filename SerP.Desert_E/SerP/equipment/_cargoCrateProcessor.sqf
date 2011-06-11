@@ -92,6 +92,9 @@ for "_i" from 1 to _count do {
 		case "FLARE" : {// Flaregun
 			[_veh,"Flaregun", "ACE_Tbox_RU", [["ACE_SSGreen_FG",20],["ACE_SSRed_FG",20]], [["ACE_Flaregun",3]]] call SerP_addCargoBox;
 		};
+		case "IEDS" : {// IEDS
+			[_veh,"Flaregun", "ACE_Tbox_RU", [["BAF_ied_v2",3],["BAF_ied_v4",3]], [["BAF_ied_v1",5], [["BAF_ied_v3",5]]] call SerP_addCargoBox;
+		};
 		default {diag_log format ["SerP\equipment\_cargoCrateProcessor.sqf, undefined box type - %1", _loadout];};
 	};
 };
