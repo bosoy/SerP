@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ID="Arma2">
   <Package ID="Missions">
-    <Container ID="">
+    <Container ID="SerP">
 <!-- Название миссии -->
-	<Key ID="STR_missionname">
+ 	<Key ID="STR_missionname">
 		<Original>
-		Please wait...
+		Please wait... 	&test;
 		</Original>
-	</Key>
+	</Key> 
 <!-- информация для всех -->
 	<Key ID="credits">
 		<Original>
@@ -421,7 +421,7 @@
 		</Original>
 	</Key>
 <!-- названия сторон, используется при завершении миссии -->
-<Key ID="STR_ru_call">
+	<Key ID="STR_ru_call">
 		<Russian>
 		мотострелки РА
 		</Russian>
@@ -437,13 +437,12 @@
 		SPEZNAZ troops
 		</Original>
 	</Key>
-	</Key>
-		<Key ID="STR_cdkz_call">
+	<Key ID="STR_cdkz_call">
 		<Russian>
 		Бойцы ЧДКЗ
 		</Russian>
 		<Original>
-	    CDKZ rebels
+		CDKZ rebels
 		</Original>
 	</Key>
 	<Key ID="STR_ta_call">
@@ -509,7 +508,7 @@
 		<Original>
 		Mujahideen
 		</Original>
-	</Key>z
+	</Key>
     </Container>
   </Package>
 </Project>
