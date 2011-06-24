@@ -36,7 +36,7 @@ switch _type do {
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_West",3);
 		addWeapons ["AK_47_M","ACE_BackPack"];
-		addItems ["R","B","F"];
+		addItems ["R","B","F","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x54_PK",2]]];
 	};
 	case "MGM60": {//Machinegunner
@@ -49,7 +49,7 @@ switch _type do {
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_West",3);
 		addWeapons ["AK_47_M","ACE_BackPack"];
-		addItems ["R","B","F"];
+		addItems ["R","B","F","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240",2]]];
 	};
 	case "AR": {// Automatic Rifleman
