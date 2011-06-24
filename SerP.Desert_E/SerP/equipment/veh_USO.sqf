@@ -66,4 +66,38 @@ switch _loadout do {
 		_veh addWeaponCargo ["ACE_Stretcher",2];
 		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
 	};
+	case "PMC_L" : { //
+		_veh addMagazineCargo ["HandGrenade_west",10];
+		_veh addMagazineCargo ["SmokeShell",5];
+		_veh addMagazineCargo ["30Rnd_556x45_G36",10];
+		_veh addMagazineCargo ["30Rnd_762x39_AK47",10];
+		_veh addMagazineCargo ["100Rnd_762x54_PK",3];
+		_veh addMagazineCargo ["100Rnd_556x45_BetaCMag",6];
+		_veh addMagazineCargo ["20Rnd_762x51_DMR",5];
+		_veh addMagazineCargo ["1Rnd_HE_GP25",5];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["ACE_M72",1];
+	};
+	case "PMC_H" : { //
+		_veh addMagazineCargo ["HandGrenade_west",10];
+		_veh addMagazineCargo ["SmokeShell",10];
+		_veh addMagazineCargo ["30Rnd_556x45_G36",10];
+		_veh addMagazineCargo ["30Rnd_762x39_AK47",5];
+		_veh addMagazineCargo ["100Rnd_762x51_M240",3];
+		_veh addMagazineCargo ["1Rnd_HE_GP25",5];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+		_veh addMagazineCargo ["30Rnd_9x19_MP5SD", 5];
+		_veh addMagazineCargo ["ACE_5Rnd_127x99_B_TAC50", 5];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["ACE_M72",2];
+	};
 };
