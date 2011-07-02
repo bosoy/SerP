@@ -61,7 +61,6 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["ACE_RPK74M_1P29"];
 		addItems ["R","N","E"];
-		{_unit addMagazine "ACE_75Rnd_545x39_T_RPK"} forEach [0,0,0,0,0,0,0];
 	};
 	case "AT" : { //1й номер расчета РПГ
 		addMagazines("30Rnd_545x39_AK",6);
@@ -133,7 +132,7 @@ switch _loadout do {
 	};
 	case "R_SN" : { //Разведчик - снайпер
 		addMagazines("ACE_Battery_Rangefinder", 2);
-		addMagazines("10Rnd_762x54_SVD",7);
+		addMagazines("10Rnd_762x54_SVD",5);
 		addMagazines("ACE_10Rnd_762x54_T_SVD",1);
 		addMagazines("ACE_20Rnd_9x18_APSB",4);
 		addMagazines("ACE_RDGM",2);
@@ -172,6 +171,15 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["VSS_vintorez","ACE_RPG27","NVGoggles"];
 		addItems ["R","N","M"];
+	};
+	case "R_AN" : { // Авианаводчик
+		addMagazines("30Rnd_545x39_AK",5);
+		addMagazines("ACE_30Rnd_545x39_T_AK",1);
+		addMagazines("ACE_RDGM",2);
+		addMagazines("HandGrenade_East",2);
+		addMagazines("Laserbatteries",2);
+		addWeapons ["ACE_AKS74P","ACE_P168_RD90","Laserdesignator"];
+		addItems ["R","N","M","MT","D","G"];
 	};
 //Отделение АГС/миномета/ПТРК когда оружие погружено в технику
 	case "ACOM" : { // Командир расчета АГС/Миномета
@@ -213,7 +221,7 @@ switch _loadout do {
 	};
 	case "AHAT" : { //2й номер расчета РПГ-29
 		addMagazines("ACE_Battery_Rangefinder", 2);
-		addMagazines("30Rnd_545x39_AK",7);
+		addMagazines("30Rnd_545x39_AK",5);
 		addMagazines("ACE_30Rnd_545x39_T_AK",1);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
@@ -272,7 +280,7 @@ switch _loadout do {
 		addMagazines("ACE_10Rnd_762x54_T_SVD",1);
 		addMagazines("ACE_20Rnd_9x18_APSB",4);
 		addMagazines("ACE_RDGM",2);
-		addMagazines("ACE_MON50_M",2);
+		addMagazines("ACE_Pomz_M",2);
 		addWeapons ["SVD","ACE_APSB"];
 		addItems ["R","N","B"];
 	};
@@ -354,9 +362,9 @@ switch _loadout do {
 // специалисты
 	case "AA": { //Оператор ПЗРК
 		addMagazines("30Rnd_545x39_AK",3);
-		addMagazines("HandGrenade_East",3);
-		addMagazines("Strela",1);
-		addWeapons ["AKS_74_U","Strela"];
+		addMagazines("HandGrenade_East",2);
+		addMagazines("Igla",1);
+		addWeapons ["AKS_74_U","Igla"];
 		addItems ["R","N","M","E"];
 	};
 };

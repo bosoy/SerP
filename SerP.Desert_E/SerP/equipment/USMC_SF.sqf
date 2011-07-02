@@ -89,8 +89,8 @@ switch _type do {
 		addWeapons ["ACE_HK416_D14_SD", "ACE_USPSD"];
 		addItems ["R","L","B","N","M"];
 	};
-	case "FAS": {// Forvard Aircraft Spotter
-		addMagazines("30Rnd_556x45_Stanag",8);
+	case "FAС": {// Forvard Aircraft Controller
+		addMagazines("30Rnd_556x45_Stanag",5);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",4);
 		addMagazines("ACE_12Rnd_45ACP_USPSD",4);

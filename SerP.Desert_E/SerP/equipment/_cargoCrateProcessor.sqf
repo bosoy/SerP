@@ -36,7 +36,7 @@ for "_i" from 1 to _count do {
 			[_veh,"Mk 19 ammo box", "ACE_Tbox_US", [["ACE_MK19_CSWDM",5]]] call SerP_addCargoBox;
 		};
 		case "FIM92" : {// FIM-92F Stinger
-			[_veh,"9M39 Igla","ACE_Tbox_RU", [["Stinger",2]],[["Stinger",1]]] call SerP_addCargoBox;
+			[_veh,"FIM-92F Stinger","ACE_Tbox_RU", [["Stinger",1]],[["Stinger",1]]] call SerP_addCargoBox;
 		};
 		
 	//RUS

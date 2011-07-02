@@ -140,7 +140,7 @@ switch _type do {
 	};
 	case "AA": {//Pzrk Operator
 		addMagazines("30Rnd_762x39_AK47",3);
-		addMagazines("HandGrenade_East",3);
+		addMagazines("HandGrenade_East",2);
 		addMagazines("Strela",1);
 		addWeapons ["AK_47_S","Strela"];
 		addItems ["R","F","M","E"];

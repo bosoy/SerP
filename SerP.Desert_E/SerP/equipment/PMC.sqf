@@ -118,8 +118,7 @@ switch _type do {
 	};
 	case "AA": {//Pzrk Operator
 		addMagazines("30Rnd_556x45_G36",3);
-		addMagazines("SmokeShell",2);
-		addMagazines("HandGrenade_East",3);
+		addMagazines("HandGrenade_East",2);
 		addMagazines("Stinger",1);
 		addWeapons ["ACE_G36K_iron","Stinger"];
 		addItems ["R","F","N","M","G","E"];

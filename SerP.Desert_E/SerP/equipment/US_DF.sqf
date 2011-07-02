@@ -154,8 +154,8 @@ switch _type do {
 		addItems ["R","L","N","M","G","D","K"];
 		_unit setVariable ["ACE_RuckMagContents",[["1Rnd_HE_M203",2],["ACE_SSWhite_M203",2], ["ACE_Claymore_M",3]]];
 	};
-	case "FAS": {// Forvard Aircraft Spotter
-		addMagazines("30Rnd_556x45_Stanag",8);
+	case "FAС": {// Forvard Aircraft Controller
+		addMagazines("30Rnd_556x45_Stanag",6);
 		addMagazines("15Rnd_9x19_M9SD",4);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
