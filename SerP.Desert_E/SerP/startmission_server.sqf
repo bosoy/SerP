@@ -72,7 +72,8 @@ _zones = [];//[_pos,_size,_unitsInZone,_side]
 	};
 	_x setVariable ["SerP_isPlayer",(isPlayer _x)];
 } forEach playableUnits;
-waitUntil{
+_exit = false;
+while {!_exit} do {
 	_exit = true;
 	{
 		_zonePos1 = _x select 0;
@@ -101,7 +102,6 @@ waitUntil{
 		} forEach _zones;
 		if (!_exit) exitWith {};
 	} forEach _zones;
-	_exit
 };
 _objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
 //teleportarium

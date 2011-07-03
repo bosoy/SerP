@@ -14,9 +14,7 @@ enableEngineArtillery false;
 //functions
 SerP_isCrew = compile preprocessFileLineNumbers "SerP\isCrew.sqf";
 SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
-Serp_randomposition = compile preprocessFileLineNumbers "SerP\teleport.sqf";
 [] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
-if (isServer) then {Serp_RPparam = round(random 100); publicvariable "Serp_RPparam";};
 [] execVM "SerP\endmission.sqf";
 
 if (isServer) then {

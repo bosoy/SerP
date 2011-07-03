@@ -70,8 +70,8 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Morphine",9];
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addWeaponCargo ["ACE_RPG27",1];
-		_veh addMagazineCargo ["ACE_2b14Proxy",1];
-		_veh addMagazineCargo ["ACE_2b14TripodProxy",1];
+		_veh addWeaponCargo ["ACE_2b14Proxy",1];
+		_veh addWeaponCargo ["ACE_2b14TripodProxy",1];
 		_veh addWeaponCargo ["ace_arty_rangeTable_2b14_legacy",2];
 		[_veh,"82MMHE",10] call SerP_cargoCrateProcessor;
 		[_veh,"82MMWP",2] call SerP_cargoCrateProcessor;
