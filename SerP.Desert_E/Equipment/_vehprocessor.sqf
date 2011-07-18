@@ -57,5 +57,5 @@ if (isNil {SerP_addCargoBox}) then {
 //call functions
 _veh call _common_processor;
 _veh call _addTyre;
-[_veh, _loadout] call compile format ["if isNil {SerP_veh_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}; _this call SerP_veh_%1_processor",_faction];
+[_veh, _loadout] call compile format ["if isNil {SerP_veh_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'veh_%1.sqf'}; _this call SerP_veh_%1_processor",_faction];
 if (!isNil {_cargoBoxes}) then { {[_veh, _x] call SerP_cargoCrateProcessor} forEach _cargoBoxes};

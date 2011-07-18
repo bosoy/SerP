@@ -46,6 +46,6 @@ if (_faction=="") then {
 	};
 }else{
 	_unit call _weapon_processor;
-	[_unit, _loadout] call compile format ["if isNil {SerP_%1_processor} then {SerP_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\%1.sqf'};_this call SerP_%1_processor",_faction];
+	[_unit, _loadout] call compile format ["if isNil {SerP_%1_processor} then {SerP_%1_processor = compile preprocessFileLineNumbers '%1.sqf'};_this call SerP_%1_processor",_faction];
 };
 _unit call _med_processor;
