@@ -34,17 +34,16 @@ SerP_processorEND = {
 };
 
 SerP_endMission = {
-	#include "const.sqf"
 	_title = _this select 0;
 	if (count(_this)==1) then {
 		SerP_end = [_title,true];
 		publicVariable "SerP_end";
 	};
 	_title = switch toLower(_title) do {
-		case "redfor_win": {format [localize "STR_win_call", getText(missionConfigFile >> "SerP_const" >> "titleREDFOR")]};
-		case "bluefor_win": {format [localize "STR_win_call", getText(missionConfigFile >> "SerP_const" >> "titleBLUEFOR")]};
-		case "redfor_retreat": {format [localize "STR_dead_call", getText(missionConfigFile >> "SerP_const" >> "titleREDFOR")]};
-		case "bluefor_retreat": {format [localize "STR_dead_call", getText(missionConfigFile >> "SerP_const" >> "titleBLUEFOR")]};
+		case "redfor_win": {format [localize "STR_win_call", __titleREDFOR]};
+		case "bluefor_win": {format [localize "STR_win_call", __titleBLUEFOR]};
+		case "redfor_retreat": {format [localize "STR_dead_call", __titleREDFOR]};
+		case "bluefor_retreat": {format [localize "STR_dead_call", __titleBLUEFOR]};
 		case "end_admin": {localize "STR_mission_end_admin"};
 		default {_title};
 	};
@@ -112,19 +111,19 @@ SerP_all_units = []; //собираем список юнитов в начале игры потому-что узнать им
 	};
 } forEach allGroups; 
 
-_initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
-_initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
+_initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideREDFOR)} count playableUnits;
+_initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideBLUEFOR)} count playableUnits;
 
 while {true} do {
 	sleep 10;
-	_RFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideREDFOR)} count playableUnits;
-	_BFCount = {(isPlayer _x)&&(alive _x)&&(side _x == _sideBLUEFOR)} count playableUnits;
+	_RFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideREDFOR)} count playableUnits;
+	_BFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideBLUEFOR)} count playableUnits;
 	//REDFOR retreat
-	if ((_RFCount<_initRFCount*_RFRetreat)&&(_RFCount*_domiMult<_BFCount)) exitWith {
+	if ((_RFCount<_initRFCount*__RFRetreat)&&(_RFCount*__domiMult<_BFCount)) exitWith {
 		["redfor_retreat"] call SerP_endMission;
 	};
 	//BLUEFOR retreat
-	if ((_BFCount<_initBFCount*_BFRetreat)&&(_BFCount*_domiMult<_RFCount)) exitWith {
+	if ((_BFCount<_initBFCount*__BFRetreat)&&(_BFCount*__domiMult<_RFCount)) exitWith {
 		["bluefor_retreat"] call SerP_endMission;
 	};
 };

@@ -61,7 +61,7 @@ format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %
 ]];
 //задачи, вооружение и брифинги сторон
 switch true do {
-	case (_unitside == _sideREDFOR): {
+	case (_unitside == __sideREDFOR): {
 		{if (localize(_x select 1)!="") then {
 			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
@@ -72,7 +72,7 @@ switch true do {
 			["situation_title","situation_rf"]
 		];
 	};
-	case (_unitside == _sideBLUEFOR): {
+	case (_unitside == __sideBLUEFOR): {
 		{if (localize(_x select 1)!="") then {
 			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [

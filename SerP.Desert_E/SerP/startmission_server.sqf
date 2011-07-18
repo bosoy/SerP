@@ -5,8 +5,8 @@ _bCounter = {
 	_briefingTime = (_this select 0);
 	warbegins = 0;publicVariable "warbegins";
 	waitUntil{
-		SerP_server_message = format ["%1 minutes remaining",round((_briefingTime-time)/60)];
-		publicVariable "SerP_server_message";hint SerP_server_message;
+		SerP_taskHint = format ["%1 minutes remaining",round((_briefingTime-time)/60)];
+		publicVariable "SerP_taskHint";hint SerP_taskHint;
 		sleep 60;
 		(time >= _briefingTime)||(warbegins==1)
 	};
@@ -34,9 +34,9 @@ _zones = [];//[_pos,_size,_unitsInZone,_side]
 	_unit = _x;
 	_side = side _x;
 	_size = switch true do {
-		case (_side==_sideREDFOR): {_defZoneSize*_zoneMultREDFOR};
-		case (_side==_sideBLUEFOR): {_defZoneSize*_zoneMultBLUEFOR};
-		default {_defZoneSize};
+		case (_side==__sideREDFOR): {__defZoneSize*_zoneMultREDFOR};
+		case (_side==__sideBLUEFOR): {__defZoneSize*_zoneMultBLUEFOR};
+		default {__defZoneSize};
 	};
 	_teleportTo = [];
 	if (waypointDescription(waypoints(group _unit) select 1)=="teleport") then {
@@ -105,8 +105,8 @@ while {!_exit} do {
 };
 _objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
 //teleportarium
-SerP_startSeed = if (_synchronizedRespawn==0) then {
-	_synchronizedRespawn
+SerP_startSeed = if (__synchronizedRespawn==0) then {
+	__synchronizedRespawn
 }else{
 	round(random(1000+({isPlayer(_x)} count playableUnits)))
 };
@@ -119,7 +119,7 @@ _teleportList = [];
 	_units = _x select 4;
 	_zoneTeleportTo = _x select 5;
 	if (count(_zoneTeleportTo)>0) then {
-		_teleportTo = if (_synchronizedRespawn!=0) then {
+		_teleportTo = if (__synchronizedRespawn!=0) then {
 			(SerP_startSeed%(count(_zoneTeleportTo)+1))
 		}else{
 			round(random(1000+({isPlayer(_x)} count playableUnits)))%(count(_zoneTeleportTo)+1)
@@ -181,27 +181,18 @@ _teleportList = [];
 	} forEach _actionList;
 	publicVariable "startZones";publicVariable "warbegins";publicVariable "readyArray";
 	//control
-	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&!isDedicated)||(warbegins==1)};
+	_oneSide = ({isPlayer(_x)&&(side(_x)==__sideBLUEFOR)} count playableUnits == 0)||({isPlayer(_x)&&(side(_x)==__sideREDFOR)} count playableUnits == 0);
+	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&_oneSide)||(warbegins==1)};
 
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";
 	'logic' createUnit [[0,0,0], createGroup sideLogic,'
-		_toNull = [];
-		{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
-			_toNull = _toNull + [_x];
-		}else{if local(_x) then {
-			[_x] join (createGroup(side _x))
-		}}} forEach playableUnits;
-		_toNull joinSilent grpNull;
-		{
-			_x setPos [0,30000,100];
-			if local(_x) then {
-				_unit = _x;
-				removeAllWeapons _unit;
-				removeAllItems _unit;
-				{_unit removeMagazine _x} forEach magazines(_unit);
-			};
-		} forEach _toNull;
+		if isServer then {
+			{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
+				_x setPos [30000,0,100];
+				deleteVehicle _x;
+			}} forEach playableUnits;
+		};
 		taskHint ["War begins", [1, 0, 0, 1], "taskNew"];
 		{deleteVehicle _x} forEach trashArray;
 		{

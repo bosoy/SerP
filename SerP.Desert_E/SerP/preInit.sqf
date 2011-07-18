@@ -7,6 +7,7 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_tracking_markers_enabled = false;
 	ace_sys_spectator_playable_only = true;
 	//ace_sys_spectator_NoMarkersUpdates = true;
+	ace_sys_nvg_rangelimit_enabled = true;
 };
 
 enableEngineArtillery false;

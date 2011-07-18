@@ -1,18 +1,18 @@
 #define __quoted(str) #str
 #define __concat2(var1,var2) ##var1####var2
-#define getParamNumber(a) __concat2(_,a) = getNumber(missionConfigFile >> "SerP_const" >> __quoted(a))
-#define getParamText(a) __concat2(_,a) = getText(missionConfigFile >> "SerP_const" >> __quoted(a))
-#define getParamTextCompile(a) __concat2(_,a) = call compile getText(missionConfigFile >> "SerP_const" >> __quoted(a))
+#define getParamNumber(a) getNumber(missionConfigFile >> "SerP_const" >> __quoted(a))
+#define getParamText(a) getText(missionConfigFile >> "SerP_const" >> __quoted(a))
+#define getParamTextCompile(a) (call compile getText(missionConfigFile >> "SerP_const" >> __quoted(a)))
 
-getParamNumber(defZoneSize);
-getParamNumber(hintzonesize);
-getParamNumber(zoneMultREDFOR);
-getParamNumber(zoneMultBLUEFOR);
-getParamTextCompile(sideREDFOR);
-getParamTextCompile(sideBLUEFOR);
-getParamText(titleREDFOR);
-getParamText(titleBLUEFOR);
-getParamNumber(domiMult);
-getParamNumber(RFRetreat);
-getParamNumber(BFRetreat);
-getParamNumber(synchronizedRespawn);
+#define __defZoneSize getParamNumber(defZoneSize)
+#define __hintzonesize getParamNumber(hintzonesize)
+#define __zoneMultREDFOR getParamNumber(zoneMultREDFOR)
+#define __zoneMultBLUEFOR getParamNumber(zoneMultBLUEFOR)
+#define __sideREDFOR getParamTextCompile(sideREDFOR)
+#define __sideBLUEFOR getParamTextCompile(sideBLUEFOR)
+#define __titleREDFOR getParamText(titleREDFOR)
+#define __titleBLUEFOR getParamText(titleBLUEFOR)
+#define __domiMult getParamNumber(domiMult)
+#define __RFRetreat getParamNumber(RFRetreat)
+#define __BFRetreat getParamNumber(BFRetreat)
+#define __synchronizedRespawn getParamNumber(synchronizedRespawn)
