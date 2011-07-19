@@ -75,7 +75,7 @@ _inZone = false;
 	_helper = (_x select 3);
 	_ppos = getPos vehicle player;
 	_dist = [_ppos select 0,_ppos select 1,0] distance [_pos select 0,_pos select 1,0];
-	if (_dist<(_size+_hintzonesize)) exitWith {
+	if (_dist<(_size+__hintzonesize)) exitWith {
 		_inZone = true;
 		_waitTime = time + 90;
 		createMarkerLocal ["SerP_startZoneMarker",_pos];
