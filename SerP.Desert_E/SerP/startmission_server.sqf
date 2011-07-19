@@ -34,8 +34,8 @@ _zones = [];//[_pos,_size,_unitsInZone,_side]
 	_unit = _x;
 	_side = side _x;
 	_size = switch true do {
-		case (_side==__sideREDFOR): {__defZoneSize*_zoneMultREDFOR};
-		case (_side==__sideBLUEFOR): {__defZoneSize*_zoneMultBLUEFOR};
+		case (_side==__sideREDFOR): {__defZoneSize*__zoneMultREDFOR};
+		case (_side==__sideBLUEFOR): {__defZoneSize*__zoneMultBLUEFOR};
 		default {__defZoneSize};
 	};
 	_teleportTo = [];
