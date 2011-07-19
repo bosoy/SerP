@@ -63,26 +63,37 @@ format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %
 ]];
 //задачи, вооружение и брифинги сторон
 switch true do {
-	case (_unitside == __sideREDFOR): {
+	case (_unitside == east): {
 		{if (localize(_x select 1)!="") then {
 			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_rf"],
-			["enemy_title","enemy_rf"],			
+			["enemy_title","enemy_rf"],
 			["execution_title","execution_rf"],
 			["task_title","task_rf"],
 			["situation_title","situation_rf"]
 		];
 	};
-	case (_unitside == __sideBLUEFOR): {
+	case (_unitside == west): {
 		{if (localize(_x select 1)!="") then {
 			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
 		};} forEach [
 			["machinery_title","machinery_bf"],
 			["enemy_title","enemy_bf"],
-			["execution_title","execution_bf"],			
+			["execution_title","execution_bf"],
 			["task_title","task_bf"],
 			["situation_title","situation_bf"]
+		];
+	};
+	case (_unitside == resistance): {
+		{if (localize(_x select 1)!="") then {
+			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
+		};} forEach [
+			["machinery_title","machinery_guer"],
+			["enemy_title","enemy_guer"],
+			["execution_title","execution_guer"],
+			["task_title","task_guer"],
+			["situation_title","situation_guer"]
 		];
 	};
 	default {//цивилы

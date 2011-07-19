@@ -109,6 +109,32 @@
 		Информация о противнике для красной стороны.
 		</Original>
 	</Key>
+<!-- информация для независимых -->
+	<Key ID="situation_guer">
+		<Original>
+		Описание ситуации для независимых.
+		</Original>
+	</Key>
+	<Key ID="task_guer">
+		<Original>
+		Задачи для независимых.
+		</Original>
+	</Key>
+	<Key ID="machinery_guer">
+		<Original>
+		Вооружение независимых.
+		</Original>
+	</Key>
+	<Key ID="execution_guer">
+		<Original>
+		Выполнение для независимых.
+		</Original>
+	</Key>
+	<Key ID="enemy_guer">
+		<Original>
+		Информация о противнике для независимых.
+		</Original>
+	</Key>
 <!-- заголовки в заметках -->
 	<Key ID="groups_title">
 		<Original>
