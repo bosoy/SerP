@@ -1,6 +1,6 @@
 ﻿_veh = _this select 0;
 _faction = _this select 1;
-call compile format ["if (isNil {SerP_veh_%1_processor}) then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'SerP\equipment\veh_%1.sqf'}",_faction];
+call compile format ["if (isNil {SerP_veh_%1_processor}) then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'equipment\veh_%1.sqf'}",_faction];
 _loadout = _this select 2;
 _cargoBoxes = _this select 3;
 //prepare functions
@@ -30,7 +30,7 @@ _addTyre = {
 	};
 };
 
-if (isNil {SerP_cargoCrateProcessor}) then {SerP_cargoCrateProcessor = compile preprocessFileLineNumbers "SerP\equipment\_cargoCrateProcessor.sqf"};
+if (isNil {SerP_cargoCrateProcessor}) then {SerP_cargoCrateProcessor = compile preprocessFileLineNumbers "equipment\_cargoCrateProcessor.sqf"};
 if (isNil {SerP_addCargoBox}) then {
 	SerP_addCargoBox = {
 	// (c) Zu-23-2
@@ -57,5 +57,5 @@ if (isNil {SerP_addCargoBox}) then {
 //call functions
 _veh call _common_processor;
 _veh call _addTyre;
-[_veh, _loadout] call compile format ["if isNil {SerP_veh_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'veh_%1.sqf'}; _this call SerP_veh_%1_processor",_faction];
+[_veh, _loadout] call compile format ["if isNil {SerP_veh_%1_processor} then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'equipment\veh_%1.sqf'}; _this call SerP_veh_%1_processor",_faction];
 if (!isNil {_cargoBoxes}) then { {[_veh, _x] call SerP_cargoCrateProcessor} forEach _cargoBoxes};
