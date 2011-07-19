@@ -87,15 +87,6 @@ _inZone = false;
 		waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/90);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
 		endLoadingScreen;
 		_veh enableSimulation true;
-		{//обновляем информацию о положении игроков в "отрядах"
-			_leader = leader _x;
-			_markerName = "SerP_startposMarker"+str _x;
-			{
-				if ((alive _x)&&(isPlayer _x)&&(side _x == side player)) exitWith {
-					_markerName setMarkerPosLocal getPos _leader;
-				};
-			} forEach units _x;
-		} forEach allGroups;
 		_act = _veh addAction ["Change optics", "SerP\opticsChange.sqf"];
 		while {(warbegins!=1)} do {
 			sleep 1;

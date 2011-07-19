@@ -23,7 +23,9 @@ _grpText = "";
 		};
 	} forEach _units;
 	if _show then {
-		createMarkerLocal [_markerName, getPos leader _x];
+		if (markerPos(_markerName) select 0 == 0) then {
+			createMarkerLocal [_markerName, getPos leader _x];
+		};
 		_grpText = _grpText + _tmpText + "<br/>";
 	};
 } forEach allGroups;

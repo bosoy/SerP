@@ -105,12 +105,9 @@ while {!_exit} do {
 };
 _objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
 //teleportarium
-SerP_startSeed = if (__synchronizedRespawn==0) then {
-	__synchronizedRespawn
-}else{
-	round(random(1000+({isPlayer(_x)} count playableUnits)))
-};
+SerP_startSeed = round(random(1000+({isPlayer(_x)} count playableUnits)));
 
+startMarkers = [];
 _teleportList = [];
 {
 	_zone = _x;
@@ -134,6 +131,11 @@ _teleportList = [];
 					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
 					_teleportList set [count _teleportList,[_x,_newPos]];
 				};
+				if (_x == leader(group _x)) then {
+					_markerName = "SerP_startposMarker"+str(group _x);
+					_markerPos = _newPos;
+					startMarkers set [count startMarkers,[_markerName,_newZonePos]];
+				};
 			} forEach _units;
 			{
 				if ((_x distance _zonePos)<_hintzonesize+_size) then {
@@ -144,8 +146,17 @@ _teleportList = [];
 				};
 			} forEach _objectList;
 		};
+	}else{
+		{
+			if (_x == leader group _x) then {
+				startMarkers set [count startMarkers,["SerP_startposMarker"+str(group _x),getPos _x]];
+			};
+		} forEach _units;
 	};
 } forEach _zones;
+
+{createMarker [_x select 0,_x select 1]} forEach startMarkers;
+
 //end teleportarium
 [_zones,_hintzonesize,_objectList,_teleportList] spawn {
 	_zones = _this select 0;
@@ -180,6 +191,11 @@ _teleportList = [];
 		(_x select 0) setVectorDirAndUp (_x select 2);
 	} forEach _actionList;
 	publicVariable "startZones";publicVariable "warbegins";publicVariable "readyArray";
+
+	{//update markers
+		deleteMarker(_x select 0);
+		createMarker [_x select 0,_x select 1];
+	} forEach startMarkers;
 	//control
 	_oneSide = ({isPlayer(_x)&&(side(_x)==__sideBLUEFOR)} count playableUnits == 0)||({isPlayer(_x)&&(side(_x)==__sideREDFOR)} count playableUnits == 0);
 	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&_oneSide)||(warbegins==1)};
