@@ -175,7 +175,7 @@ _teleportList = [];
 		_corepos = getPosASL _core;
 		trashArray set [count trashArray, _core];
 		{
-			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
+			if (((_x distance _core)<__hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
 				_unitpos = getPosASL _x;
 				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
 				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[(vectorDir _x),(vectorUp _x)]]];

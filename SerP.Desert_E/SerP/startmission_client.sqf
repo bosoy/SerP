@@ -92,7 +92,7 @@ _inZone = false;
 			sleep 1;
 			_ppos = getPos vehicle player;
 			_dist = [_ppos select 0,_ppos select 1,0] distance [_pos select 0,_pos select 1,0];
-			if (_dist>(_size+_hintzonesize)) then {
+			if (_dist>(_size+__hintzonesize)) then {
 				hint "Мне очень жаль";
 				player say "r44";
 				player say "svd_single_shot_v2";
