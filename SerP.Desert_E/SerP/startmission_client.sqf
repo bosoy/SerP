@@ -23,7 +23,7 @@ if (warbegins==1) exitWith {
 	_veh enableSimulation true;
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
 };
-
+player setVariable ["SerP_isPlayer",true,true];
 _radio=createTrigger["EmptyDetector",[0,0]];
 _radio setTriggerActivation["INDIA","PRESENT",true];
 _radio setTriggerStatements["this",format ["
