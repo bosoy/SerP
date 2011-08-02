@@ -61,7 +61,7 @@ switch _type do {
 	case "AT": {//AT Operator
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("HandGrenade_East",3);
-		addMagazines("PG7V",2);
+		addMagazines("PG7V",4);
 		addWeapons ["AK_47_S", "RPG7V"];
 		addItems ["R","N","M","E"];
 	};

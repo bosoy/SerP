@@ -26,7 +26,12 @@ _grpText = "";
 		if (markerPos(_markerName) select 0 == 0) then {
 			createMarkerLocal [_markerName, getPos leader _x];
 		};
-		_grpText = _grpText + _tmpText + "<br/>";
+		if (!_JIP) then {
+			_markerName setMarkerTypeLocal "Start";
+			_markerName setMarkerTextLocal str(_x);
+			_markerName setMarkerColorLocal "ColorGreen";
+			_grpText = _grpText + _tmpText + "<br/>";
+		};
 	};
 } forEach allGroups;
 _groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
@@ -100,3 +105,20 @@ switch true do {
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
 	};
 };
+if !_JIP then {[] spawn {
+	_waitTime = time + 90;
+	waitUntil{sleep 1;
+		!isNil{warbegins}||(time>_waitTime)
+	};
+	if isNil{warbegins} exitWith {};
+	if (warbegins==1) exitWith {};
+	sleep 10;
+	{if (side(_x)==side(player)) then {
+		_markerName = "SerP_startposMarker"+str _x;
+		_markerName setMarkerTypeLocal "Start";
+		_markerName setMarkerTextLocal str(_x);
+		_markerName setMarkerColorLocal "ColorGreen";
+	}} forEach allGroups;
+	waitUntil{sleep 1;warbegins == 1};
+	{deleteMarkerLocal ("SerP_startposMarker"+str(_x))} forEach allGroups;
+}};

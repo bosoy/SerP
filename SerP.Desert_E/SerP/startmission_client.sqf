@@ -15,7 +15,7 @@ _blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 [0,-1] call ace_sys_weaponselect_fnc_keypressed;
 _waitTime = time + 90;
 waitUntil{sleep 1;progressLoadingScreen (0.1-0.1*(_waitTime - time)/90);
-!isNil{warbegins}||(time>_waitTime)
+	!isNil{warbegins}||(time>_waitTime)
 };
 if isNil{warbegins} then {warbegins = 1};
 if (warbegins==1) exitWith {
@@ -78,15 +78,16 @@ _inZone = false;
 	if (_dist<(_size+__hintzonesize)) exitWith {
 		_inZone = true;
 		_waitTime = time + 90;
+		waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/90);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
+		endLoadingScreen;
+		_veh enableSimulation true;
+
 		createMarkerLocal ["SerP_startZoneMarker",_pos];
 		"SerP_startZoneMarker" setMarkerBrushLocal "SOLID";
 		"SerP_startZoneMarker" setMarkerShapeLocal "Ellipse";
 		"SerP_startZoneMarker" setMarkerSizeLocal [_size,_size];
 		"SerP_startZoneMarker" setMarkerColorLocal "ColorGreen";
 		"SerP_startZoneMarker" setMarkerAlphaLocal 1;
-		waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/90);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
-		endLoadingScreen;
-		_veh enableSimulation true;
 		_act = _veh addAction ["Change optics", "SerP\opticsChange.sqf"];
 		while {(warbegins!=1)} do {
 			sleep 1;

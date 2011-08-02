@@ -151,6 +151,7 @@ switch _loadout do {
 		_veh addWeaponCargo ["ACE_Rucksack_RD90",2];
 		_veh addMagazineCargo ["ACE_30Rnd_762x39_T_AK47", 6];
 		_veh addMagazineCargo ["100Rnd_762x51_M240", 2];
+		_veh addMagazineCargo ["PG7V",4];
 		_veh addMagazineCargo ["ACE_Bandage",5];
 		_veh addMagazineCargo ["ACE_Morphine",2];
 		_veh addMagazineCargo ["ACE_Epinephrine",2];

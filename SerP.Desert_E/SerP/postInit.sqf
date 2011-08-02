@@ -7,10 +7,8 @@ if (isServer) then {
 if (!isDedicated) then {
 	[] call compile preprocessFileLineNumbers "SerP\briefing.sqf";
 	enableRadio false;
-	{
-		player createDiaryRecord ["diary", _x]
-	} forEach SerP_briefing;
 	[] execVM "SerP\startmission_client.sqf";
+	[["AllVehicles"], [ace_sys_interaction_key], 2, ["SerP\interactionMenu.sqf", "main"]] call CBA_ui_fnc_add
 /*//uncomment to disable spectator's map
 ace_sys_spectator_fnc_spectate_events_old = ace_sys_spectator_fnc_spectate_events;
 ace_sys_spectator_fnc_spectate_events = {

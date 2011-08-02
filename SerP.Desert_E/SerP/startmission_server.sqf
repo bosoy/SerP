@@ -174,14 +174,21 @@ _teleportList = [];
 	sleep 1;
 	_actionList = [];
 	startZones = [];
+	_exludeCondition = getParamText(vehHolderExludeCondition);
+	_exludeCondition = if (_exludeCondition == "") then {
+		false
+	}else{
+		compile ("_object = _this select 0;_side = _this select 1;("+_exludeCondition+")")
+	};
 	{
 		_corepos = _x select 0;
 		_size = _x select 1;
+		_side = _x select 3;
 		_core = createVehicle ["FlagCarrierChecked", [_corepos select 0,_corepos select 1, -3], [], 0, "CAN_COLLIDE"];
 		_corepos = getPosASL _core;
 		trashArray set [count trashArray, _core];
 		{
-			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
+			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")&&!([_x,_side] call _exludeCondition)) then {
 				_unitpos = getPosASL _x;
 				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
 				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[(vectorDir _x),(vectorUp _x)]]];
