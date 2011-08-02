@@ -29,14 +29,20 @@ warbegins = 0;publicVariable "warbegins";
 readyArray = [0,0];publicVariable "readyArray";
 //find zones
 _zones = [];//[_pos,_size,_unitsInZone,_side]
+_hintzonesize = __hintzonesize;
+_sideREDFOR = __sideREDFOR;
+_sideBLUEFOR = __sideBLUEFOR;
+_defZoneSize = __defZoneSize;
+_zoneMultREDFOR = __zoneMultREDFOR;
+_zoneMultBLUEFOR = __zoneMultBLUEFOR;
 {
 	_unitPos = getPos vehicle(_x);
 	_unit = _x;
 	_side = side _x;
 	_size = switch true do {
-		case (_side==__sideREDFOR): {__defZoneSize*__zoneMultREDFOR};
-		case (_side==__sideBLUEFOR): {__defZoneSize*__zoneMultBLUEFOR};
-		default {__defZoneSize};
+		case (_side==_sideREDFOR): {_defZoneSize*_zoneMultREDFOR};
+		case (_side==_sideBLUEFOR): {_defZoneSize*_zoneMultBLUEFOR};
+		default {_defZoneSize};
 	};
 	_teleportTo = [];
 	if (waypointDescription(waypoints(group _unit) select 1)=="teleport") then {
@@ -158,11 +164,11 @@ _teleportList = [];
 {createMarker [_x select 0,_x select 1]} forEach startMarkers;
 
 //end teleportarium
-[_zones,_hintzonesize,_objectList,_teleportList] spawn {
+[_zones,_objectList,_teleportList] spawn {
 	_zones = _this select 0;
-	_hintzonesize = _this select 1;
-	_objectList = _this select 2;
-	_teleportList = _this select 3;
+	_objectList = _this select 1;
+	_teleportList = _this select 2;
+	_hintzonesize = __hintzonesize;
 	sleep 5;
 	{(_x select 0) setPos (_x select 1)} forEach _teleportList; //move objects
 	sleep 1;
@@ -175,7 +181,7 @@ _teleportList = [];
 		_corepos = getPosASL _core;
 		trashArray set [count trashArray, _core];
 		{
-			if (((_x distance _core)<__hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
+			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")) then {
 				_unitpos = getPosASL _x;
 				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
 				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[(vectorDir _x),(vectorUp _x)]]];
@@ -197,7 +203,9 @@ _teleportList = [];
 		createMarker [_x select 0,_x select 1];
 	} forEach startMarkers;
 	//control
-	_oneSide = ({isPlayer(_x)&&(side(_x)==__sideBLUEFOR)} count playableUnits == 0)||({isPlayer(_x)&&(side(_x)==__sideREDFOR)} count playableUnits == 0);
+	_sideBLUEFOR = __sideBLUEFOR;
+	_sideREDFOR = __sideREDFOR;
+	_oneSide = ({isPlayer(_x)&&(side(_x)==_sideBLUEFOR)} count playableUnits == 0)||({isPlayer(_x)&&(side(_x)==_sideREDFOR)} count playableUnits == 0);
 	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&_oneSide)||(warbegins==1)};
 
 	warbegins=1;publicVariable "warbegins";
