@@ -11,7 +11,7 @@ _grpText = "";
 	_markerName = "SerP_startposMarker"+str _x;
 	_tmpText = "<br/>" + (if (_JIP) then {str _x}else{"<marker name = '"+_markerName+"'>"+str _x+"</marker>"});
 	{
-		if ((alive _x)&&(isPlayer _x)&&(side _x == _unitside)) then {
+		if ((alive _x)&&((isPlayer _x)||isServer)&&(side _x == _unitside)) then {
 			_tmpText = _tmpText + "<br/>--  " + (name _x);
 			{
 				_weapon = (configFile >> "cfgWeapons" >> _x);
