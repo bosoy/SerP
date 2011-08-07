@@ -10,12 +10,11 @@ _AI_processor = {
 	_this doWatch objNull;
 	_this disableAI "MOVE";
 	_this stop true;
+	_this setVariable ["BIS_noCoreConversations", false];
 };
 _item_processor = {
 	removeAllItems _this;
 	_this removeWeapon "ItemGPS";
-	_this addMagazine "ACE_Morphine";
-	_this addMagazine "ACE_Epinephrine";
 	_this addWeapon "ItemMap";
 	_this addWeapon "ItemWatch";
 	_this addWeapon "ItemCompass";

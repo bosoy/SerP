@@ -265,7 +265,7 @@ switch _loadout do {
 		addItems ["K","N","M","G"];
 		_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",10],["ACE_MON50_M",1]]];
-		
+
 	};
 //отделение сбора и эвакуации раненых
 	case "MED_SL" : { //Командир отделения - санитарный инструктор
@@ -284,20 +284,20 @@ switch _loadout do {
 	};
 //экипаж
 	case "CRWVC" : { //Командир техники
-		addMagazines("30Rnd_762x39_AK47",6);
+		addMagazines("30Rnd_545x39_AK",6);
 		addMagazines("8Rnd_9x18_Makarov",4);
 		addMagazines("ACE_RDGM",2);
 		addWeapons ["AKS_74_U","Makarov"];
 		addItems ["R","B","N","M","G"];
 	};
 	case "CRW" : { //Экипаж
-		addMagazines("30Rnd_762x39_AK47",6);
+		addMagazines("30Rnd_545x39_AK",6);
 		addMagazines("ACE_RDGM",2);
 		addWeapons ["AKS_74_U"];
 		addItems ["R","N"];
 	};
 	case "PL" : { //Пилот
-		addMagazines("30Rnd_762x39_AK47",6);
+		addMagazines("30Rnd_545x39_AK",6);
 		addMagazines("8Rnd_9x18_Makarov",4);
 		addMagazines("ACE_RDGM",2);
 		addWeapons ["AKS_74_U","Makarov"];
