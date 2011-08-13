@@ -6,6 +6,8 @@ SerP_processorEND = {
 	_message = _this select 0;
 	taskHint [_message,[1, 0, 0, 1], "taskNew"];
 	_toRPT = [];
+	{_toRPT set [count _toRPT,format ["Alive at side %1: %2",_x,_x countSide playableUnits]]} forEach [east,west,resistance,civilian];
+	_toRPT set [count _toRPT,"SerP Unit states:"];
 	{
 		_toRPT set [count _toRPT,format ["Group: %1",_x select 0]];
 		_toRPT set [count _toRPT,"Name:			Lifestate:	Weapons:"];
@@ -20,13 +22,24 @@ SerP_processorEND = {
 			_toRPT set [count _toRPT, format ['%1		%2		%3', _x select 0,lifeState(_x select 1),_wpnStr]];
 		} forEach (_x select 1);
 	} forEach SerP_all_units;
+	_toRPT set [count _toRPT, "Vehicles:"];
+	_toRPT set [count _toRPT,"Type:	Position:	Damage:	Crew:"];
+	{
+		_pos = getPos _x; _pos = [round(_pos select 0),round(_pos select 1),round(_pos select 2)];
+		_crew = crew _x;
+		{_crew set [_forEachIndex,name _x]} forEach _crew;
+		_toRPT set [count _toRPT, format ['%1		%2		%3		%4',getText(configFile >> "cfgVehicles" >> typeOf(_x) >> "DisplayName"),_pos,damage _x, _crew]];
+	} forEach (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
 	[_message,_toRPT] spawn {
+		_message = _this select 0;
+		_toRpt = _this select 1;
+		createDialog "RscDisplayStatistics";
 		{
+			lbAdd [101, _x];
 			diag_log _x;
-		} forEach (_this select 1);
-		sleep 4;
+		} forEach _toRpt;
 		2 cutText ['','BLACK',5];
-		sleep 4;
+		sleep 30;
 		2 cutText[_this select 0,'BLACK FADED',5];
 		sleep 4;
 		endMission 'LOSER';
@@ -61,10 +74,7 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 		_alt = _this select 4;
 		_handled = false;
 		if ((_dikCode==207)&&_shift&&_ctrlKey&&_alt) then {
-			SerP_taskhint = localize "STR_mission_end_admin";publicVariable "SerP_taskhint";
-			taskHint [SerP_taskhint,[1, 0, 0, 1], "taskNew"];
-			SerP_end = ["end_admin",true];
-			publicVariable "SerP_end";
+			["end_admin"] call SerP_endMission
 		};
 	'];
 };
@@ -107,9 +117,9 @@ SerP_all_units = []; //собираем список юнитов в начале игры потому-что узнать им
 		_unitsInGroup set [count _unitsInGroup,[name _x, _x]];
 	};} forEach (units _x);
 	if _show then {
-		SerP_all_units set [count SerP_all_units, [_x,_unitsInGroup]]; 
+		SerP_all_units set [count SerP_all_units, [_x,_unitsInGroup]];
 	};
-} forEach allGroups; 
+} forEach allGroups;
 
 _initRFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideREDFOR)} count playableUnits;
 _initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideBLUEFOR)} count playableUnits;

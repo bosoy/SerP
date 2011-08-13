@@ -20,7 +20,7 @@ SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
 
 if (isServer) then {
 	publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones","SerP_end"];
-	onPlayerConnected "{publicVariable _x} forEach publicVars";
+	onPlayerConnected ("{publicVariable _x} forEach publicVars;"+getText(missionConfigFile >> "SerP_const" >> "onPlayerConnected"));
 };
 
 if (!isDedicated) then {
