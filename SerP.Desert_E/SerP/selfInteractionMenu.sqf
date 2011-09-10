@@ -3,7 +3,7 @@ _menu = [
 	[
 		["End mission",
 			{["end_admin"] call SerP_endMission},
-			"", "", "", -1, 1, ((serverCommandAvailable "#kick")||isServer)
+			"", "", "", -10, 1, ((serverCommandAvailable "#kick")||isServer)
 		]
 	]
 ];

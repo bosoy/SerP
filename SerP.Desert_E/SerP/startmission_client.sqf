@@ -79,6 +79,7 @@ _inZone = false;
 		_inZone = true;
 		_waitTime = time + 90;
 		waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/90);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
+		[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
 		endLoadingScreen;
 		_veh enableSimulation true;
 
