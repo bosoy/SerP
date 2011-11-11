@@ -1,4 +1,5 @@
 #include "const.sqf"
+if (count(playableUnits)==0) exitWith {};
 trashArray = [];
 planeList = [];
 _bCounter = {

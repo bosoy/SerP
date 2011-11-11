@@ -1,6 +1,6 @@
 private ["_timeOfDay","_weather","_MissionOvercast","_MissionFog"];
 
-if (time<10) then {//time will be automatically synchronised during JIP
+if (time<300) then {//time will be automatically synchronised during JIP
 _defDate = date;
 switch (timeOfDay) do	{
 	case 0:	{
