@@ -66,7 +66,6 @@ switch _type do {
 		addMagazines("1Rnd_Smoke_M203",2);
 		addMagazines("1Rnd_HE_M203",4);
 		addMagazines("FlareRed_M203",2);
-		addMagazines("ACE_12Rnd_45ACP_USPSD",2);
 		addWeapons ["ACE_M16A4_CCO_GL","ACE_FAST_PackEDC_ACU"];
 		addItems ["R","L","N"];
 		_unit setVariable ["ACE_RuckMagContents",[["FlareRed_M203", 4], ["1Rnd_HE_M203", 6], ["1Rnd_Smoke_M203", 6]]];
@@ -76,7 +75,6 @@ switch _type do {
 		addMagazines("1Rnd_Smoke_M203",2);
 		addMagazines("1Rnd_HE_M203",4);
 		addMagazines("FlareRed_M203",2);
-		addMagazines("ACE_12Rnd_45ACP_USPSD",2);
 		addMagazines("6Rnd_HE_M203",3);
 		addWeapons ["ACE_M16A4_CCO_GL", "ACE_FAST_PackEDC_ACU"];
 		addItems ["R","L","N"];
@@ -175,8 +173,9 @@ switch _type do {
 	case "ASAG" : {// ASSAULT SECTION assistant GUNNER
 		addMagazines("30Rnd_556x45_Stanag",4);
 		addMagazines("SmokeShell",2);
-		addMagazines("ACE_C4_M",3);
+		addMagazines("ACE_C4_M",1);
 		addMagazines("ACE_MAAWS_HE",1);
+		addMagazines("ACE_Battery_Rangefinder",1);
 		addWeapons ["m16a4","ACE_Rucksack_MOLLE_Green","ACE_YardAge450","NVGoggles"];
 		addWeapons ["ACE_Earplugs","ACE_Map","ItemGPS", "ACE_GlassesLHD_glasses"];
 		_unit setVariable ["ACE_RuckMagContents",[["MAAWS_HEDP",1],["MAAWS_HEAT",1]]];

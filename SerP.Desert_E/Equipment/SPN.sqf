@@ -39,7 +39,6 @@ switch _loadout do {
 		addMagazines("ACE_30Rnd_545x39_T_AK",2);
 		addMagazines("ACE_RDGM",2);
 		addMagazines("HandGrenade_East",2);
-		addMagazines("1Rnd_HE_GP25",4);
 		addWeapons ["ACE_AK74M_1P29","ACE_RPG22"];
 		addItems ["R","B","N","M","G"];
 	};

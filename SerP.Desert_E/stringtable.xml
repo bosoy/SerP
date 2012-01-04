@@ -346,14 +346,66 @@
 		15 минут
 		</Russian>
 	</Key>
-	<Key ID="STR_briefing_mode_Option3">
+
+	<Key ID="STR_serp_loading">
 		<Original>
-		Start when ready
+		Loading
 		</Original>
 		<Russian>
-		Старт по готовности
+		Вход в игру
 		</Russian>
 	</Key>
+	<Key ID="STR_serp_loading_Option0">
+		<Original>
+		Вуафгде
+		</Original>
+		<Russian>
+		Без ограничений
+		</Russian>
+	</Key>
+	<Key ID="STR_serp_loading_Option1">
+		<Original>
+		Only with map
+		</Original>
+		<Russian>
+		Только с картой
+		</Russian>
+	</Key>
+
+
+	<Key ID="STR_serp_end_briefing">
+		<Original>
+		End briefing
+		</Original>
+		<Russian>
+		Закончить брифинг
+		</Russian>
+	</Key>
+	<Key ID="STR_serp_continue_briefing">
+		<Original>
+		Сontinue briefing
+		</Original>
+		<Russian>
+		Продолжить брифинг
+		</Russian>
+	</Key>
+	<Key ID="STR_serp_outOfZone">
+		<Original>
+		You're leaving zone of briefing
+		</Original>
+		<Russian>
+		Вы покидаете зону брифинга
+		</Russian>
+	</Key>
+	<Key ID="STR_serp_sorry">
+		<Original>
+		Sorry
+		</Original>
+		<Russian>
+		Мне очень жаль
+		</Russian>
+	</Key>
+
 
 <!-- это добавил Зу хз зачем -->
 	<Key ID="STR_On">

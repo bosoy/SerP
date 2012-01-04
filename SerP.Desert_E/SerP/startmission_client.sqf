@@ -6,8 +6,13 @@ waitUntil{player==player};
 if (count(playableUnits)==0) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};//костыль для запуска в синглплеерном редакторе
 if !alive(player) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};
 sleep .01;
+
+if ((SerP_loading==1)&&(time<60)&&!(player hasWeapon "ACE_map")) exitWith {
+	failMission "loser";
+};
+
 _veh = (vehicle player);
-startLoadingScreen [localize 'STR_missionname', "RscDisplayLoadCustom"];
+openMap [true,true];
 _veh enableSimulation false;
 _blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 	[0,-1] call ace_sys_weaponselect_fnc_keypressed;
@@ -16,7 +21,7 @@ _blocker2 = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", '
 [0,-1] call ace_sys_weaponselect_fnc_keypressed;
 try {
 	_waitTime = time + 90;
-	waitUntil{sleep 1;progressLoadingScreen (0.1-0.1*(_waitTime - time)/90);
+	waitUntil{sleep 1;
 		!isNil{warbegins}||(time>_waitTime)
 	};
 	if isNil{warbegins} then {warbegins = 1};
@@ -45,8 +50,8 @@ try {
 	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 	_endTrigger setTriggerStatements[
 		"(((readyArray select 0) == 1))",format [
-		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Продолжить брифинг"";};",side player == __sideBLUEFOR],format [
-		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Закончить брифинг"";};",side player == __sideBLUEFOR]
+		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_continue_briefing"";};",side player == __sideBLUEFOR],format [
+		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_end_briefing"";};",side player == __sideBLUEFOR]
 		];
 	trashArray set [count trashArray, _endTrigger];
 
@@ -54,17 +59,17 @@ try {
 	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
 	_endTrigger setTriggerStatements[
 		"(((readyArray select 1) == 1))",format [
-		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Продолжить брифинг"";};",side player == __sideREDFOR],format [
-		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg ""Закончить брифинг"";};",side player == __sideREDFOR]
+		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_continue_briefing"";};",side player == __sideREDFOR],format [
+		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_end_briefing"";};",side player == __sideREDFOR]
 		];
 	trashArray set [count trashArray, _endTrigger];
-	9 setRadioMsg "Закончить брифинг";
+	9 setRadioMsg localize "STR_serp_end_briefing";
 	_waitTime = time + 90;
-	waitUntil{sleep 1;progressLoadingScreen (0.3-0.2*(_waitTime - time)/90);
-	!isNil{startZones}||(time>_waitTime)
+	waitUntil{sleep 1;
+		!isNil{startZones}||(time>_waitTime)
 	};
 	if isNil{startZones} then {
-		startZones = [[getPos(vehicle player),_defZoneSize,1,objNull,objNull]];
+		startZones = [[getPos(vehicle player),__defZoneSize,1,objNull,objNull]];
 	};
 	_inZone = false;
 	{
@@ -76,9 +81,9 @@ try {
 		if (_dist<(_size+__hintzonesize)) exitWith {
 			_inZone = true;
 			_waitTime = time + 90;
-			waitUntil {sleep .5;progressLoadingScreen (1-0.7*(_waitTime - time)/90);(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
+			waitUntil {sleep .5;(time>_waitTime)||((getDir _helper != 0)&&!(isNull _helper))||(isNull _helper)};
 			[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
-			endLoadingScreen;
+			openMap [false,false];
 			_veh enableSimulation true;
 
 			createMarkerLocal ["SerP_startZoneMarker",_pos];
@@ -93,7 +98,7 @@ try {
 				_ppos = getPos vehicle player;
 				_dist = [_ppos select 0,_ppos select 1,0] distance [_pos select 0,_pos select 1,0];
 				if (_dist>(_size+__hintzonesize)) then {
-					hint "Мне очень жаль";
+					hint localize "STR_serp_sorry";
 					player say "r44";
 					player say "svd_single_shot_v2";
 					player say "All_haha";
@@ -102,7 +107,7 @@ try {
 					player setPos [_pos select 0,_pos select 1,0];
 				};
 				if (_dist>_size) then {
-					hint "Вы покидаете зону брифинга";
+					hint localize "STR_serp_outOfZone";
 					(vehicle player) setVelocity [0,0,0];
 					switch round(random 11) do {
 						case 0: {player say "r11"};
@@ -130,14 +135,13 @@ try {
 catch {
 	if (_exception == "outOfZone") then {
 		diag_log "startmission_client.sqf - player is out of zones";
-		[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
 		_veh enableSimulation true;
-		endLoadingScreen;
+		openMap [false,false];
 	};
 	if (_exception == "warbegins") then {
 		[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
 		_veh enableSimulation true;
-		endLoadingScreen;
+		openMap [false,false];
 	};
 	deleteMarkerLocal "SerP_startZoneMarker";
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];

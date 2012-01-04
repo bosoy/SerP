@@ -27,3 +27,8 @@ ace_sys_spectator_fnc_spectate_events = {
 };
 */
 };
+
+//testing
+if (isServer&&!isDedicated) then {
+	[] call compile preprocessFileLineNumbers "SerP\template_test.sqf";
+};

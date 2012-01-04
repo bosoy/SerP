@@ -6,22 +6,23 @@ _bCounter = {
 	_briefingTime = (_this select 0);
 	warbegins = 0;publicVariable "warbegins";
 	waitUntil{
-		SerP_taskHint = format ["%1 minutes remaining",round((_briefingTime-time)/60)];
-		publicVariable "SerP_taskHint";hint SerP_taskHint;
-		sleep 60;
-		(time >= _briefingTime)||(warbegins==1)
+		[format ["%1 minutes remaining",_briefingTime]] call SerP_msg;
+		_waitTime = diag_tickTime + 60;
+		waitUntil{sleep 5;diag_tickTime>_waitTime};
+		_briefingTime = _briefingTime - 1;
+		(_briefingTime<1)||(warbegins==1)
 	};
 	warbegins = 1;publicVariable "warbegins";
 };
 switch (briefing_mode) do	{
 	case 0:	{
-		[180] spawn _bCounter;
+		[3] spawn _bCounter;
 	};
 	case 1:	{
-		[420] spawn _bCounter;
+		[7] spawn _bCounter;
 	};
 	case 2:	{
-		[900] spawn _bCounter;
+		[15] spawn _bCounter;
 	};
 };
 

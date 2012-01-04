@@ -4,8 +4,7 @@ for [ { _i = 0 }, { _i < count(paramsArray) }, { _i = _i + 1 } ] do	{
 	_paramName =(configName ((missionConfigFile >> "Params") select _i));
 	_paramValue = (paramsArray select _i);
 	_paramCode = ( getText (missionConfigFile >> "Params" >> _paramName >> "code"));
-	_code = format[_paramCode, _paramValue];
-	call compile _code;
+	call compile format[_paramCode, _paramValue];
 };
 //init global variables
 if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
@@ -23,6 +22,20 @@ enableEngineArtillery false;
 //functions
 SerP_isCrew = compile preprocessFileLineNumbers "SerP\isCrew.sqf";
 SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
+SerP_msg = {//["Hello world!",west] call SerP_msg;
+		if (count(_this)==2) then {
+			if ((side player)==(_this select 1)) then {
+				taskHint [(_this select 0),[1, 0, 0, 1], "taskNew"];
+			};
+		}else{
+			taskHint [(_this select 0),[0, 1, 0, 1], "taskNew"];
+		};
+	SerP_msgText = _this;
+	publicVariable "SerP_msgText";
+};
+
+
+
 [] execVM "SerP\endmission.sqf";
 //server
 if (isServer) then {
@@ -39,5 +52,15 @@ if (!isDedicated) then {
 	"SerP_server_message" addPublicVariableEventHandler {hint (_this select 1)};
 	SerP_taskhint = "";
 	"SerP_taskhint" addPublicVariableEventHandler {taskHint [(_this select 1),[1, 0, 0, 1], "taskNew"];};
+	SerP_msgText = "";
+	"SerP_msgText" addPublicVariableEventHandler {
+		if (count(_this select 1)==2) then {
+			if ((side player)==(_this select 1) select 1) then {
+				taskHint [(_this select 1) select 0,[1, 0, 0, 1], "taskNew"];
+			};
+		}else{
+			taskHint [(_this select 1) select 0,[0, 1, 0, 1], "taskNew"];
+		};
+	};
 	setViewDistance 1;
 };

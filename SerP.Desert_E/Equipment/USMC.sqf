@@ -78,12 +78,12 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
-		addMagazines("HandGrenade_West",2);	
+		addMagazines("HandGrenade_West",2);
 		addWeapons ["m16a4","M136"];
 		addItems ["R","L","N"];
 	};
 
-	case "DM" : { // Marksman 
+	case "DM" : { // Marksman
 		addMagazines("20Rnd_762x51_DMR",8);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
@@ -100,15 +100,15 @@ switch _type do {
 //snipers
 	case "SN": { // Sniper
 		addMagazines("5Rnd_762x51_M24",8);
-		addMagazines("15Rnd_9x19_M9",2);
 		addMagazines("SmokeShell",2);
-		addWeapons ["M40A3","M9","ACE_USPSD"];
+		addMagazines("ACE_12Rnd_45ACP_USPSD",2);
+		addWeapons ["M40A3","ACE_USPSD"];
 		addItems ["R","L","B","N","M"];
 	};
-	
+
 	case "ASN" : { // Assist. Sniper SF
 		addMagazines("30Rnd_556x45_Stanag",8);
-		addMagazines("1Rnd_HE_M203",6);		
+		addMagazines("1Rnd_HE_M203",6);
 		addMagazines("ACE_SSWhite_M203",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("ACE_Battery_Rangefinder",2);
@@ -125,7 +125,7 @@ switch _type do {
 		addWeapons ["M240","M9"];
 		addItems ["R","L","N","E","M"];
 	};
-	
+
 	case "AG": { //Asst. Machinegunner
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);

@@ -19,3 +19,10 @@
 		default = 1;
 		code = "briefing_mode = %1";
 	};
+	class loading {
+		title = "$STR_serp_loading";
+		values[] = {0,1};
+		texts[] = {$STR_serp_loading_Option0,$STR_serp_loading_Option1};
+		default = 0;
+		code = "SerP_loading = %1";
+	};
