@@ -68,7 +68,7 @@ try {
 	waitUntil{sleep 1;
 		!isNil{startZones}||(time>_waitTime)
 	};
-		diag_log str startZones;
+
 	if isNil{startZones} then {
 		startZones = [[getPos(vehicle player),__defZoneSize,1,objNull,objNull]];
 	};
