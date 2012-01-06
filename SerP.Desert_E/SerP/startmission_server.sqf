@@ -175,7 +175,7 @@ _teleportList = [];
 	{(_x select 0) setPos (_x select 1)} forEach _teleportList; //move objects
 	sleep 1;
 	_actionList = [];
-	startZones = [];
+	_startZones = [];
 	_exludeCondition = getParamText(vehHolderExludeCondition);
 	_exludeCondition = if (_exludeCondition == "") then {
 		false
@@ -199,12 +199,13 @@ _teleportList = [];
 		_helper = createVehicle ["Sign_arrow_down_EP1", _corepos, [], 0, "CAN_COLLIDE"];
 		_actionList set [count _actionList,[_helper,[_core,[0,0,-5]],[[1,0,0],[0,0,1]]]];
 		trashArray set [count trashArray, _helper];
-		startZones set [count startZones,[[_corepos select 0,_corepos select 1,0],_size,_core,_helper]];
+		_startZones set [count _startZones,[[_corepos select 0,_corepos select 1,0],_size,_core,_helper]];
 	} forEach _zones;
 	{
 		(_x select 0) attachTo (_x select 1);
 		(_x select 0) setVectorDirAndUp (_x select 2);
 	} forEach _actionList;
+	startZones = +_startZones;
 	publicVariable "startZones";publicVariable "warbegins";publicVariable "readyArray";
 
 	{//update markers

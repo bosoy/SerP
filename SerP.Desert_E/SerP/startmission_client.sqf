@@ -68,6 +68,7 @@ try {
 	waitUntil{sleep 1;
 		!isNil{startZones}||(time>_waitTime)
 	};
+		diag_log str startZones;
 	if isNil{startZones} then {
 		startZones = [[getPos(vehicle player),__defZoneSize,1,objNull,objNull]];
 	};
@@ -135,6 +136,7 @@ try {
 catch {
 	if (_exception == "outOfZone") then {
 		diag_log "startmission_client.sqf - player is out of zones";
+		[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
 		_veh enableSimulation true;
 		openMap [false,false];
 	};
