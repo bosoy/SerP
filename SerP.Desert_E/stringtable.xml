@@ -12,11 +12,6 @@
 	<Key ID="credits">
 		<Original>
 		Автор миссии:&lt;br/&gt;
-		Unknown
-		&lt;br/&gt;&lt;br/&gt;
-		Платформа: SerP&lt;br/&gt;
-		Идея: conKORD&lt;br/&gt;
-		Исполнение: conKORD, Zu-23-2&lt;br/&gt;
 		</Original>
 	</Key>
 	<Key ID="convent">
@@ -365,10 +360,10 @@
 	</Key>
 	<Key ID="STR_serp_loading_Option1">
 		<Original>
-		Only with map
+		Only group leaders
 		</Original>
 		<Russian>
-		Только с картой
+		Только командиры групп
 		</Russian>
 	</Key>
 

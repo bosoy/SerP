@@ -6,8 +6,8 @@ waitUntil{player==player};
 if (count(playableUnits)==0) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};//костыль для запуска в синглплеерном редакторе
 if !alive(player) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};
 sleep .01;
-
-if ((SerP_loading==1)&&(time<60)&&!(player hasWeapon "ACE_map")) exitWith {
+player setVariable ["SerP_isPlayer",true,true];
+if ((SerP_loading==1)&&(time<60)&&!((player == leader group player)||(serverCommandAvailable "#kick"))) exitWith {
 	failMission "loser";
 };
 
@@ -26,7 +26,6 @@ try {
 	};
 	if isNil{warbegins} then {warbegins = 1};
 	if (warbegins==1) then {throw "warbegins"};
-	player setVariable ["SerP_isPlayer",true,true];
 	_radio=createTrigger["EmptyDetector",[0,0]];
 	_radio setTriggerActivation["INDIA","PRESENT",true];
 	_radio setTriggerStatements["this",format ["
@@ -142,6 +141,9 @@ catch {
 	};
 	if (_exception == "warbegins") then {
 		[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
+		if (count(units group player)>1) then {
+			[player] joinSilent createGroup (side player);
+		};
 		_veh enableSimulation true;
 		openMap [false,false];
 	};
