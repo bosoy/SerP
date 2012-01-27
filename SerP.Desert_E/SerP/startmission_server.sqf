@@ -221,7 +221,6 @@ _teleportList = [];
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";
 	'logic' createUnit [[0,0,0], createGroup sideLogic,'
-		[player] joinSilent createGroup (side player);
 		if isServer then {
 			{if (!(isPlayer _x)&&!(_x getVariable "SerP_isPlayer")) then {
 				_x setPos [30000,0,100];

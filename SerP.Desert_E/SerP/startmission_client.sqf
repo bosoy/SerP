@@ -141,9 +141,6 @@ catch {
 	};
 	if (_exception == "warbegins") then {
 		[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
-		if (count(units group player)>1) then {
-			[player] joinSilent createGroup (side player);
-		};
 		_veh enableSimulation true;
 		openMap [false,false];
 	};
