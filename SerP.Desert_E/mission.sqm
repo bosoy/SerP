@@ -5570,6 +5570,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.33333331;
 					init="[this,""GUER"",""TL""] call compile preprocessFileLineNumbers ""Equipment\_process_units.sqf""";
+					description="Стрелок";
 				};
 				class Item2
 				{
@@ -6958,7 +6959,7 @@ class Mission
 					special="NONE";
 					id=547;
 					side="GUER";
-					vehicle="TK_GUE_Soldier_2_EP1";
+					vehicle="TK_GUE_Bonesetter_EP1";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.33333331;
@@ -7104,7 +7105,7 @@ class Mission
 					special="NONE";
 					id=557;
 					side="GUER";
-					vehicle="TK_GUE_Soldier_2_EP1";
+					vehicle="TK_GUE_Bonesetter_EP1";
 					player="PLAY CDG";
 					skill=0.2;
 					init="[this,""GUER"",""MED""] call compile preprocessFileLineNumbers ""Equipment\_process_units.sqf""";
@@ -7249,7 +7250,7 @@ class Mission
 					special="NONE";
 					id=567;
 					side="GUER";
-					vehicle="TK_GUE_Soldier_2_EP1";
+					vehicle="TK_GUE_Bonesetter_EP1";
 					player="PLAY CDG";
 					skill=0.2;
 					init="[this,""GUER"",""MED""] call compile preprocessFileLineNumbers ""Equipment\_process_units.sqf""";
@@ -7394,7 +7395,7 @@ class Mission
 					special="NONE";
 					id=577;
 					side="GUER";
-					vehicle="TK_GUE_Soldier_2_EP1";
+					vehicle="TK_GUE_Bonesetter_EP1";
 					player="PLAY CDG";
 					skill=0.2;
 					init="[this,""GUER"",""MED""] call compile preprocessFileLineNumbers ""Equipment\_process_units.sqf""";
