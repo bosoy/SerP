@@ -30,6 +30,7 @@ _weapon_processor = {
 	{_this removeMagazine _x} forEach (magazines _this);
 };
 _unit call _AI_processor;
+if (!isServer) exitWith {};
 _unit call _item_processor;
 if (_faction=="") then {
 	switch _loadout do {

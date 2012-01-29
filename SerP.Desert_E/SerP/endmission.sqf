@@ -126,8 +126,8 @@ _initBFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideBLUEFOR)} count pla
 
 while {true} do {
 	sleep 10;
-	_RFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideREDFOR)} count playableUnits;
-	_BFCount = {(isPlayer _x)&&(alive _x)&&(side _x == __sideBLUEFOR)} count playableUnits;
+	_RFCount = {(alive _x)&&(side _x == __sideREDFOR)} count playableUnits;
+	_BFCount = {(alive _x)&&(side _x == __sideBLUEFOR)} count playableUnits;
 	//REDFOR retreat
 	if ((_RFCount<_initRFCount*__RFRetreat)&&(_RFCount*__domiMult<_BFCount)) exitWith {
 		["redfor_retreat"] call SerP_endMission;

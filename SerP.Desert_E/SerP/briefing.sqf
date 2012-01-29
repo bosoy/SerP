@@ -105,6 +105,38 @@ switch true do {
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
 	};
 };
+
+_side = side player;
+_index = switch _side do {
+	case east: {0};
+	case west: {1};
+	case resistance: {2};
+	case civilian: {3};
+};
+if (!isNil{SerP_markerCount}) then {
+	_count = SerP_markerCount select _index;
+	for "_i" from 0 to _count do {
+		_name = "SerP_marker"+str(_side) + str(_i);
+		_name setMarkerAlphaLocal 1;
+	};
+}else{
+	_i = 0;
+	_flag = true;
+	while {_flag} do {
+		_name = "SerP_marker"+str(_side) + str(_i);
+		_pos = getMarkerPos _name;
+		if (_pos select 0 == 0 && _pos select 1 == 0) then {
+			_flag = false;
+		}else{
+			_name setMarkerAlphaLocal 1;
+		};
+	};
+};
+
+
+
+
+
 if !_JIP then {[] spawn {
 	_waitTime = time + 90;
 	waitUntil{sleep 1;

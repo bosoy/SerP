@@ -1,5 +1,7 @@
 _units = playableUnits;
 
+_text = "";
+
 _getCompatibleMagazines = {
 	_weapon = (configFile >> "cfgWeapons" >> _this);
 	_compatibleMagazines = [];
@@ -24,7 +26,7 @@ _getCompatibleMagazines = {
 			};
 		} forEach _compatibleMagazines;
 		if ((!_haveMagazines)&&count(_compatibleMagazines)>0&&!_disposable) then {
-			diag_log format["Warning!! Unit %1 have no magazines for weapon '%2'",_unit getVariable "SerP_template",_x];
+			_text = _text + format["Warning!! Unit %1 have no magazines for weapon '%2'",_unit getVariable "SerP_template",_x] + "<br/>";
 		};
 	} forEach _weapons;
 
@@ -40,9 +42,11 @@ _getCompatibleMagazines = {
 		} forEach _weapons;
 
 		if ((!_haveWeapon)) then {
-			diag_log format["Warning!! Unit %1 have no weapon for magazine '%2'",_unit getVariable "SerP_template",_magazine];
+			_text = _text + format["Warning!! Unit %1 have no weapon for magazine '%2'",_unit getVariable "SerP_template",_magazine] + "<br/>";
 		};
 	} forEach _magazines;
 
 
 } forEach _units;
+
+player createDiaryRecord ["diary", ["SerP debug",_text]];

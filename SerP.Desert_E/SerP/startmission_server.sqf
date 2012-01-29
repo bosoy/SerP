@@ -121,6 +121,7 @@ _teleportList = [];
 	_zone = _x;
 	_zonePos = _x select 0;
 	_size = _x select 1;
+	_zoneSide = _x select 3;
 	_units = _x select 4;
 	_zoneTeleportTo = _x select 5;
 	if (count(_zoneTeleportTo)>0) then {
@@ -151,6 +152,7 @@ _teleportList = [];
 					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
 					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
 					_teleportList set [count _teleportList,[_x,_newPos]];
+					[_zoneSide,_newPos,"mil_box","ColorWhite",getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")] call SerP_addMarker;
 				};
 			} forEach _objectList;
 		};
@@ -160,11 +162,16 @@ _teleportList = [];
 				startMarkers set [count startMarkers,["SerP_startposMarker"+str(group _x),getPos _x]];
 			};
 		} forEach _units;
+		{
+			if ((_x distance _zonePos)<_hintzonesize+_size) then {
+				[_zoneSide,getPos _x,"mil_box","ColorWhite",getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")] call SerP_addMarker;
+			};
+		} forEach _objectList;
 	};
 } forEach _zones;
 
 {createMarker [_x select 0,_x select 1]} forEach startMarkers;
-
+publicVariable "SerP_markerCount";
 //end teleportarium
 [_zones,_objectList,_teleportList] spawn {
 	_zones = _this select 0;
@@ -207,6 +214,16 @@ _teleportList = [];
 	} forEach _actionList;
 	startZones = +_startZones;
 	publicVariable "startZones";publicVariable "warbegins";publicVariable "readyArray";
+	{
+		_ACE_RuckMagContents = _x getVariable ["ACE_RuckMagContents",[]];
+		if (count(_ACE_RuckMagContents)>0) then {
+			_x setVariable ["ACE_RuckMagContents",_ACE_RuckMagContents,true];
+		};
+		_ACE_weapononback = _x getVariable ["ACE_weapononback",""];
+		if (_ACE_weapononback!="") then {
+			_x setVariable ["ACE_weapononback",_ACE_weapononback,true];
+		};
+	} forEach playableUnits;
 
 	{//update markers
 		deleteMarker(_x select 0);
@@ -250,5 +267,19 @@ _teleportList = [];
 			sleep 4;
 			deleteVehicle _this;
 		}
-	', 0.6, 'corporal']
+	', 0.6, 'corporal'];
+	{
+		_side = _x;
+		_index = switch _side do {
+			case east: {0};
+			case west: {1};
+			case resistance: {2};
+			case civilian: {3};
+		};
+		_count = SerP_markerCount select _index;
+		for "_i" from 0 to _count do {
+			_name = "SerP_marker"+str(_side) + str(_i);
+			deleteMarker _name;
+		};
+	} forEach [east,west,resistance,civilian];
 };
