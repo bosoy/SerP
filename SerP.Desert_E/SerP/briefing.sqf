@@ -129,6 +129,7 @@ if (!isNil{SerP_markerCount}) then {
 			_flag = false;
 		}else{
 			_name setMarkerAlphaLocal 1;
+			_i = _i + 1;
 		};
 	};
 };
