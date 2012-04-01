@@ -31,6 +31,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Epinephrine",9];
 		_veh addMagazineCargo ["ACE_Bandage",9];
 		_veh addWeaponCargo ["M136",4];
+		[_veh,"FIM92"] call SerP_cargoCrateProcessor;
 	};
 	case "TRUCK_MORTAR" : { //
 		_veh addMagazineCargo ["HandGrenade_west",5];

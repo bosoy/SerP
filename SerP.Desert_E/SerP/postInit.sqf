@@ -2,6 +2,9 @@
 
 if (isServer) then {
 	[] call compile preprocessFileLineNumbers "SerP\startmission_server.sqf";
+
+	_publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones","SerP_end","SerP_markerCount"];
+	{publicVariable _x} forEach _publicVars;
 };
 
 if (!isDedicated) then {

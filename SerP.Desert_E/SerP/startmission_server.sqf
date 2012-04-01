@@ -111,7 +111,7 @@ while {!_exit} do {
 		if (!_exit) exitWith {};
 	} forEach _zones;
 };
-_objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship");
+_objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship")-(allMissionObjects "ACE_JerryCan_15");
 //teleportarium
 SerP_startSeed = round(random(1000+({isPlayer(_x)} count playableUnits)));
 
@@ -139,6 +139,7 @@ _teleportList = [];
 					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
 					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
 					_teleportList set [count _teleportList,[_x,_newPos]];
+					_x setVariable ["SerP_startPos",_newPos,true];
 				};
 				if (_x == leader(group _x)) then {
 					_markerName = "SerP_startposMarker"+str(group _x);
@@ -211,6 +212,7 @@ publicVariable "SerP_markerCount";
 	{
 		(_x select 0) attachTo (_x select 1);
 		(_x select 0) setVectorDirAndUp (_x select 2);
+		(_x select 0) setVelocity [0,0,-100];
 	} forEach _actionList;
 	startZones = +_startZones;
 	publicVariable "startZones";publicVariable "warbegins";publicVariable "readyArray";
@@ -225,10 +227,6 @@ publicVariable "SerP_markerCount";
 		};
 	} forEach playableUnits;
 
-	{//update markers
-		deleteMarker(_x select 0);
-		createMarker [_x select 0,_x select 1];
-	} forEach startMarkers;
 	//control
 	_sideBLUEFOR = __sideBLUEFOR;
 	_sideREDFOR = __sideREDFOR;
@@ -253,9 +251,8 @@ publicVariable "SerP_markerCount";
 						detach _x;
 						_x setVelocity [(sin(getDir _x) * 100),(cos(getDir _x) * 100),20];
 					};
-					case (((_x isKindOf "LandVehicle")&&(!(_x isKindOf "StaticWeapon")))||(_x isKindOf "Air")or(_x isKindOf "Ship")): {
+					case (((_x isKindOf "LandVehicle")&&(!(_x isKindOf "StaticWeapon")))||(_x isKindOf "Air")||(_x isKindOf "Ship")): {
 						detach _x;
-						_x setVelocity [0,0,-1];
 					};
 				};
 			};

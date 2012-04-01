@@ -76,7 +76,7 @@ try {
 		_pos = (_x select 0);
 		_size = (_x select 1);
 		_helper = (_x select 3);
-		_ppos = getPos vehicle player;
+		_ppos = player getVariable ["SerP_startPos",getPos vehicle player];
 		_dist = [_ppos select 0,_ppos select 1,0] distance [_pos select 0,_pos select 1,0];
 		if (_dist<(_size+__hintzonesize)) exitWith {
 			_inZone = true;
@@ -104,7 +104,7 @@ try {
 					player say "All_haha";
 					//player say "ACE_rus_combat143";
 					sleep 4;
-					player setPos [_pos select 0,_pos select 1,0];
+					player setPos (player getVariable ["SerP_startPos",[_pos select 0,_pos select 1,0]]);
 				};
 				if (_dist>_size) then {
 					hint localize "STR_serp_outOfZone";

@@ -34,6 +34,39 @@ _grpText = "";
 		};
 	};
 } forEach allGroups;
+
+_vehText = "<br/><br/>";
+_side = side player;
+_index = switch _side do {
+	case east: {0};
+	case west: {1};
+	case resistance: {2};
+	case civilian: {3};
+};
+if (!isNil{SerP_markerCount}) then {
+	_count = SerP_markerCount select _index;
+	for "_i" from 0 to _count do {
+		_name = "SerP_marker"+str(_side) + str(_i);
+		_name setMarkerAlphaLocal 1;
+		_vehText = _vehText + "<marker name = '"+_name+"'>"+markerText _name+"</marker><br/>";
+	};
+}else{
+	_i = 0;
+	_flag = true;
+	while {_flag} do {
+		_name = "SerP_marker"+str(_side) + str(_i);
+		_pos = getMarkerPos _name;
+		if (_pos select 0 == 0 && _pos select 1 == 0) then {
+			_flag = false;
+		}else{
+			_name setMarkerAlphaLocal 1;
+			_vehText = _vehText + "<marker name = '"+_name+"'>"+markerText _name+"</marker><br/>";
+			_i = _i + 1;
+		};
+	};
+};
+
+
 _groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
 
 //условности, одни на всех
@@ -69,74 +102,42 @@ format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %
 //задачи, вооружение и брифинги сторон
 switch true do {
 	case (_unitside == east): {
-		{if (localize(_x select 1)!="") then {
-			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
-		};} forEach [
-			["machinery_title","machinery_rf"],
-			["enemy_title","enemy_rf"],
-			["execution_title","execution_rf"],
-			["task_title","task_rf"],
-			["situation_title","situation_rf"]
+		{if ((_x select 1)!="") then {
+			player createDiaryRecord ["diary", [(_x select 0),(_x select 1)]]
+		}} forEach [
+			[localize "machinery_title",(localize "machinery_rf")+_vehText],
+			[localize "enemy_title",localize "enemy_rf"],
+			[localize "execution_title",localize "execution_rf"],
+			[localize "task_title",localize "task_rf"],
+			[localize "situation_title",localize "situation_rf"]
 		];
 	};
 	case (_unitside == west): {
-		{if (localize(_x select 1)!="") then {
-			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
+		{if ((_x select 1)!="") then {
+			player createDiaryRecord ["diary", [(_x select 0),(_x select 1)]]
 		};} forEach [
-			["machinery_title","machinery_bf"],
-			["enemy_title","enemy_bf"],
-			["execution_title","execution_bf"],
-			["task_title","task_bf"],
-			["situation_title","situation_bf"]
+			[localize "machinery_title",(localize "machinery_bf")+_vehText],
+			[localize "enemy_title",localize "enemy_bf"],
+			[localize "execution_title",localize "execution_bf"],
+			[localize "task_title",localize "task_bf"],
+			[localize "situation_title",localize "situation_bf"]
 		];
 	};
 	case (_unitside == resistance): {
-		{if (localize(_x select 1)!="") then {
-			player createDiaryRecord ["diary", [localize(_x select 0),localize(_x select 1)]]
+		{if ((_x select 1)!="") then {
+			player createDiaryRecord ["diary", [(_x select 0),(_x select 1)]]
 		};} forEach [
-			["machinery_title","machinery_guer"],
-			["enemy_title","enemy_guer"],
-			["execution_title","execution_guer"],
-			["task_title","task_guer"],
-			["situation_title","situation_guer"]
+			[localize "machinery_title",(localize "machinery_guer")+_vehText],
+			[localize "enemy_title",localize "enemy_guer"],
+			[localize "execution_title",localize "execution_guer"],
+			[localize "task_title",localize "task_guer"],
+			[localize "situation_title",localize "situation_guer"]
 		];
 	};
 	default {//цивилы
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
 	};
 };
-
-_side = side player;
-_index = switch _side do {
-	case east: {0};
-	case west: {1};
-	case resistance: {2};
-	case civilian: {3};
-};
-if (!isNil{SerP_markerCount}) then {
-	_count = SerP_markerCount select _index;
-	for "_i" from 0 to _count do {
-		_name = "SerP_marker"+str(_side) + str(_i);
-		_name setMarkerAlphaLocal 1;
-	};
-}else{
-	_i = 0;
-	_flag = true;
-	while {_flag} do {
-		_name = "SerP_marker"+str(_side) + str(_i);
-		_pos = getMarkerPos _name;
-		if (_pos select 0 == 0 && _pos select 1 == 0) then {
-			_flag = false;
-		}else{
-			_name setMarkerAlphaLocal 1;
-			_i = _i + 1;
-		};
-	};
-};
-
-
-
-
 
 if !_JIP then {[] spawn {
 	_waitTime = time + 90;

@@ -15,8 +15,6 @@ sideREDFOR = "east";
 sideBLUEFOR = "west";
 //здесь можно описать условие при котором техника в стартовой зоне не будет зафиксирована. ƒоступны 2 переменные - _side - кака€ сторона стартует в зоне, и _object - объект, который будет/не будет зафисирован. ѕример: "_side == west" - на старте синих можно свободно кататьс€, "_object isKindOf 'tank'" - можно кататьс€ на танках
 vehHolderExludeCondition = "false";
-//код который будет вызыватьс€ при подключении клиента, может быть необходимо дл€ синхронизации глабоальных переменных
-onPlayerConnected = "";
 //“екст который будет использован в сообщении о победе/проигрыше
 //ƒопустимые значени€: STR_ru_call, STR_ruspn_call, STR_usmc_call, STR_usarmy_call, STR_75th_call, STR_napa_call, STR_ta_call, STR_cdkz_call, STR_pot_call, STR_CDF_call
 //ћожно дописать свое в stringtable.xml

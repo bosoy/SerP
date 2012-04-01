@@ -16,7 +16,7 @@ for "_i" from 1 to _count do {
 		};
 		case "GREN_WEST" : {// Grenade
 			[_veh,"Grenade", "ACE_Tbox_US", [["HandGrenade_West",15], ["SmokeShell",10]]] call SerP_addCargoBox;
-		};		
+		};
 		case "60MMHE" : {// M224 60 mm HE
 			[_veh,"M224 60 mm HE", "ACE_Tbox_US", [["ACE_M224HE_CSWDM",10]]] call SerP_addCargoBox;
 		};
@@ -38,12 +38,15 @@ for "_i" from 1 to _count do {
 		case "FIM92" : {// FIM-92F Stinger
 			[_veh,"FIM-92F Stinger","ACE_Tbox_RU", [["Stinger",1]],[["Stinger",1]]] call SerP_addCargoBox;
 		};
-		
+		case "FIM92_AMMO" : {// FIM-92F Stinger ammo
+			[_veh,"FIM-92F Stinger","ACE_Tbox_RU", [["Stinger",2]]] call SerP_addCargoBox;
+		};
+
 	//RUS
-		case "545M_BIG" : {// 5.45x39 AK 
+		case "545M_BIG" : {// 5.45x39 AK
 			[_veh,"5.45x39 AK", "ACE_Tbox_RU", [["30Rnd_545x39_AK",20],["ACE_30Rnd_545x39_T_AK",6]]] call SerP_addCargoBox;
 		};
-		case "762M_BIG" : {// 7.62x39 AK 
+		case "762M_BIG" : {// 7.62x39 AK
 			[_veh,"7.62x39 AK ", "ACE_Tbox_RU", [["30Rnd_762x39_AK47",20],["ACE_30Rnd_762x39_T_AK47",6]]] call SerP_addCargoBox;
 		};
 		case "762X54B" : {// 7.62x54 Belt
@@ -68,7 +71,10 @@ for "_i" from 1 to _count do {
 			[_veh,"9M32 Strela", "ACE_Tbox_RU", [["Strela",1]],[["Strela",1]]] call SerP_addCargoBox;
 		};
 		case "9M39" : {// 9M39 Igla
-			[_veh,"9M39 Igla","ACE_Tbox_RU", [["Igla",2]],[["Igla",1]]] call SerP_addCargoBox;
+			[_veh,"9M39 Igla","ACE_Tbox_RU", [["Igla",1]],[["Igla",1]]] call SerP_addCargoBox;
+		};
+		case "9M39_AMMO" : {// 9M39 Igla Ammo
+			[_veh,"9M39 Igla","ACE_Tbox_RU", [["Igla",2]]] call SerP_addCargoBox;
 		};
 		case "9M115" : {// 9К131 Metis-M Ammo HEAT
 			[_veh,"9К131 Metis-M Ammo HEAT","ACE_Tbox_RU",[["AT13",3]]] call SerP_addCargoBox;
@@ -81,7 +87,7 @@ for "_i" from 1 to _count do {
 		};
 		case "9M113" : {// 9K113 Konkurs-M Ammo
 			[_veh,"9K113 Konkurs-M Ammo","ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",3]]] call SerP_addCargoBox;
-		};		
+		};
 		case "9P135" : {// 9K113 Konkurs-M Launcher
 			[_veh,"9K113 Konkurs-M Launcher","ACE_Tbox_RU",[["ACE_KonkursM_CSWDM",2]],[["ACE_KonkursTripodProxy",1]]] call SerP_addCargoBox;
 		};
@@ -89,8 +95,8 @@ for "_i" from 1 to _count do {
 			[_veh,"AGS30","ACE_Tbox_RU",[],[["ACE_AGS30Proxy",1],["ACE_AGS30TripodProxy",1]]] call SerP_addCargoBox;
 		};
 		case "AGS30_AMMO" : {// AGS30 ammo
-			[_veh,"AGS30 AMMO","ACE_Tbox_RU",[["ACE_AGS30_CSWDM",8]],[]] call SerP_addCargoBox;
-		};	
+			[_veh,"AGS30 AMMO","ACE_Tbox_RU",[["ACE_AGS30_CSWDM",2]],[]] call SerP_addCargoBox;
+		};
 	//Other
 		case "FLARE" : {// Flaregun
 			[_veh,"Flaregun", "ACE_Tbox_RU", [["ACE_SSGreen_FG",20],["ACE_SSRed_FG",20]], [["ACE_Flaregun",3]]] call SerP_addCargoBox;

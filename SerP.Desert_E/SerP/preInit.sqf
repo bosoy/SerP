@@ -17,6 +17,7 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_nvg_rangelimit_enabled = true;
 	ace_settings_enable_vd_change = true;
 	missionNamespace setVariable ["ace_viewdistance_limit",getNumber(missionConfigFile >> "SerP_const" >> "viewDistance")];
+	ACE_NoStaminaEffects = true;
 };
 
 enableEngineArtillery false;
@@ -66,13 +67,6 @@ if (isServer) then {
 
 	};
 
-
-	SerP_onPlayerConnected = {
-		_publicVars = ["timeOfDay","weather","briefing_mode","warbegins","readyarray","startZones","SerP_end","SerP_markerCount"];
-		{publicVariable _x} forEach _publicVars;
-	};
-
-	onPlayerConnected ("[] call SerP_onPlayerConnected;"+getText(missionConfigFile >> "SerP_const" >> "onPlayerConnected"));
 	[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf";
 	if isNil{briefing_mode} then {
 		briefing_mode = 1;publicVariable "briefing_mode";

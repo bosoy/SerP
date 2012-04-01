@@ -5,10 +5,10 @@ _loadout = _this select 2;
 _cargoBoxes = _this select 3;
 //prepare functions
 _common_processor = {
-	clearWeaponCargo _this;
-	clearMagazineCargo _this;
+	_veh = _this;
+	clearWeaponCargo _veh;
+	clearMagazineCargo _veh;
 	//_this disableTIEquipment true;
-	_this addWeaponCargo ["ACE_JerryCan_Dummy_15",1];
 	_this addMagazineCargo ["ACE_Rope_TOW_M_5",1];
 };
 _addTyre = {
