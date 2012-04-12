@@ -18,6 +18,7 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_settings_enable_vd_change = true;
 	missionNamespace setVariable ["ace_viewdistance_limit",getNumber(missionConfigFile >> "SerP_const" >> "viewDistance")];
 	ACE_NoStaminaEffects = true;
+	[] spawn {_s = diag_tickTime+100;waitUntil{sleep 1;!ACE_SYS_STAMINA||_s>diag_tickTime};ACE_SYS_STAMINA=true;};
 };
 
 enableEngineArtillery false;
