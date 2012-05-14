@@ -97,9 +97,9 @@ switch _type do {
 	case "AHAT" : { //Assistant Javelin Operator
 		addMagazines("30Rnd_556x45_Stanag",6);
 		addMagazines("SmokeShell",2);
-		addWeapons ["M4A1","Javelin"];
+		addWeapons ["M4A1","ACE_Javelin_Direct"];
 		addItems ["R","B","N"];
-		_unit setVariable ["ACE_weapononback","Javelin"];
+		_unit setVariable ["ACE_weapononback","ACE_Javelin_Direct"];
 	};
 	case "DM" : { //Designated marksman
 		addMagazines("30Rnd_556x45_Stanag",6);

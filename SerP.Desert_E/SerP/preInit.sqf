@@ -14,11 +14,11 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_tracking_markers_enabled = false;
 	ace_sys_spectator_playable_only = true;
 	//ace_sys_spectator_NoMarkersUpdates = true;
-	ace_sys_nvg_rangelimit_enabled = true;
+	//ace_sys_nvg_rangelimit_enabled = true;
 	ace_settings_enable_vd_change = true;
 	missionNamespace setVariable ["ace_viewdistance_limit",getNumber(missionConfigFile >> "SerP_const" >> "viewDistance")];
 	ACE_NoStaminaEffects = true;
-	[] spawn {_s = diag_tickTime+100;waitUntil{sleep 1;!ACE_SYS_STAMINA||_s>diag_tickTime};ACE_SYS_STAMINA=true;};
+	[] spawn {_s = time+100;waitUntil{sleep 1;!ACE_SYS_STAMINA||_s>time};ACE_SYS_STAMINA=true;};
 };
 
 enableEngineArtillery false;

@@ -64,7 +64,7 @@ switch _loadout do {
 	};
 	case "AT" : { //1й номер расчета РПГ
 		addMagazines("30Rnd_545x39_AK",6);
-		addMagazines("ACE_PG7VM_PGO7",3);
+		addMagazines("ACE_PG7VL_PGO7",3);
 		addWeapons ["ACE_AK74M","ACE_RPG7V_PGO7"];
 		addItems ["R","N","E"];
 	};
@@ -75,7 +75,7 @@ switch _loadout do {
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["ACE_AK74M","ACE_Rucksack_RD90"];
 		addItems ["R","B","N","E"];
-		_unit setVariable ["ACE_RuckMagContents",[["ACE_PG7VM_PGO7",4]]];
+		_unit setVariable ["ACE_RuckMagContents",[["ACE_PG7VL_PGO7",4]]];
 	};
 	case "GL" : { //Стрелок с ГП
 		addMagazines("30Rnd_545x39_AK",7);
@@ -176,11 +176,11 @@ switch _loadout do {
 	};
 	case "R_AT" : { //Разведчик - гранатометчик
 		addMagazines("30Rnd_545x39_AK",6);
-		addMagazines("ACE_PG7VM_PGO7",3);
+		addMagazines("ACE_PG7VL_PGO7",3);
 		addWeapons ["ACE_AKS74P","ACE_RPG7V_PGO7"];
 		addItems ["R","N","E"];
 		_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
-		_unit setVariable ["ACE_RuckMagContents",[["ACE_PG7VM_PGO7",4]]];
+		_unit setVariable ["ACE_RuckMagContents",[["ACE_PG7VL_PGO7",4]]];
 	};
 	case "R_R" : { // Разведчик - радиотелефонист
 		addMagazines("30Rnd_545x39_AK",7);
