@@ -22,4 +22,4 @@ class Header	{
 
 onLoadMission = $STR_missionname;
 loadScreen = __SerP_loadscreen;
-//disableChannels[] = {0,2,4,5,6};
+disableChannels[] = {0,2,3,5,6};
