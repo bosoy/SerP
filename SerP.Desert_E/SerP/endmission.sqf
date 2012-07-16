@@ -39,7 +39,9 @@ SerP_processorEND = {
 			diag_log _x;
 		} forEach _toRpt;
 		2 cutText ['','BLACK',5];
-		sleep 30;
+		sleep 5;
+		(vehicle player) enableSimulation false;
+		sleep 25;
 		2 cutText[_this select 0,'BLACK FADED',5];
 		sleep 4;
 		endMission 'LOSER';

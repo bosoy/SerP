@@ -26,43 +26,34 @@ try {
 	};
 	if isNil{warbegins} then {warbegins = 1};
 	if (warbegins==1) then {throw "warbegins"};
-	_radio=createTrigger["EmptyDetector",[0,0]];
-	_radio setTriggerActivation["INDIA","PRESENT",true];
-	_radio setTriggerStatements["this",format ["
-		if (%1) then {
-			if ((readyArray select 1) == 0) then
-				{readyArray set [1, 1];publicVariable ""readyArray"";}
+	_index = 2;_side = side player;
+	switch true do {
+		case (side player == __sideREDFOR): {_index = 1;_side = "REDFOR"};
+		case (side player == __sideBLUEFOR): {_index = 0;_side = "BLUEFOR"};
+	};
+	if (_index<2) then {
+		_radio=createTrigger["EmptyDetector",[0,0]];
+		_radio setTriggerActivation["INDIA","PRESENT",true];
+		_radio setTriggerStatements["this",format ["
+			if (readyArray select %1) then
+				{readyArray set [%1, false];publicVariable ""readyArray"";[""%2 not ready (%3)""] call SerP_msg}
 			else
-				{readyArray set [1, 0];publicVariable ""readyArray"";};
-		};
-		if (%2) then {
-			if ((readyArray select 0) == 0) then
-				{readyArray set [0, 1];publicVariable ""readyArray"";}
-			else
-				{readyArray set [0, 0];publicVariable ""readyArray"";}
-		;};
-		", side player == __sideREDFOR, side player == __sideBLUEFOR],
-		""];
-	trashArray set [count trashArray, _radio];
+				{readyArray set [%1, true];publicVariable ""readyArray"";[""%2 ready (%3)""] call SerP_msg};
+			",_index,_side,name player],
+			""];
+		trashArray set [count trashArray, _radio];
 
-	_endTrigger = createTrigger["EmptyDetector",[0,0]];
-	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
-	_endTrigger setTriggerStatements[
-		"(((readyArray select 0) == 1))",format [
-		"taskhint [""BLUEFOR ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_continue_briefing"";};",side player == __sideBLUEFOR],format [
-		"taskhint [""BLUEFOR not ready "", [0, 0, 1, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_end_briefing"";};",side player == __sideBLUEFOR]
-		];
-	trashArray set [count trashArray, _endTrigger];
+		_endTrigger = createTrigger["EmptyDetector",[0,0]];
+		_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
+		_endTrigger setTriggerStatements[
+			format["(readyArray select %1)",_index],
+			"9 setRadioMsg localize ""STR_serp_continue_briefing"";",
+			"9 setRadioMsg localize ""STR_serp_end_briefing"";"
+			];
+		trashArray set [count trashArray, _endTrigger];
 
-	_endTrigger = createTrigger["EmptyDetector",[0,0]];
-	_endTrigger setTriggerActivation ["ANY", "PRESENT", true];
-	_endTrigger setTriggerStatements[
-		"(((readyArray select 1) == 1))",format [
-		"taskhint [""REDFOR ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_continue_briefing"";};",side player == __sideREDFOR],format [
-		"taskhint [""REDFOR not ready "", [1, 0, 0, 1], ""taskNew""];if (%1) then {9 setRadioMsg localize ""STR_serp_end_briefing"";};",side player == __sideREDFOR]
-		];
-	trashArray set [count trashArray, _endTrigger];
-	9 setRadioMsg localize "STR_serp_end_briefing";
+		9 setRadioMsg localize "STR_serp_end_briefing";
+	};
 	_waitTime = time + 90;
 	waitUntil{sleep 1;
 		!isNil{startZones}||(time>_waitTime)

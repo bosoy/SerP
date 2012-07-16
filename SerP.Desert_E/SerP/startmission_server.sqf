@@ -28,7 +28,7 @@ switch (briefing_mode) do	{
 
 
 warbegins = 0;publicVariable "warbegins";
-readyArray = [0,0];publicVariable "readyArray";
+readyArray = [false,false];publicVariable "readyArray";
 //find zones
 _zones = [];//[_pos,_size,_unitsInZone,_side]
 _hintzonesize = __hintzonesize;
@@ -231,7 +231,7 @@ publicVariable "SerP_markerCount";
 	_sideBLUEFOR = __sideBLUEFOR;
 	_sideREDFOR = __sideREDFOR;
 	_oneSide = ({isPlayer(_x)&&(side(_x)==_sideBLUEFOR)} count playableUnits == 0)||({isPlayer(_x)&&(side(_x)==_sideREDFOR)} count playableUnits == 0);
-	waitUntil{sleep 1;(((readyArray select 0) == 1)&&((readyArray select 1) == 1))||((1 in readyArray)&&_oneSide)||(warbegins==1)};
+	waitUntil{sleep 1;((readyArray select 0)&&(readyArray select 1))||(((readyArray select 0)||(readyArray select 1))&&_oneSide)||(warbegins==1)};
 
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";

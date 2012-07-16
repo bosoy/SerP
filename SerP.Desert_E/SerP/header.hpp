@@ -11,7 +11,7 @@ class Extended_PostInit_EventHandlers {
 	};
 };
 
-SerP_version = 25;
+SerP_version = 26;
 respawn = 1;
 respawndelay = 3;
 class Header	{
@@ -22,3 +22,4 @@ class Header	{
 
 onLoadMission = $STR_missionname;
 loadScreen = __SerP_loadscreen;
+//disableChannels[] = {0,2,4,5,6};
