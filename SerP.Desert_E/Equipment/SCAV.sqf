@@ -41,7 +41,7 @@ switch _type do {
 		addMagazines("5Rnd_762x51_M24",7);
 		addMagazines("SmokeShell",3);
 		addMagazines("7Rnd_45ACP_1911",3);
-		addWeapons ["M24_des_EP1","Colt1911","ACE_Rucksack_MOLLE_ACU"];
+		addWeapons ["M24_des_EP1","Colt1911","ACE_Rucksack_MOLLE_ACU","ACE_SniperTripod"];
 		_unit setVariable ["ACE_RuckMagContents",[["5Rnd_762x51_M24",12]]];
 		addItems ["R","B","N","D","M","MT","GM","E","K"];
 	};
@@ -64,7 +64,6 @@ switch _type do {
 		addMagazines("200Rnd_556x45_M249",3);
 		addMagazines("HandGrenade_West",2);
 		addMagazines("SmokeShell",2);
-		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["M249","ACE_ANPRC77"];
 		addItems ["R","N","G","M",E,"GM"];
 	};
@@ -77,7 +76,6 @@ switch _type do {
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("HandGrenade_West",3);
 		addMagazines("SmokeShell",2);
-		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["ACE_M4_RCO_GL","ACE_ANPRC77"];
 		addItems ["R","N","G","M",E,"GM"];
 	};

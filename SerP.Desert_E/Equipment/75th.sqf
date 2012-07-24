@@ -33,8 +33,7 @@ switch _type do {
 	case "SL" : { //Squad Leader
 		addMagazines("30Rnd_556x45_Stanag",5);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",1);
-		addMagazines("15Rnd_9x19_M9", 2);
-		addWeapons ["M9", "M16A4_ACG"];
+		addWeapons ["ACE_SSVZ", "M16A4_ACG"];
 		addItems ["R","L","B","N","M","MT","G"];
 	};
 	case "TL" : { // FT Leader
@@ -43,7 +42,7 @@ switch _type do {
 		addMagazines("ACE_1Rnd_HE_M203",4);
 		addMagazines("SmokeShell", 2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["M16A4_ACG_GL"];
+		addWeapons ["M16A4_ACG_GL","ACE_SSVZ"];
 		addItems ["R","L","B","N","M"];
 	};
 	case "AR" : { // Automatic Rifleman
@@ -132,11 +131,13 @@ switch _type do {
 	};
 //sniper team
 	case "SN2": {// Sniper
-		addMagazines("5Rnd_762x51_M24",6);
-		addMagazines("15Rnd_9x19_M9",2);
+		addMagazines("5Rnd_762x51_M24",4);
 		addMagazines("SmokeShell",2);
-		addWeapons ["M24_des_EP1","M9","NVGoggles", "Binocular"];
+		addMagazines("30Rnd_556x45_Stanag",2);
+		addWeapons ["M24_des_EP1","ACE_SSVZ","NVGoggles", "Binocular","ACE_Rucksack_MOLLE_Green"];
 		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS"];
+		_unit setVariable ["ACE_weapononback","m16a4"];
+		_unit setVariable ["ACE_RuckMagContents", [["5Rnd_762x51_M24", 10]]];
 	};
 	case "SN": {// Sniper
 		addMagazines("10Rnd_127x99_m107",5);
@@ -144,7 +145,7 @@ switch _type do {
 		addMagazines("ACE_10Rnd_127x99_Raufoss_m107",1);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",3);
-		addWeapons ["m107", "NVGoggles", "Binocular"];
+		addWeapons ["m107", "NVGoggles", "Binocular","ACE_SSVZ"];
 		addWeapons ["ACE_Map", "ACE_Map_Tools", "ItemGPS", "ACE_GlassesLHD_glasses"];
 	};
 

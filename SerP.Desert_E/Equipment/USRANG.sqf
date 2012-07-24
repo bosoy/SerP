@@ -14,9 +14,7 @@ case "PSG": {// Platoon Sergant
 
 	case "MED": {//Medic
 		addMagazines("30Rnd_556x45_Stanag",6);
-		addMagazines("15Rnd_9x19_M9",2);
 		addMagazines("SmokeShell",2);
-		addMagazines("15Rnd_9x19_M9",2);
 		addWeapons ["SCAR_L_STD_HOLO","ACE_Rucksack_MOLLE_ACU_Medic"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]];
 		addItems ["R","N","D","M","MT","G"];
@@ -35,8 +33,7 @@ case "PSG": {// Platoon Sergant
 		addMagazines("ACE_Battery_Rangefinder",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",3);
-		addMagazines("15Rnd_9x19_M9",2);
-		addWeapons ["ACE_SCAR_L_ACOG","M9","ACE_Rangefinder_OD"];
+		addWeapons ["ACE_SCAR_L_ACOG","ACE_SSVZ","ACE_Rangefinder_OD"];
 		addItems ["R","B","N","D","M","MT","G","K"];
 	};
 	case "SL": {// Squad Leader

@@ -32,7 +32,7 @@ switch _type do {
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["M4A1"];
+		addWeapons ["M4A1","ACE_SSVZ"];
 		addItems ["R","B","N","M"];
 	};
 //Rifle squad
@@ -40,8 +40,7 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",6);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
-		addMagazines("15Rnd_9x19_M9",2);
-		addWeapons ["M4A1","ACE_ANPRC77","M9"];
+		addWeapons ["M4A1","ACE_ANPRC77","ACE_SSVZ"];
 		addItems ["R","B","N","M","MT","G"];
 	};
 
@@ -140,11 +139,13 @@ switch _type do {
 
 //sniper team
 	case "SN": { // Sniper
-		addMagazines("5Rnd_762x51_M24",6);
-		addMagazines("15Rnd_9x19_M9",2);
+		addMagazines("5Rnd_762x51_M24",4);
+		addMagazines("30Rnd_556x45_Stanag",2);
 		addMagazines("SmokeShell",2);
-		addWeapons ["M24_des_EP1","M9"];
+		addWeapons ["M24_des_EP1","ACE_SSVZ","ACE_SniperTripod"];
 		addItems ["R","N","M","MT","G"];
+		_unit setVariable ["ACE_weapononback","m16a4"];
+		_unit setVariable ["ACE_RuckMagContents", [["5Rnd_762x51_M24", 10]]];
 	};
 	case "SN2": { // Sniper
 		addMagazines("20Rnd_762x51_B_SCAR",6);

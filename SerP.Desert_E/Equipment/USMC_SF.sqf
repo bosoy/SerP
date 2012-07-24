@@ -6,8 +6,7 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",8);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",4);
-		addMagazines("ACE_12Rnd_45ACP_USPSD",4);
-		addWeapons ["ACE_USPSD", "ACE_HK416_D10_AIM"];
+		addWeapons ["ACE_SSVZ", "ACE_HK416_D10_AIM"];
 		addItems ["R","B","N","D","M","MT","G","L","H"];
 	};
 	case "TL" : { // FT Leader SF

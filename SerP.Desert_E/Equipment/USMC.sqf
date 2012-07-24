@@ -32,8 +32,7 @@ switch _type do {
 		addMagazines("30Rnd_556x45_Stanag",6);
 		addMagazines("ACE_30Rnd_556x45_T_Stanag",2);
 		addMagazines("SmokeShell",2);
-		addMagazines("15Rnd_9x19_M9",2);
-		addWeapons ["M16A4_ACG","M9"];
+		addWeapons ["M16A4_ACG","ACE_SSVZ"];
 		addItems ["R","B","N","M","MT","G","L"];
 	};
 	case "TL" : { // FT Leader
@@ -99,11 +98,13 @@ switch _type do {
 	};
 //snipers
 	case "SN": { // Sniper
-		addMagazines("5Rnd_762x51_M24",8);
+		addMagazines("5Rnd_762x51_M24",4);
 		addMagazines("SmokeShell",2);
-		addMagazines("ACE_12Rnd_45ACP_USPSD",2);
-		addWeapons ["M40A3","ACE_USPSD"];
-		addItems ["R","L","B","N","M"];
+		addMagazines("30Rnd_556x45_Stanag",2);
+		addWeapons ["M40A3","ACE_SSVZ","NVGoggles", "Binocular","ACE_Rucksack_MOLLE_Green"];
+		addWeapons ["ACE_Map","ACE_Map_Tools","ItemGPS","ACE_SniperTripod"];
+		_unit setVariable ["ACE_weapononback","m16a4"];
+		_unit setVariable ["ACE_RuckMagContents", [["5Rnd_762x51_M24", 10]]];
 	};
 
 	case "ASN" : { // Assist. Sniper SF

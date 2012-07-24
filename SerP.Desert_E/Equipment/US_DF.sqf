@@ -4,10 +4,9 @@ _type = toUpper (_this select 1);
 switch _type do {
 	case "SL": {// Squad Lider
 		addMagazines("30Rnd_556x45_Stanag",8);
-		addMagazines("15Rnd_9x19_M9SD ",4);
 		addMagazines("SmokeShell",2);
 		addMagazines("HandGrenade_West",2);
-		addWeapons ["ACE_SOC_M4A1_Eotech", "M9SD"];
+		addWeapons ["ACE_SOC_M4A1_Eotech", "ACE_SSVZ"];
 		addItems ["R","L","B","N","D","M","MT","G"];
 	};
 	case "TL": {// Team Lider
