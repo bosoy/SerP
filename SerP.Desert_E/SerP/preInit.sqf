@@ -89,5 +89,4 @@ if (!isDedicated) then {
 			taskHint [(_this select 1) select 0,[0, 1, 0, 1], "taskNew"];
 		};
 	};
-	setViewDistance 1;
 };

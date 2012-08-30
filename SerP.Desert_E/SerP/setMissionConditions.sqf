@@ -70,5 +70,3 @@ switch (weather) do	{
 	default {};
 };
 
-setViewDistance (getNumber(missionConfigFile >> "SerP_const" >> "viewDistance") min 3500);
-

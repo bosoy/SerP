@@ -21,8 +21,8 @@
 	};
 	class loading {
 		title = "$STR_serp_loading";
-		values[] = {0,1};
-		texts[] = {$STR_serp_loading_Option0,$STR_serp_loading_Option1};
+		values[] = {0,1,2};
+		texts[] = {$STR_serp_loading_Option0,$STR_serp_loading_Option1,$STR_serp_loading_Option2};
 		default = 0;
 		code = "SerP_loading = %1";
 	};

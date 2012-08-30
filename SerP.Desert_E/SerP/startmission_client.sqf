@@ -3,14 +3,16 @@ private ["_blocker"];
 trashArray = [];
 planeList = [];
 waitUntil{player==player};
-if (count(playableUnits)==0) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};//костыль для запуска в синглплеерном редакторе
-if !alive(player) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};
+setViewDistance (getNumber(missionConfigFile >> "SerP_const" >> "viewDistance") min 3500);
+if (count(playableUnits)==0||!alive(player)) exitWith {[] call compile preprocessFileLineNumbers "SerP\setMissionConditions.sqf"};//костыль для запуска в синглплеерном редакторе
 sleep .01;
 player setVariable ["SerP_isPlayer",true,true];
-if ((SerP_loading==1)&&(time<60)&&!((player == leader group player)||(serverCommandAvailable "#kick"))) exitWith {
+if ((SerP_loading==0)&&(time<60)&&!((player == leader group player)||(serverCommandAvailable "#kick")||120<{isPlayer _x} count playableUnits)) exitWith {
 	failMission "loser";
 };
-
+if ((SerP_loading==2)&&(time<60)&&!((player == leader group player)||(serverCommandAvailable "#kick"))) exitWith {
+	failMission "loser";
+};
 _veh = (vehicle player);
 openMap [true,true];
 _veh enableSimulation false;

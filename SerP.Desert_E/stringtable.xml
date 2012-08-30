@@ -352,13 +352,21 @@
 	</Key>
 	<Key ID="STR_serp_loading_Option0">
 		<Original>
-		Default
+		Auto
+		</Original>
+		<Russian>
+		Авто
+		</Russian>
+	</Key>
+	<Key ID="STR_serp_loading_Option1">
+		<Original>
+		Any
 		</Original>
 		<Russian>
 		Без ограничений
 		</Russian>
 	</Key>
-	<Key ID="STR_serp_loading_Option1">
+	<Key ID="STR_serp_loading_Option3">
 		<Original>
 		Only group leaders
 		</Original>
@@ -366,7 +374,6 @@
 		Только командиры групп
 		</Russian>
 	</Key>
-
 
 	<Key ID="STR_serp_end_briefing">
 		<Original>

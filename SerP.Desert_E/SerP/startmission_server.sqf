@@ -148,7 +148,7 @@ _teleportList = [];
 				};
 			} forEach _units;
 			{
-				if ((_x distance _zonePos)<_hintzonesize+_size) then {
+				if (((_x distance _zonePos)<_hintzonesize+_size)&&!locked(_x)) then {
 					_unitpos = getPosASL _x;
 					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
 					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
@@ -164,7 +164,7 @@ _teleportList = [];
 			};
 		} forEach _units;
 		{
-			if ((_x distance _zonePos)<_hintzonesize+_size) then {
+			if (((_x distance _zonePos)<_hintzonesize+_size)&&!locked(_x)) then {
 				[_zoneSide,getPos _x,"mil_box","ColorWhite",getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")] call SerP_addMarker;
 			};
 		} forEach _objectList;
@@ -198,7 +198,7 @@ publicVariable "SerP_markerCount";
 		_corepos = getPosASL _core;
 		trashArray set [count trashArray, _core];
 		{
-			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")&&!([_x,_side] call _exludeCondition)) then {
+			if (((_x distance _core)<_hintzonesize+_size)&&!(_x isKindOf "StaticWeapon")&&!([_x,_side] call _exludeCondition)&&!locked(_x)) then {
 				_unitpos = getPosASL _x;
 				_diff = [((_unitpos select 0) - (_corepos select 0)),((_unitpos select 1) - (_corepos select 1)),((_unitpos select 2) - (_corepos select 2))];
 				_actionList set [count _actionList,[_x,[_core,[(_diff select 0),(_diff select 1),((_diff select 2) - (((boundingBox _x) select 0) select 2) - 1.5)]],[(vectorDir _x),(vectorUp _x)]]];
