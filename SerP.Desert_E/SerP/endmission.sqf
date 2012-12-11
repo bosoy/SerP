@@ -1,5 +1,7 @@
 #include "const.sqf"
 
+if (isNil{SerP_endMissionToggle}) then {SerP_endMissionToggle = true;};
+if (!SerP_endMissionToggle) exitWith {};
 //инициализируем функции
 SerP_processorEND = {
 	SerP_endMission = {};

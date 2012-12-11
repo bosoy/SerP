@@ -26,3 +26,10 @@
 		default = 0;
 		code = "SerP_loading = %1";
 	};
+	class endMission {
+		title = "EndMission";
+		values[] = {true,false};
+		texts[] = {"On","Off"};
+		default = true;
+		code = "SerP_endMissionToggle = %1";
+	};

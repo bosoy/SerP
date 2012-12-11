@@ -13,22 +13,67 @@ if (!isDedicated) then {
 	[] execVM "SerP\startmission_client.sqf";
 	[["AllVehicles"], [ace_sys_interaction_key], 2, ["SerP\interactionMenu.sqf", "main"]] call CBA_ui_fnc_add;
 	[["player"], [ace_sys_interaction_key_self], 2, ["SerP\selfInteractionMenu.sqf", "main"]] call CBA_ui_fnc_add;
-/*//uncomment to disable spectator's map
-ace_sys_spectator_fnc_spectate_events_old = ace_sys_spectator_fnc_spectate_events;
-ace_sys_spectator_fnc_spectate_events = {
-	switch true do {
-		case ((_this select 0) in ["ToggleTags","UnitFired","ToggleMapBird","MapClick"]): {false};
-		case ((_this select 0) == "ToggleMap"): {
-			ctrlShow [55014, false];
-			ctrlShow [55015, false];
-			((findDisplay 55001) displayCtrl 55013) ctrlSetPosition [2, 2];
-			((findDisplay 55001) displayCtrl 55013) ctrlCommit 0;
-			false
+	//disable spectator's map
+	ace_sys_spectator_fnc_spectate_events_old = ace_sys_spectator_fnc_spectate_events;
+	ace_sys_spectator_fnc_spectate_events = {
+		if !(ace_sys_spectator_camSelLast in [2,4]) then {
+			ace_sys_spectator_NewCameraIdx = 2;
+			ace_sys_spectator_camSelLast = 2;
 		};
-		default {_this call ace_sys_spectator_fnc_spectate_events_old};
+		switch true do {
+			case ((_this select 0) in ["ToggleTags","UnitFired","ToggleMapBird","MapClick","MouseZChanged"]): {false};
+			case ((_this select 0) == "ToggleMap"): {
+				ctrlShow [55014, false];
+				ctrlShow [55015, false];
+				ctrlShow [55013, false];
+				false
+			};
+			case ((_this select 0) == "KeyUp"): {
+				_key = (_this select 1) select 1;
+				switch(_key) do {
+					case 49: {
+						if (ace_sys_spectator_UseNVG == 0) then {
+							ace_sys_spectator_UseNVG = 1;
+							ace_sys_spectator_NVGMode = 2
+						} else {
+							ace_sys_spectator_UseNVG = 0;
+							ace_sys_spectator_NVGMode = -1;
+							ace_sys_spectator_OldNVGMode = -5;
+						};
+					};
+					case 37: {};
+					default {_this call ace_sys_spectator_fnc_spectate_events_old};
+				}
+			};
+			default {_this call ace_sys_spectator_fnc_spectate_events_old};
+		};
 	};
-};
-*/
+	ace_sys_spectator_fnc_menucamslbchange_old = ace_sys_spectator_fnc_menucamslbchange;
+	ace_sys_spectator_fnc_menucamslbchange = {
+		switch (_this select 1) do {
+			case 0: { // separator
+			};
+			case 1: { // separator
+			};
+			case 3: { // separator
+			};
+			case 7: { // Special for toggling NVG
+				if (ace_sys_spectator_UseNVG == 0) then {
+					ace_sys_spectator_UseNVG = 1;
+					ace_sys_spectator_NVGMode = 2
+				} else {
+					ace_sys_spectator_UseNVG = 0;
+					ace_sys_spectator_NVGMode = -1;
+					ace_sys_spectator_OldNVGMode = -5;
+				};
+			};
+			case 8: { // Special for toggling tags
+			};
+			default {
+				_this call ace_sys_spectator_fnc_menucamslbchange_old;
+			};
+		};
+	};
 };
 
 //testing
