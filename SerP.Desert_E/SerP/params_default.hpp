@@ -28,8 +28,8 @@
 	};
 	class endMission {
 		title = "EndMission";
-		values[] = {true,false};
+		values[] = {1,0};
 		texts[] = {"On","Off"};
-		default = true;
+		default = 1;
 		code = "SerP_endMissionToggle = %1";
 	};
