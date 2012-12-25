@@ -8,7 +8,8 @@ _pairs = [
 	["SVD_CAMO","SVD_NSPU_EP1"],
 	["ACE_SVD_Bipod","SVD_NSPU_EP1"],
 	["ACE_M110","M110_NVG_EP1"],
-	["ACE_FAL_Para","FN_FAL_ANPVS4"]
+	["ACE_FAL_Para","FN_FAL_ANPVS4"],
+	["ACE_M4A1_ACOG","ACE_M4A1_ACOG_PVS14"]
 ];
 if (isNil{player getVariable "SerP_weap_pair"}) then {
 	{if ((_x select 0) in weapons player) exitWith {

@@ -48,21 +48,21 @@ switch (weather) do	{
 // Light Fog
 	case 2: {
 		_MissionOvercast = 00.60;
-		_MissionFog = 00.60;
+		_MissionFog = 00.20;
 		0 setOvercast _MissionOvercast;
 		0 setFog _MissionFog;
 	};
 // Heavy Fog
 	case 3: {
 		_MissionOvercast = 00.60;
-		_MissionFog = 00.96;
+		_MissionFog = 00.30;
 		0 setOvercast _MissionOvercast;
 		0 setFog _MissionFog;
 	};
 // Storm
 	case 4: {
 		_MissionOvercast = 01.00;
-		_MissionFog = 00.50;
+		_MissionFog = 00.20;
 		0 setOvercast _MissionOvercast;
 		0 setFog _MissionFog;
 	};

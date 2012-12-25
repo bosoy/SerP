@@ -19,16 +19,23 @@ if (!isDedicated) then {
 	//disable spectator's map
 	ace_sys_spectator_fnc_spectate_events_old = ace_sys_spectator_fnc_spectate_events;
 	ace_sys_spectator_fnc_spectate_events = {
-		if !(ace_sys_spectator_camSelLast in [2,4]) then {
+		if !(ace_sys_spectator_camSelLast in [0,2,4]) then {
 			ace_sys_spectator_NewCameraIdx = 2;
 			ace_sys_spectator_camSelLast = 2;
 		};
+		if (ctrlVisible 55014) then {ctrlShow [55014, false];};
+		if (ctrlVisible 55013) then {ctrlShow [55013, false];};
+		if (ctrlVisible 55015) then {ctrlShow [55015, false];};
+
 		switch true do {
 			case ((_this select 0) in ["ToggleTags","UnitFired","ToggleMapBird","MapClick","MouseZChanged"]): {false};
 			case ((_this select 0) == "ToggleMap"): {
-				ctrlShow [55014, false];
-				ctrlShow [55015, false];
-				ctrlShow [55013, false];
+				//ctrlShow [55014, false];
+				//ctrlShow [55015, false];
+				//ctrlShow [55013, false];
+				false
+			};
+			case ((_this select 0) == "MouseZChanged"): {
 				false
 			};
 			case ((_this select 0) == "KeyUp"): {
@@ -54,8 +61,6 @@ if (!isDedicated) then {
 	ace_sys_spectator_fnc_menucamslbchange_old = ace_sys_spectator_fnc_menucamslbchange;
 	ace_sys_spectator_fnc_menucamslbchange = {
 		switch (_this select 1) do {
-			case 0: { // separator
-			};
 			case 1: { // separator
 			};
 			case 3: { // separator

@@ -10,23 +10,24 @@ _menu = [
 			{
 				_target = CBA_ui_target;
 				_max = switch true do {
-					case (_target isKindOf "Wheeled_APC"): {100};
-					case (_target isKindOf "Tank"): {200};
-					case (_target isKindOf "Helicopter"): {50};
-					case (_target isKindOf "Plane"): {50};
-					case (_target isKindOf "Ship"): {50};
-					case (_target isKindOf "StaticWeapon"): {10};
-					case (_target isKindOf "LandVehicle"): {50};
-					default {100};
+					case (_target isKindOf "Wheeled_APC"): {1000};
+					case (_target isKindOf "Tank"): {2000};
+					case (_target isKindOf "Helicopter"): {500};
+					case (_target isKindOf "Plane"): {500};
+					case (_target isKindOf "Ship"): {500};
+					case (_target isKindOf "StaticWeapon"): {100};
+					case (_target isKindOf "LandVehicle"): {500};
+					default {1000};
 				};
 				_r = random(_max);
 				if (_r<2) then {
 					_target lock false;
+					hint "Success";
 				}else{
-					hint "Fail";
+					hintSilent "Fail";
 				};
 			},
-			"", "", "", -1, (locked(_target)), (_target isKindOf "LandVehicle" || _target isKindOf "Helicopter" || _target isKindOf "Plane" || _target isKindOf "Ship" || _target isKindOf "StaticWeapon")
+			"", "", "", 22, true, (_target isKindOf "LandVehicle" || _target isKindOf "Helicopter" || _target isKindOf "Plane" || _target isKindOf "Ship" || _target isKindOf "StaticWeapon")&&(locked(_target))
 		]
 	]
 ];

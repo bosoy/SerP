@@ -95,9 +95,9 @@ _weather = switch true do {
 	default {localize "STR_weather_Option5"};
 };
 
-
+_vd = getNumber(missionConfigFile >> "SerP_const" >> "viewDistance");
 _weather = player createDiaryRecord ["diary", [localize "STR_weather",
-format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2",_time,_weather]
+format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2<br/>" + localize "str_disp_xbox_editor_wizard_weather_viewdistance" + " - %3" ,_time,_weather,_vd]
 ]];
 //задачи, вооружение и брифинги сторон
 switch true do {

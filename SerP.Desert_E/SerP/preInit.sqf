@@ -13,8 +13,8 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 	ace_sys_tracking_markers_enabled_override = true;
 	ace_sys_tracking_markers_enabled = false;
 	ace_sys_spectator_playable_only = true;
-	ace_sys_spectator_can_exit_spectator = false;
-	ace_sys_spectator_no_butterfly_mode = true;
+	//ace_sys_spectator_can_exit_spectator = false;
+	//ace_sys_spectator_no_butterfly_mode = true;
 	ace_sys_spectator_ShownSides = [playerSide];
 	ace_sys_spectator_NoMarkersUpdates = true;
 	//ace_sys_nvg_rangelimit_enabled = true;
