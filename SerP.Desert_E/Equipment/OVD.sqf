@@ -233,7 +233,7 @@ switch _loadout do {
 		addItems ["K","N"];
 		_unit setVariable ["ACE_weapononback","ACE_Rucksack_RD90"];
 		_unit setVariable ["ACE_RuckMagContents",[["10Rnd_762x54_SVD",10],["ACE_MON50_M",1]]];
-		
+
 	};
 //отделение сбора и эвакуации раненых
 	case "MED_SL" : { //Командир отделения - санитарный инструктор
@@ -284,4 +284,5 @@ switch _loadout do {
 		addWeapons ["AKS_74_U","Strela"];
 		addItems ["R","F","M","E"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

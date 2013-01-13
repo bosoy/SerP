@@ -74,10 +74,10 @@ switch _type do {
 	};
 	case "LAT": {// Rifleman AT
 		addMagazines("30Rnd_762x39_AK47",3);
-		addMagazines("HandGrenade_East",3);	
+		addMagazines("HandGrenade_East",3);
 		addWeapons ["AK_47_S","ACE_RPG22"];
 		addItems ["R","F","M"];
-	};	
+	};
 	case "SAB": {// Saboteur
 		addMagazines("30Rnd_762x39_AK47",3);
 		addWeapons ["AK_47_S","ACE_BackPack"];
@@ -145,7 +145,7 @@ switch _type do {
 		addWeapons ["AK_47_S","Strela"];
 		addItems ["R","F","M","E"];
 	};
-//DSHKM		
+//DSHKM
 	case "HMG" : {//DSHKM Gunner
 		addMagazines("30Rnd_762x39_AK47",3);
 		addMagazines("ACE_DSHKM_CSWDM",1);
@@ -192,4 +192,5 @@ switch _type do {
 		addMagazines("HandGrenade_East",2);
 		addWeapons ["Sa61_EP1"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

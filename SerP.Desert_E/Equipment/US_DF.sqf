@@ -171,4 +171,5 @@ switch _type do {
 		addItems ["R","L","N"];
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_Medkit",10]]]
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

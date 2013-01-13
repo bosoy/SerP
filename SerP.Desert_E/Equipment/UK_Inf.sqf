@@ -172,4 +172,5 @@ switch _type do {
 		addWeapons ["ACE_P226","BAF_L85A2_RIS_Holo"];
 		addItems ["R","N","G","M"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

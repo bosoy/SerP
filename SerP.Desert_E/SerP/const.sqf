@@ -16,3 +16,5 @@
 #define __RFRetreat getParamNumber(RFRetreat)
 #define __BFRetreat getParamNumber(BFRetreat)
 #define __synchronizedRespawn getParamNumber(synchronizedRespawn)
+//#define __debug(text) diag_log (__FILE__+" "+__quoted(text));
+#define __debug(text) ;

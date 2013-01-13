@@ -21,7 +21,7 @@ switch _type do {
 		addMagazines("HandGrenade_East",3);
 		addMagazines("30Rnd_762x39_AK47",6);
 		addMagazines("ACE_33Rnd_9x19_G18",2);
-		addMagazines("1Rnd_HE_GP25",6);		
+		addMagazines("1Rnd_HE_GP25",6);
 		addMagazines("1Rnd_SMOKE_GP25",2);
 		addWeapons ["ACE_AK103_GL_PSO","Binocular","ACE_RPG22"];
 		addItems ["R","M","G","F","N"];
@@ -77,7 +77,7 @@ switch _type do {
 		addWeapons ["G36K","ACE_M72"];
 		_unit setVariable ["ACE_weapononback","ACE_M72"];
 		addItems ["R","F","N","M","G"];
-	};	
+	};
 	case "SAB": {// Saboteur
 		addMagazines("30Rnd_9x19_MP5SD",6);
 		addMagazines("SmokeShell",2);
@@ -123,4 +123,5 @@ switch _type do {
 		addWeapons ["ACE_G36K_iron","Stinger"];
 		addItems ["R","F","N","M","G","E"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

@@ -79,4 +79,5 @@ switch _type do {
 		addWeapons ["ACE_M4_RCO_GL","ACE_ANPRC77"];
 		addItems ["R","N","G","M",E,"GM"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

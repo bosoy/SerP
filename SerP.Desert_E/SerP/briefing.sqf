@@ -1,71 +1,39 @@
 #include "const.sqf"
+__debug(start)
 private ["_unitside"];
-_unitside = side player;
+_unitside = side group player;
 _JIP = if (time>10) then {true}else{false};
-_cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP v%2",localize "credits",getNumber(missionConfigFile >> "SerP_version")]]];
+_version = getNumber(missionConfigFile >> "SerP_version");
+if (_version==0) then {
+	_version = getText(missionConfigFile >> "SerP_version");
+}else{
+	_version = "v"+str(_version);
+};
+_cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP %2",localize "credits",_version]]];
 //отобразит игроков стороны в отрядах
 _grpText = "";
 {
-	_show = false;
-	_units = units _x;
-	_markerName = "SerP_startposMarker"+str _x;
-	_tmpText = "<br/>" + (if (_JIP) then {str _x}else{"<marker name = '"+_markerName+"'>"+str _x+"</marker>"});
-	{
-		if ((alive _x)&&((isPlayer _x)||isServer)&&(side _x == _unitside)) then {
-			_tmpText = _tmpText + "<br/>--  " + (name _x);
-			{
-				_weapon = (configFile >> "cfgWeapons" >> _x);
-				if ((getNumber(_weapon >> "type") in [1,4,5])&&!isNil{(getArray(_weapon >> "magazines") select  0)}) then {
-					_tmpText = _tmpText + "  -  " + getText(_weapon >> "displayName");
-				};
-			} forEach weapons(_x);
-			_show = true;
-		};
-	} forEach _units;
-	if _show then {
-		if (markerPos(_markerName) select 0 == 0) then {
-			createMarkerLocal [_markerName, getPos leader _x];
-		};
+	if (side(_x) == _unitside) then {
+		_units = units _x;
+		_markerName = "SerP_startposMarker"+str _x;
+		_tmpText = "<br/>" + (if (_JIP) then {str _x}else{"<marker name = '"+_markerName+"'>"+str _x+"</marker>"});
+
+		{
+			if ((alive _x)&&((isPlayer _x)||isServer)) then {
+				_tmpText = _tmpText + "<br/>--  " + (name _x);
+				{
+					_weapon = (configFile >> "cfgWeapons" >> _x);
+					if ((getNumber(_weapon >> "type") in [1,4,5])&&!isNil{(getArray(_weapon >> "magazines") select  0)}) then {
+						_tmpText = _tmpText + "  -  " + getText(_weapon >> "displayName");
+					};
+				} forEach weapons(_x);
+			};
+		} forEach _units;
 		if (!_JIP) then {
-			_markerName setMarkerTypeLocal "Start";
-			_markerName setMarkerTextLocal str(_x);
-			_markerName setMarkerColorLocal "ColorGreen";
 			_grpText = _grpText + _tmpText + "<br/>";
 		};
 	};
 } forEach allGroups;
-
-_vehText = "<br/><br/>";
-_side = side player;
-_index = switch _side do {
-	case east: {0};
-	case west: {1};
-	case resistance: {2};
-	case civilian: {3};
-};
-if (!isNil{SerP_markerCount}) then {
-	_count = SerP_markerCount select _index;
-	for "_i" from 0 to _count do {
-		_name = "SerP_marker"+str(_side) + str(_i);
-		_name setMarkerAlphaLocal 1;
-		_vehText = _vehText + "<marker name = '"+_name+"'>"+markerText _name+"</marker><br/>";
-	};
-}else{
-	_i = 0;
-	_flag = true;
-	while {_flag} do {
-		_name = "SerP_marker"+str(_side) + str(_i);
-		_pos = getMarkerPos _name;
-		if (_pos select 0 == 0 && _pos select 1 == 0) then {
-			_flag = false;
-		}else{
-			_name setMarkerAlphaLocal 1;
-			_vehText = _vehText + "<marker name = '"+_name+"'>"+markerText _name+"</marker><br/>";
-			_i = _i + 1;
-		};
-	};
-};
-
 
 _groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
 
@@ -139,20 +107,4 @@ switch true do {
 	};
 };
 
-if !_JIP then {[] spawn {
-	_waitTime = time + 90;
-	waitUntil{sleep 1;
-		!isNil{warbegins}||(time>_waitTime)
-	};
-	if isNil{warbegins} exitWith {};
-	if (warbegins==1) exitWith {};
-	sleep 10;
-	{if (side(_x)==side(player)) then {
-		_markerName = "SerP_startposMarker"+str _x;
-		_markerName setMarkerTypeLocal "Start";
-		_markerName setMarkerTextLocal str(_x);
-		_markerName setMarkerColorLocal "ColorGreen";
-	}} forEach allGroups;
-	waitUntil{sleep 1;warbegins == 1};
-	{deleteMarkerLocal ("SerP_startposMarker"+str(_x))} forEach allGroups;
-}};
+__debug(end)

@@ -27,9 +27,9 @@
 		code = "SerP_loading = %1";
 	};
 	class endMission {
-		title = "EndMission";
+		title = "$STR_serp_endMission";
 		values[] = {1,0};
-		texts[] = {"On","Off"};
+		texts[] = {$STR_On,$STR_Off};
 		default = 1;
 		code = "SerP_endMissionToggle = %1";
 	};

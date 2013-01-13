@@ -1,4 +1,5 @@
 #include "const.sqf"
+__debug(start)
 if (count(playableUnits)==0) exitWith {};
 trashArray = [];
 planeList = [];
@@ -25,7 +26,6 @@ switch (briefing_mode) do	{
 		[15] spawn _bCounter;
 	};
 };
-
 
 warbegins = 0;publicVariable "warbegins";
 readyArray = [false,false];publicVariable "readyArray";
@@ -111,6 +111,7 @@ while {!_exit} do {
 		if (!_exit) exitWith {};
 	} forEach _zones;
 };
+__debug(zones)
 _objectList = (allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship")-(allMissionObjects "ACE_JerryCan_15");
 //teleportarium
 SerP_startSeed = round(random(1000+({isPlayer(_x)} count playableUnits)));
@@ -124,27 +125,26 @@ _teleportList = [];
 	_zoneSide = _x select 3;
 	_units = _x select 4;
 	_zoneTeleportTo = _x select 5;
-	if (count(_zoneTeleportTo)>0) then {
-		_teleportTo = if (__synchronizedRespawn!=0) then {
-			(SerP_startSeed%(count(_zoneTeleportTo)+1))
-		}else{
-			round(random(1000+({isPlayer(_x)} count playableUnits)))%(count(_zoneTeleportTo)+1)
-		};
+	_teleportTo = switch true do {
+		case (count(_zoneTeleportTo)==0): {0};
+		case (__synchronizedRespawn!=0): {(SerP_startSeed%(count(_zoneTeleportTo)+1))};
+		case (__synchronizedRespawn==0): {round(random(1000+({isPlayer(_x)} count playableUnits)))%(count(_zoneTeleportTo)+1)};
+		default {0};
+	};
+	if (_teleportTo>0) then {
 		if (_teleportTo>0) then {//0 means that units stay still
 			_newZonePos = _zoneTeleportTo select(_teleportTo-1);
 			_zone set [0,_newZonePos];
 			{
+				_unitpos = getPosASL _x;
+				_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
+				_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
 				if (vehicle(_x) == _x) then {
-					_unitpos = getPosASL _x;
-					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
-					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
 					_teleportList set [count _teleportList,[_x,_newPos]];
 					_x setVariable ["SerP_startPos",_newPos,true];
 				};
 				if (_x == leader(group _x)) then {
-					_markerName = "SerP_startposMarker"+str(group _x);
-					_markerPos = _newPos;
-					startMarkers set [count startMarkers,[_markerName,_newZonePos]];
+					[_zoneSide,["SerP_startposMarker"+str(group _x),_newPos,"Start",[1,1],str(group _x),"ColorGreen",1,"SOLID","ICON"]] call SerP_addMarker;
 				};
 			} forEach _units;
 			{
@@ -153,26 +153,27 @@ _teleportList = [];
 					_diff = [((_unitpos select 0) - (_zonePos select 0)),((_unitpos select 1) - (_zonePos select 1)),0];
 					_newPos = [((_newZonePos select 0)+(_diff select 0)),((_newZonePos select 1)+(_diff select 1)),0];
 					_teleportList set [count _teleportList,[_x,_newPos]];
-					[_zoneSide,_newPos,"mil_box","ColorWhite",getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")] call SerP_addMarker;
+					[_zoneSide,["",_newPos,"mil_box",[1,1],getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName"),"ColorWhite",1,"SOLID","ICON"]] call SerP_addMarker;
 				};
 			} forEach _objectList;
 		};
+		[_zoneSide,["",_x select 0,"mil_dot",[_size,_size],"","ColorGreen",1,"SOLID","Ellipse"]] call SerP_addMarker;
 	}else{
 		{
 			if (_x == leader group _x) then {
-				startMarkers set [count startMarkers,["SerP_startposMarker"+str(group _x),getPos _x]];
+				[_zoneSide,["SerP_startposMarker"+str(group _x),getPos _x,"Start",[1,1],"","ColorGreen",1,"SOLID","ICON"]] call SerP_addMarker;
 			};
 		} forEach _units;
 		{
 			if (((_x distance _zonePos)<_hintzonesize+_size)&&!locked(_x)) then {
-				[_zoneSide,getPos _x,"mil_box","ColorWhite",getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")] call SerP_addMarker;
+				[_zoneSide,["",getPos _x,"mil_box",[1,1],getText(configFile >> "CfgVehicles" >> typeOf(_x) >> "displayName"),"ColorWhite",1,"SOLID","ICON"]] call SerP_addMarker;
 			};
 		} forEach _objectList;
+		[_zoneSide,["",_zonePos,"mil_dot",[_size,_size],"","ColorGreen",1,"SOLID","Ellipse"]] call SerP_addMarker;
 	};
 } forEach _zones;
-
-{createMarker [_x select 0,_x select 1]} forEach startMarkers;
-publicVariable "SerP_markerCount";
+__debug(teleport)
+call SerP_commitMarkers;
 //end teleportarium
 [_zones,_objectList,_teleportList] spawn {
 	_zones = _this select 0;
@@ -233,6 +234,10 @@ publicVariable "SerP_markerCount";
 	_oneSide = ({isPlayer(_x)&&(side(_x)==_sideBLUEFOR)} count playableUnits == 0)||({isPlayer(_x)&&(side(_x)==_sideREDFOR)} count playableUnits == 0);
 	waitUntil{sleep 1;((readyArray select 0)&&(readyArray select 1))||(((readyArray select 0)||(readyArray select 1))&&_oneSide)||(warbegins==1)};
 
+	{
+		call compile format["SerP_markers_%1 = [['all'],[]];",_x];
+	} forEach [east,west,resistance,civilian];
+	call SerP_commitMarkers;
 	warbegins=1;publicVariable "warbegins";
 	warbeginstime=time;publicVariable "warbeginstime";
 	'logic' createUnit [[0,0,0], createGroup sideLogic,'
@@ -243,7 +248,6 @@ publicVariable "SerP_markerCount";
 			}} forEach playableUnits;
 		};
 		taskHint ["War begins", [1, 0, 0, 1], "taskNew"];
-		{deleteVehicle _x} forEach trashArray;
 		{
 			if (local _x) then {
 				switch true do {
@@ -252,11 +256,17 @@ publicVariable "SerP_markerCount";
 						_x setVelocity [(sin(getDir _x) * 100),(cos(getDir _x) * 100),20];
 					};
 					case (((_x isKindOf "LandVehicle")&&(!(_x isKindOf "StaticWeapon")))||(_x isKindOf "Air")||(_x isKindOf "Ship")): {
+						_pos = getPos(_x);
 						detach _x;
+						_x setPos _pos;
+						if (_pos select 2 > 0) then {
+							_x setVelocity [0,0,-1];
+						};
 					};
 				};
 			};
 		} forEach ((allMissionObjects "Plane")+(allMissionObjects "LandVehicle")+(allMissionObjects "Helicopter")+(allMissionObjects "Ship"));
+		{deleteVehicle _x} forEach trashArray;
 		ace_sys_map_enabled = true;
 		[] execVM "\x\ace\addons\sys_map\mapview.sqf";
 		player say "r61";
@@ -265,18 +275,5 @@ publicVariable "SerP_markerCount";
 			deleteVehicle _this;
 		}
 	', 0.6, 'corporal'];
-	{
-		_side = _x;
-		_index = switch _side do {
-			case east: {0};
-			case west: {1};
-			case resistance: {2};
-			case civilian: {3};
-		};
-		_count = SerP_markerCount select _index;
-		for "_i" from 0 to _count do {
-			_name = "SerP_marker"+str(_side) + str(_i);
-			deleteMarker _name;
-		};
-	} forEach [east,west,resistance,civilian];
 };
+__debug(end)

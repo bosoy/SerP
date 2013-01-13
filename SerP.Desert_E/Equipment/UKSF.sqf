@@ -585,4 +585,5 @@ _type = toUpper(_this select 1);
 		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",5],["ACE_Morphine",5],["ACE_Epinephrine",5],["ACE_Medkit",5]]];
 		_unit setVariable ["ACE_weapononback","ACE_ParachuteRoundPack"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

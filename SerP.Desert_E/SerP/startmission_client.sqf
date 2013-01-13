@@ -1,4 +1,5 @@
 #include "const.sqf"
+__debug(start)
 private ["_blocker"];
 trashArray = [];
 planeList = [];
@@ -79,12 +80,6 @@ try {
 			openMap [false,false];
 			_veh enableSimulation true;
 
-			createMarkerLocal ["SerP_startZoneMarker",_pos];
-			"SerP_startZoneMarker" setMarkerBrushLocal "SOLID";
-			"SerP_startZoneMarker" setMarkerShapeLocal "Ellipse";
-			"SerP_startZoneMarker" setMarkerSizeLocal [_size,_size];
-			"SerP_startZoneMarker" setMarkerColorLocal "ColorGreen";
-			"SerP_startZoneMarker" setMarkerAlphaLocal 1;
 			_act = _veh addAction ["Change optics", "SerP\opticsChange.sqf"];
 			while {(warbegins!=1)} do {
 				sleep 1;
@@ -137,6 +132,6 @@ catch {
 		_veh enableSimulation true;
 		openMap [false,false];
 	};
-	deleteMarkerLocal "SerP_startZoneMarker";
 	(findDisplay 46) displayRemoveEventHandler ["MouseButtonDown",_blocker2];
-}
+};
+__debug(end)

@@ -106,4 +106,5 @@ switch _type do {
 		addItems ["R","L","B","N","M"];
 		_unit setVariable ["ACE_RuckMagContents",[["PipeBomb", 3]]];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

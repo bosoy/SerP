@@ -82,4 +82,5 @@ switch _type do {
 		addWeapons ["ACE_M4_Eotech","ACE_Rucksack_MOLLE_DMARPAT_Medic"];
 		addItems ["R","N","G","M","GM"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

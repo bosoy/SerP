@@ -114,4 +114,5 @@ case "PSG": {// Platoon Sergant
 		addItems ["R","N","M","G","E"];
 		_unit setVariable ["ACE_RuckMagContents",[["100Rnd_762x51_M240", 3]]];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

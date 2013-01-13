@@ -229,4 +229,5 @@ switch _type do {
 		addWeapons ["MP5A5","M9"];
 		addItems ["R","N","M","G"];
 	};
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
 };

@@ -407,6 +407,14 @@
 		Мне очень жаль
 		</Russian>
 	</Key>
+	<Key ID="STR_serp_endMission">
+		<Original>
+		End mission
+		</Original>
+		<Russian>
+		Завершение игры
+		</Russian>
+	</Key>
 
 
 <!-- это добавил Зу хз зачем -->
