@@ -14,6 +14,7 @@ if (!isDedicated) then {
 	[["AllVehicles"], [ace_sys_interaction_key], 2, ["SerP\interactionMenu.sqf", "main"]] call CBA_ui_fnc_add;
 	[["player"], [ace_sys_interaction_key_self], 2, ["SerP\selfInteractionMenu.sqf", "main"]] call CBA_ui_fnc_add;
 	//disable spectator's map
+	ace_sys_spectator_ShownSides = [side group player];
 	ace_sys_spectator_fnc_startSpectator_old = ace_sys_spectator_fnc_startSpectator;
 	ace_sys_spectator_fnc_startSpectator = {
 		ace_sys_spectator_ShownSides = [side group player];
