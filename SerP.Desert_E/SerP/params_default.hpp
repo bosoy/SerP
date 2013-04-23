@@ -33,3 +33,10 @@
 		default = 1;
 		code = "SerP_endMissionToggle = %1";
 	};
+	class spectator {
+		title = "$STR_serp_SpectatorLimitations";
+		values[] = {1,0};
+		texts[] = {$STR_On,$STR_Off};
+		default = 1;
+		code = "SerP_spectatorLimitations = %1";
+	};

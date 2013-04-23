@@ -9,6 +9,16 @@
 		</Original>
 	</Key> 
 <!-- информация для всех -->
+ 	<Key ID="brief">
+		<Original>
+		Краткое описание миссии
+		</Original>
+	</Key> 
+ 	<Key ID="changes">
+		<Original>
+		изменения в миссии
+		</Original>
+	</Key> 
 	<Key ID="credits">
 		<Original>
 		Автор миссии:&lt;br/&gt;
@@ -413,6 +423,15 @@
 		</Original>
 		<Russian>
 		Завершение игры
+		</Russian>
+	</Key>
+
+	<Key ID="STR_serp_SpectatorLimitations">
+		<Original>
+		Spectator limitations
+		</Original>
+		<Russian>
+		Ограничения спектатора
 		</Russian>
 	</Key>
 
