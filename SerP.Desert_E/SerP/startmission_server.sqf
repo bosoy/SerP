@@ -256,11 +256,20 @@ call SerP_commitMarkers;
 						_x setVelocity [(sin(getDir _x) * 100),(cos(getDir _x) * 100),20];
 					};
 					case (((_x isKindOf "LandVehicle")&&(!(_x isKindOf "StaticWeapon")))||(_x isKindOf "Air")||(_x isKindOf "Ship")): {
-						_pos = getPos(_x);
-						detach _x;
-						_x setPos _pos;
-						if (_pos select 2 > 0) then {
-							_x setVelocity [0,0,-1];
+						_pos = getPosATL _x;
+						if (surfaceIsWater _pos) then {
+							_pos = getPosASL _x;
+							detach _x;
+							_x setPosASL _pos;
+							if (_pos select 2 > 0) then {
+								_x setVelocity [0,0,-1];
+							};
+						} else {
+							detach _x;
+							_x setPosATL _pos;
+							if (_pos select 2 > 0) then {
+								_x setVelocity [0,0,-1];
+							};
 						};
 					};
 				};
