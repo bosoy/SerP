@@ -1,4 +1,4 @@
-﻿_unit = _this select 0;
+_unit = _this select 0;
 _faction = if (count(_this)>1) then {_this select 1}else{""};
 _loadout = if (count(_this)>2) then {toUpper(_this select 2)}else{""};
 _AI_processor = {

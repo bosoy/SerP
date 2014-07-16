@@ -10,7 +10,7 @@ if (_version==0) then {
 	_version = "v"+str(_version);
 };
 _cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>SerP %2",localize "credits",_version]]];
-//отобразит игроков стороны в отрядах
+//РѕС‚РѕР±СЂР°Р·РёС‚ РёРіСЂРѕРєРѕРІ СЃС‚РѕСЂРѕРЅС‹ РІ РѕС‚СЂСЏРґР°С…
 _grpText = "";
 {
 	if (side(_x) == _unitside) then {
@@ -37,9 +37,9 @@ _grpText = "";
 
 _groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
 
-//условности, одни на всех
+//СѓСЃР»РѕРІРЅРѕСЃС‚Рё, РѕРґРЅРё РЅР° РІСЃРµС…
 if (localize "convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];};
-//погода из настроек миссии
+//РїРѕРіРѕРґР° РёР· РЅР°СЃС‚СЂРѕРµРє РјРёСЃСЃРёРё
 
 _hour = date select 3;
 _time = switch true do {
@@ -67,7 +67,7 @@ _vd = getNumber(missionConfigFile >> "SerP_const" >> "viewDistance");
 _weather = player createDiaryRecord ["diary", [localize "STR_weather",
 format [localize "STR_timeOfDay" + " - %1<br/>" + localize "STR_weather" + " - %2<br/>" + localize "str_disp_xbox_editor_wizard_weather_viewdistance" + " - %3" ,_time,_weather,_vd]
 ]];
-//задачи, вооружение и брифинги сторон
+//Р·Р°РґР°С‡Рё, РІРѕРѕСЂСѓР¶РµРЅРёРµ Рё Р±СЂРёС„РёРЅРіРё СЃС‚РѕСЂРѕРЅ
 switch true do {
 	case (_unitside == east): {
 		{if ((_x select 1)!="") then {
@@ -102,7 +102,7 @@ switch true do {
 			[localize "situation_title",localize "situation_guer"]
 		];
 	};
-	default {//цивилы
+	default {//С†РёРІРёР»С‹
 		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
 	};
 };

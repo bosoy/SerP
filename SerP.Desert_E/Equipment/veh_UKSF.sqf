@@ -1,7 +1,7 @@
 _veh = _this select 0;
 _loadout = toUpper(_this select 1);
 switch _loadout do {
-	case "LRPV" : {//Патрульные автомобили дальнего радиуса
+	case "LRPV" : {//РџР°С‚СЂСѓР»СЊРЅС‹Рµ Р°РІС‚РѕРјРѕР±РёР»Рё РґР°Р»СЊРЅРµРіРѕ СЂР°РґРёСѓСЃР°
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
@@ -24,7 +24,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["PipeBomb",2];
 		_veh addWeaponCargo ["ACE_WireCutter",1];
 	};
-	case "ASHELI" : {//Штурмовой вертолет
+	case "ASHELI" : {//РЁС‚СѓСЂРјРѕРІРѕР№ РІРµСЂС‚РѕР»РµС‚
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
@@ -41,7 +41,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["30Rnd_9x19_MP5"];
 		_veh addMagazineCargo ["ACE_Rope_M_50",2];
 	};
-	case "PTHELI" : {//Воздушная заброска патруля посадочная
+	case "PTHELI" : {//Р’РѕР·РґСѓС€РЅР°СЏ Р·Р°Р±СЂРѕСЃРєР° РїР°С‚СЂСѓР»СЏ РїРѕСЃР°РґРѕС‡РЅР°СЏ
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
@@ -61,7 +61,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["PipeBomb",4];
 		_veh addWeaponCargo ["M136",1];
 	};
-	case "С130" : {//Заброска патруля HALO
+	case "РЎ130" : {//Р—Р°Р±СЂРѕСЃРєР° РїР°С‚СЂСѓР»СЏ HALO
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
@@ -81,7 +81,7 @@ switch _loadout do {
 		_veh addWeaponCargo ["ACE_ParachuteRoundPack",10];
 		_veh addMagazineCargo ["PipeBomb",4];
 	};
-	case "UNDCOV" : {//Гражданский транспорт
+	case "UNDCOV" : {//Р“СЂР°Р¶РґР°РЅСЃРєРёР№ С‚СЂР°РЅСЃРїРѕСЂС‚
 		_veh addMagazineCargo ["HandGrenade_west",5];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["ACE_Flashbang",10];

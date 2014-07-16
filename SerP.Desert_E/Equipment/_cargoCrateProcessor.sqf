@@ -1,4 +1,4 @@
-﻿
+
 _veh = _this select 0;
 _loadout = toUpper (_this select 1);
 _count = if (count(_this)>2) then {_this select 2}else{1};

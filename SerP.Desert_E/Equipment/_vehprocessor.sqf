@@ -1,4 +1,4 @@
-﻿_veh = _this select 0;
+_veh = _this select 0;
 _faction = _this select 1;
 call compile format ["if (isNil {SerP_veh_%1_processor}) then {SerP_veh_%1_processor = compile preprocessFileLineNumbers 'equipment\veh_%1.sqf'}",_faction];
 _loadout = _this select 2;

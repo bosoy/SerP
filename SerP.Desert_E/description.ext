@@ -1,4 +1,4 @@
-﻿#include "SerP\header.hpp"
+#include "SerP\header.hpp"
 //#include "mission.sqm"
 
 class SerP_const {

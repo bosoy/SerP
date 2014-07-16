@@ -1,7 +1,7 @@
 _veh = _this select 0;
 _loadout = toUpper(_this select 1);
 switch _loadout do {
-	case "HQVEH" : {//Штабная машина
+	case "HQVEH" : {//РЁС‚Р°Р±РЅР°СЏ РјР°С€РёРЅР°
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
@@ -18,7 +18,7 @@ switch _loadout do {
 		_veh addWeaponCargo ["M136",1];
 		_veh addMagazineCargo ["PipeBomb",2];
 	};
-	case "MORVEH" : {//Машина взводного миномета
+	case "MORVEH" : {//РњР°С€РёРЅР° РІР·РІРѕРґРЅРѕРіРѕ РјРёРЅРѕРјРµС‚Р°
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
@@ -32,7 +32,7 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_M224HE_CSWDM",5];
 		_veh addMagazineCargo ["ACE_M224WP_CSWDM",5];
 	};
-	case "PLVEH" : {//Автомобиль пехотной секции
+	case "PLVEH" : {//РђРІС‚РѕРјРѕР±РёР»СЊ РїРµС…РѕС‚РЅРѕР№ СЃРµРєС†РёРё
 		_veh addMagazineCargo ["HandGrenade_west",10];
 		_veh addMagazineCargo ["SmokeShell",10];
 		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];

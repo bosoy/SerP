@@ -1,4 +1,4 @@
-﻿#include "macros.hpp"
+#include "macros.hpp"
 _unit = _this select 0;
 _loadout = toUpper (_this select 1);
 switch _loadout do {

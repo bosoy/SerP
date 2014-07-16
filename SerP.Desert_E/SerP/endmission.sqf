@@ -2,7 +2,7 @@
 
 if (isNil{SerP_endMissionToggle}) then {SerP_endMissionToggle = 1;};
 if (SerP_endMissionToggle==0) exitWith {SerP_endMission = {}};
-//инициализируем функции
+//РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј С„СѓРЅРєС†РёРё
 SerP_processorEND = {
 	SerP_endMission = {};
 	_message = _this select 0;
@@ -68,7 +68,7 @@ SerP_endMission = {
 };
 
 sleep 10;
-//админ может завершить миссию досрочно нажав комбинацию клавиш ctrl+alt+shift+end
+//Р°РґРјРёРЅ РјРѕР¶РµС‚ Р·Р°РІРµСЂС€РёС‚СЊ РјРёСЃСЃРёСЋ РґРѕСЃСЂРѕС‡РЅРѕ РЅР°Р¶Р°РІ РєРѕРјР±РёРЅР°С†РёСЋ РєР»Р°РІРёС€ ctrl+alt+shift+end
 if ((serverCommandAvailable "#kick")||isServer) then {
 	(findDisplay 46) displayAddEventHandler ["KeyDown", '
 		_ctrl = _this select 0;
@@ -83,7 +83,7 @@ if ((serverCommandAvailable "#kick")||isServer) then {
 	'];
 };
 
-//ждем пока не закончится фризтайм
+//Р¶РґРµРј РїРѕРєР° РЅРµ Р·Р°РєРѕРЅС‡РёС‚СЃСЏ С„СЂРёР·С‚Р°Р№Рј
 waitUntil {sleep 1;!isNil{warbegins}};
 waitUntil {sleep 1;warbegins==1};
 
@@ -95,7 +95,7 @@ if isNil{SerP_end} then {
 	};
 };
 
-if (!isDedicated&&isServer) then {//костыль для тестов
+if (!isDedicated&&isServer) then {//РєРѕСЃС‚С‹Р»СЊ РґР»СЏ С‚РµСЃС‚РѕРІ
 	_trigger = createTrigger["EmptyDetector",[0,0]];
 	_trigger setTriggerActivation ["ANY", "PRESENT", true];
 	_trigger setTriggerStatements[
@@ -103,7 +103,7 @@ if (!isDedicated&&isServer) then {//костыль для тестов
 		"SerP_end call SerP_endMission",
 		""
 	];
-}else{//завершение
+}else{//Р·Р°РІРµСЂС€РµРЅРёРµ
 	"SerP_end" addPublicVariableEventHandler {
 		if ((_this select 1) select 1) then {
 			(_this select 1) call SerP_endMission
@@ -112,7 +112,7 @@ if (!isDedicated&&isServer) then {//костыль для тестов
 };
 
 
-SerP_all_units = []; //собираем список юнитов в начале игры потому-что узнать имя мертвого игрока нельзя
+SerP_all_units = []; //СЃРѕР±РёСЂР°РµРј СЃРїРёСЃРѕРє СЋРЅРёС‚РѕРІ РІ РЅР°С‡Р°Р»Рµ РёРіСЂС‹ РїРѕС‚РѕРјСѓ-С‡С‚Рѕ СѓР·РЅР°С‚СЊ РёРјСЏ РјРµСЂС‚РІРѕРіРѕ РёРіСЂРѕРєР° РЅРµР»СЊР·СЏ
 {
 	_show = false;
 	_unitsInGroup = [];
