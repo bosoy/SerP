@@ -324,7 +324,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",4);
 		addWeapons ["ACE_AK74M","ACE_Rucksack_MOLLE_DMARPAT_Medic"];
 		addItems ["R","N","M"];
-		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3],["ACE_Splint",3],["ACE_IV",3],["ACE_Plasma",3]]]
+		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3]]]
 	};
 	case "MED" : { //Санитар
 		addMagazines("30Rnd_545x39_AK",5);
@@ -332,7 +332,7 @@ switch _loadout do {
 		addMagazines("ACE_RDGM",4);
 		addWeapons ["ACE_AK74M","ACE_Rucksack_MOLLE_DMARPAT_Medic"];
 		addItems ["R","N"];
-		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3],["ACE_Splint",3],["ACE_IV",3],["ACE_Plasma",3]]]
+		_unit setVariable ["ACE_RuckMagContents",[["ACE_Bandage",10],["ACE_Morphine",10],["ACE_Epinephrine",10],["ACE_LargeBandage",5],["ACE_Tourniquet",3]]]
 	};
 //экипаж
 	case "CRWVC" : { //Командир техники
