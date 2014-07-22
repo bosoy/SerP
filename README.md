@@ -18,6 +18,8 @@ SerP
 - Сбор и вывод информации о выживших/погибших в конце игры.
 
 
+[Скачать последнюю версию](https://github.com/Skarm/SerP/releases/latest)
+
 ###Authors
 - conKORD
 - Zu-23-2
