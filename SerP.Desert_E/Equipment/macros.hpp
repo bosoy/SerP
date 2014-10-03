@@ -11,6 +11,7 @@
 			case "F": {_unit addWeapon "ACE_MugLite"}; \
 			case "E": {_unit addWeapon "ACE_Earplugs"}; \
 			case "B": {_unit addWeapon "Binocular"}; \
+			case "NB": {_unit addWeapon "NVB"}; \
 			case "K": {_unit addWeapon "ACE_Kestrel4500"}; \
 			case "SG": {_unit addWeapon "ACE_GlassesSunglasses"}; \
 			case "H": {_unit addWeapon "ACE_HuntIR_monitor"}; \
