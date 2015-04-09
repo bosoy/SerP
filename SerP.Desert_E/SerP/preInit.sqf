@@ -3,7 +3,7 @@
 __debug(start)
 enableSaving [false, false];
 //process parameters
-for [ { _i = 0 }, { _i < count(paramsArray) }, { _i = _i + 1 } ] do	{
+for "_i" from 0 to count(paramsArray)-1 do {
 	_paramName =(configName ((missionConfigFile >> "Params") select _i));
 	_paramValue = (paramsArray select _i);
 	_paramCode = ( getText (missionConfigFile >> "Params" >> _paramName >> "code"));
