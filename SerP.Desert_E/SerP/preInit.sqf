@@ -30,8 +30,6 @@ if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {
 enableEngineArtillery false;
 
 //functions
-SerP_isCrew = compile preprocessFileLineNumbers "SerP\isCrew.sqf";
-SerP_isPilot = compile preprocessFileLineNumbers "SerP\isPilot.sqf";
 SerP_msg = {//["Hello world!",west] call SerP_msg;
 		if (count(_this)==2) then {
 			if ((side player)==(_this select 1)) then {
